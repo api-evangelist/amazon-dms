@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/amazon-dms-replication-task.json",
+  "title": "AWS DMS Replication Task",
+  "description": "Schema for an AWS Database Migration Service replication task resource, representing a data migration task between source and target database endpoints.",
+  "type": "object",
+  "properties": {
+    "ReplicationTaskIdentifier": {
+      "type": "string",
+      "description": "The user-assigned replication task identifier.",
+      "maxLength": 255
+    },
+    "SourceEndpointArn": {
+      "type": "string",
+      "description": "The ARN of the source endpoint."
+    },
+    "TargetEndpointArn": {
+      "type": "string",
+      "description": "The ARN of the target endpoint."
+    },
+    "ReplicationInstanceArn": {
+      "type": "string",
+      "description": "The ARN of the replication instance."
+    },
+    "MigrationType": {
+      "type": "string",
+      "description": "The type of migration.",
+      "enum": ["full-load", "cdc", "full-load-and-cdc"]
+    },
+    "TableMappings": {
+      "type": "string",
+      "description": "Table mappings in JSON format for the replication task."
+    },
+    "ReplicationTaskSettings": {
+      "type": "string",
+      "description": "Settings for the replication task in JSON format."
+    },
+    "Status": {
+      "type": "string",
+      "description": "The status of the replication task.",
+      "enum": [
+        "creating",
+        "running",
+        "stopped",
+        "stopping",
+        "deleting",
+        "failed",
+        "moving",
+        "ready",
+        "modifying",
+        "testing"
+      ]
+    },
+    "ReplicationTaskArn": {
+      "type": "string",
+      "description": "The ARN of the replication task.",
+      "pattern": "^arn:aws:dms:[a-z0-9-]+:[0-9]{12}:task:.+"
+    },
+    "ReplicationTaskStats": {
+      "$ref": "#/$defs/ReplicationTaskStats"
+    },
+    "ReplicationTaskCreationDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date the replication task was created."
+    },
+    "ReplicationTaskStartDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date the replication task first started."
+    }
+  },
+  "required": [
+    "ReplicationTaskIdentifier",
+    "SourceEndpointArn",
+    "TargetEndpointArn",
+    "ReplicationInstanceArn",
+    "MigrationType",
+    "TableMappings"
+  ],
+  "$defs": {
+    "ReplicationTaskStats": {
+      "type": "object",
+      "description": "Statistics for the replication task.",
+      "properties": {
+        "FullLoadProgressPercent": {
+          "type": "integer",
+          "description": "The percent complete for the full load migration task.",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "ElapsedTimeMillis": {
+          "type": "integer",
+          "description": "The elapsed time of the task, in milliseconds.",
+          "minimum": 0
+        },
+        "TablesLoaded": {
+          "type": "integer",
+          "description": "The number of tables loaded for this task.",
+          "minimum": 0
+        },
+        "TablesLoading": {
+          "type": "integer",
+          "description": "The number of tables currently loading.",
+          "minimum": 0
+        },
+        "TablesQueued": {
+          "type": "integer",
+          "description": "The number of tables queued for this task.",
+          "minimum": 0
+        },
+        "TablesErrored": {
+          "type": "integer",
+          "description": "The number of errors that have occurred during this task.",
+          "minimum": 0
+        },
+        "FreshStartDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date the replication task was started."
+        },
+        "StartDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "StopDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "Endpoint": {
+      "type": "object",
+      "description": "A source or target database endpoint for migration.",
+      "properties": {
+        "EndpointIdentifier": {
+          "type": "string",
+          "description": "The database endpoint identifier."
+        },
+        "EndpointType": {
+          "type": "string",
+          "enum": ["source", "target"]
+        },
+        "EngineName": {
+          "type": "string",
+          "description": "The type of engine for the endpoint."
+        },
+        "ServerName": {
+          "type": "string"
+        },
+        "Port": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 65535
+        },
+        "DatabaseName": {
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        },
+        "EndpointArn": {
+          "type": "string"
+        },
+        "SslMode": {
+          "type": "string",
+          "enum": ["none", "require", "verify-ca", "verify-full"]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,380 @@
+openapi: 3.1.0
+info:
+  title: AWS Database Migration Service API
+  description: >-
+    AWS Database Migration Service (DMS) helps you migrate databases to AWS
+    quickly and securely. The API provides operations for creating and managing
+    replication instances, endpoints, and replication tasks for database
+    migrations.
+  version: "2016-01-01"
+  contact:
+    name: Amazon Web Services
+    url: https://aws.amazon.com/dms/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: https://dms.amazonaws.com
+    description: AWS DMS API endpoint
+paths:
+  /:
+    post:
+      operationId: CreateReplicationInstance
+      summary: Create a replication instance
+      description: >-
+        Creates the replication instance using the specified parameters.
+        A replication instance is used to run replication tasks.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              $ref: "#/components/schemas/CreateReplicationInstanceInput"
+      responses:
+        "200":
+          description: Replication instance created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReplicationInstance"
+        "400":
+          description: Bad request
+      tags:
+        - Replication Instances
+  /createEndpoint:
+    post:
+      operationId: CreateEndpoint
+      summary: Create an endpoint
+      description: >-
+        Creates an endpoint using the provided settings, representing
+        a source or target database for migration.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              $ref: "#/components/schemas/CreateEndpointInput"
+      responses:
+        "200":
+          description: Endpoint created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Endpoint"
+        "400":
+          description: Bad request
+      tags:
+        - Endpoints
+  /createReplicationTask:
+    post:
+      operationId: CreateReplicationTask
+      summary: Create a replication task
+      description: >-
+        Creates a replication task using the specified parameters. A
+        replication task moves data from a source endpoint to a target endpoint.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              $ref: "#/components/schemas/CreateReplicationTaskInput"
+      responses:
+        "200":
+          description: Replication task created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReplicationTask"
+        "400":
+          description: Bad request
+      tags:
+        - Replication Tasks
+  /describeReplicationInstances:
+    post:
+      operationId: DescribeReplicationInstances
+      summary: Describe replication instances
+      description: Returns information about replication instances.
+      requestBody:
+        required: false
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              properties:
+                Filters:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/Filter"
+                MaxRecords:
+                  type: integer
+                Marker:
+                  type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ReplicationInstances:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/ReplicationInstance"
+                  Marker:
+                    type: string
+      tags:
+        - Replication Instances
+  /describeEndpoints:
+    post:
+      operationId: DescribeEndpoints
+      summary: Describe endpoints
+      description: Returns information about the endpoints for your account.
+      requestBody:
+        required: false
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              properties:
+                Filters:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/Filter"
+                MaxRecords:
+                  type: integer
+                Marker:
+                  type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Endpoints:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Endpoint"
+                  Marker:
+                    type: string
+      tags:
+        - Endpoints
+  /startReplicationTask:
+    post:
+      operationId: StartReplicationTask
+      summary: Start a replication task
+      description: Starts the replication task.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              required:
+                - ReplicationTaskArn
+                - StartReplicationTaskType
+              properties:
+                ReplicationTaskArn:
+                  type: string
+                StartReplicationTaskType:
+                  type: string
+                  enum:
+                    - start-replication
+                    - resume-processing
+                    - reload-target
+                CdcStartTime:
+                  type: string
+                  format: date-time
+      responses:
+        "200":
+          description: Replication task started
+      tags:
+        - Replication Tasks
+components:
+  schemas:
+    CreateReplicationInstanceInput:
+      type: object
+      required:
+        - ReplicationInstanceIdentifier
+        - ReplicationInstanceClass
+      properties:
+        ReplicationInstanceIdentifier:
+          type: string
+          description: The replication instance identifier.
+        ReplicationInstanceClass:
+          type: string
+          description: The compute and memory capacity of the replication instance.
+        AllocatedStorage:
+          type: integer
+          description: The amount of storage (in gigabytes) to allocate.
+        VpcSecurityGroupIds:
+          type: array
+          items:
+            type: string
+        AvailabilityZone:
+          type: string
+        ReplicationSubnetGroupIdentifier:
+          type: string
+        MultiAZ:
+          type: boolean
+        EngineVersion:
+          type: string
+        PubliclyAccessible:
+          type: boolean
+    ReplicationInstance:
+      type: object
+      properties:
+        ReplicationInstanceIdentifier:
+          type: string
+        ReplicationInstanceClass:
+          type: string
+        ReplicationInstanceStatus:
+          type: string
+        AllocatedStorage:
+          type: integer
+        ReplicationInstanceArn:
+          type: string
+        ReplicationInstancePublicIpAddress:
+          type: string
+        ReplicationInstancePrivateIpAddress:
+          type: string
+        AvailabilityZone:
+          type: string
+        MultiAZ:
+          type: boolean
+        EngineVersion:
+          type: string
+    CreateEndpointInput:
+      type: object
+      required:
+        - EndpointIdentifier
+        - EndpointType
+        - EngineName
+      properties:
+        EndpointIdentifier:
+          type: string
+        EndpointType:
+          type: string
+          enum:
+            - source
+            - target
+        EngineName:
+          type: string
+          description: The type of engine for the endpoint.
+        ServerName:
+          type: string
+        Port:
+          type: integer
+        DatabaseName:
+          type: string
+        Username:
+          type: string
+        Password:
+          type: string
+        SslMode:
+          type: string
+          enum:
+            - none
+            - require
+            - verify-ca
+            - verify-full
+    Endpoint:
+      type: object
+      properties:
+        EndpointIdentifier:
+          type: string
+        EndpointType:
+          type: string
+        EngineName:
+          type: string
+        EngineDisplayName:
+          type: string
+        ServerName:
+          type: string
+        Port:
+          type: integer
+        DatabaseName:
+          type: string
+        Status:
+          type: string
+        EndpointArn:
+          type: string
+        SslMode:
+          type: string
+    CreateReplicationTaskInput:
+      type: object
+      required:
+        - ReplicationTaskIdentifier
+        - SourceEndpointArn
+        - TargetEndpointArn
+        - ReplicationInstanceArn
+        - MigrationType
+        - TableMappings
+      properties:
+        ReplicationTaskIdentifier:
+          type: string
+        SourceEndpointArn:
+          type: string
+        TargetEndpointArn:
+          type: string
+        ReplicationInstanceArn:
+          type: string
+        MigrationType:
+          type: string
+          enum:
+            - full-load
+            - cdc
+            - full-load-and-cdc
+        TableMappings:
+          type: string
+          description: JSON table mappings for the replication task.
+    ReplicationTask:
+      type: object
+      properties:
+        ReplicationTaskIdentifier:
+          type: string
+        SourceEndpointArn:
+          type: string
+        TargetEndpointArn:
+          type: string
+        ReplicationInstanceArn:
+          type: string
+        MigrationType:
+          type: string
+        Status:
+          type: string
+        ReplicationTaskArn:
+          type: string
+        ReplicationTaskStats:
+          type: object
+          properties:
+            FullLoadProgressPercent:
+              type: integer
+            ElapsedTimeMillis:
+              type: integer
+            TablesLoaded:
+              type: integer
+            TablesLoading:
+              type: integer
+            TablesQueued:
+              type: integer
+            TablesErrored:
+              type: integer
+    Filter:
+      type: object
+      properties:
+        Name:
+          type: string
+        Values:
+          type: array
+          items:
+            type: string
+tags:
+  - name: Replication Instances
+    description: Operations for managing DMS replication instances
+  - name: Endpoints
+    description: Operations for managing source and target endpoints
+  - name: Replication Tasks
+    description: Operations for managing replication tasks

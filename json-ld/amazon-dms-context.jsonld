@@ -1,0 +1,91 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "dms": "https://docs.aws.amazon.com/dms/latest/APIReference/",
+    "aws": "https://aws.amazon.com/",
+    "ReplicationTask": {
+      "@id": "dms:API_ReplicationTask",
+      "@context": {
+        "replicationTaskIdentifier": {
+          "@id": "dms:ReplicationTask/ReplicationTaskIdentifier",
+          "@type": "xsd:string"
+        },
+        "sourceEndpointArn": {
+          "@id": "dms:ReplicationTask/SourceEndpointArn",
+          "@type": "xsd:string"
+        },
+        "targetEndpointArn": {
+          "@id": "dms:ReplicationTask/TargetEndpointArn",
+          "@type": "xsd:string"
+        },
+        "migrationType": {
+          "@id": "dms:ReplicationTask/MigrationType",
+          "@type": "xsd:string"
+        },
+        "status": {
+          "@id": "dms:ReplicationTask/Status",
+          "@type": "xsd:string"
+        },
+        "replicationTaskArn": {
+          "@id": "dms:ReplicationTask/ReplicationTaskArn",
+          "@type": "xsd:string"
+        }
+      }
+    },
+    "ReplicationInstance": {
+      "@id": "dms:API_ReplicationInstance",
+      "@context": {
+        "replicationInstanceIdentifier": {
+          "@id": "dms:ReplicationInstance/ReplicationInstanceIdentifier",
+          "@type": "xsd:string"
+        },
+        "replicationInstanceClass": {
+          "@id": "dms:ReplicationInstance/ReplicationInstanceClass",
+          "@type": "xsd:string"
+        },
+        "replicationInstanceStatus": {
+          "@id": "dms:ReplicationInstance/ReplicationInstanceStatus",
+          "@type": "xsd:string"
+        },
+        "allocatedStorage": {
+          "@id": "dms:ReplicationInstance/AllocatedStorage",
+          "@type": "xsd:integer"
+        },
+        "multiAZ": {
+          "@id": "dms:ReplicationInstance/MultiAZ",
+          "@type": "xsd:boolean"
+        }
+      }
+    },
+    "Endpoint": {
+      "@id": "dms:API_Endpoint",
+      "@context": {
+        "endpointIdentifier": {
+          "@id": "dms:Endpoint/EndpointIdentifier",
+          "@type": "xsd:string"
+        },
+        "endpointType": {
+          "@id": "dms:Endpoint/EndpointType",
+          "@type": "xsd:string"
+        },
+        "engineName": {
+          "@id": "dms:Endpoint/EngineName",
+          "@type": "xsd:string"
+        },
+        "serverName": {
+          "@id": "dms:Endpoint/ServerName",
+          "@type": "xsd:string"
+        },
+        "port": {
+          "@id": "dms:Endpoint/Port",
+          "@type": "xsd:integer"
+        },
+        "status": {
+          "@id": "dms:Endpoint/Status",
+          "@type": "xsd:string"
+        }
+      }
+    },
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  }
+}
