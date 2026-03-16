@@ -1,4 +1,4 @@
-name: Amazon DMS API
+name: Amazon DMS
 description: >-
   AWS Database Migration Service (AWS DMS) helps you migrate databases to AWS
   quickly and securely. The source database remains fully operational during the
