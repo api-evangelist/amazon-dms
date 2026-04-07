@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: AWS Database Migration Service API
+  title: Amazon DMS AWS Database Migration Service API
   description: >-
     AWS Database Migration Service (DMS) helps you migrate databases to AWS
     quickly and securely. The API provides operations for creating and managing
@@ -20,7 +20,7 @@ paths:
   /:
     post:
       operationId: CreateReplicationInstance
-      summary: Create a replication instance
+      summary: Amazon DMS Create a replication instance
       description: >-
         Creates the replication instance using the specified parameters.
         A replication instance is used to run replication tasks.
@@ -44,7 +44,7 @@ paths:
   /createEndpoint:
     post:
       operationId: CreateEndpoint
-      summary: Create an endpoint
+      summary: Amazon DMS Create an endpoint
       description: >-
         Creates an endpoint using the provided settings, representing
         a source or target database for migration.
@@ -68,7 +68,7 @@ paths:
   /createReplicationTask:
     post:
       operationId: CreateReplicationTask
-      summary: Create a replication task
+      summary: Amazon DMS Create a replication task
       description: >-
         Creates a replication task using the specified parameters. A
         replication task moves data from a source endpoint to a target endpoint.
@@ -92,7 +92,7 @@ paths:
   /describeReplicationInstances:
     post:
       operationId: DescribeReplicationInstances
-      summary: Describe replication instances
+      summary: Amazon DMS Describe replication instances
       description: Returns information about replication instances.
       requestBody:
         required: false
@@ -128,7 +128,7 @@ paths:
   /describeEndpoints:
     post:
       operationId: DescribeEndpoints
-      summary: Describe endpoints
+      summary: Amazon DMS Describe endpoints
       description: Returns information about the endpoints for your account.
       requestBody:
         required: false
@@ -164,7 +164,7 @@ paths:
   /startReplicationTask:
     post:
       operationId: StartReplicationTask
-      summary: Start a replication task
+      summary: Amazon DMS Start a replication task
       description: Starts the replication task.
       requestBody:
         required: true
