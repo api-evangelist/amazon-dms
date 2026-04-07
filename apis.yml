@@ -11,11 +11,11 @@ baseURL: https://dms.amazonaws.com
 created: '2024-01-15'
 modified: '2026-03-16'
 tags:
-  - Database Migration
-  - Data Replication
-  - Migration
-  - Database
   - AWS
+  - Data Replication
+  - Database
+  - Database Migration
+  - Migration
 apis:
   - name: Amazon DMS API
     description: >-

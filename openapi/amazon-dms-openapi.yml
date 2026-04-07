@@ -372,9 +372,9 @@ components:
           items:
             type: string
 tags:
-  - name: Replication Instances
-    description: Operations for managing DMS replication instances
   - name: Endpoints
     description: Operations for managing source and target endpoints
+  - name: Replication Instances
+    description: Operations for managing DMS replication instances
   - name: Replication Tasks
     description: Operations for managing replication tasks
