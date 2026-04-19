@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-dms/refs/heads/main/json-structure/amazon-dms-subnet-structure.json",
+  "title": "Subnet",
+  "description": "In response to a request by the <code>DescribeReplicationSubnetGroups</code> operation, this object identifies a subnet by its given Availability Zone, subnet identifier, and status.",
+  "type": "object",
+  "properties": {
+    "SubnetIdentifier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The subnet identifier."
+        }
+      ]
+    },
+    "SubnetAvailabilityZone": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AvailabilityZone"
+        },
+        {
+          "description": "The Availability Zone of the subnet."
+        }
+      ]
+    },
+    "SubnetStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The status of the subnet."
+        }
+      ]
+    }
+  }
+}

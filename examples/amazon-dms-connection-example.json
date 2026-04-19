@@ -1,0 +1,8 @@
+{
+  "ReplicationInstanceArn": "example-5892",
+  "EndpointArn": "example-9639",
+  "Status": "example-2042",
+  "LastFailureMessage": "example-7737",
+  "EndpointIdentifier": "example-4798",
+  "ReplicationInstanceIdentifier": "example-8608"
+}

@@ -1,0 +1,15 @@
+{
+  "CollectorReferencedId": "example-8731",
+  "CollectorName": "example-4008",
+  "CollectorVersion": "example-5040",
+  "VersionStatus": "example-5325",
+  "Description": "example-4456",
+  "S3BucketName": "example-8355",
+  "ServiceAccessRoleArn": "example-2419",
+  "CollectorHealthCheck": {},
+  "LastDataReceived": "example-3559",
+  "RegisteredDate": "example-8228",
+  "CreatedDate": "example-2413",
+  "ModifiedDate": "example-6496",
+  "InventoryData": {}
+}

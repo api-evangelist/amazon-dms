@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-dms/refs/heads/main/json-structure/amazon-dms-database-response-structure.json",
+  "title": "DatabaseResponse",
+  "description": "Describes a database in a Fleet Advisor collector inventory.",
+  "type": "object",
+  "properties": {
+    "DatabaseId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The ID of a database in a Fleet Advisor collector inventory."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The name of a database in a Fleet Advisor collector inventory. "
+        }
+      ]
+    },
+    "IpAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The IP address of a database in a Fleet Advisor collector inventory. "
+        }
+      ]
+    },
+    "NumberOfSchemas": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LongOptional"
+        },
+        {
+          "description": "The number of schemas in a Fleet Advisor collector inventory database. "
+        }
+      ]
+    },
+    "Server": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServerShortInfoResponse"
+        },
+        {
+          "description": "The server name of a database in a Fleet Advisor collector inventory. "
+        }
+      ]
+    },
+    "SoftwareDetails": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatabaseInstanceSoftwareDetailsResponse"
+        },
+        {
+          "description": "The software details of a database in a Fleet Advisor collector inventory, such as database engine and version."
+        }
+      ]
+    },
+    "Collectors": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CollectorsList"
+        },
+        {
+          "description": "A list of collectors associated with the database."
+        }
+      ]
+    }
+  }
+}

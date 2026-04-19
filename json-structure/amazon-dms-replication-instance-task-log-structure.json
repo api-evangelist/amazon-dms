@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-dms/refs/heads/main/json-structure/amazon-dms-replication-instance-task-log-structure.json",
+  "title": "ReplicationInstanceTaskLog",
+  "description": "Contains metadata for a replication instance task log.",
+  "type": "object",
+  "properties": {
+    "ReplicationTaskName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The name of the replication task."
+        }
+      ]
+    },
+    "ReplicationTaskArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the replication task."
+        }
+      ]
+    },
+    "ReplicationInstanceTaskLogSize": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The size, in bytes, of the replication task log."
+        }
+      ]
+    }
+  }
+}

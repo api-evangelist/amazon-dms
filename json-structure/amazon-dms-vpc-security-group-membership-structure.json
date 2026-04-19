@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-dms/refs/heads/main/json-structure/amazon-dms-vpc-security-group-membership-structure.json",
+  "title": "VpcSecurityGroupMembership",
+  "description": "Describes the status of a security group associated with the virtual private cloud (VPC) hosting your replication and DB instances.",
+  "type": "object",
+  "properties": {
+    "VpcSecurityGroupId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The VPC security group ID."
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The status of the VPC security group."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-dms/refs/heads/main/json-schema/amazon-dms-orderable-replication-instance-schema.json",
+  "title": "OrderableReplicationInstance",
+  "description": "In response to the <code>DescribeOrderableReplicationInstances</code> operation, this object describes an available replication instance. This description includes the replication instance's type, engine version, and allocated storage.",
+  "type": "object",
+  "properties": {
+    "EngineVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The version of the replication engine."
+        }
+      ]
+    },
+    "ReplicationInstanceClass": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "<p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>\"dms.c4.large\"</code>.</p> <p>For more information on the settings and capacities for the available replication instance classes, see <a href=\"https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth\"> Selecting the right DMS replication instance for your migration</a>. </p>"
+        }
+      ]
+    },
+    "StorageType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The type of storage used by the replication instance."
+        }
+      ]
+    },
+    "MinAllocatedStorage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The minimum amount of storage (in gigabytes) that can be allocated for the replication instance."
+        }
+      ]
+    },
+    "MaxAllocatedStorage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The minimum amount of storage (in gigabytes) that can be allocated for the replication instance."
+        }
+      ]
+    },
+    "DefaultAllocatedStorage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The default amount of storage (in gigabytes) that is allocated for the replication instance."
+        }
+      ]
+    },
+    "IncludedAllocatedStorage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The amount of storage (in gigabytes) that is allocated for the replication instance."
+        }
+      ]
+    },
+    "AvailabilityZones": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AvailabilityZonesList"
+        },
+        {
+          "description": "List of Availability Zones for this replication instance."
+        }
+      ]
+    },
+    "ReleaseStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReleaseStatusValues"
+        },
+        {
+          "description": "<p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p> <note> <p>DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> </note>"
+        }
+      ]
+    }
+  }
+}

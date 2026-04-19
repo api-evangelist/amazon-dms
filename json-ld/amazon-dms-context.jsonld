@@ -1,91 +1,825 @@
 {
   "@context": {
-    "@vocab": "https://schema.org/",
-    "dms": "https://docs.aws.amazon.com/dms/latest/APIReference/",
-    "aws": "https://aws.amazon.com/",
-    "ReplicationTask": {
-      "@id": "dms:API_ReplicationTask",
-      "@context": {
-        "replicationTaskIdentifier": {
-          "@id": "dms:ReplicationTask/ReplicationTaskIdentifier",
-          "@type": "xsd:string"
-        },
-        "sourceEndpointArn": {
-          "@id": "dms:ReplicationTask/SourceEndpointArn",
-          "@type": "xsd:string"
-        },
-        "targetEndpointArn": {
-          "@id": "dms:ReplicationTask/TargetEndpointArn",
-          "@type": "xsd:string"
-        },
-        "migrationType": {
-          "@id": "dms:ReplicationTask/MigrationType",
-          "@type": "xsd:string"
-        },
-        "status": {
-          "@id": "dms:ReplicationTask/Status",
-          "@type": "xsd:string"
-        },
-        "replicationTaskArn": {
-          "@id": "dms:ReplicationTask/ReplicationTaskArn",
-          "@type": "xsd:string"
-        }
-      }
+    "@version": 1.1,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "https://schema.org/",
+    "dms": "https://aws.amazon.com/dms/vocab#",
+    "AccountQuota": "dms:AccountQuota",
+    "AccountQuotaName": {
+      "@id": "dms:AccountQuotaName",
+      "@type": "xsd:string"
     },
-    "ReplicationInstance": {
-      "@id": "dms:API_ReplicationInstance",
-      "@context": {
-        "replicationInstanceIdentifier": {
-          "@id": "dms:ReplicationInstance/ReplicationInstanceIdentifier",
-          "@type": "xsd:string"
-        },
-        "replicationInstanceClass": {
-          "@id": "dms:ReplicationInstance/ReplicationInstanceClass",
-          "@type": "xsd:string"
-        },
-        "replicationInstanceStatus": {
-          "@id": "dms:ReplicationInstance/ReplicationInstanceStatus",
-          "@type": "xsd:string"
-        },
-        "allocatedStorage": {
-          "@id": "dms:ReplicationInstance/AllocatedStorage",
-          "@type": "xsd:integer"
-        },
-        "multiAZ": {
-          "@id": "dms:ReplicationInstance/MultiAZ",
-          "@type": "xsd:boolean"
-        }
-      }
+    "Used": {
+      "@id": "dms:Used",
+      "@type": "xsd:string"
     },
-    "Endpoint": {
-      "@id": "dms:API_Endpoint",
-      "@context": {
-        "endpointIdentifier": {
-          "@id": "dms:Endpoint/EndpointIdentifier",
-          "@type": "xsd:string"
-        },
-        "endpointType": {
-          "@id": "dms:Endpoint/EndpointType",
-          "@type": "xsd:string"
-        },
-        "engineName": {
-          "@id": "dms:Endpoint/EngineName",
-          "@type": "xsd:string"
-        },
-        "serverName": {
-          "@id": "dms:Endpoint/ServerName",
-          "@type": "xsd:string"
-        },
-        "port": {
-          "@id": "dms:Endpoint/Port",
-          "@type": "xsd:integer"
-        },
-        "status": {
-          "@id": "dms:Endpoint/Status",
-          "@type": "xsd:string"
-        }
-      }
+    "Max": {
+      "@id": "dms:Max",
+      "@type": "xsd:string"
     },
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "AvailabilityZone": "dms:AvailabilityZone",
+    "Name": {
+      "@id": "dms:Name",
+      "@type": "xsd:string"
+    },
+    "Certificate": "dms:Certificate",
+    "CertificateIdentifier": {
+      "@id": "dms:CertificateIdentifier",
+      "@type": "xsd:string"
+    },
+    "CertificateCreationDate": {
+      "@id": "dms:CertificateCreationDate",
+      "@type": "xsd:string"
+    },
+    "CertificatePem": {
+      "@id": "dms:CertificatePem",
+      "@type": "xsd:string"
+    },
+    "CertificateWallet": {
+      "@id": "dms:CertificateWallet",
+      "@type": "xsd:string"
+    },
+    "CertificateArn": {
+      "@id": "dms:CertificateArn",
+      "@type": "xsd:string"
+    },
+    "CertificateOwner": {
+      "@id": "dms:CertificateOwner",
+      "@type": "xsd:string"
+    },
+    "ValidFromDate": {
+      "@id": "dms:ValidFromDate",
+      "@type": "xsd:string"
+    },
+    "ValidToDate": {
+      "@id": "dms:ValidToDate",
+      "@type": "xsd:string"
+    },
+    "SigningAlgorithm": {
+      "@id": "dms:SigningAlgorithm",
+      "@type": "xsd:string"
+    },
+    "KeyLength": {
+      "@id": "dms:KeyLength",
+      "@type": "xsd:string"
+    },
+    "CollectorResponse": "dms:CollectorResponse",
+    "CollectorReferencedId": {
+      "@id": "dms:CollectorReferencedId",
+      "@type": "xsd:string"
+    },
+    "CollectorName": {
+      "@id": "dms:CollectorName",
+      "@type": "xsd:string"
+    },
+    "CollectorVersion": {
+      "@id": "dms:CollectorVersion",
+      "@type": "xsd:string"
+    },
+    "VersionStatus": {
+      "@id": "dms:VersionStatus",
+      "@type": "xsd:string"
+    },
+    "Description": {
+      "@id": "dms:Description",
+      "@type": "xsd:string"
+    },
+    "S3BucketName": {
+      "@id": "dms:S3BucketName",
+      "@type": "xsd:string"
+    },
+    "ServiceAccessRoleArn": {
+      "@id": "dms:ServiceAccessRoleArn",
+      "@type": "xsd:string"
+    },
+    "CollectorHealthCheck": {
+      "@id": "dms:CollectorHealthCheck",
+      "@type": "xsd:string"
+    },
+    "LastDataReceived": {
+      "@id": "dms:LastDataReceived",
+      "@type": "xsd:string"
+    },
+    "RegisteredDate": {
+      "@id": "dms:RegisteredDate",
+      "@type": "xsd:string"
+    },
+    "CreatedDate": {
+      "@id": "dms:CreatedDate",
+      "@type": "xsd:string"
+    },
+    "ModifiedDate": {
+      "@id": "dms:ModifiedDate",
+      "@type": "xsd:string"
+    },
+    "InventoryData": {
+      "@id": "dms:InventoryData",
+      "@type": "xsd:string"
+    },
+    "Connection": "dms:Connection",
+    "ReplicationInstanceArn": {
+      "@id": "dms:ReplicationInstanceArn",
+      "@type": "xsd:string"
+    },
+    "EndpointArn": {
+      "@id": "dms:EndpointArn",
+      "@type": "xsd:string"
+    },
+    "Status": {
+      "@id": "dms:Status",
+      "@type": "xsd:string"
+    },
+    "LastFailureMessage": {
+      "@id": "dms:LastFailureMessage",
+      "@type": "xsd:string"
+    },
+    "EndpointIdentifier": {
+      "@id": "dms:EndpointIdentifier",
+      "@type": "xsd:string"
+    },
+    "ReplicationInstanceIdentifier": {
+      "@id": "dms:ReplicationInstanceIdentifier",
+      "@type": "xsd:string"
+    },
+    "DatabaseResponse": "dms:DatabaseResponse",
+    "DatabaseId": {
+      "@id": "dms:DatabaseId",
+      "@type": "xsd:string"
+    },
+    "DatabaseName": {
+      "@id": "dms:DatabaseName",
+      "@type": "xsd:string"
+    },
+    "IpAddress": {
+      "@id": "dms:IpAddress",
+      "@type": "xsd:string"
+    },
+    "NumberOfSchemas": {
+      "@id": "dms:NumberOfSchemas",
+      "@type": "xsd:string"
+    },
+    "Server": {
+      "@id": "dms:Server",
+      "@type": "xsd:string"
+    },
+    "SoftwareDetails": {
+      "@id": "dms:SoftwareDetails",
+      "@type": "xsd:string"
+    },
+    "Collectors": {
+      "@id": "dms:Collectors",
+      "@type": "xsd:string"
+    },
+    "Endpoint": "dms:Endpoint",
+    "EndpointType": {
+      "@id": "dms:EndpointType",
+      "@type": "xsd:string"
+    },
+    "EngineName": {
+      "@id": "dms:EngineName",
+      "@type": "xsd:string"
+    },
+    "EngineDisplayName": {
+      "@id": "dms:EngineDisplayName",
+      "@type": "xsd:string"
+    },
+    "Username": {
+      "@id": "dms:Username",
+      "@type": "xsd:string"
+    },
+    "ServerName": {
+      "@id": "dms:ServerName",
+      "@type": "xsd:string"
+    },
+    "Port": {
+      "@id": "dms:Port",
+      "@type": "xsd:string"
+    },
+    "ExtraConnectionAttributes": {
+      "@id": "dms:ExtraConnectionAttributes",
+      "@type": "xsd:string"
+    },
+    "KmsKeyId": {
+      "@id": "dms:KmsKeyId",
+      "@type": "xsd:string"
+    },
+    "SslMode": {
+      "@id": "dms:SslMode",
+      "@type": "xsd:string"
+    },
+    "ExternalTableDefinition": {
+      "@id": "dms:ExternalTableDefinition",
+      "@type": "xsd:string"
+    },
+    "ExternalId": {
+      "@id": "dms:ExternalId",
+      "@type": "xsd:string"
+    },
+    "DynamoDbSettings": {
+      "@id": "dms:DynamoDbSettings",
+      "@type": "xsd:string"
+    },
+    "S3Settings": {
+      "@id": "dms:S3Settings",
+      "@type": "xsd:string"
+    },
+    "DmsTransferSettings": {
+      "@id": "dms:DmsTransferSettings",
+      "@type": "xsd:string"
+    },
+    "MongoDbSettings": {
+      "@id": "dms:MongoDbSettings",
+      "@type": "xsd:string"
+    },
+    "KinesisSettings": {
+      "@id": "dms:KinesisSettings",
+      "@type": "xsd:string"
+    },
+    "KafkaSettings": {
+      "@id": "dms:KafkaSettings",
+      "@type": "xsd:string"
+    },
+    "ElasticsearchSettings": {
+      "@id": "dms:ElasticsearchSettings",
+      "@type": "xsd:string"
+    },
+    "NeptuneSettings": {
+      "@id": "dms:NeptuneSettings",
+      "@type": "xsd:string"
+    },
+    "RedshiftSettings": {
+      "@id": "dms:RedshiftSettings",
+      "@type": "xsd:string"
+    },
+    "PostgreSQLSettings": {
+      "@id": "dms:PostgreSQLSettings",
+      "@type": "xsd:string"
+    },
+    "MySQLSettings": {
+      "@id": "dms:MySQLSettings",
+      "@type": "xsd:string"
+    },
+    "OracleSettings": {
+      "@id": "dms:OracleSettings",
+      "@type": "xsd:string"
+    },
+    "SybaseSettings": {
+      "@id": "dms:SybaseSettings",
+      "@type": "xsd:string"
+    },
+    "MicrosoftSQLServerSettings": {
+      "@id": "dms:MicrosoftSQLServerSettings",
+      "@type": "xsd:string"
+    },
+    "IBMDb2Settings": {
+      "@id": "dms:IBMDb2Settings",
+      "@type": "xsd:string"
+    },
+    "DocDbSettings": {
+      "@id": "dms:DocDbSettings",
+      "@type": "xsd:string"
+    },
+    "RedisSettings": {
+      "@id": "dms:RedisSettings",
+      "@type": "xsd:string"
+    },
+    "GcpMySQLSettings": {
+      "@id": "dms:GcpMySQLSettings",
+      "@type": "xsd:string"
+    },
+    "EventSubscription": "dms:EventSubscription",
+    "CustomerAwsId": {
+      "@id": "dms:CustomerAwsId",
+      "@type": "xsd:string"
+    },
+    "CustSubscriptionId": {
+      "@id": "dms:CustSubscriptionId",
+      "@type": "xsd:string"
+    },
+    "SnsTopicArn": {
+      "@id": "dms:SnsTopicArn",
+      "@type": "xsd:string"
+    },
+    "SubscriptionCreationTime": {
+      "@id": "dms:SubscriptionCreationTime",
+      "@type": "xsd:string"
+    },
+    "SourceType": {
+      "@id": "dms:SourceType",
+      "@type": "xsd:string"
+    },
+    "SourceIdsList": {
+      "@id": "dms:SourceIdsList",
+      "@type": "xsd:string"
+    },
+    "EventCategoriesList": {
+      "@id": "dms:EventCategoriesList",
+      "@type": "xsd:string"
+    },
+    "Enabled": {
+      "@id": "dms:Enabled",
+      "@type": "xsd:string"
+    },
+    "Limitation": "dms:Limitation",
+    "Impact": {
+      "@id": "dms:Impact",
+      "@type": "xsd:string"
+    },
+    "Type": {
+      "@id": "dms:Type",
+      "@type": "xsd:string"
+    },
+    "OrderableReplicationInstance": "dms:OrderableReplicationInstance",
+    "EngineVersion": {
+      "@id": "dms:EngineVersion",
+      "@type": "xsd:string"
+    },
+    "ReplicationInstanceClass": {
+      "@id": "dms:ReplicationInstanceClass",
+      "@type": "xsd:string"
+    },
+    "StorageType": {
+      "@id": "dms:StorageType",
+      "@type": "xsd:string"
+    },
+    "MinAllocatedStorage": {
+      "@id": "dms:MinAllocatedStorage",
+      "@type": "xsd:string"
+    },
+    "MaxAllocatedStorage": {
+      "@id": "dms:MaxAllocatedStorage",
+      "@type": "xsd:string"
+    },
+    "DefaultAllocatedStorage": {
+      "@id": "dms:DefaultAllocatedStorage",
+      "@type": "xsd:string"
+    },
+    "IncludedAllocatedStorage": {
+      "@id": "dms:IncludedAllocatedStorage",
+      "@type": "xsd:string"
+    },
+    "AvailabilityZones": {
+      "@id": "dms:AvailabilityZones",
+      "@type": "xsd:string"
+    },
+    "ReleaseStatus": {
+      "@id": "dms:ReleaseStatus",
+      "@type": "xsd:string"
+    },
+    "PendingMaintenanceAction": "dms:PendingMaintenanceAction",
+    "Action": {
+      "@id": "dms:Action",
+      "@type": "xsd:string"
+    },
+    "AutoAppliedAfterDate": {
+      "@id": "dms:AutoAppliedAfterDate",
+      "@type": "xsd:string"
+    },
+    "ForcedApplyDate": {
+      "@id": "dms:ForcedApplyDate",
+      "@type": "xsd:string"
+    },
+    "OptInStatus": {
+      "@id": "dms:OptInStatus",
+      "@type": "xsd:string"
+    },
+    "CurrentApplyDate": {
+      "@id": "dms:CurrentApplyDate",
+      "@type": "xsd:string"
+    },
+    "RefreshSchemasStatus": "dms:RefreshSchemasStatus",
+    "LastRefreshDate": {
+      "@id": "dms:LastRefreshDate",
+      "@type": "xsd:string"
+    },
+    "ReplicationInstance": "dms:ReplicationInstance",
+    "ReplicationInstanceStatus": {
+      "@id": "dms:ReplicationInstanceStatus",
+      "@type": "xsd:string"
+    },
+    "AllocatedStorage": {
+      "@id": "dms:AllocatedStorage",
+      "@type": "xsd:string"
+    },
+    "InstanceCreateTime": {
+      "@id": "dms:InstanceCreateTime",
+      "@type": "xsd:string"
+    },
+    "VpcSecurityGroups": {
+      "@id": "dms:VpcSecurityGroups",
+      "@type": "xsd:string"
+    },
+    "ReplicationSubnetGroup": "dms:ReplicationSubnetGroup",
+    "PreferredMaintenanceWindow": {
+      "@id": "dms:PreferredMaintenanceWindow",
+      "@type": "xsd:string"
+    },
+    "PendingModifiedValues": {
+      "@id": "dms:PendingModifiedValues",
+      "@type": "xsd:string"
+    },
+    "MultiAZ": {
+      "@id": "dms:MultiAZ",
+      "@type": "xsd:string"
+    },
+    "AutoMinorVersionUpgrade": {
+      "@id": "dms:AutoMinorVersionUpgrade",
+      "@type": "xsd:string"
+    },
+    "ReplicationInstancePublicIpAddress": {
+      "@id": "dms:ReplicationInstancePublicIpAddress",
+      "@type": "xsd:string"
+    },
+    "ReplicationInstancePrivateIpAddress": {
+      "@id": "dms:ReplicationInstancePrivateIpAddress",
+      "@type": "xsd:string"
+    },
+    "ReplicationInstancePublicIpAddresses": {
+      "@id": "dms:ReplicationInstancePublicIpAddresses",
+      "@type": "xsd:string"
+    },
+    "ReplicationInstancePrivateIpAddresses": {
+      "@id": "dms:ReplicationInstancePrivateIpAddresses",
+      "@type": "xsd:string"
+    },
+    "ReplicationInstanceIpv6Addresses": {
+      "@id": "dms:ReplicationInstanceIpv6Addresses",
+      "@type": "xsd:string"
+    },
+    "PubliclyAccessible": {
+      "@id": "dms:PubliclyAccessible",
+      "@type": "xsd:string"
+    },
+    "SecondaryAvailabilityZone": {
+      "@id": "dms:SecondaryAvailabilityZone",
+      "@type": "xsd:string"
+    },
+    "FreeUntil": {
+      "@id": "dms:FreeUntil",
+      "@type": "xsd:string"
+    },
+    "DnsNameServers": {
+      "@id": "dms:DnsNameServers",
+      "@type": "xsd:string"
+    },
+    "NetworkType": {
+      "@id": "dms:NetworkType",
+      "@type": "xsd:string"
+    },
+    "ReplicationInstanceTaskLog": "dms:ReplicationInstanceTaskLog",
+    "ReplicationTaskName": {
+      "@id": "dms:ReplicationTaskName",
+      "@type": "xsd:string"
+    },
+    "ReplicationTaskArn": {
+      "@id": "dms:ReplicationTaskArn",
+      "@type": "xsd:string"
+    },
+    "ReplicationInstanceTaskLogSize": {
+      "@id": "dms:ReplicationInstanceTaskLogSize",
+      "@type": "xsd:string"
+    },
+    "ReplicationSubnetGroupIdentifier": {
+      "@id": "dms:ReplicationSubnetGroupIdentifier",
+      "@type": "xsd:string"
+    },
+    "ReplicationSubnetGroupDescription": {
+      "@id": "dms:ReplicationSubnetGroupDescription",
+      "@type": "xsd:string"
+    },
+    "VpcId": {
+      "@id": "dms:VpcId",
+      "@type": "xsd:string"
+    },
+    "SubnetGroupStatus": {
+      "@id": "dms:SubnetGroupStatus",
+      "@type": "xsd:string"
+    },
+    "Subnets": {
+      "@id": "dms:Subnets",
+      "@type": "xsd:string"
+    },
+    "SupportedNetworkTypes": {
+      "@id": "dms:SupportedNetworkTypes",
+      "@type": "xsd:string"
+    },
+    "ReplicationTask": "dms:ReplicationTask",
+    "ReplicationTaskIdentifier": {
+      "@id": "dms:ReplicationTaskIdentifier",
+      "@type": "xsd:string"
+    },
+    "SourceEndpointArn": {
+      "@id": "dms:SourceEndpointArn",
+      "@type": "xsd:string"
+    },
+    "TargetEndpointArn": {
+      "@id": "dms:TargetEndpointArn",
+      "@type": "xsd:string"
+    },
+    "MigrationType": {
+      "@id": "dms:MigrationType",
+      "@type": "xsd:string"
+    },
+    "TableMappings": {
+      "@id": "dms:TableMappings",
+      "@type": "xsd:string"
+    },
+    "ReplicationTaskSettings": {
+      "@id": "dms:ReplicationTaskSettings",
+      "@type": "xsd:string"
+    },
+    "StopReason": {
+      "@id": "dms:StopReason",
+      "@type": "xsd:string"
+    },
+    "ReplicationTaskCreationDate": {
+      "@id": "dms:ReplicationTaskCreationDate",
+      "@type": "xsd:string"
+    },
+    "ReplicationTaskStartDate": {
+      "@id": "dms:ReplicationTaskStartDate",
+      "@type": "xsd:string"
+    },
+    "CdcStartPosition": {
+      "@id": "dms:CdcStartPosition",
+      "@type": "xsd:string"
+    },
+    "CdcStopPosition": {
+      "@id": "dms:CdcStopPosition",
+      "@type": "xsd:string"
+    },
+    "RecoveryCheckpoint": {
+      "@id": "dms:RecoveryCheckpoint",
+      "@type": "xsd:string"
+    },
+    "ReplicationTaskStats": "dms:ReplicationTaskStats",
+    "TaskData": {
+      "@id": "dms:TaskData",
+      "@type": "xsd:string"
+    },
+    "TargetReplicationInstanceArn": {
+      "@id": "dms:TargetReplicationInstanceArn",
+      "@type": "xsd:string"
+    },
+    "ReplicationTaskAssessmentResult": "dms:ReplicationTaskAssessmentResult",
+    "ReplicationTaskLastAssessmentDate": {
+      "@id": "dms:ReplicationTaskLastAssessmentDate",
+      "@type": "xsd:string"
+    },
+    "AssessmentStatus": {
+      "@id": "dms:AssessmentStatus",
+      "@type": "xsd:string"
+    },
+    "AssessmentResultsFile": {
+      "@id": "dms:AssessmentResultsFile",
+      "@type": "xsd:string"
+    },
+    "AssessmentResults": {
+      "@id": "dms:AssessmentResults",
+      "@type": "xsd:string"
+    },
+    "S3ObjectUrl": {
+      "@id": "dms:S3ObjectUrl",
+      "@type": "xsd:string"
+    },
+    "ReplicationTaskAssessmentRun": "dms:ReplicationTaskAssessmentRun",
+    "ReplicationTaskAssessmentRunArn": {
+      "@id": "dms:ReplicationTaskAssessmentRunArn",
+      "@type": "xsd:string"
+    },
+    "ReplicationTaskAssessmentRunCreationDate": {
+      "@id": "dms:ReplicationTaskAssessmentRunCreationDate",
+      "@type": "xsd:string"
+    },
+    "AssessmentProgress": {
+      "@id": "dms:AssessmentProgress",
+      "@type": "xsd:string"
+    },
+    "ResultLocationBucket": {
+      "@id": "dms:ResultLocationBucket",
+      "@type": "xsd:string"
+    },
+    "ResultLocationFolder": {
+      "@id": "dms:ResultLocationFolder",
+      "@type": "xsd:string"
+    },
+    "ResultEncryptionMode": {
+      "@id": "dms:ResultEncryptionMode",
+      "@type": "xsd:string"
+    },
+    "ResultKmsKeyArn": {
+      "@id": "dms:ResultKmsKeyArn",
+      "@type": "xsd:string"
+    },
+    "AssessmentRunName": {
+      "@id": "dms:AssessmentRunName",
+      "@type": "xsd:string"
+    },
+    "FullLoadProgressPercent": {
+      "@id": "dms:FullLoadProgressPercent",
+      "@type": "xsd:string"
+    },
+    "ElapsedTimeMillis": {
+      "@id": "dms:ElapsedTimeMillis",
+      "@type": "xsd:string"
+    },
+    "TablesLoaded": {
+      "@id": "dms:TablesLoaded",
+      "@type": "xsd:string"
+    },
+    "TablesLoading": {
+      "@id": "dms:TablesLoading",
+      "@type": "xsd:string"
+    },
+    "TablesQueued": {
+      "@id": "dms:TablesQueued",
+      "@type": "xsd:string"
+    },
+    "TablesErrored": {
+      "@id": "dms:TablesErrored",
+      "@type": "xsd:string"
+    },
+    "FreshStartDate": {
+      "@id": "dms:FreshStartDate",
+      "@type": "xsd:string"
+    },
+    "StartDate": {
+      "@id": "dms:StartDate",
+      "@type": "xsd:string"
+    },
+    "StopDate": {
+      "@id": "dms:StopDate",
+      "@type": "xsd:string"
+    },
+    "FullLoadStartDate": {
+      "@id": "dms:FullLoadStartDate",
+      "@type": "xsd:string"
+    },
+    "FullLoadFinishDate": {
+      "@id": "dms:FullLoadFinishDate",
+      "@type": "xsd:string"
+    },
+    "SchemaResponse": "dms:SchemaResponse",
+    "CodeLineCount": {
+      "@id": "dms:CodeLineCount",
+      "@type": "xsd:string"
+    },
+    "CodeSize": {
+      "@id": "dms:CodeSize",
+      "@type": "xsd:string"
+    },
+    "Complexity": {
+      "@id": "dms:Complexity",
+      "@type": "xsd:string"
+    },
+    "DatabaseInstance": {
+      "@id": "dms:DatabaseInstance",
+      "@type": "xsd:string"
+    },
+    "SchemaId": {
+      "@id": "dms:SchemaId",
+      "@type": "xsd:string"
+    },
+    "SchemaName": {
+      "@id": "dms:SchemaName",
+      "@type": "xsd:string"
+    },
+    "OriginalSchema": {
+      "@id": "dms:OriginalSchema",
+      "@type": "xsd:string"
+    },
+    "Similarity": {
+      "@id": "dms:Similarity",
+      "@type": "xsd:string"
+    },
+    "Subnet": "dms:Subnet",
+    "SubnetIdentifier": {
+      "@id": "dms:SubnetIdentifier",
+      "@type": "xsd:string"
+    },
+    "SubnetAvailabilityZone": {
+      "@id": "dms:SubnetAvailabilityZone",
+      "@type": "xsd:string"
+    },
+    "SubnetStatus": {
+      "@id": "dms:SubnetStatus",
+      "@type": "xsd:string"
+    },
+    "SupportedEndpointType": "dms:SupportedEndpointType",
+    "SupportsCDC": {
+      "@id": "dms:SupportsCDC",
+      "@type": "xsd:string"
+    },
+    "ReplicationInstanceEngineMinimumVersion": {
+      "@id": "dms:ReplicationInstanceEngineMinimumVersion",
+      "@type": "xsd:string"
+    },
+    "TableStatistics": "dms:TableStatistics",
+    "TableName": {
+      "@id": "dms:TableName",
+      "@type": "xsd:string"
+    },
+    "Inserts": {
+      "@id": "dms:Inserts",
+      "@type": "xsd:string"
+    },
+    "Deletes": {
+      "@id": "dms:Deletes",
+      "@type": "xsd:string"
+    },
+    "Updates": {
+      "@id": "dms:Updates",
+      "@type": "xsd:string"
+    },
+    "Ddls": {
+      "@id": "dms:Ddls",
+      "@type": "xsd:string"
+    },
+    "AppliedInserts": {
+      "@id": "dms:AppliedInserts",
+      "@type": "xsd:string"
+    },
+    "AppliedDeletes": {
+      "@id": "dms:AppliedDeletes",
+      "@type": "xsd:string"
+    },
+    "AppliedUpdates": {
+      "@id": "dms:AppliedUpdates",
+      "@type": "xsd:string"
+    },
+    "AppliedDdls": {
+      "@id": "dms:AppliedDdls",
+      "@type": "xsd:string"
+    },
+    "FullLoadRows": {
+      "@id": "dms:FullLoadRows",
+      "@type": "xsd:string"
+    },
+    "FullLoadCondtnlChkFailedRows": {
+      "@id": "dms:FullLoadCondtnlChkFailedRows",
+      "@type": "xsd:string"
+    },
+    "FullLoadErrorRows": {
+      "@id": "dms:FullLoadErrorRows",
+      "@type": "xsd:string"
+    },
+    "FullLoadStartTime": {
+      "@id": "dms:FullLoadStartTime",
+      "@type": "xsd:string"
+    },
+    "FullLoadEndTime": {
+      "@id": "dms:FullLoadEndTime",
+      "@type": "xsd:string"
+    },
+    "FullLoadReloaded": {
+      "@id": "dms:FullLoadReloaded",
+      "@type": "xsd:string"
+    },
+    "LastUpdateTime": {
+      "@id": "dms:LastUpdateTime",
+      "@type": "xsd:string"
+    },
+    "TableState": {
+      "@id": "dms:TableState",
+      "@type": "xsd:string"
+    },
+    "ValidationPendingRecords": {
+      "@id": "dms:ValidationPendingRecords",
+      "@type": "xsd:string"
+    },
+    "ValidationFailedRecords": {
+      "@id": "dms:ValidationFailedRecords",
+      "@type": "xsd:string"
+    },
+    "ValidationSuspendedRecords": {
+      "@id": "dms:ValidationSuspendedRecords",
+      "@type": "xsd:string"
+    },
+    "ValidationState": {
+      "@id": "dms:ValidationState",
+      "@type": "xsd:string"
+    },
+    "ValidationStateDetails": {
+      "@id": "dms:ValidationStateDetails",
+      "@type": "xsd:string"
+    },
+    "Tag": "dms:Tag",
+    "Key": {
+      "@id": "dms:Key",
+      "@type": "xsd:string"
+    },
+    "Value": {
+      "@id": "dms:Value",
+      "@type": "xsd:string"
+    },
+    "ResourceArn": {
+      "@id": "dms:ResourceArn",
+      "@type": "xsd:string"
+    },
+    "VpcSecurityGroupMembership": "dms:VpcSecurityGroupMembership",
+    "VpcSecurityGroupId": {
+      "@id": "dms:VpcSecurityGroupId",
+      "@type": "xsd:string"
+    }
   }
 }

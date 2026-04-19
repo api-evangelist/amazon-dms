@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-dms/refs/heads/main/json-structure/amazon-dms-pending-maintenance-action-structure.json",
+  "title": "PendingMaintenanceAction",
+  "description": "Describes a maintenance action pending for an DMS resource, including when and how it will be applied. This data type is a response element to the <code>DescribePendingMaintenanceActions</code> operation.",
+  "type": "object",
+  "properties": {
+    "Action": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The type of pending maintenance action that is available for the resource."
+        }
+      ]
+    },
+    "AutoAppliedAfterDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TStamp"
+        },
+        {
+          "description": "The date of the maintenance window when the action is to be applied. The maintenance action is applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored."
+        }
+      ]
+    },
+    "ForcedApplyDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TStamp"
+        },
+        {
+          "description": "The date when the maintenance action will be automatically applied. The maintenance action is applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored."
+        }
+      ]
+    },
+    "OptInStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The type of opt-in request that has been received for the resource."
+        }
+      ]
+    },
+    "CurrentApplyDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TStamp"
+        },
+        {
+          "description": "The effective date when the pending maintenance action will be applied to the resource. This date takes into account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API operation, and also the <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter values. This value is blank if an opt-in request has not been received and nothing has been specified for <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "A description providing more detail about the maintenance action."
+        }
+      ]
+    }
+  }
+}

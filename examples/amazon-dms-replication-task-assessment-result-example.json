@@ -1,0 +1,9 @@
+{
+  "ReplicationTaskIdentifier": "example-4546",
+  "ReplicationTaskArn": "example-8042",
+  "ReplicationTaskLastAssessmentDate": "example-2656",
+  "AssessmentStatus": "example-4394",
+  "AssessmentResultsFile": "example-1671",
+  "AssessmentResults": "example-7268",
+  "S3ObjectUrl": "example-8771"
+}

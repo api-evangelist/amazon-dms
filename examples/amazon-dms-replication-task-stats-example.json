@@ -1,0 +1,13 @@
+{
+  "FullLoadProgressPercent": "example-5122",
+  "ElapsedTimeMillis": "example-2904",
+  "TablesLoaded": "example-7248",
+  "TablesLoading": "example-6548",
+  "TablesQueued": "example-7804",
+  "TablesErrored": "example-7115",
+  "FreshStartDate": "example-3611",
+  "StartDate": "example-9892",
+  "StopDate": "example-6002",
+  "FullLoadStartDate": "example-3620",
+  "FullLoadFinishDate": "example-8138"
+}

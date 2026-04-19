@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-dms/refs/heads/main/json-schema/amazon-dms-collector-response-schema.json",
+  "title": "CollectorResponse",
+  "description": "Describes a Fleet Advisor collector.",
+  "type": "object",
+  "properties": {
+    "CollectorReferencedId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The reference ID of the Fleet Advisor collector."
+        }
+      ]
+    },
+    "CollectorName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The name of the Fleet Advisor collector ."
+        }
+      ]
+    },
+    "CollectorVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code> "
+        }
+      ]
+    },
+    "VersionStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VersionStatus"
+        },
+        {
+          "description": "Whether the collector version is up to date."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "A summary description of the Fleet Advisor collector."
+        }
+      ]
+    },
+    "S3BucketName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata."
+        }
+      ]
+    },
+    "ServiceAccessRoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The IAM role that grants permissions to access the specified Amazon S3 bucket."
+        }
+      ]
+    },
+    "CollectorHealthCheck": {
+      "$ref": "#/components/schemas/CollectorHealthCheck"
+    },
+    "LastDataReceived": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code> "
+        }
+      ]
+    },
+    "RegisteredDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> "
+        }
+      ]
+    },
+    "CreatedDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> "
+        }
+      ]
+    },
+    "ModifiedDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> "
+        }
+      ]
+    },
+    "InventoryData": {
+      "$ref": "#/components/schemas/InventoryData"
+    }
+  }
+}

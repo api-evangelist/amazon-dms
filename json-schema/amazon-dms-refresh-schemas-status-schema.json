@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-dms/refs/heads/main/json-schema/amazon-dms-refresh-schemas-status-schema.json",
+  "title": "RefreshSchemasStatus",
+  "description": "Provides information that describes status of a schema at an endpoint specified by the <code>DescribeRefreshSchemaStatus</code> operation.",
+  "type": "object",
+  "properties": {
+    "EndpointArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) string that uniquely identifies the endpoint."
+        }
+      ]
+    },
+    "ReplicationInstanceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the replication instance."
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RefreshSchemasStatusTypeValue"
+        },
+        {
+          "description": "The status of the schema."
+        }
+      ]
+    },
+    "LastRefreshDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TStamp"
+        },
+        {
+          "description": "The date the schema was last refreshed."
+        }
+      ]
+    },
+    "LastFailureMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The last failure message for the schema."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-dms/refs/heads/main/json-schema/amazon-dms-replication-subnet-group-schema.json",
+  "title": "ReplicationSubnetGroup",
+  "description": "Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroups</code> operation.",
+  "type": "object",
+  "properties": {
+    "ReplicationSubnetGroupIdentifier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The identifier of the replication instance subnet group."
+        }
+      ]
+    },
+    "ReplicationSubnetGroupDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "A description for the replication subnet group."
+        }
+      ]
+    },
+    "VpcId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The ID of the VPC."
+        }
+      ]
+    },
+    "SubnetGroupStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The status of the subnet group."
+        }
+      ]
+    },
+    "Subnets": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SubnetList"
+        },
+        {
+          "description": "The subnets that are in the subnet group."
+        }
+      ]
+    },
+    "SupportedNetworkTypes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringList"
+        },
+        {
+          "description": "The IP addressing protocol supported by the subnet group. This is used by a replication instance with values such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported."
+        }
+      ]
+    }
+  }
+}

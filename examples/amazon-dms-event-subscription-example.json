@@ -1,0 +1,11 @@
+{
+  "CustomerAwsId": "example-8199",
+  "CustSubscriptionId": "example-4306",
+  "SnsTopicArn": "example-1505",
+  "Status": "example-8201",
+  "SubscriptionCreationTime": "example-8396",
+  "SourceType": "example-6574",
+  "SourceIdsList": "example-7393",
+  "EventCategoriesList": "example-1891",
+  "Enabled": "example-1756"
+}

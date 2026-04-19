@@ -1,0 +1,11 @@
+{
+  "EngineVersion": "example-9328",
+  "ReplicationInstanceClass": "example-2121",
+  "StorageType": "example-2072",
+  "MinAllocatedStorage": "example-2294",
+  "MaxAllocatedStorage": "example-4010",
+  "DefaultAllocatedStorage": "example-8401",
+  "IncludedAllocatedStorage": "example-2016",
+  "AvailabilityZones": "example-8796",
+  "ReleaseStatus": "example-2041"
+}

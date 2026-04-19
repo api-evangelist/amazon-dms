@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-dms/refs/heads/main/json-structure/amazon-dms-schema-response-structure.json",
+  "title": "SchemaResponse",
+  "description": "Describes a schema in a Fleet Advisor collector inventory.",
+  "type": "object",
+  "properties": {
+    "CodeLineCount": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LongOptional"
+        },
+        {
+          "description": "The number of lines of code in a schema in a Fleet Advisor collector inventory."
+        }
+      ]
+    },
+    "CodeSize": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LongOptional"
+        },
+        {
+          "description": "The size level of the code in a schema in a Fleet Advisor collector inventory."
+        }
+      ]
+    },
+    "Complexity": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The complexity level of the code in a schema in a Fleet Advisor collector inventory."
+        }
+      ]
+    },
+    "Server": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServerShortInfoResponse"
+        },
+        {
+          "description": "The database server for a schema in a Fleet Advisor collector inventory."
+        }
+      ]
+    },
+    "DatabaseInstance": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatabaseShortInfoResponse"
+        },
+        {
+          "description": "The database for a schema in a Fleet Advisor collector inventory."
+        }
+      ]
+    },
+    "SchemaId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The ID of a schema in a Fleet Advisor collector inventory."
+        }
+      ]
+    },
+    "SchemaName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The name of a schema in a Fleet Advisor collector inventory."
+        }
+      ]
+    },
+    "OriginalSchema": {
+      "$ref": "#/components/schemas/SchemaShortInfoResponse"
+    },
+    "Similarity": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DoubleOptional"
+        },
+        {
+          "description": "The similarity value for a schema in a Fleet Advisor collector inventory. A higher similarity value indicates that a schema is likely to be a duplicate."
+        }
+      ]
+    }
+  }
+}

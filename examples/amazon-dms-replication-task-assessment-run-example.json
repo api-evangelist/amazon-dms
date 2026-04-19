@@ -1,0 +1,14 @@
+{
+  "ReplicationTaskAssessmentRunArn": "example-4671",
+  "ReplicationTaskArn": "example-8213",
+  "Status": "example-9763",
+  "ReplicationTaskAssessmentRunCreationDate": "example-6413",
+  "AssessmentProgress": "example-3781",
+  "LastFailureMessage": "example-7734",
+  "ServiceAccessRoleArn": "example-6169",
+  "ResultLocationBucket": "example-2890",
+  "ResultLocationFolder": "example-4326",
+  "ResultEncryptionMode": "example-9965",
+  "ResultKmsKeyArn": "example-7505",
+  "AssessmentRunName": "example-9022"
+}

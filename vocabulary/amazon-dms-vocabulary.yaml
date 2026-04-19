@@ -1,0 +1,186 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Amazon DMS
+  description: Unified taxonomy mapping operational (OpenAPI) and capability (Naftiko) dimensions for AWS Database Migration Service.
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: dms
+      version: "2016-01-01"
+      baseUrl: https://dms.amazonaws.com
+      status: active
+      description: Amazon DMS REST API for managed database migrations
+
+  resources:
+    - name: replication-instances
+      description: Managed compute instances that host database replication tasks
+      api: dms
+      actions: [create, describe, modify, delete, reboot]
+    - name: endpoints
+      description: Source and target database endpoints for migration
+      api: dms
+      actions: [create, describe, modify, delete, test]
+    - name: replication-tasks
+      description: Tasks defining what data to migrate between endpoints
+      api: dms
+      actions: [create, describe, modify, delete, start, stop]
+    - name: replication-task-assessment-runs
+      description: Premigration assessment runs to validate migration readiness
+      api: dms
+      actions: [start, describe, cancel, delete]
+    - name: certificates
+      description: SSL certificates for encrypted migration connections
+      api: dms
+      actions: [import, describe, delete]
+    - name: event-subscriptions
+      description: SNS subscriptions for migration event notifications
+      api: dms
+      actions: [create, describe, modify, delete]
+    - name: replication-subnet-groups
+      description: VPC subnet groups for replication instance placement
+      api: dms
+      actions: [create, describe, modify, delete]
+    - name: connections
+      description: Connections between replication instances and endpoints
+      api: dms
+      actions: [describe, test, delete, refresh-schemas]
+    - name: table-statistics
+      description: Per-table migration progress statistics
+      api: dms
+      actions: [describe, reload]
+
+  actions:
+    - name: create
+      httpMethod: POST
+      pattern: write
+      description: Create a new resource
+    - name: describe
+      httpMethod: POST
+      pattern: read
+      description: Retrieve information about resources
+    - name: modify
+      httpMethod: POST
+      pattern: write
+      description: Modify an existing resource
+    - name: delete
+      httpMethod: POST
+      pattern: destructive
+      description: Delete a resource
+    - name: start
+      httpMethod: POST
+      pattern: write
+      description: Start a replication task
+    - name: stop
+      httpMethod: POST
+      pattern: write
+      description: Stop a replication task
+    - name: test
+      httpMethod: POST
+      pattern: read
+      description: Test a connection to an endpoint
+    - name: import
+      httpMethod: POST
+      pattern: write
+      description: Import a certificate
+
+  schemas:
+    core:
+      - name: ReplicationInstance
+        description: A managed compute instance for hosting replication tasks
+        properties: [replicationInstanceIdentifier, replicationInstanceClass, replicationInstanceStatus, allocatedStorage, replicationInstanceArn, replicationInstancePublicIpAddresses, replicationInstancePrivateIpAddresses, engineVersion, multiAZ, availabilityZone, replicationSubnetGroup]
+      - name: Endpoint
+        description: A source or target database endpoint
+        properties: [endpointIdentifier, endpointType, engineName, engineDisplayName, username, serverName, port, databaseName, status, sslMode, endpointArn, endpointCreationDate]
+      - name: ReplicationTask
+        description: A task that performs database migration between endpoints
+        properties: [replicationTaskIdentifier, sourceEndpointArn, targetEndpointArn, replicationInstanceArn, migrationType, tableMappings, replicationTaskSettings, status, lastFailureMessage, replicationTaskArn, replicationTaskCreationDate, replicationTaskStartDate, cdcStartPosition, cdcStopPosition, replicationTaskStats]
+
+    monitoring:
+      - name: TableStatistics
+        description: Per-table migration progress statistics
+        properties: [schemaName, tableName, inserts, deletes, updates, ddls, fullLoadRows, fullLoadCondtnlChkFailedRows, fullLoadErrorRows, fullLoadStartTime, fullLoadEndTime, fullLoadReloaded, lastUpdateTime, tableState, validationPendingRecords, validationFailedRecords, validationSuspendedRecords, validationState, validationStateDetails]
+      - name: Connection
+        description: A connection between a replication instance and an endpoint
+        properties: [replicationInstanceArn, endpointArn, status, lastFailureMessage, endpointIdentifier, replicationInstanceIdentifier]
+
+    security:
+      - name: Certificate
+        description: An SSL certificate for encrypted migration connections
+        properties: [certificateIdentifier, certificateCreationDate, certificatePem, certificateWallet, certificateArn, certificateOwner, validFromDate, validToDate, signingAlgorithm, keyLength]
+
+  authentication:
+    schemes:
+      - name: sigv4
+        type: apikey
+        description: AWS Signature Version 4
+
+capability:
+  workflows:
+    - name: Database Migration Management
+      file: capabilities/database-migration-management.yaml
+      description: End-to-end database migration lifecycle using AWS DMS
+      apisConsumed: [dms]
+      toolCount: 14
+      personas:
+        - Database Engineer
+        - Cloud Architect
+      domains:
+        - Database Migration
+        - Data Engineering
+
+  personas:
+    - id: database-engineer
+      name: Database Engineer
+      description: Database engineer managing migration projects and monitoring replication tasks
+      workflows: [Database Migration Management]
+    - id: cloud-architect
+      name: Cloud Architect
+      description: Cloud architect designing database migration strategy and infrastructure
+      workflows: [Database Migration Management]
+
+  domains:
+    - name: Migration Infrastructure
+      description: Replication instances and network configuration
+      resources: [replication-instances, replication-subnet-groups]
+    - name: Connectivity
+      description: Source and target database endpoint management
+      resources: [endpoints, connections, certificates]
+    - name: Migration Execution
+      description: Replication task lifecycle and monitoring
+      resources: [replication-tasks, table-statistics, event-subscriptions]
+
+  namespaces:
+    - type: consumed
+      name: dms
+      description: Amazon DMS REST API
+    - type: rest
+      name: database-migration-api
+      port: 8080
+    - type: mcp
+      name: database-migration-mcp
+      port: 9090
+
+  binds:
+    - name: AWS_ACCESS_KEY_ID
+      workflows: [Database Migration Management]
+    - name: AWS_SECRET_ACCESS_KEY
+      workflows: [Database Migration Management]
+    - name: AWS_REGION
+      workflows: [Database Migration Management]
+
+crossReference:
+  - resource: replication-instances
+    operations: [DescribeReplicationInstances, CreateReplicationInstance, DeleteReplicationInstance]
+    workflows: [Database Migration Management]
+    personas: [Database Engineer, Cloud Architect]
+  - resource: endpoints
+    operations: [DescribeEndpoints, CreateEndpoint, TestConnection]
+    workflows: [Database Migration Management]
+    personas: [Database Engineer]
+  - resource: replication-tasks
+    operations: [DescribeReplicationTasks, CreateReplicationTask, StartReplicationTask, StopReplicationTask]
+    workflows: [Database Migration Management]
+    personas: [Database Engineer]

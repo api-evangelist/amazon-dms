@@ -1,0 +1,12 @@
+{
+  "CertificateIdentifier": "example-6111",
+  "CertificateCreationDate": "example-8018",
+  "CertificatePem": "example-8159",
+  "CertificateWallet": "example-9783",
+  "CertificateArn": "example-5975",
+  "CertificateOwner": "example-6689",
+  "ValidFromDate": "example-6177",
+  "ValidToDate": "example-3868",
+  "SigningAlgorithm": "example-6820",
+  "KeyLength": "example-2089"
+}

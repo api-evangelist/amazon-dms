@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-dms/refs/heads/main/json-structure/amazon-dms-table-statistics-structure.json",
+  "title": "TableStatistics",
+  "description": "Provides a collection of table statistics in response to a request by the <code>DescribeTableStatistics</code> operation.",
+  "type": "object",
+  "properties": {
+    "SchemaName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The schema name."
+        }
+      ]
+    },
+    "TableName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The name of the table."
+        }
+      ]
+    },
+    "Inserts": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The number of insert actions performed on a table."
+        }
+      ]
+    },
+    "Deletes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The number of delete actions performed on a table."
+        }
+      ]
+    },
+    "Updates": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The number of update actions performed on a table."
+        }
+      ]
+    },
+    "Ddls": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The data definition language (DDL) used to build and modify the structure of your tables."
+        }
+      ]
+    },
+    "AppliedInserts": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LongOptional"
+        },
+        {
+          "description": "The number of insert actions applied on a target table."
+        }
+      ]
+    },
+    "AppliedDeletes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LongOptional"
+        },
+        {
+          "description": "The number of delete actions applied on a target table."
+        }
+      ]
+    },
+    "AppliedUpdates": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LongOptional"
+        },
+        {
+          "description": "The number of update actions applied on a target table."
+        }
+      ]
+    },
+    "AppliedDdls": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LongOptional"
+        },
+        {
+          "description": "The number of data definition language (DDL) statements used to build and modify the structure of your tables applied on the target."
+        }
+      ]
+    },
+    "FullLoadRows": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The number of rows added during the full load operation."
+        }
+      ]
+    },
+    "FullLoadCondtnlChkFailedRows": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The number of rows that failed conditional checks during the full load operation (valid only for migrations where DynamoDB is the target)."
+        }
+      ]
+    },
+    "FullLoadErrorRows": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The number of rows that failed to load during the full load operation (valid only for migrations where DynamoDB is the target)."
+        }
+      ]
+    },
+    "FullLoadStartTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TStamp"
+        },
+        {
+          "description": "The time when the full load operation started."
+        }
+      ]
+    },
+    "FullLoadEndTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TStamp"
+        },
+        {
+          "description": "The time when the full load operation completed."
+        }
+      ]
+    },
+    "FullLoadReloaded": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanOptional"
+        },
+        {
+          "description": "A value that indicates if the table was reloaded (<code>true</code>) or loaded as part of a new full load operation (<code>false</code>)."
+        }
+      ]
+    },
+    "LastUpdateTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TStamp"
+        },
+        {
+          "description": "The last time a table was updated."
+        }
+      ]
+    },
+    "TableState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "<p>The state of the tables described.</p> <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error | Table is being reloaded</p>"
+        }
+      ]
+    },
+    "ValidationPendingRecords": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The number of records that have yet to be validated."
+        }
+      ]
+    },
+    "ValidationFailedRecords": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The number of records that failed validation."
+        }
+      ]
+    },
+    "ValidationSuspendedRecords": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The number of records that couldn't be validated."
+        }
+      ]
+    },
+    "ValidationState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "<p>The validation state of the table.</p> <p>This parameter can have the following values:</p> <ul> <li> <p>Not enabled \u2013 Validation isn't enabled for the table in the migration task.</p> </li> <li> <p>Pending records \u2013 Some records in the table are waiting for validation.</p> </li> <li> <p>Mismatched records \u2013 Some records in the table don't match between the source and target.</p> </li> <li> <p>Suspended records \u2013 Some records in the table couldn't be validated.</p> </li> <li> <p>No primary key \u2013The table couldn't be validated because it has no primary key.</p> </li> <li> <p>Table error \u2013 The table wasn't validated because it's in an error state and some data wasn't migrated.</p> </li> <li> <p>Validated \u2013 All rows in the table are validated. If the table is updated, the status can change from Validated.</p> </li> <li> <p>Error \u2013 The table couldn't be validated because of an unexpected error.</p> </li> <li> <p>Pending validation \u2013 The table is waiting validation.</p> </li> <li> <p>Preparing table \u2013 Preparing the table enabled in the migration task for validation.</p> </li> <li> <p>Pending revalidation \u2013 All rows in the table are pending validation after the table was updated.</p> </li> </ul>"
+        }
+      ]
+    },
+    "ValidationStateDetails": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Additional details about the state of validation."
+        }
+      ]
+    }
+  }
+}

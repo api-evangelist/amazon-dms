@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-dms/refs/heads/main/json-schema/amazon-dms-replication-task-assessment-result-schema.json",
+  "title": "ReplicationTaskAssessmentResult",
+  "description": " The task assessment report in JSON format. ",
+  "type": "object",
+  "properties": {
+    "ReplicationTaskIdentifier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": " The replication task identifier of the task on which the task assessment was run. "
+        }
+      ]
+    },
+    "ReplicationTaskArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the replication task. "
+        }
+      ]
+    },
+    "ReplicationTaskLastAssessmentDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TStamp"
+        },
+        {
+          "description": "The date the task assessment was completed. "
+        }
+      ]
+    },
+    "AssessmentStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": " The status of the task assessment. "
+        }
+      ]
+    },
+    "AssessmentResultsFile": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": " The file containing the results of the task assessment. "
+        }
+      ]
+    },
+    "AssessmentResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "<p> The task assessment results in JSON format. </p> <p>The response object only contains this field if you provide <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the request.</p>"
+        }
+      ]
+    },
+    "S3ObjectUrl": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "<p> The URL of the S3 object containing the task assessment results. </p> <p>The response object only contains this field if you provide <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the request.</p>"
+        }
+      ]
+    }
+  }
+}

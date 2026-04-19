@@ -1,0 +1,8 @@
+{
+  "ReplicationSubnetGroupIdentifier": "example-2708",
+  "ReplicationSubnetGroupDescription": "example-6165",
+  "VpcId": "example-8391",
+  "SubnetGroupStatus": "example-7350",
+  "Subnets": "example-8239",
+  "SupportedNetworkTypes": "example-4389"
+}

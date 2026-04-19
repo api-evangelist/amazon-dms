@@ -1,0 +1,21 @@
+{
+  "ReplicationTaskIdentifier": "example-8791",
+  "SourceEndpointArn": "example-5676",
+  "TargetEndpointArn": "example-7963",
+  "ReplicationInstanceArn": "example-1395",
+  "MigrationType": "example-6290",
+  "TableMappings": "example-5221",
+  "ReplicationTaskSettings": "example-9630",
+  "Status": "example-2836",
+  "LastFailureMessage": "example-7717",
+  "StopReason": "example-1925",
+  "ReplicationTaskCreationDate": "example-1109",
+  "ReplicationTaskStartDate": "example-8551",
+  "CdcStartPosition": "example-6801",
+  "CdcStopPosition": "example-6288",
+  "RecoveryCheckpoint": "example-4406",
+  "ReplicationTaskArn": "example-7119",
+  "ReplicationTaskStats": "example-7989",
+  "TaskData": "example-8615",
+  "TargetReplicationInstanceArn": "example-1175"
+}
