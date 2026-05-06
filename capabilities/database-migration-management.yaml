@@ -1,250 +1,403 @@
-naftiko: "1.0.0-alpha1"
-
+naftiko: 1.0.0-alpha2
 info:
   label: Amazon DMS Database Migration Management
-  description: >-
-    Workflow capability for database engineers and cloud architects to manage
-    end-to-end database migrations using AWS Database Migration Service. Covers
-    replication instance provisioning, source and target endpoint configuration,
-    replication task management, migration monitoring, and schema conversion support.
+  description: Workflow capability for database engineers and cloud architects to manage end-to-end database migrations using
+    AWS Database Migration Service. Covers replication instance provisioning, source and target endpoint configuration, replication
+    task management, migration monitoring, and schema conversion support.
   tags:
-    - Amazon DMS
-    - Database Migration
-    - Data Replication
-    - AWS
-  created: "2026-04-19"
-  modified: "2026-04-19"
-
+  - Amazon DMS
+  - Database Migration
+  - Data Replication
+  - AWS
+  created: '2026-04-19'
+  modified: '2026-05-06'
 binds:
-  - namespace: env
-    keys:
-      AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
-      AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
-      AWS_REGION: AWS_REGION
-
+- namespace: env
+  keys:
+    AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+    AWS_REGION: AWS_REGION
 capability:
   consumes:
-    - import: dms
-      location: ./shared/dms-api.yaml
-
+  - type: http
+    namespace: dms
+    baseUri: https://dms.amazonaws.com
+    description: Amazon DMS REST API for managing database migrations.
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{AWS_ACCESS_KEY_ID}}'
+      placement: header
+    resources:
+    - name: replication-instances
+      path: /
+      description: Replication instances for database migration
+      operations:
+      - name: describe-replication-instances
+        method: POST
+        description: List replication instances in the account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: create-replication-instance
+        method: POST
+        description: Create a replication instance
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: delete-replication-instance
+        method: POST
+        description: Delete a replication instance
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: modify-replication-instance
+        method: POST
+        description: Modify a replication instance
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: endpoints
+      path: /
+      description: Source and target endpoints for migration
+      operations:
+      - name: describe-endpoints
+        method: POST
+        description: List endpoints in the account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: create-endpoint
+        method: POST
+        description: Create a source or target endpoint
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: delete-endpoint
+        method: POST
+        description: Delete an endpoint
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: test-connection
+        method: POST
+        description: Test connection to an endpoint
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: replication-tasks
+      path: /
+      description: Replication tasks for database migration
+      operations:
+      - name: describe-replication-tasks
+        method: POST
+        description: List replication tasks
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: create-replication-task
+        method: POST
+        description: Create a replication task
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: start-replication-task
+        method: POST
+        description: Start or resume a replication task
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: stop-replication-task
+        method: POST
+        description: Stop a replication task
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: delete-replication-task
+        method: POST
+        description: Delete a replication task
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: certificates
+      path: /
+      description: SSL certificates for encrypted connections
+      operations:
+      - name: describe-certificates
+        method: POST
+        description: List SSL certificates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: import-certificate
+        method: POST
+        description: Import an SSL certificate
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: event-subscriptions
+      path: /
+      description: SNS event subscriptions for migration notifications
+      operations:
+      - name: describe-event-subscriptions
+        method: POST
+        description: List event subscriptions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: create-event-subscription
+        method: POST
+        description: Create an event subscription
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: table-statistics
+      path: /
+      description: Table-level migration statistics
+      operations:
+      - name: describe-table-statistics
+        method: POST
+        description: List table statistics for a replication task
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
   exposes:
-    - type: rest
-      port: 8080
-      namespace: database-migration-api
-      description: Unified REST API for Amazon DMS database migration workflows.
-      resources:
-        - path: /v1/replication-instances
-          name: replication-instances
-          description: Replication instances for migration processing
-          operations:
-            - method: GET
-              name: describe-replication-instances
-              description: List all replication instances
-              call: "dms.describe-replication-instances"
-              outputParameters:
-                - type: object
-                  mapping: "$."
-            - method: POST
-              name: create-replication-instance
-              description: Create a new replication instance
-              call: "dms.create-replication-instance"
-              outputParameters:
-                - type: object
-                  mapping: "$."
-
-        - path: /v1/endpoints
-          name: endpoints
-          description: Source and target database endpoints
-          operations:
-            - method: GET
-              name: describe-endpoints
-              description: List all endpoints
-              call: "dms.describe-endpoints"
-              outputParameters:
-                - type: object
-                  mapping: "$."
-            - method: POST
-              name: create-endpoint
-              description: Create a source or target endpoint
-              call: "dms.create-endpoint"
-              outputParameters:
-                - type: object
-                  mapping: "$."
-
-        - path: /v1/tasks
-          name: replication-tasks
-          description: Replication tasks for migration
-          operations:
-            - method: GET
-              name: describe-replication-tasks
-              description: List all replication tasks
-              call: "dms.describe-replication-tasks"
-              outputParameters:
-                - type: object
-                  mapping: "$."
-            - method: POST
-              name: create-replication-task
-              description: Create a new replication task
-              call: "dms.create-replication-task"
-              outputParameters:
-                - type: object
-                  mapping: "$."
-
-        - path: /v1/certificates
-          name: certificates
-          description: SSL certificates for encrypted migration
-          operations:
-            - method: GET
-              name: describe-certificates
-              description: List registered SSL certificates
-              call: "dms.describe-certificates"
-              outputParameters:
-                - type: object
-                  mapping: "$."
-
-    - type: mcp
-      port: 9090
-      namespace: database-migration-mcp
-      transport: http
-      description: MCP server for AI-assisted database migration management.
-      tools:
-        - name: describe-replication-instances
-          description: List all DMS replication instances used for database migration processing
-          hints:
-            readOnly: true
-            openWorld: true
-          call: "dms.describe-replication-instances"
-          outputParameters:
-            - type: object
-              mapping: "$."
-
-        - name: create-replication-instance
-          description: Create a new DMS replication instance to process migration tasks
-          hints:
-            readOnly: false
-            destructive: false
-          call: "dms.create-replication-instance"
-          outputParameters:
-            - type: object
-              mapping: "$."
-
-        - name: delete-replication-instance
-          description: Delete a DMS replication instance
-          hints:
-            readOnly: false
-            destructive: true
-            idempotent: true
-          call: "dms.delete-replication-instance"
-          outputParameters:
-            - type: object
-              mapping: "$."
-
-        - name: describe-endpoints
-          description: List all source and target database endpoints configured for migration
-          hints:
-            readOnly: true
-            openWorld: true
-          call: "dms.describe-endpoints"
-          outputParameters:
-            - type: object
-              mapping: "$."
-
-        - name: create-endpoint
-          description: Create a source or target database endpoint for migration
-          hints:
-            readOnly: false
-            destructive: false
-          call: "dms.create-endpoint"
-          outputParameters:
-            - type: object
-              mapping: "$."
-
-        - name: test-connection
-          description: Test the connection between a replication instance and an endpoint
-          hints:
-            readOnly: false
-            destructive: false
-          call: "dms.test-connection"
-          outputParameters:
-            - type: object
-              mapping: "$."
-
-        - name: describe-replication-tasks
-          description: List replication tasks and their current migration status
-          hints:
-            readOnly: true
-            openWorld: true
-          call: "dms.describe-replication-tasks"
-          outputParameters:
-            - type: object
-              mapping: "$."
-
-        - name: create-replication-task
-          description: Create a new replication task to migrate data between source and target
-          hints:
-            readOnly: false
-            destructive: false
-          call: "dms.create-replication-task"
-          outputParameters:
-            - type: object
-              mapping: "$."
-
-        - name: start-replication-task
-          description: Start or resume a database migration replication task
-          hints:
-            readOnly: false
-            destructive: false
-          call: "dms.start-replication-task"
-          outputParameters:
-            - type: object
-              mapping: "$."
-
-        - name: stop-replication-task
-          description: Stop a running database migration replication task
-          hints:
-            readOnly: false
-            destructive: false
-          call: "dms.stop-replication-task"
-          outputParameters:
-            - type: object
-              mapping: "$."
-
-        - name: describe-table-statistics
-          description: List per-table migration statistics for a replication task
-          hints:
-            readOnly: true
-            openWorld: true
-          call: "dms.describe-table-statistics"
-          outputParameters:
-            - type: object
-              mapping: "$."
-
-        - name: describe-connections
-          description: List connections between replication instances and endpoints
-          hints:
-            readOnly: true
-            openWorld: true
-          call: "dms.describe-connections"
-          outputParameters:
-            - type: object
-              mapping: "$."
-
-        - name: describe-certificates
-          description: List SSL certificates for encrypted database migration connections
-          hints:
-            readOnly: true
-            openWorld: true
-          call: "dms.describe-certificates"
-          outputParameters:
-            - type: object
-              mapping: "$."
-
-        - name: describe-event-subscriptions
-          description: List SNS event subscriptions for migration notifications
-          hints:
-            readOnly: true
-            openWorld: true
-          call: "dms.describe-event-subscriptions"
-          outputParameters:
-            - type: object
-              mapping: "$."
+  - type: rest
+    port: 8080
+    namespace: database-migration-api
+    description: Unified REST API for Amazon DMS database migration workflows.
+    resources:
+    - path: /v1/replication-instances
+      name: replication-instances
+      description: Replication instances for migration processing
+      operations:
+      - method: GET
+        name: describe-replication-instances
+        description: List all replication instances
+        call: dms.describe-replication-instances
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: create-replication-instance
+        description: Create a new replication instance
+        call: dms.create-replication-instance
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/endpoints
+      name: endpoints
+      description: Source and target database endpoints
+      operations:
+      - method: GET
+        name: describe-endpoints
+        description: List all endpoints
+        call: dms.describe-endpoints
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: create-endpoint
+        description: Create a source or target endpoint
+        call: dms.create-endpoint
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tasks
+      name: replication-tasks
+      description: Replication tasks for migration
+      operations:
+      - method: GET
+        name: describe-replication-tasks
+        description: List all replication tasks
+        call: dms.describe-replication-tasks
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: create-replication-task
+        description: Create a new replication task
+        call: dms.create-replication-task
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/certificates
+      name: certificates
+      description: SSL certificates for encrypted migration
+      operations:
+      - method: GET
+        name: describe-certificates
+        description: List registered SSL certificates
+        call: dms.describe-certificates
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: database-migration-mcp
+    transport: http
+    description: MCP server for AI-assisted database migration management.
+    tools:
+    - name: describe-replication-instances
+      description: List all DMS replication instances used for database migration processing
+      hints:
+        readOnly: true
+        openWorld: true
+      call: dms.describe-replication-instances
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-replication-instance
+      description: Create a new DMS replication instance to process migration tasks
+      hints:
+        readOnly: false
+        destructive: false
+      call: dms.create-replication-instance
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-replication-instance
+      description: Delete a DMS replication instance
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: dms.delete-replication-instance
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: describe-endpoints
+      description: List all source and target database endpoints configured for migration
+      hints:
+        readOnly: true
+        openWorld: true
+      call: dms.describe-endpoints
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-endpoint
+      description: Create a source or target database endpoint for migration
+      hints:
+        readOnly: false
+        destructive: false
+      call: dms.create-endpoint
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: test-connection
+      description: Test the connection between a replication instance and an endpoint
+      hints:
+        readOnly: false
+        destructive: false
+      call: dms.test-connection
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: describe-replication-tasks
+      description: List replication tasks and their current migration status
+      hints:
+        readOnly: true
+        openWorld: true
+      call: dms.describe-replication-tasks
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-replication-task
+      description: Create a new replication task to migrate data between source and target
+      hints:
+        readOnly: false
+        destructive: false
+      call: dms.create-replication-task
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: start-replication-task
+      description: Start or resume a database migration replication task
+      hints:
+        readOnly: false
+        destructive: false
+      call: dms.start-replication-task
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: stop-replication-task
+      description: Stop a running database migration replication task
+      hints:
+        readOnly: false
+        destructive: false
+      call: dms.stop-replication-task
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: describe-table-statistics
+      description: List per-table migration statistics for a replication task
+      hints:
+        readOnly: true
+        openWorld: true
+      call: dms.describe-table-statistics
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: describe-connections
+      description: List connections between replication instances and endpoints
+      hints:
+        readOnly: true
+        openWorld: true
+      call: dms.describe-connections
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: describe-certificates
+      description: List SSL certificates for encrypted database migration connections
+      hints:
+        readOnly: true
+        openWorld: true
+      call: dms.describe-certificates
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: describe-event-subscriptions
+      description: List SNS event subscriptions for migration notifications
+      hints:
+        readOnly: true
+        openWorld: true
+      call: dms.describe-event-subscriptions
+      outputParameters:
+      - type: object
+        mapping: $.
