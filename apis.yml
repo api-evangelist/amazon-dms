@@ -8,7 +8,7 @@ description: >-
   open-source databases, supporting homogeneous and heterogeneous migrations
   with continuous data replication.
 type: Index
-x-type: company
+kind: company
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - AWS
