@@ -1,0 +1,3834 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: AWS Database Migration Service
+  description: 'AWS Database Migration Service. 69 operations. Lead operation: AWS Database Migration Service. Self-contained
+    Naftiko capability covering one Amazon Dms business surface.'
+  tags:
+  - Amazon Dms
+  - AWS Database Migration Service
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_DMS_API_KEY: AMAZON_DMS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-dms
+    baseUri: http://dms.{region}.amazonaws.com
+    description: AWS Database Migration Service business capability. Self-contained, no shared references.
+    resources:
+    - name: '#X-Amz-Target=AmazonDMSv20160101.AddTagsToResource'
+      path: /#X-Amz-Target=AmazonDMSv20160101.AddTagsToResource
+      operations:
+      - name: addtagstoresource
+        method: POST
+        description: Adds metadata tags to an DMS resource, including replication instance, endpoint, subnet group, and migration
+          task. These tags can also be used with cost allocation reporting to track cost associated with DMS resources, or
+          used in a Conditio
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.ApplyPendingMaintenanceAction'
+      path: /#X-Amz-Target=AmazonDMSv20160101.ApplyPendingMaintenanceAction
+      operations:
+      - name: applypendingmaintenanceaction
+        method: POST
+        description: Applies a pending maintenance action to a resource (for example, to a replication instance).
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.BatchStartRecommendations'
+      path: /#X-Amz-Target=AmazonDMSv20160101.BatchStartRecommendations
+      operations:
+      - name: batchstartrecommendations
+        method: POST
+        description: <p>Starts the analysis of up to 20 source databases to recommend target engines for each source database.
+          This is a batch version of <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartRecommendations.html">StartRecommenda
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.CancelReplicationTaskAssessmentRun'
+      path: /#X-Amz-Target=AmazonDMSv20160101.CancelReplicationTaskAssessmentRun
+      operations:
+      - name: cancelreplicationtaskassessmentrun
+        method: POST
+        description: <p>Cancels a single premigration assessment run.</p> <p>This operation prevents any individual assessments
+          from running if they haven't started running. It also attempts to cancel any individual assessments that are currently
+          running.</p>
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.CreateEndpoint'
+      path: /#X-Amz-Target=AmazonDMSv20160101.CreateEndpoint
+      operations:
+      - name: createendpoint
+        method: POST
+        description: <p>Creates an endpoint using the provided settings.</p> <note> <p>For a MySQL source or target endpoint,
+          don't explicitly specify the database using the <code>DatabaseName</code> request parameter on the <code>CreateEndpoint</code>
+          API call
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.CreateEventSubscription'
+      path: /#X-Amz-Target=AmazonDMSv20160101.CreateEventSubscription
+      operations:
+      - name: createeventsubscription
+        method: POST
+        description: <p> Creates an DMS event notification subscription. </p> <p>You can specify the type of source (<code>SourceType</code>)
+          you want to be notified of, provide a list of DMS source IDs (<code>SourceIds</code>) that triggers the events,
+          and pro
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.CreateFleetAdvisorCollector'
+      path: /#X-Amz-Target=AmazonDMSv20160101.CreateFleetAdvisorCollector
+      operations:
+      - name: createfleetadvisorcollector
+        method: POST
+        description: Creates a Fleet Advisor collector using the specified parameters.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.CreateReplicationInstance'
+      path: /#X-Amz-Target=AmazonDMSv20160101.CreateReplicationInstance
+      operations:
+      - name: createreplicationinstance
+        method: POST
+        description: <p>Creates the replication instance using the specified parameters.</p> <p>DMS requires that your account
+          have certain roles with appropriate permissions before you can create a replication instance. For information on
+          the required roles, s
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.CreateReplicationSubnetGroup'
+      path: /#X-Amz-Target=AmazonDMSv20160101.CreateReplicationSubnetGroup
+      operations:
+      - name: createreplicationsubnetgroup
+        method: POST
+        description: <p>Creates a replication subnet group given a list of the subnet IDs in a VPC.</p> <p>The VPC needs to
+          have at least one subnet in at least two availability zones in the Amazon Web Services Region, otherwise the service
+          will throw a <code>R
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.CreateReplicationTask'
+      path: /#X-Amz-Target=AmazonDMSv20160101.CreateReplicationTask
+      operations:
+      - name: createreplicationtask
+        method: POST
+        description: Creates a replication task using the specified parameters.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DeleteCertificate'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DeleteCertificate
+      operations:
+      - name: deletecertificate
+        method: POST
+        description: Deletes the specified certificate.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DeleteConnection'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DeleteConnection
+      operations:
+      - name: deleteconnection
+        method: POST
+        description: Deletes the connection between a replication instance and an endpoint.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DeleteEndpoint'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DeleteEndpoint
+      operations:
+      - name: deleteendpoint
+        method: POST
+        description: <p>Deletes the specified endpoint.</p> <note> <p>All tasks associated with the endpoint must be deleted
+          before you can delete the endpoint.</p> </note> <p/>
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DeleteEventSubscription'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DeleteEventSubscription
+      operations:
+      - name: deleteeventsubscription
+        method: POST
+        description: Deletes an DMS event subscription.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DeleteFleetAdvisorCollector'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DeleteFleetAdvisorCollector
+      operations:
+      - name: deletefleetadvisorcollector
+        method: POST
+        description: Deletes the specified Fleet Advisor collector.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DeleteFleetAdvisorDatabases'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DeleteFleetAdvisorDatabases
+      operations:
+      - name: deletefleetadvisordatabases
+        method: POST
+        description: Deletes the specified Fleet Advisor collector databases.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DeleteReplicationInstance'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DeleteReplicationInstance
+      operations:
+      - name: deletereplicationinstance
+        method: POST
+        description: <p>Deletes the specified replication instance.</p> <note> <p>You must delete any migration tasks that
+          are associated with the replication instance before you can delete it.</p> </note> <p/>
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DeleteReplicationSubnetGroup'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DeleteReplicationSubnetGroup
+      operations:
+      - name: deletereplicationsubnetgroup
+        method: POST
+        description: Deletes a subnet group.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DeleteReplicationTask'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DeleteReplicationTask
+      operations:
+      - name: deletereplicationtask
+        method: POST
+        description: Deletes the specified replication task.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DeleteReplicationTaskAssessmentRun'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DeleteReplicationTaskAssessmentRun
+      operations:
+      - name: deletereplicationtaskassessmentrun
+        method: POST
+        description: <p>Deletes the record of a single premigration assessment run.</p> <p>This operation removes all metadata
+          that DMS maintains about this assessment run. However, the operation leaves untouched all information about this
+          assessment run that i
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeAccountAttributes'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeAccountAttributes
+      operations:
+      - name: describeaccountattributes
+        method: POST
+        description: <p>Lists all of the DMS attributes for a customer account. These attributes include DMS quotas for the
+          account and a unique account identifier in a particular DMS region. DMS quotas include a list of resource quotas
+          supported by the account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeApplicableIndividualAssessments'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeApplicableIndividualAssessments
+      operations:
+      - name: describeapplicableindividualassessments
+        method: POST
+        description: <p>Provides a list of individual assessments that you can specify for a new premigration assessment run,
+          given one or more parameters.</p> <p>If you specify an existing migration task, this operation provides the default
+          individual assessme
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeCertificates'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeCertificates
+      operations:
+      - name: describecertificates
+        method: POST
+        description: Provides a description of the certificate.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeConnections'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeConnections
+      operations:
+      - name: describeconnections
+        method: POST
+        description: Describes the status of the connections that have been made between the replication instance and an endpoint.
+          Connections are created when you test an endpoint.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeEndpointSettings'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeEndpointSettings
+      operations:
+      - name: describeendpointsettings
+        method: POST
+        description: Returns information about the possible endpoint settings available when you create an endpoint for a
+          specific database engine.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeEndpointTypes'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeEndpointTypes
+      operations:
+      - name: describeendpointtypes
+        method: POST
+        description: Returns information about the type of endpoints available.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeEndpoints'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeEndpoints
+      operations:
+      - name: describeendpoints
+        method: POST
+        description: Returns information about the endpoints for your account in the current region.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeEventCategories'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeEventCategories
+      operations:
+      - name: describeeventcategories
+        method: POST
+        description: Lists categories for all event source types, or, if specified, for a specified source type. You can see
+          a list of the event categories and source types in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+          w
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeEventSubscriptions'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeEventSubscriptions
+      operations:
+      - name: describeeventsubscriptions
+        method: POST
+        description: <p>Lists all the event subscriptions for a customer account. The description of a subscription includes
+          <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>, <code>SourceID</code>,
+          <code>
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeEvents'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeEvents
+      operations:
+      - name: describeevents
+        method: POST
+        description: Lists events for a given source identifier and source type. You can also specify a start and end time.
+          For more information on DMS events, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+          with Events a
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorCollectors'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorCollectors
+      operations:
+      - name: describefleetadvisorcollectors
+        method: POST
+        description: Returns a list of the Fleet Advisor collectors in your account.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorDatabases'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorDatabases
+      operations:
+      - name: describefleetadvisordatabases
+        method: POST
+        description: Returns a list of Fleet Advisor databases in your account.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis
+      operations:
+      - name: describefleetadvisorlsaanalysis
+        method: POST
+        description: Provides descriptions of large-scale assessment (LSA) analyses produced by your Fleet Advisor collectors.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorSchemaObjectSummary'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorSchemaObjectSummary
+      operations:
+      - name: describefleetadvisorschemaobjectsummary
+        method: POST
+        description: Provides descriptions of the schemas discovered by your Fleet Advisor collectors.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorSchemas'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorSchemas
+      operations:
+      - name: describefleetadvisorschemas
+        method: POST
+        description: Returns a list of schemas detected by Fleet Advisor Collectors in your account.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeOrderableReplicationInstances'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeOrderableReplicationInstances
+      operations:
+      - name: describeorderablereplicationinstances
+        method: POST
+        description: Returns information about the replication instance types that can be created in the specified region.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribePendingMaintenanceActions'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribePendingMaintenanceActions
+      operations:
+      - name: describependingmaintenanceactions
+        method: POST
+        description: For internal use only
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeRecommendationLimitations'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeRecommendationLimitations
+      operations:
+      - name: describerecommendationlimitations
+        method: POST
+        description: Returns a paginated list of limitations for recommendations of target Amazon Web Services engines.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeRecommendations'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeRecommendations
+      operations:
+      - name: describerecommendations
+        method: POST
+        description: Returns a paginated list of target engine recommendations for your source databases.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeRefreshSchemasStatus'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeRefreshSchemasStatus
+      operations:
+      - name: describerefreshschemasstatus
+        method: POST
+        description: Returns the status of the RefreshSchemas operation.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationInstanceTaskLogs'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationInstanceTaskLogs
+      operations:
+      - name: describereplicationinstancetasklogs
+        method: POST
+        description: Returns information about the task logs for the specified task.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationInstances'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationInstances
+      operations:
+      - name: describereplicationinstances
+        method: POST
+        description: Returns information about replication instances for your account in the current region.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationSubnetGroups'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationSubnetGroups
+      operations:
+      - name: describereplicationsubnetgroups
+        method: POST
+        description: Returns information about the replication subnet groups.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentResults'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentResults
+      operations:
+      - name: describereplicationtaskassessmentresults
+        method: POST
+        description: <p>Returns the task assessment results from the Amazon S3 bucket that DMS creates in your Amazon Web
+          Services account. This action always returns the latest results.</p> <p>For more information about DMS task assessments,
+          see <a href="https
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns
+      operations:
+      - name: describereplicationtaskassessmentruns
+        method: POST
+        description: '<p>Returns a paginated list of premigration assessment runs based on filter settings.</p> <p>These filter
+          settings can specify a combination of premigration assessment runs, migration tasks, replication instances, and
+          assessment run status '
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTaskIndividualAssessments'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTaskIndividualAssessments
+      operations:
+      - name: describereplicationtaskindividualassessments
+        method: POST
+        description: <p>Returns a paginated list of individual assessments based on filter settings.</p> <p>These filter settings
+          can specify a combination of premigration assessment runs, migration tasks, and assessment status values.</p>
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTasks'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTasks
+      operations:
+      - name: describereplicationtasks
+        method: POST
+        description: Returns information about replication tasks for your account in the current region.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeSchemas'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeSchemas
+      operations:
+      - name: describeschemas
+        method: POST
+        description: <p>Returns information about the schema for the specified endpoint.</p> <p/>
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.DescribeTableStatistics'
+      path: /#X-Amz-Target=AmazonDMSv20160101.DescribeTableStatistics
+      operations:
+      - name: describetablestatistics
+        method: POST
+        description: <p>Returns table statistics on the database migration task, including table name, rows inserted, rows
+          updated, and rows deleted.</p> <p>Note that the "last updated" column the DMS console only indicates the time that
+          DMS last updated the ta
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxRecords
+          in: query
+          type: string
+          description: Pagination limit
+        - name: Marker
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.ImportCertificate'
+      path: /#X-Amz-Target=AmazonDMSv20160101.ImportCertificate
+      operations:
+      - name: importcertificate
+        method: POST
+        description: Uploads the specified certificate.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.ListTagsForResource'
+      path: /#X-Amz-Target=AmazonDMSv20160101.ListTagsForResource
+      operations:
+      - name: listtagsforresource
+        method: POST
+        description: Lists all metadata tags attached to an DMS resource, including replication instance, endpoint, subnet
+          group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
+          <code>Tag
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.ModifyEndpoint'
+      path: /#X-Amz-Target=AmazonDMSv20160101.ModifyEndpoint
+      operations:
+      - name: modifyendpoint
+        method: POST
+        description: <p>Modifies the specified endpoint.</p> <note> <p>For a MySQL source or target endpoint, don't explicitly
+          specify the database using the <code>DatabaseName</code> request parameter on the <code>ModifyEndpoint</code> API
+          call. Specifying <co
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.ModifyEventSubscription'
+      path: /#X-Amz-Target=AmazonDMSv20160101.ModifyEventSubscription
+      operations:
+      - name: modifyeventsubscription
+        method: POST
+        description: Modifies an existing DMS event notification subscription.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance'
+      path: /#X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance
+      operations:
+      - name: modifyreplicationinstance
+        method: POST
+        description: <p>Modifies the replication instance to apply new settings. You can change one or more parameters by
+          specifying these parameters and the new values in the request.</p> <p>Some settings are applied during the maintenance
+          window.</p> <p/>
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.ModifyReplicationSubnetGroup'
+      path: /#X-Amz-Target=AmazonDMSv20160101.ModifyReplicationSubnetGroup
+      operations:
+      - name: modifyreplicationsubnetgroup
+        method: POST
+        description: Modifies the settings for the specified replication subnet group.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.ModifyReplicationTask'
+      path: /#X-Amz-Target=AmazonDMSv20160101.ModifyReplicationTask
+      operations:
+      - name: modifyreplicationtask
+        method: POST
+        description: <p>Modifies the specified replication task.</p> <p>You can't modify the task endpoints. The task must
+          be stopped before you can modify it. </p> <p>For more information about DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/use
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.MoveReplicationTask'
+      path: /#X-Amz-Target=AmazonDMSv20160101.MoveReplicationTask
+      operations:
+      - name: movereplicationtask
+        method: POST
+        description: Moves a replication task from its current replication instance to a different target replication instance
+          using the specified parameters. The target replication instance must be created with the same or later DMS version
+          as the current repl
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.RebootReplicationInstance'
+      path: /#X-Amz-Target=AmazonDMSv20160101.RebootReplicationInstance
+      operations:
+      - name: rebootreplicationinstance
+        method: POST
+        description: Reboots a replication instance. Rebooting results in a momentary outage, until the replication instance
+          becomes available again.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.RefreshSchemas'
+      path: /#X-Amz-Target=AmazonDMSv20160101.RefreshSchemas
+      operations:
+      - name: refreshschemas
+        method: POST
+        description: Populates the schema for the specified endpoint. This is an asynchronous operation and can take several
+          minutes. You can check the status of this operation by calling the DescribeRefreshSchemasStatus operation.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.ReloadTables'
+      path: /#X-Amz-Target=AmazonDMSv20160101.ReloadTables
+      operations:
+      - name: reloadtables
+        method: POST
+        description: <p>Reloads the target database table with the source data. </p> <p>You can only use this operation with
+          a task in the <code>RUNNING</code> state, otherwise the service will throw an <code>InvalidResourceStateFault</code>
+          exception.</p>
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.RemoveTagsFromResource'
+      path: /#X-Amz-Target=AmazonDMSv20160101.RemoveTagsFromResource
+      operations:
+      - name: removetagsfromresource
+        method: POST
+        description: Removes metadata tags from an DMS resource, including replication instance, endpoint, subnet group, and
+          migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
+          <code>Tag</code> <
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.RunFleetAdvisorLsaAnalysis'
+      path: /#X-Amz-Target=AmazonDMSv20160101.RunFleetAdvisorLsaAnalysis
+      operations:
+      - name: runfleetadvisorlsaanalysis
+        method: POST
+        description: Runs large-scale assessment (LSA) analysis on every Fleet Advisor collector in your account.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.StartRecommendations'
+      path: /#X-Amz-Target=AmazonDMSv20160101.StartRecommendations
+      operations:
+      - name: startrecommendations
+        method: POST
+        description: <p>Starts the analysis of your source database to provide recommendations of target engines.</p> <p>You
+          can create recommendations for multiple source databases using <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_BatchSta
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.StartReplicationTask'
+      path: /#X-Amz-Target=AmazonDMSv20160101.StartReplicationTask
+      operations:
+      - name: startreplicationtask
+        method: POST
+        description: <p>Starts the replication task.</p> <p>For more information about DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
+          with Migration Tasks </a> in the <i>Database Migration Service User Guide.</
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.StartReplicationTaskAssessment'
+      path: /#X-Amz-Target=AmazonDMSv20160101.StartReplicationTaskAssessment
+      operations:
+      - name: startreplicationtaskassessment
+        method: POST
+        description: <p> Starts the replication task assessment for unsupported data types in the source database. </p> <p>You
+          can only use this operation for a task if the following conditions are true:</p> <ul> <li> <p>The task must be in
+          the <code>stopped</c
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.StartReplicationTaskAssessmentRun'
+      path: /#X-Amz-Target=AmazonDMSv20160101.StartReplicationTaskAssessmentRun
+      operations:
+      - name: startreplicationtaskassessmentrun
+        method: POST
+        description: <p>Starts a new premigration assessment run for one or more individual assessments of a migration task.</p>
+          <p>The assessments that you can specify depend on the source and target database engine and the migration type defined
+          for the given
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.StopReplicationTask'
+      path: /#X-Amz-Target=AmazonDMSv20160101.StopReplicationTask
+      operations:
+      - name: stopreplicationtask
+        method: POST
+        description: Stops the replication task.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.TestConnection'
+      path: /#X-Amz-Target=AmazonDMSv20160101.TestConnection
+      operations:
+      - name: testconnection
+        method: POST
+        description: Tests the connection between the replication instance and the endpoint.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AmazonDMSv20160101.UpdateSubscriptionsToEventBridge'
+      path: /#X-Amz-Target=AmazonDMSv20160101.UpdateSubscriptionsToEventBridge
+      operations:
+      - name: updatesubscriptionstoeventbridge
+        method: POST
+        description: <p>Migrates 10 active and enabled Amazon SNS subscriptions at a time and converts them to corresponding
+          Amazon EventBridge rules. By default, this operation migrates subscriptions only when all your replication instance
+          versions are 3.4.6 o
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_DMS_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-dms-rest
+    port: 8080
+    description: REST adapter for AWS Database Migration Service. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/x-amz-target-amazondmsv20160101-addtagstoresource
+      name: x-amz-target-amazondmsv20160101-addtagstoresource
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.AddTagsToResource.'
+      operations:
+      - method: POST
+        name: addtagstoresource
+        description: Adds metadata tags to an DMS resource, including replication instance, endpoint, subnet group, and migration
+          task. These tags can also be used with cost allocation reporting to track cost associated with DMS resources, or
+          used in a Conditio
+        call: amazon-dms.addtagstoresource
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-applypendingmaintenanceaction
+      name: x-amz-target-amazondmsv20160101-applypendingmaintenanceaction
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.ApplyPendingMaintenanceAction.'
+      operations:
+      - method: POST
+        name: applypendingmaintenanceaction
+        description: Applies a pending maintenance action to a resource (for example, to a replication instance).
+        call: amazon-dms.applypendingmaintenanceaction
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-batchstartrecommendations
+      name: x-amz-target-amazondmsv20160101-batchstartrecommendations
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.BatchStartRecommendations.'
+      operations:
+      - method: POST
+        name: batchstartrecommendations
+        description: <p>Starts the analysis of up to 20 source databases to recommend target engines for each source database.
+          This is a batch version of <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartRecommendations.html">StartRecommenda
+        call: amazon-dms.batchstartrecommendations
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-cancelreplicationtaskassessmentrun
+      name: x-amz-target-amazondmsv20160101-cancelreplicationtaskassessmentrun
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.CancelReplicationTaskAssessmentRun.'
+      operations:
+      - method: POST
+        name: cancelreplicationtaskassessmentrun
+        description: <p>Cancels a single premigration assessment run.</p> <p>This operation prevents any individual assessments
+          from running if they haven't started running. It also attempts to cancel any individual assessments that are currently
+          running.</p>
+        call: amazon-dms.cancelreplicationtaskassessmentrun
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-createendpoint
+      name: x-amz-target-amazondmsv20160101-createendpoint
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.CreateEndpoint.'
+      operations:
+      - method: POST
+        name: createendpoint
+        description: <p>Creates an endpoint using the provided settings.</p> <note> <p>For a MySQL source or target endpoint,
+          don't explicitly specify the database using the <code>DatabaseName</code> request parameter on the <code>CreateEndpoint</code>
+          API call
+        call: amazon-dms.createendpoint
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-createeventsubscription
+      name: x-amz-target-amazondmsv20160101-createeventsubscription
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.CreateEventSubscription.'
+      operations:
+      - method: POST
+        name: createeventsubscription
+        description: <p> Creates an DMS event notification subscription. </p> <p>You can specify the type of source (<code>SourceType</code>)
+          you want to be notified of, provide a list of DMS source IDs (<code>SourceIds</code>) that triggers the events,
+          and pro
+        call: amazon-dms.createeventsubscription
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-createfleetadvisorcollector
+      name: x-amz-target-amazondmsv20160101-createfleetadvisorcollector
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.CreateFleetAdvisorCollector.'
+      operations:
+      - method: POST
+        name: createfleetadvisorcollector
+        description: Creates a Fleet Advisor collector using the specified parameters.
+        call: amazon-dms.createfleetadvisorcollector
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-createreplicationinstance
+      name: x-amz-target-amazondmsv20160101-createreplicationinstance
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.CreateReplicationInstance.'
+      operations:
+      - method: POST
+        name: createreplicationinstance
+        description: <p>Creates the replication instance using the specified parameters.</p> <p>DMS requires that your account
+          have certain roles with appropriate permissions before you can create a replication instance. For information on
+          the required roles, s
+        call: amazon-dms.createreplicationinstance
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-createreplicationsubnetgroup
+      name: x-amz-target-amazondmsv20160101-createreplicationsubnetgroup
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.CreateReplicationSubnetGroup.'
+      operations:
+      - method: POST
+        name: createreplicationsubnetgroup
+        description: <p>Creates a replication subnet group given a list of the subnet IDs in a VPC.</p> <p>The VPC needs to
+          have at least one subnet in at least two availability zones in the Amazon Web Services Region, otherwise the service
+          will throw a <code>R
+        call: amazon-dms.createreplicationsubnetgroup
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-createreplicationtask
+      name: x-amz-target-amazondmsv20160101-createreplicationtask
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.CreateReplicationTask.'
+      operations:
+      - method: POST
+        name: createreplicationtask
+        description: Creates a replication task using the specified parameters.
+        call: amazon-dms.createreplicationtask
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-deletecertificate
+      name: x-amz-target-amazondmsv20160101-deletecertificate
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DeleteCertificate.'
+      operations:
+      - method: POST
+        name: deletecertificate
+        description: Deletes the specified certificate.
+        call: amazon-dms.deletecertificate
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-deleteconnection
+      name: x-amz-target-amazondmsv20160101-deleteconnection
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DeleteConnection.'
+      operations:
+      - method: POST
+        name: deleteconnection
+        description: Deletes the connection between a replication instance and an endpoint.
+        call: amazon-dms.deleteconnection
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-deleteendpoint
+      name: x-amz-target-amazondmsv20160101-deleteendpoint
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DeleteEndpoint.'
+      operations:
+      - method: POST
+        name: deleteendpoint
+        description: <p>Deletes the specified endpoint.</p> <note> <p>All tasks associated with the endpoint must be deleted
+          before you can delete the endpoint.</p> </note> <p/>
+        call: amazon-dms.deleteendpoint
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-deleteeventsubscription
+      name: x-amz-target-amazondmsv20160101-deleteeventsubscription
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DeleteEventSubscription.'
+      operations:
+      - method: POST
+        name: deleteeventsubscription
+        description: Deletes an DMS event subscription.
+        call: amazon-dms.deleteeventsubscription
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-deletefleetadvisorcollector
+      name: x-amz-target-amazondmsv20160101-deletefleetadvisorcollector
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DeleteFleetAdvisorCollector.'
+      operations:
+      - method: POST
+        name: deletefleetadvisorcollector
+        description: Deletes the specified Fleet Advisor collector.
+        call: amazon-dms.deletefleetadvisorcollector
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-deletefleetadvisordatabases
+      name: x-amz-target-amazondmsv20160101-deletefleetadvisordatabases
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DeleteFleetAdvisorDatabases.'
+      operations:
+      - method: POST
+        name: deletefleetadvisordatabases
+        description: Deletes the specified Fleet Advisor collector databases.
+        call: amazon-dms.deletefleetadvisordatabases
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-deletereplicationinstance
+      name: x-amz-target-amazondmsv20160101-deletereplicationinstance
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DeleteReplicationInstance.'
+      operations:
+      - method: POST
+        name: deletereplicationinstance
+        description: <p>Deletes the specified replication instance.</p> <note> <p>You must delete any migration tasks that
+          are associated with the replication instance before you can delete it.</p> </note> <p/>
+        call: amazon-dms.deletereplicationinstance
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-deletereplicationsubnetgroup
+      name: x-amz-target-amazondmsv20160101-deletereplicationsubnetgroup
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DeleteReplicationSubnetGroup.'
+      operations:
+      - method: POST
+        name: deletereplicationsubnetgroup
+        description: Deletes a subnet group.
+        call: amazon-dms.deletereplicationsubnetgroup
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-deletereplicationtask
+      name: x-amz-target-amazondmsv20160101-deletereplicationtask
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DeleteReplicationTask.'
+      operations:
+      - method: POST
+        name: deletereplicationtask
+        description: Deletes the specified replication task.
+        call: amazon-dms.deletereplicationtask
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-deletereplicationtaskassessmentrun
+      name: x-amz-target-amazondmsv20160101-deletereplicationtaskassessmentrun
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DeleteReplicationTaskAssessmentRun.'
+      operations:
+      - method: POST
+        name: deletereplicationtaskassessmentrun
+        description: <p>Deletes the record of a single premigration assessment run.</p> <p>This operation removes all metadata
+          that DMS maintains about this assessment run. However, the operation leaves untouched all information about this
+          assessment run that i
+        call: amazon-dms.deletereplicationtaskassessmentrun
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describeaccountattributes
+      name: x-amz-target-amazondmsv20160101-describeaccountattributes
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeAccountAttributes.'
+      operations:
+      - method: POST
+        name: describeaccountattributes
+        description: <p>Lists all of the DMS attributes for a customer account. These attributes include DMS quotas for the
+          account and a unique account identifier in a particular DMS region. DMS quotas include a list of resource quotas
+          supported by the account
+        call: amazon-dms.describeaccountattributes
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describeapplicableindividualassessments
+      name: x-amz-target-amazondmsv20160101-describeapplicableindividualassessments
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeApplicableIndividualAssessments.'
+      operations:
+      - method: POST
+        name: describeapplicableindividualassessments
+        description: <p>Provides a list of individual assessments that you can specify for a new premigration assessment run,
+          given one or more parameters.</p> <p>If you specify an existing migration task, this operation provides the default
+          individual assessme
+        call: amazon-dms.describeapplicableindividualassessments
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describecertificates
+      name: x-amz-target-amazondmsv20160101-describecertificates
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeCertificates.'
+      operations:
+      - method: POST
+        name: describecertificates
+        description: Provides a description of the certificate.
+        call: amazon-dms.describecertificates
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describeconnections
+      name: x-amz-target-amazondmsv20160101-describeconnections
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeConnections.'
+      operations:
+      - method: POST
+        name: describeconnections
+        description: Describes the status of the connections that have been made between the replication instance and an endpoint.
+          Connections are created when you test an endpoint.
+        call: amazon-dms.describeconnections
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describeendpointsettings
+      name: x-amz-target-amazondmsv20160101-describeendpointsettings
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeEndpointSettings.'
+      operations:
+      - method: POST
+        name: describeendpointsettings
+        description: Returns information about the possible endpoint settings available when you create an endpoint for a
+          specific database engine.
+        call: amazon-dms.describeendpointsettings
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describeendpointtypes
+      name: x-amz-target-amazondmsv20160101-describeendpointtypes
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeEndpointTypes.'
+      operations:
+      - method: POST
+        name: describeendpointtypes
+        description: Returns information about the type of endpoints available.
+        call: amazon-dms.describeendpointtypes
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describeendpoints
+      name: x-amz-target-amazondmsv20160101-describeendpoints
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeEndpoints.'
+      operations:
+      - method: POST
+        name: describeendpoints
+        description: Returns information about the endpoints for your account in the current region.
+        call: amazon-dms.describeendpoints
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describeeventcategories
+      name: x-amz-target-amazondmsv20160101-describeeventcategories
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeEventCategories.'
+      operations:
+      - method: POST
+        name: describeeventcategories
+        description: Lists categories for all event source types, or, if specified, for a specified source type. You can see
+          a list of the event categories and source types in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+          w
+        call: amazon-dms.describeeventcategories
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describeeventsubscriptions
+      name: x-amz-target-amazondmsv20160101-describeeventsubscriptions
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeEventSubscriptions.'
+      operations:
+      - method: POST
+        name: describeeventsubscriptions
+        description: <p>Lists all the event subscriptions for a customer account. The description of a subscription includes
+          <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>, <code>SourceID</code>,
+          <code>
+        call: amazon-dms.describeeventsubscriptions
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describeevents
+      name: x-amz-target-amazondmsv20160101-describeevents
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeEvents.'
+      operations:
+      - method: POST
+        name: describeevents
+        description: Lists events for a given source identifier and source type. You can also specify a start and end time.
+          For more information on DMS events, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+          with Events a
+        call: amazon-dms.describeevents
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describefleetadvisorcollectors
+      name: x-amz-target-amazondmsv20160101-describefleetadvisorcollectors
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorCollectors.'
+      operations:
+      - method: POST
+        name: describefleetadvisorcollectors
+        description: Returns a list of the Fleet Advisor collectors in your account.
+        call: amazon-dms.describefleetadvisorcollectors
+        with:
+          MaxRecords: rest.MaxRecords
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describefleetadvisordatabases
+      name: x-amz-target-amazondmsv20160101-describefleetadvisordatabases
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorDatabases.'
+      operations:
+      - method: POST
+        name: describefleetadvisordatabases
+        description: Returns a list of Fleet Advisor databases in your account.
+        call: amazon-dms.describefleetadvisordatabases
+        with:
+          MaxRecords: rest.MaxRecords
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describefleetadvisorlsaanalysis
+      name: x-amz-target-amazondmsv20160101-describefleetadvisorlsaanalysis
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis.'
+      operations:
+      - method: POST
+        name: describefleetadvisorlsaanalysis
+        description: Provides descriptions of large-scale assessment (LSA) analyses produced by your Fleet Advisor collectors.
+        call: amazon-dms.describefleetadvisorlsaanalysis
+        with:
+          MaxRecords: rest.MaxRecords
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describefleetadvisorschemaobjectsummary
+      name: x-amz-target-amazondmsv20160101-describefleetadvisorschemaobjectsummary
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorSchemaObjectSummary.'
+      operations:
+      - method: POST
+        name: describefleetadvisorschemaobjectsummary
+        description: Provides descriptions of the schemas discovered by your Fleet Advisor collectors.
+        call: amazon-dms.describefleetadvisorschemaobjectsummary
+        with:
+          MaxRecords: rest.MaxRecords
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describefleetadvisorschemas
+      name: x-amz-target-amazondmsv20160101-describefleetadvisorschemas
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorSchemas.'
+      operations:
+      - method: POST
+        name: describefleetadvisorschemas
+        description: Returns a list of schemas detected by Fleet Advisor Collectors in your account.
+        call: amazon-dms.describefleetadvisorschemas
+        with:
+          MaxRecords: rest.MaxRecords
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describeorderablereplicationinstances
+      name: x-amz-target-amazondmsv20160101-describeorderablereplicationinstances
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeOrderableReplicationInstances.'
+      operations:
+      - method: POST
+        name: describeorderablereplicationinstances
+        description: Returns information about the replication instance types that can be created in the specified region.
+        call: amazon-dms.describeorderablereplicationinstances
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describependingmaintenanceactions
+      name: x-amz-target-amazondmsv20160101-describependingmaintenanceactions
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribePendingMaintenanceActions.'
+      operations:
+      - method: POST
+        name: describependingmaintenanceactions
+        description: For internal use only
+        call: amazon-dms.describependingmaintenanceactions
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describerecommendationlimitations
+      name: x-amz-target-amazondmsv20160101-describerecommendationlimitations
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeRecommendationLimitations.'
+      operations:
+      - method: POST
+        name: describerecommendationlimitations
+        description: Returns a paginated list of limitations for recommendations of target Amazon Web Services engines.
+        call: amazon-dms.describerecommendationlimitations
+        with:
+          MaxRecords: rest.MaxRecords
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describerecommendations
+      name: x-amz-target-amazondmsv20160101-describerecommendations
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeRecommendations.'
+      operations:
+      - method: POST
+        name: describerecommendations
+        description: Returns a paginated list of target engine recommendations for your source databases.
+        call: amazon-dms.describerecommendations
+        with:
+          MaxRecords: rest.MaxRecords
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describerefreshschemasstatus
+      name: x-amz-target-amazondmsv20160101-describerefreshschemasstatus
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeRefreshSchemasStatus.'
+      operations:
+      - method: POST
+        name: describerefreshschemasstatus
+        description: Returns the status of the RefreshSchemas operation.
+        call: amazon-dms.describerefreshschemasstatus
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describereplicationinstancetasklogs
+      name: x-amz-target-amazondmsv20160101-describereplicationinstancetasklogs
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeReplicationInstanceTaskLogs.'
+      operations:
+      - method: POST
+        name: describereplicationinstancetasklogs
+        description: Returns information about the task logs for the specified task.
+        call: amazon-dms.describereplicationinstancetasklogs
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describereplicationinstances
+      name: x-amz-target-amazondmsv20160101-describereplicationinstances
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeReplicationInstances.'
+      operations:
+      - method: POST
+        name: describereplicationinstances
+        description: Returns information about replication instances for your account in the current region.
+        call: amazon-dms.describereplicationinstances
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describereplicationsubnetgroups
+      name: x-amz-target-amazondmsv20160101-describereplicationsubnetgroups
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeReplicationSubnetGroups.'
+      operations:
+      - method: POST
+        name: describereplicationsubnetgroups
+        description: Returns information about the replication subnet groups.
+        call: amazon-dms.describereplicationsubnetgroups
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describereplicationtaskassessmentresults
+      name: x-amz-target-amazondmsv20160101-describereplicationtaskassessmentresults
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentResults.'
+      operations:
+      - method: POST
+        name: describereplicationtaskassessmentresults
+        description: <p>Returns the task assessment results from the Amazon S3 bucket that DMS creates in your Amazon Web
+          Services account. This action always returns the latest results.</p> <p>For more information about DMS task assessments,
+          see <a href="https
+        call: amazon-dms.describereplicationtaskassessmentresults
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describereplicationtaskassessmentruns
+      name: x-amz-target-amazondmsv20160101-describereplicationtaskassessmentruns
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns.'
+      operations:
+      - method: POST
+        name: describereplicationtaskassessmentruns
+        description: '<p>Returns a paginated list of premigration assessment runs based on filter settings.</p> <p>These filter
+          settings can specify a combination of premigration assessment runs, migration tasks, replication instances, and
+          assessment run status '
+        call: amazon-dms.describereplicationtaskassessmentruns
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describereplicationtaskindividualassessments
+      name: x-amz-target-amazondmsv20160101-describereplicationtaskindividualassessments
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTaskIndividualAssessments.'
+      operations:
+      - method: POST
+        name: describereplicationtaskindividualassessments
+        description: <p>Returns a paginated list of individual assessments based on filter settings.</p> <p>These filter settings
+          can specify a combination of premigration assessment runs, migration tasks, and assessment status values.</p>
+        call: amazon-dms.describereplicationtaskindividualassessments
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describereplicationtasks
+      name: x-amz-target-amazondmsv20160101-describereplicationtasks
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTasks.'
+      operations:
+      - method: POST
+        name: describereplicationtasks
+        description: Returns information about replication tasks for your account in the current region.
+        call: amazon-dms.describereplicationtasks
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describeschemas
+      name: x-amz-target-amazondmsv20160101-describeschemas
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeSchemas.'
+      operations:
+      - method: POST
+        name: describeschemas
+        description: <p>Returns information about the schema for the specified endpoint.</p> <p/>
+        call: amazon-dms.describeschemas
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-describetablestatistics
+      name: x-amz-target-amazondmsv20160101-describetablestatistics
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.DescribeTableStatistics.'
+      operations:
+      - method: POST
+        name: describetablestatistics
+        description: <p>Returns table statistics on the database migration task, including table name, rows inserted, rows
+          updated, and rows deleted.</p> <p>Note that the "last updated" column the DMS console only indicates the time that
+          DMS last updated the ta
+        call: amazon-dms.describetablestatistics
+        with:
+          MaxRecords: rest.MaxRecords
+          Marker: rest.Marker
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-importcertificate
+      name: x-amz-target-amazondmsv20160101-importcertificate
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.ImportCertificate.'
+      operations:
+      - method: POST
+        name: importcertificate
+        description: Uploads the specified certificate.
+        call: amazon-dms.importcertificate
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-listtagsforresource
+      name: x-amz-target-amazondmsv20160101-listtagsforresource
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.ListTagsForResource.'
+      operations:
+      - method: POST
+        name: listtagsforresource
+        description: Lists all metadata tags attached to an DMS resource, including replication instance, endpoint, subnet
+          group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
+          <code>Tag
+        call: amazon-dms.listtagsforresource
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-modifyendpoint
+      name: x-amz-target-amazondmsv20160101-modifyendpoint
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.ModifyEndpoint.'
+      operations:
+      - method: POST
+        name: modifyendpoint
+        description: <p>Modifies the specified endpoint.</p> <note> <p>For a MySQL source or target endpoint, don't explicitly
+          specify the database using the <code>DatabaseName</code> request parameter on the <code>ModifyEndpoint</code> API
+          call. Specifying <co
+        call: amazon-dms.modifyendpoint
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-modifyeventsubscription
+      name: x-amz-target-amazondmsv20160101-modifyeventsubscription
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.ModifyEventSubscription.'
+      operations:
+      - method: POST
+        name: modifyeventsubscription
+        description: Modifies an existing DMS event notification subscription.
+        call: amazon-dms.modifyeventsubscription
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-modifyreplicationinstance
+      name: x-amz-target-amazondmsv20160101-modifyreplicationinstance
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance.'
+      operations:
+      - method: POST
+        name: modifyreplicationinstance
+        description: <p>Modifies the replication instance to apply new settings. You can change one or more parameters by
+          specifying these parameters and the new values in the request.</p> <p>Some settings are applied during the maintenance
+          window.</p> <p/>
+        call: amazon-dms.modifyreplicationinstance
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-modifyreplicationsubnetgroup
+      name: x-amz-target-amazondmsv20160101-modifyreplicationsubnetgroup
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.ModifyReplicationSubnetGroup.'
+      operations:
+      - method: POST
+        name: modifyreplicationsubnetgroup
+        description: Modifies the settings for the specified replication subnet group.
+        call: amazon-dms.modifyreplicationsubnetgroup
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-modifyreplicationtask
+      name: x-amz-target-amazondmsv20160101-modifyreplicationtask
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.ModifyReplicationTask.'
+      operations:
+      - method: POST
+        name: modifyreplicationtask
+        description: <p>Modifies the specified replication task.</p> <p>You can't modify the task endpoints. The task must
+          be stopped before you can modify it. </p> <p>For more information about DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/use
+        call: amazon-dms.modifyreplicationtask
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-movereplicationtask
+      name: x-amz-target-amazondmsv20160101-movereplicationtask
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.MoveReplicationTask.'
+      operations:
+      - method: POST
+        name: movereplicationtask
+        description: Moves a replication task from its current replication instance to a different target replication instance
+          using the specified parameters. The target replication instance must be created with the same or later DMS version
+          as the current repl
+        call: amazon-dms.movereplicationtask
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-rebootreplicationinstance
+      name: x-amz-target-amazondmsv20160101-rebootreplicationinstance
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.RebootReplicationInstance.'
+      operations:
+      - method: POST
+        name: rebootreplicationinstance
+        description: Reboots a replication instance. Rebooting results in a momentary outage, until the replication instance
+          becomes available again.
+        call: amazon-dms.rebootreplicationinstance
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-refreshschemas
+      name: x-amz-target-amazondmsv20160101-refreshschemas
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.RefreshSchemas.'
+      operations:
+      - method: POST
+        name: refreshschemas
+        description: Populates the schema for the specified endpoint. This is an asynchronous operation and can take several
+          minutes. You can check the status of this operation by calling the DescribeRefreshSchemasStatus operation.
+        call: amazon-dms.refreshschemas
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-reloadtables
+      name: x-amz-target-amazondmsv20160101-reloadtables
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.ReloadTables.'
+      operations:
+      - method: POST
+        name: reloadtables
+        description: <p>Reloads the target database table with the source data. </p> <p>You can only use this operation with
+          a task in the <code>RUNNING</code> state, otherwise the service will throw an <code>InvalidResourceStateFault</code>
+          exception.</p>
+        call: amazon-dms.reloadtables
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-removetagsfromresource
+      name: x-amz-target-amazondmsv20160101-removetagsfromresource
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.RemoveTagsFromResource.'
+      operations:
+      - method: POST
+        name: removetagsfromresource
+        description: Removes metadata tags from an DMS resource, including replication instance, endpoint, subnet group, and
+          migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
+          <code>Tag</code> <
+        call: amazon-dms.removetagsfromresource
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-runfleetadvisorlsaanalysis
+      name: x-amz-target-amazondmsv20160101-runfleetadvisorlsaanalysis
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.RunFleetAdvisorLsaAnalysis.'
+      operations:
+      - method: POST
+        name: runfleetadvisorlsaanalysis
+        description: Runs large-scale assessment (LSA) analysis on every Fleet Advisor collector in your account.
+        call: amazon-dms.runfleetadvisorlsaanalysis
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-startrecommendations
+      name: x-amz-target-amazondmsv20160101-startrecommendations
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.StartRecommendations.'
+      operations:
+      - method: POST
+        name: startrecommendations
+        description: <p>Starts the analysis of your source database to provide recommendations of target engines.</p> <p>You
+          can create recommendations for multiple source databases using <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_BatchSta
+        call: amazon-dms.startrecommendations
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-startreplicationtask
+      name: x-amz-target-amazondmsv20160101-startreplicationtask
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.StartReplicationTask.'
+      operations:
+      - method: POST
+        name: startreplicationtask
+        description: <p>Starts the replication task.</p> <p>For more information about DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
+          with Migration Tasks </a> in the <i>Database Migration Service User Guide.</
+        call: amazon-dms.startreplicationtask
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-startreplicationtaskassessment
+      name: x-amz-target-amazondmsv20160101-startreplicationtaskassessment
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.StartReplicationTaskAssessment.'
+      operations:
+      - method: POST
+        name: startreplicationtaskassessment
+        description: <p> Starts the replication task assessment for unsupported data types in the source database. </p> <p>You
+          can only use this operation for a task if the following conditions are true:</p> <ul> <li> <p>The task must be in
+          the <code>stopped</c
+        call: amazon-dms.startreplicationtaskassessment
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-startreplicationtaskassessmentrun
+      name: x-amz-target-amazondmsv20160101-startreplicationtaskassessmentrun
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.StartReplicationTaskAssessmentRun.'
+      operations:
+      - method: POST
+        name: startreplicationtaskassessmentrun
+        description: <p>Starts a new premigration assessment run for one or more individual assessments of a migration task.</p>
+          <p>The assessments that you can specify depend on the source and target database engine and the migration type defined
+          for the given
+        call: amazon-dms.startreplicationtaskassessmentrun
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-stopreplicationtask
+      name: x-amz-target-amazondmsv20160101-stopreplicationtask
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.StopReplicationTask.'
+      operations:
+      - method: POST
+        name: stopreplicationtask
+        description: Stops the replication task.
+        call: amazon-dms.stopreplicationtask
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-testconnection
+      name: x-amz-target-amazondmsv20160101-testconnection
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.TestConnection.'
+      operations:
+      - method: POST
+        name: testconnection
+        description: Tests the connection between the replication instance and the endpoint.
+        call: amazon-dms.testconnection
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-amazondmsv20160101-updatesubscriptionstoeventbridge
+      name: x-amz-target-amazondmsv20160101-updatesubscriptionstoeventbridge
+      description: 'REST surface for #X-Amz-Target=AmazonDMSv20160101.UpdateSubscriptionsToEventBridge.'
+      operations:
+      - method: POST
+        name: updatesubscriptionstoeventbridge
+        description: <p>Migrates 10 active and enabled Amazon SNS subscriptions at a time and converts them to corresponding
+          Amazon EventBridge rules. By default, this operation migrates subscriptions only when all your replication instance
+          versions are 3.4.6 o
+        call: amazon-dms.updatesubscriptionstoeventbridge
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-dms-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for AWS Database Migration Service. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: adds-metadata-tags-dms-resource
+      description: Adds metadata tags to an DMS resource, including replication instance, endpoint, subnet group, and migration
+        task. These tags can also be used with cost allocation reporting to track cost associated with DMS resources, or used
+        in a Conditio
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.addtagstoresource
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: applies-pending-maintenance-action-resource
+      description: Applies a pending maintenance action to a resource (for example, to a replication instance).
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.applypendingmaintenanceaction
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-starts-analysis-up-20-source
+      description: <p>Starts the analysis of up to 20 source databases to recommend target engines for each source database.
+        This is a batch version of <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartRecommendations.html">StartRecommenda
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.batchstartrecommendations
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-cancels-single-premigration-assessment-run
+      description: <p>Cancels a single premigration assessment run.</p> <p>This operation prevents any individual assessments
+        from running if they haven't started running. It also attempts to cancel any individual assessments that are currently
+        running.</p>
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.cancelreplicationtaskassessmentrun
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-creates-endpoint-using-provided-settings
+      description: <p>Creates an endpoint using the provided settings.</p> <note> <p>For a MySQL source or target endpoint,
+        don't explicitly specify the database using the <code>DatabaseName</code> request parameter on the <code>CreateEndpoint</code>
+        API call
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.createendpoint
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-creates-dms-event-notification
+      description: <p> Creates an DMS event notification subscription. </p> <p>You can specify the type of source (<code>SourceType</code>)
+        you want to be notified of, provide a list of DMS source IDs (<code>SourceIds</code>) that triggers the events, and
+        pro
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.createeventsubscription
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: creates-fleet-advisor-collector-using
+      description: Creates a Fleet Advisor collector using the specified parameters.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.createfleetadvisorcollector
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-creates-replication-instance-using-specified
+      description: <p>Creates the replication instance using the specified parameters.</p> <p>DMS requires that your account
+        have certain roles with appropriate permissions before you can create a replication instance. For information on the
+        required roles, s
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.createreplicationinstance
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-creates-replication-subnet-group-given
+      description: <p>Creates a replication subnet group given a list of the subnet IDs in a VPC.</p> <p>The VPC needs to
+        have at least one subnet in at least two availability zones in the Amazon Web Services Region, otherwise the service
+        will throw a <code>R
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.createreplicationsubnetgroup
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: creates-replication-task-using-specified
+      description: Creates a replication task using the specified parameters.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.createreplicationtask
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletes-specified-certificate
+      description: Deletes the specified certificate.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.deletecertificate
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletes-connection-between-replication-instance
+      description: Deletes the connection between a replication instance and an endpoint.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.deleteconnection
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-deletes-specified-endpoint-p-note
+      description: <p>Deletes the specified endpoint.</p> <note> <p>All tasks associated with the endpoint must be deleted
+        before you can delete the endpoint.</p> </note> <p/>
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.deleteendpoint
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletes-dms-event-subscription
+      description: Deletes an DMS event subscription.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.deleteeventsubscription
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletes-specified-fleet-advisor-collector
+      description: Deletes the specified Fleet Advisor collector.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.deletefleetadvisorcollector
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletes-specified-fleet-advisor-collector-2
+      description: Deletes the specified Fleet Advisor collector databases.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.deletefleetadvisordatabases
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-deletes-specified-replication-instance-p
+      description: <p>Deletes the specified replication instance.</p> <note> <p>You must delete any migration tasks that are
+        associated with the replication instance before you can delete it.</p> </note> <p/>
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.deletereplicationinstance
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletes-subnet-group
+      description: Deletes a subnet group.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.deletereplicationsubnetgroup
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletes-specified-replication-task
+      description: Deletes the specified replication task.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.deletereplicationtask
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-deletes-record-single-premigration-assessment
+      description: <p>Deletes the record of a single premigration assessment run.</p> <p>This operation removes all metadata
+        that DMS maintains about this assessment run. However, the operation leaves untouched all information about this assessment
+        run that i
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.deletereplicationtaskassessmentrun
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-lists-all-dms-attributes-customer
+      description: <p>Lists all of the DMS attributes for a customer account. These attributes include DMS quotas for the
+        account and a unique account identifier in a particular DMS region. DMS quotas include a list of resource quotas supported
+        by the account
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describeaccountattributes
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-provides-list-individual-assessments-that
+      description: <p>Provides a list of individual assessments that you can specify for a new premigration assessment run,
+        given one or more parameters.</p> <p>If you specify an existing migration task, this operation provides the default
+        individual assessme
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describeapplicableindividualassessments
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: provides-description-certificate
+      description: Provides a description of the certificate.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describecertificates
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: describes-status-connections-that-have
+      description: Describes the status of the connections that have been made between the replication instance and an endpoint.
+        Connections are created when you test an endpoint.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describeconnections
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-information-about-possible-endpoint
+      description: Returns information about the possible endpoint settings available when you create an endpoint for a specific
+        database engine.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describeendpointsettings
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-information-about-type-endpoints
+      description: Returns information about the type of endpoints available.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describeendpointtypes
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-information-about-endpoints-your
+      description: Returns information about the endpoints for your account in the current region.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describeendpoints
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: lists-categories-all-event-source
+      description: Lists categories for all event source types, or, if specified, for a specified source type. You can see
+        a list of the event categories and source types in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+        w
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describeeventcategories
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-lists-all-event-subscriptions-customer
+      description: <p>Lists all the event subscriptions for a customer account. The description of a subscription includes
+        <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>, <code>SourceID</code>,
+        <code>
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describeeventsubscriptions
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: lists-events-given-source-identifier
+      description: Lists events for a given source identifier and source type. You can also specify a start and end time.
+        For more information on DMS events, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+        with Events a
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describeevents
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-fleet-advisor-collectors
+      description: Returns a list of the Fleet Advisor collectors in your account.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describefleetadvisorcollectors
+      with:
+        MaxRecords: tools.MaxRecords
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-fleet-advisor-databases
+      description: Returns a list of Fleet Advisor databases in your account.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describefleetadvisordatabases
+      with:
+        MaxRecords: tools.MaxRecords
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: provides-descriptions-large-scale-assessment
+      description: Provides descriptions of large-scale assessment (LSA) analyses produced by your Fleet Advisor collectors.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describefleetadvisorlsaanalysis
+      with:
+        MaxRecords: tools.MaxRecords
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: provides-descriptions-schemas-discovered-your
+      description: Provides descriptions of the schemas discovered by your Fleet Advisor collectors.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describefleetadvisorschemaobjectsummary
+      with:
+        MaxRecords: tools.MaxRecords
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-schemas-detected-fleet
+      description: Returns a list of schemas detected by Fleet Advisor Collectors in your account.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describefleetadvisorschemas
+      with:
+        MaxRecords: tools.MaxRecords
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-information-about-replication-instance
+      description: Returns information about the replication instance types that can be created in the specified region.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describeorderablereplicationinstances
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: internal-use-only
+      description: For internal use only
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describependingmaintenanceactions
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-paginated-list-limitations-recommendations
+      description: Returns a paginated list of limitations for recommendations of target Amazon Web Services engines.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describerecommendationlimitations
+      with:
+        MaxRecords: tools.MaxRecords
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-paginated-list-target-engine
+      description: Returns a paginated list of target engine recommendations for your source databases.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describerecommendations
+      with:
+        MaxRecords: tools.MaxRecords
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-status-refreshschemas-operation
+      description: Returns the status of the RefreshSchemas operation.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describerefreshschemasstatus
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-information-about-task-logs
+      description: Returns information about the task logs for the specified task.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describereplicationinstancetasklogs
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-information-about-replication-instances
+      description: Returns information about replication instances for your account in the current region.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describereplicationinstances
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-information-about-replication-subnet
+      description: Returns information about the replication subnet groups.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describereplicationsubnetgroups
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-returns-task-assessment-results-amazon
+      description: <p>Returns the task assessment results from the Amazon S3 bucket that DMS creates in your Amazon Web Services
+        account. This action always returns the latest results.</p> <p>For more information about DMS task assessments, see
+        <a href="https
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describereplicationtaskassessmentresults
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-returns-paginated-list-premigration-assessment
+      description: '<p>Returns a paginated list of premigration assessment runs based on filter settings.</p> <p>These filter
+        settings can specify a combination of premigration assessment runs, migration tasks, replication instances, and assessment
+        run status '
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describereplicationtaskassessmentruns
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-returns-paginated-list-individual-assessments
+      description: <p>Returns a paginated list of individual assessments based on filter settings.</p> <p>These filter settings
+        can specify a combination of premigration assessment runs, migration tasks, and assessment status values.</p>
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describereplicationtaskindividualassessments
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-information-about-replication-tasks
+      description: Returns information about replication tasks for your account in the current region.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describereplicationtasks
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-returns-information-about-schema-specified
+      description: <p>Returns information about the schema for the specified endpoint.</p> <p/>
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describeschemas
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-returns-table-statistics-database-migration
+      description: <p>Returns table statistics on the database migration task, including table name, rows inserted, rows updated,
+        and rows deleted.</p> <p>Note that the "last updated" column the DMS console only indicates the time that DMS last
+        updated the ta
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.describetablestatistics
+      with:
+        MaxRecords: tools.MaxRecords
+        Marker: tools.Marker
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: uploads-specified-certificate
+      description: Uploads the specified certificate.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.importcertificate
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: lists-all-metadata-tags-attached
+      description: Lists all metadata tags attached to an DMS resource, including replication instance, endpoint, subnet group,
+        and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
+        <code>Tag
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.listtagsforresource
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-modifies-specified-endpoint-p-note
+      description: <p>Modifies the specified endpoint.</p> <note> <p>For a MySQL source or target endpoint, don't explicitly
+        specify the database using the <code>DatabaseName</code> request parameter on the <code>ModifyEndpoint</code> API
+        call. Specifying <co
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.modifyendpoint
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: modifies-existing-dms-event-notification
+      description: Modifies an existing DMS event notification subscription.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.modifyeventsubscription
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-modifies-replication-instance-apply-new
+      description: <p>Modifies the replication instance to apply new settings. You can change one or more parameters by specifying
+        these parameters and the new values in the request.</p> <p>Some settings are applied during the maintenance window.</p>
+        <p/>
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.modifyreplicationinstance
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: modifies-settings-specified-replication-subnet
+      description: Modifies the settings for the specified replication subnet group.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.modifyreplicationsubnetgroup
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-modifies-specified-replication-task-p
+      description: <p>Modifies the specified replication task.</p> <p>You can't modify the task endpoints. The task must be
+        stopped before you can modify it. </p> <p>For more information about DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/use
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.modifyreplicationtask
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: moves-replication-task-its-current
+      description: Moves a replication task from its current replication instance to a different target replication instance
+        using the specified parameters. The target replication instance must be created with the same or later DMS version
+        as the current repl
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.movereplicationtask
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: reboots-replication-instance-rebooting-results
+      description: Reboots a replication instance. Rebooting results in a momentary outage, until the replication instance
+        becomes available again.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.rebootreplicationinstance
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: populates-schema-specified-endpoint-this
+      description: Populates the schema for the specified endpoint. This is an asynchronous operation and can take several
+        minutes. You can check the status of this operation by calling the DescribeRefreshSchemasStatus operation.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.refreshschemas
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-reloads-target-database-table-source
+      description: <p>Reloads the target database table with the source data. </p> <p>You can only use this operation with
+        a task in the <code>RUNNING</code> state, otherwise the service will throw an <code>InvalidResourceStateFault</code>
+        exception.</p>
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.reloadtables
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: removes-metadata-tags-dms-resource
+      description: Removes metadata tags from an DMS resource, including replication instance, endpoint, subnet group, and
+        migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
+        <code>Tag</code> <
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.removetagsfromresource
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: runs-large-scale-assessment-lsa
+      description: Runs large-scale assessment (LSA) analysis on every Fleet Advisor collector in your account.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.runfleetadvisorlsaanalysis
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-starts-analysis-your-source-database
+      description: <p>Starts the analysis of your source database to provide recommendations of target engines.</p> <p>You
+        can create recommendations for multiple source databases using <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_BatchSta
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.startrecommendations
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-starts-replication-task-p-p-for
+      description: <p>Starts the replication task.</p> <p>For more information about DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
+        with Migration Tasks </a> in the <i>Database Migration Service User Guide.</
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.startreplicationtask
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-starts-replication-task-assessment
+      description: <p> Starts the replication task assessment for unsupported data types in the source database. </p> <p>You
+        can only use this operation for a task if the following conditions are true:</p> <ul> <li> <p>The task must be in
+        the <code>stopped</c
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.startreplicationtaskassessment
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-starts-new-premigration-assessment-run
+      description: <p>Starts a new premigration assessment run for one or more individual assessments of a migration task.</p>
+        <p>The assessments that you can specify depend on the source and target database engine and the migration type defined
+        for the given
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-dms.startreplicationtaskassessmentrun
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: stops-replication-task
+      description: Stops the replication task.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.stopreplicationtask
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: tests-connection-between-replication-instance
+      description: Tests the connection between the replication instance and the endpoint.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.testconnection
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: p-migrates-10-active-and-enabled
+      description: <p>Migrates 10 active and enabled Amazon SNS subscriptions at a time and converts them to corresponding
+        Amazon EventBridge rules. By default, this operation migrates subscriptions only when all your replication instance
+        versions are 3.4.6 o
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-dms.updatesubscriptionstoeventbridge
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
