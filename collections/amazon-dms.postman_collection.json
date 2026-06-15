@@ -1,0 +1,626 @@
+{
+  "item": [
+    {
+      "id": "02e6d496-15a7-41f4-8aa3-008d2477fd71",
+      "name": "Endpoints",
+      "description": {
+        "content": "Operations for managing source and target endpoints",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "95e2c604-dce7-4c7e-a7cf-3608efbc5f1e",
+          "name": "Amazon DMS Create an endpoint",
+          "request": {
+            "name": "Amazon DMS Create an endpoint",
+            "description": {
+              "content": "Creates an endpoint using the provided settings, representing a source or target database for migration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "createEndpoint"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"EndpointIdentifier\": \"<string>\",\n  \"EndpointType\": \"<string>\",\n  \"EngineName\": \"<string>\",\n  \"ServerName\": \"<string>\",\n  \"Port\": \"<integer>\",\n  \"DatabaseName\": \"<string>\",\n  \"Username\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"SslMode\": \"<string>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "d950bad8-1c1c-4f6b-87e6-7668a9db6406",
+              "name": "Endpoint created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "createEndpoint"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"EndpointIdentifier\": \"<string>\",\n  \"EndpointType\": \"<string>\",\n  \"EngineName\": \"<string>\",\n  \"ServerName\": \"<string>\",\n  \"Port\": \"<integer>\",\n  \"DatabaseName\": \"<string>\",\n  \"Username\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"SslMode\": \"<string>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"EndpointIdentifier\": \"string\",\n  \"EndpointType\": \"string\",\n  \"EngineName\": \"string\",\n  \"EngineDisplayName\": \"string\",\n  \"ServerName\": \"string\",\n  \"Port\": 2487,\n  \"DatabaseName\": \"string\",\n  \"Status\": \"string\",\n  \"EndpointArn\": \"string\",\n  \"SslMode\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "da9a068a-23a3-4bf7-8984-91b43c69b886",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "createEndpoint"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"EndpointIdentifier\": \"<string>\",\n  \"EndpointType\": \"<string>\",\n  \"EngineName\": \"<string>\",\n  \"ServerName\": \"<string>\",\n  \"Port\": \"<integer>\",\n  \"DatabaseName\": \"<string>\",\n  \"Username\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"SslMode\": \"<string>\"\n}"
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "83e5c067-c048-45f8-87cf-13261f246464",
+          "name": "Amazon DMS Describe endpoints",
+          "request": {
+            "name": "Amazon DMS Describe endpoints",
+            "description": {
+              "content": "Returns information about the endpoints for your account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "describeEndpoints"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Filters\": [\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"MaxRecords\": \"<integer>\",\n  \"Marker\": \"<string>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "ec96c626-797f-4066-81ea-cf846d1ea93a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "describeEndpoints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Filters\": [\n    {\n      \"Name\": \"string\",\n      \"Values\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"Name\": \"string\",\n      \"Values\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"MaxRecords\": \"<integer>\",\n  \"Marker\": \"<string>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Endpoints\": [\n    {\n      \"EndpointIdentifier\": \"string\",\n      \"EndpointType\": \"string\",\n      \"EngineName\": \"string\",\n      \"EngineDisplayName\": \"string\",\n      \"ServerName\": \"string\",\n      \"Port\": 8833,\n      \"DatabaseName\": \"string\",\n      \"Status\": \"string\",\n      \"EndpointArn\": \"string\",\n      \"SslMode\": \"string\"\n    },\n    {\n      \"EndpointIdentifier\": \"string\",\n      \"EndpointType\": \"string\",\n      \"EngineName\": \"string\",\n      \"EngineDisplayName\": \"string\",\n      \"ServerName\": \"string\",\n      \"Port\": 1278,\n      \"DatabaseName\": \"string\",\n      \"Status\": \"string\",\n      \"EndpointArn\": \"string\",\n      \"SslMode\": \"string\"\n    }\n  ],\n  \"Marker\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "20762dcb-20b1-4b75-adc2-64adf544647e",
+      "name": "Replication Instances",
+      "description": {
+        "content": "Operations for managing DMS replication instances",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "54214f03-337e-4785-8145-2201fb5abba8",
+          "name": "Amazon DMS Create a replication instance",
+          "request": {
+            "name": "Amazon DMS Create a replication instance",
+            "description": {
+              "content": "Creates the replication instance using the specified parameters. A replication instance is used to run replication tasks.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ReplicationInstanceIdentifier\": \"<string>\",\n  \"ReplicationInstanceClass\": \"<string>\",\n  \"AllocatedStorage\": \"<integer>\",\n  \"VpcSecurityGroupIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"AvailabilityZone\": \"<string>\",\n  \"ReplicationSubnetGroupIdentifier\": \"<string>\",\n  \"MultiAZ\": \"<boolean>\",\n  \"EngineVersion\": \"<string>\",\n  \"PubliclyAccessible\": \"<boolean>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "6f432f47-1f97-4f0b-9abd-fc6e9eaca218",
+              "name": "Replication instance created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ReplicationInstanceIdentifier\": \"<string>\",\n  \"ReplicationInstanceClass\": \"<string>\",\n  \"AllocatedStorage\": \"<integer>\",\n  \"VpcSecurityGroupIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"AvailabilityZone\": \"<string>\",\n  \"ReplicationSubnetGroupIdentifier\": \"<string>\",\n  \"MultiAZ\": \"<boolean>\",\n  \"EngineVersion\": \"<string>\",\n  \"PubliclyAccessible\": \"<boolean>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ReplicationInstanceIdentifier\": \"string\",\n  \"ReplicationInstanceClass\": \"string\",\n  \"ReplicationInstanceStatus\": \"string\",\n  \"AllocatedStorage\": 3355,\n  \"ReplicationInstanceArn\": \"string\",\n  \"ReplicationInstancePublicIpAddress\": \"string\",\n  \"ReplicationInstancePrivateIpAddress\": \"string\",\n  \"AvailabilityZone\": \"string\",\n  \"MultiAZ\": false,\n  \"EngineVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ac747b71-f2b7-4a46-8f11-9fc8ff635844",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ReplicationInstanceIdentifier\": \"<string>\",\n  \"ReplicationInstanceClass\": \"<string>\",\n  \"AllocatedStorage\": \"<integer>\",\n  \"VpcSecurityGroupIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"AvailabilityZone\": \"<string>\",\n  \"ReplicationSubnetGroupIdentifier\": \"<string>\",\n  \"MultiAZ\": \"<boolean>\",\n  \"EngineVersion\": \"<string>\",\n  \"PubliclyAccessible\": \"<boolean>\"\n}"
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "99e2f5d4-9789-447a-8aa8-101e2aaca606",
+          "name": "Amazon DMS Describe replication instances",
+          "request": {
+            "name": "Amazon DMS Describe replication instances",
+            "description": {
+              "content": "Returns information about replication instances.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "describeReplicationInstances"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Filters\": [\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"MaxRecords\": \"<integer>\",\n  \"Marker\": \"<string>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "934cfe5a-4d2c-43a1-9d84-2cd0559d00eb",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "describeReplicationInstances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Filters\": [\n    {\n      \"Name\": \"string\",\n      \"Values\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"Name\": \"string\",\n      \"Values\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"MaxRecords\": \"<integer>\",\n  \"Marker\": \"<string>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ReplicationInstances\": [\n    {\n      \"ReplicationInstanceIdentifier\": \"string\",\n      \"ReplicationInstanceClass\": \"string\",\n      \"ReplicationInstanceStatus\": \"string\",\n      \"AllocatedStorage\": 4661,\n      \"ReplicationInstanceArn\": \"string\",\n      \"ReplicationInstancePublicIpAddress\": \"string\",\n      \"ReplicationInstancePrivateIpAddress\": \"string\",\n      \"AvailabilityZone\": \"string\",\n      \"MultiAZ\": true,\n      \"EngineVersion\": \"string\"\n    },\n    {\n      \"ReplicationInstanceIdentifier\": \"string\",\n      \"ReplicationInstanceClass\": \"string\",\n      \"ReplicationInstanceStatus\": \"string\",\n      \"AllocatedStorage\": 687,\n      \"ReplicationInstanceArn\": \"string\",\n      \"ReplicationInstancePublicIpAddress\": \"string\",\n      \"ReplicationInstancePrivateIpAddress\": \"string\",\n      \"AvailabilityZone\": \"string\",\n      \"MultiAZ\": true,\n      \"EngineVersion\": \"string\"\n    }\n  ],\n  \"Marker\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "8a39020a-461e-4782-b2f4-4b882d9ed828",
+      "name": "Replication Tasks",
+      "description": {
+        "content": "Operations for managing replication tasks",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "33d41eea-7d68-4084-a359-f36aa4a1fd79",
+          "name": "Amazon DMS Create a replication task",
+          "request": {
+            "name": "Amazon DMS Create a replication task",
+            "description": {
+              "content": "Creates a replication task using the specified parameters. A replication task moves data from a source endpoint to a target endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "createReplicationTask"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ReplicationTaskIdentifier\": \"<string>\",\n  \"SourceEndpointArn\": \"<string>\",\n  \"TargetEndpointArn\": \"<string>\",\n  \"ReplicationInstanceArn\": \"<string>\",\n  \"MigrationType\": \"<string>\",\n  \"TableMappings\": \"<string>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "4bcad815-2d1f-4063-ae65-bb1520288aae",
+              "name": "Replication task created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "createReplicationTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ReplicationTaskIdentifier\": \"<string>\",\n  \"SourceEndpointArn\": \"<string>\",\n  \"TargetEndpointArn\": \"<string>\",\n  \"ReplicationInstanceArn\": \"<string>\",\n  \"MigrationType\": \"<string>\",\n  \"TableMappings\": \"<string>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ReplicationTaskIdentifier\": \"string\",\n  \"SourceEndpointArn\": \"string\",\n  \"TargetEndpointArn\": \"string\",\n  \"ReplicationInstanceArn\": \"string\",\n  \"MigrationType\": \"string\",\n  \"Status\": \"string\",\n  \"ReplicationTaskArn\": \"string\",\n  \"ReplicationTaskStats\": {\n    \"FullLoadProgressPercent\": 5300,\n    \"ElapsedTimeMillis\": 9725,\n    \"TablesLoaded\": 8555,\n    \"TablesLoading\": 1086,\n    \"TablesQueued\": 2755,\n    \"TablesErrored\": 4373\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ac2d8833-e512-4488-bfb2-527240f9f6a4",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "createReplicationTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ReplicationTaskIdentifier\": \"<string>\",\n  \"SourceEndpointArn\": \"<string>\",\n  \"TargetEndpointArn\": \"<string>\",\n  \"ReplicationInstanceArn\": \"<string>\",\n  \"MigrationType\": \"<string>\",\n  \"TableMappings\": \"<string>\"\n}"
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b7e8183e-82f4-4c34-9b7a-38c29db5f1d2",
+          "name": "Amazon DMS Start a replication task",
+          "request": {
+            "name": "Amazon DMS Start a replication task",
+            "description": {
+              "content": "Starts the replication task.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "startReplicationTask"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ReplicationTaskArn\": \"<string>\",\n  \"StartReplicationTaskType\": \"<string>\",\n  \"CdcStartTime\": \"<dateTime>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "12027bd1-8244-48e4-b494-3e2160ffb70d",
+              "name": "Replication task started",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "startReplicationTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ReplicationTaskArn\": \"<string>\",\n  \"StartReplicationTaskType\": \"<string>\",\n  \"CdcStartTime\": \"<dateTime>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fbbcb400-9fe1-4af4-bd6f-11c924207ad3",
+    "name": "Amazon DMS AWS Database Migration Service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "AWS Database Migration Service (DMS) helps you migrate databases to AWS quickly and securely. The API provides operations for creating and managing replication instances, endpoints, and replication tasks for database migrations.\n\nContact Support:\n Name: Amazon Web Services",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon DMS AWS Database Migration Service API",
+    "version": "2016-01-01"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Replication Instances",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon DMS Create a replication instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms.amazonaws.com/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates the replication instance using the specified parameters. A replication instance is used to run replication tasks."
+        },
+        {
+          "info": {
+            "name": "Amazon DMS Describe replication instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms.amazonaws.com/describeReplicationInstances",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns information about replication instances."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Endpoints",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon DMS Create an endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms.amazonaws.com/createEndpoint",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an endpoint using the provided settings, representing a source or target database for migration."
+        },
+        {
+          "info": {
+            "name": "Amazon DMS Describe endpoints",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms.amazonaws.com/describeEndpoints",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns information about the endpoints for your account."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Replication Tasks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon DMS Create a replication task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms.amazonaws.com/createReplicationTask",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a replication task using the specified parameters. A replication task moves data from a source endpoint to a target endpoint."
+        },
+        {
+          "info": {
+            "name": "Amazon DMS Start a replication task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms.amazonaws.com/startReplicationTask",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Starts the replication task."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
