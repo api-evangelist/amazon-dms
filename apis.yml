@@ -38,6 +38,14 @@ apis:
       - type: GettingStarted
         url: https://aws.amazon.com/dms/getting-started/
 common:
+  - type: TrustCenter
+    url: security/amazon-dms-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-dms-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-dms-domain-security.yml
+  - type: Authentication
+    url: authentication/amazon-dms-authentication.yml
   - type: Portal
     url: https://aws.amazon.com/dms/
   - type: Website
