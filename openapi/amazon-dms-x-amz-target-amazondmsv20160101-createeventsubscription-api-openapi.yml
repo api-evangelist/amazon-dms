@@ -1,0 +1,395 @@
+openapi: 3.0.0
+info:
+  version: 2016-01-01
+  x-release: v4
+  title: 'AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.CreateEventSubscription API'
+  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: dms
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/dms-2016-01-01.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://dms.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Database Migration Service multi-region endpoint
+- url: https://dms.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Database Migration Service multi-region endpoint
+- url: http://dms.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Database Migration Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://dms.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Database Migration Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AmazonDMSv20160101.CreateEventSubscription'
+paths:
+  /#X-Amz-Target=AmazonDMSv20160101.CreateEventSubscription:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateEventSubscription
+      description: <p> Creates an DMS event notification subscription. </p> <p>You can specify the type of source (<code>SourceType</code>) you want to be notified of, provide a list of DMS source IDs (<code>SourceIds</code>) that triggers the events, and provide a list of event categories (<code>EventCategories</code>) for events you want to be notified of. If you specify both the <code>SourceType</code> and <code>SourceIds</code>, such as <code>SourceType = replication-instance</code> and <code>SourceIdentifier = my-replinstance</code>, you will be notified of all the replication instance events for the specified source. If you specify a <code>SourceType</code> but don't specify a <code>SourceIdentifier</code>, you receive notice of the events for that source type for all your DMS sources. If you don't specify either <code>SourceType</code> nor <code>SourceIdentifier</code>, you will be notified of events generated from all DMS sources belonging to your customer account.</p> <p>For more information about DMS events, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> </p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateEventSubscriptionResponse'
+        '480':
+          description: ResourceQuotaExceededFault
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceQuotaExceededFault'
+        '481':
+          description: ResourceNotFoundFault
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundFault'
+        '482':
+          description: ResourceAlreadyExistsFault
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceAlreadyExistsFault'
+        '483':
+          description: SNSInvalidTopicFault
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SNSInvalidTopicFault'
+        '484':
+          description: SNSNoAuthorizationFault
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SNSNoAuthorizationFault'
+        '485':
+          description: KMSAccessDeniedFault
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KMSAccessDeniedFault'
+        '486':
+          description: KMSDisabledFault
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KMSDisabledFault'
+        '487':
+          description: KMSInvalidStateFault
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KMSInvalidStateFault'
+        '488':
+          description: KMSNotFoundFault
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KMSNotFoundFault'
+        '489':
+          description: KMSThrottlingFault
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KMSThrottlingFault'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateEventSubscriptionMessage'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AmazonDMSv20160101.CreateEventSubscription
+      tags:
+      - '#X Amz Target=AmazonDMSv20160101.CreateEventSubscription'
+components:
+  schemas:
+    EventSubscription:
+      type: object
+      properties:
+        CustomerAwsId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Web Services customer account associated with the DMS event notification subscription.
+        CustSubscriptionId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The DMS event notification subscription Id.
+        SnsTopicArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The topic ARN of the DMS event notification subscription.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: '<p>The status of the DMS event notification subscription.</p> <p>Constraints:</p> <p>Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist</p> <p>The status "no-permission" indicates that DMS no longer has permission to post to the SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p>'
+        SubscriptionCreationTime:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The time the DMS event notification subscription was created.
+        SourceType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: '<p> The type of DMS resource that generates events. </p> <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>'
+        SourceIdsList:
+          allOf:
+          - $ref: '#/components/schemas/SourceIdsList'
+          - description: A list of source Ids for the event subscription.
+        EventCategoriesList:
+          allOf:
+          - $ref: '#/components/schemas/EventCategoriesList'
+          - description: A lists of event categories.
+        Enabled:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Boolean value that indicates if the event subscription is enabled.
+      description: Describes an event notification subscription created by the <code>CreateEventSubscription</code> operation.
+    SourceIdsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    Tag:
+      type: object
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'A key is the required name of the tag. The string value can be 1-128 Unicode characters in length and can''t be prefixed with "aws:" or "dms:". The string can only contain only the set of Unicode letters, digits, white-space, ''_'', ''.'', ''/'', ''='', ''+'', ''-'' (Java regular expressions: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").'
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'A value is the optional value of the tag. The string value can be 1-256 Unicode characters in length and can''t be prefixed with "aws:" or "dms:". The string can only contain only the set of Unicode letters, digits, white-space, ''_'', ''.'', ''/'', ''='', ''+'', ''-'' (Java regular expressions: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").'
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Resource Name (ARN) string that uniquely identifies the resource for which the tag is created.
+      description: <p>A user-defined key-value pair that describes metadata added to an DMS resource and that is used by operations such as the following:</p> <ul> <li> <p> <code>AddTagsToResource</code> </p> </li> <li> <p> <code>ListTagsForResource</code> </p> </li> <li> <p> <code>RemoveTagsFromResource</code> </p> </li> </ul>
+    CreateEventSubscriptionMessage:
+      type: object
+      required:
+      - SubscriptionName
+      - SnsTopicArn
+      title: CreateEventSubscriptionMessage
+      properties:
+        SubscriptionName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the DMS event notification subscription. This name must be less than 255 characters.
+        SnsTopicArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: ' The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it. '
+        SourceType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: '<p> The type of DMS resource that generates the events. For example, if you want to be notified of events generated by a replication instance, you set this parameter to <code>replication-instance</code>. If this value isn''t specified, all events are returned. </p> <p>Valid values: <code>replication-instance</code> | <code>replication-task</code> </p>'
+        EventCategories:
+          allOf:
+          - $ref: '#/components/schemas/EventCategoriesList'
+          - description: 'A list of event categories for a source type that you want to subscribe to. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> '
+        SourceIds:
+          allOf:
+          - $ref: '#/components/schemas/SourceIdsList'
+          - description: <p>A list of identifiers for which DMS provides notification events.</p> <p>If you don't specify a value, notifications are provided for all sources.</p> <p>If you specify multiple values, they must be of the same type. For example, if you specify a database instance ID, then all of the other values must be database instance IDs.</p>
+        Enabled:
+          allOf:
+          - $ref: '#/components/schemas/BooleanOptional'
+          - description: ' A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to create the subscription but not activate it. '
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: One or more tags to be assigned to the event subscription.
+      description: <p/>
+    KMSThrottlingFault: {}
+    KMSInvalidStateFault: {}
+    BooleanOptional:
+      type: boolean
+    CreateEventSubscriptionResponse:
+      type: object
+      properties:
+        EventSubscription:
+          allOf:
+          - $ref: '#/components/schemas/EventSubscription'
+          - description: The event subscription that was created.
+      description: <p/>
+    TagList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Tag'
+    SNSInvalidTopicFault: {}
+    ResourceQuotaExceededFault: {}
+    SNSNoAuthorizationFault: {}
+    EventCategoriesList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    KMSAccessDeniedFault: {}
+    String:
+      type: string
+    Boolean:
+      type: boolean
+    KMSDisabledFault: {}
+    KMSNotFoundFault: {}
+    ResourceNotFoundFault: {}
+    ResourceAlreadyExistsFault: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/dms/
+x-hasEquivalentPaths: true

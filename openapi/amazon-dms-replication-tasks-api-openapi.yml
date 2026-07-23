@@ -1,0 +1,242 @@
+openapi: 3.0.0
+info:
+  version: 2016-01-01
+  x-release: v4
+  title: AWS Database Migration Service Endpoints Replication Tasks API
+  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: dms
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/dms-2016-01-01.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://dms.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Database Migration Service multi-region endpoint
+- url: https://dms.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Database Migration Service multi-region endpoint
+- url: http://dms.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Database Migration Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://dms.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Database Migration Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Replication Tasks
+  description: Operations for managing replication tasks
+paths:
+  /createReplicationTask:
+    post:
+      operationId: CreateReplicationTask
+      summary: Amazon DMS Create a replication task
+      description: Creates a replication task using the specified parameters. A replication task moves data from a source endpoint to a target endpoint.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              $ref: '#/components/schemas/CreateReplicationTaskInput'
+      responses:
+        '200':
+          description: Replication task created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReplicationTask'
+        '400':
+          description: Bad request
+      tags:
+      - Replication Tasks
+  /startReplicationTask:
+    post:
+      operationId: StartReplicationTask
+      summary: Amazon DMS Start a replication task
+      description: Starts the replication task.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              required:
+              - ReplicationTaskArn
+              - StartReplicationTaskType
+              properties:
+                ReplicationTaskArn:
+                  type: string
+                StartReplicationTaskType:
+                  type: string
+                  enum:
+                  - start-replication
+                  - resume-processing
+                  - reload-target
+                CdcStartTime:
+                  type: string
+                  format: date-time
+      responses:
+        '200':
+          description: Replication task started
+      tags:
+      - Replication Tasks
+components:
+  schemas:
+    ReplicationTask:
+      type: object
+      properties:
+        ReplicationTaskIdentifier:
+          type: string
+        SourceEndpointArn:
+          type: string
+        TargetEndpointArn:
+          type: string
+        ReplicationInstanceArn:
+          type: string
+        MigrationType:
+          type: string
+        Status:
+          type: string
+        ReplicationTaskArn:
+          type: string
+        ReplicationTaskStats:
+          type: object
+          properties:
+            FullLoadProgressPercent:
+              type: integer
+            ElapsedTimeMillis:
+              type: integer
+            TablesLoaded:
+              type: integer
+            TablesLoading:
+              type: integer
+            TablesQueued:
+              type: integer
+            TablesErrored:
+              type: integer
+    CreateReplicationTaskInput:
+      type: object
+      required:
+      - ReplicationTaskIdentifier
+      - SourceEndpointArn
+      - TargetEndpointArn
+      - ReplicationInstanceArn
+      - MigrationType
+      - TableMappings
+      properties:
+        ReplicationTaskIdentifier:
+          type: string
+        SourceEndpointArn:
+          type: string
+        TargetEndpointArn:
+          type: string
+        ReplicationInstanceArn:
+          type: string
+        MigrationType:
+          type: string
+          enum:
+          - full-load
+          - cdc
+          - full-load-and-cdc
+        TableMappings:
+          type: string
+          description: JSON table mappings for the replication task.
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/dms/
+x-hasEquivalentPaths: true

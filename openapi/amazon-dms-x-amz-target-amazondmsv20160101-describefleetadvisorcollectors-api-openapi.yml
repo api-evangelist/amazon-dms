@@ -1,0 +1,381 @@
+openapi: 3.0.0
+info:
+  version: 2016-01-01
+  x-release: v4
+  title: 'AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.DescribeFleetAdvisorCollectors API'
+  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: dms
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/dms-2016-01-01.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://dms.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Database Migration Service multi-region endpoint
+- url: https://dms.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Database Migration Service multi-region endpoint
+- url: http://dms.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Database Migration Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://dms.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Database Migration Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AmazonDMSv20160101.DescribeFleetAdvisorCollectors'
+paths:
+  /#X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorCollectors:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: DescribeFleetAdvisorCollectors
+      description: Returns a list of the Fleet Advisor collectors in your account.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeFleetAdvisorCollectorsResponse'
+        '480':
+          description: InvalidResourceStateFault
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidResourceStateFault'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DescribeFleetAdvisorCollectorsRequest'
+      parameters:
+      - name: MaxRecords
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AmazonDMSv20160101.DescribeFleetAdvisorCollectors
+      tags:
+      - '#X Amz Target=AmazonDMSv20160101.DescribeFleetAdvisorCollectors'
+components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    FilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Filter'
+    Filter:
+      type: object
+      required:
+      - Name
+      - Values
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the filter as specified for a <code>Describe*</code> or similar operation.
+        Values:
+          allOf:
+          - $ref: '#/components/schemas/FilterValueList'
+          - description: The filter value, which can specify one or more values used to narrow the returned results.
+      description: 'Identifies the name and value of a filter object. This filter is used to limit the number and type of DMS objects that are returned for a particular <code>Describe*</code> call or similar operation. Filters are used as an optional parameter for certain API operations. '
+    CollectorStatus:
+      type: string
+      enum:
+      - UNREGISTERED
+      - ACTIVE
+    BooleanOptional:
+      type: boolean
+    CollectorResponse:
+      type: object
+      properties:
+        CollectorReferencedId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The reference ID of the Fleet Advisor collector.
+        CollectorName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the Fleet Advisor collector .
+        CollectorVersion:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code> '
+        VersionStatus:
+          allOf:
+          - $ref: '#/components/schemas/VersionStatus'
+          - description: Whether the collector version is up to date.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A summary description of the Fleet Advisor collector.
+        S3BucketName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.
+        ServiceAccessRoleArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The IAM role that grants permissions to access the specified Amazon S3 bucket.
+        CollectorHealthCheck:
+          $ref: '#/components/schemas/CollectorHealthCheck'
+        LastDataReceived:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code> '
+        RegisteredDate:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> '
+        CreatedDate:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> '
+        ModifiedDate:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> '
+        InventoryData:
+          $ref: '#/components/schemas/InventoryData'
+      description: Describes a Fleet Advisor collector.
+    InventoryData:
+      type: object
+      properties:
+        NumberOfDatabases:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The number of databases in the Fleet Advisor collector inventory.
+        NumberOfSchemas:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The number of schemas in the Fleet Advisor collector inventory.
+      description: Describes a Fleet Advisor collector inventory.
+    FilterValueList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    InvalidResourceStateFault: {}
+    DescribeFleetAdvisorCollectorsResponse:
+      type: object
+      properties:
+        Collectors:
+          allOf:
+          - $ref: '#/components/schemas/CollectorResponses'
+          - description: 'Provides descriptions of the Fleet Advisor collectors, including the collectors'' name and ID, and the latest inventory data. '
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. '
+    IntegerOptional:
+      type: integer
+    String:
+      type: string
+    CollectorHealthCheck:
+      type: object
+      properties:
+        CollectorStatus:
+          allOf:
+          - $ref: '#/components/schemas/CollectorStatus'
+          - description: The status of the Fleet Advisor collector.
+        LocalCollectorS3Access:
+          allOf:
+          - $ref: '#/components/schemas/BooleanOptional'
+          - description: Whether the local collector can access its Amazon S3 bucket.
+        WebCollectorS3Access:
+          allOf:
+          - $ref: '#/components/schemas/BooleanOptional'
+          - description: Whether the web collector can access its Amazon S3 bucket.
+        WebCollectorGrantedRoleBasedAccess:
+          allOf:
+          - $ref: '#/components/schemas/BooleanOptional'
+          - description: Whether the role that you provided when creating the Fleet Advisor collector has sufficient permissions to access the Fleet Advisor web collector.
+      description: Describes the last Fleet Advisor collector health check.
+    VersionStatus:
+      type: string
+      enum:
+      - UP_TO_DATE
+      - OUTDATED
+      - UNSUPPORTED
+    DescribeFleetAdvisorCollectorsRequest:
+      type: object
+      title: DescribeFleetAdvisorCollectorsRequest
+      properties:
+        Filters:
+          allOf:
+          - $ref: '#/components/schemas/FilterList'
+          - description: '<p> If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p> <ul> <li> <p> <code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li> <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li> </ul> <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>'
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: Sets the maximum number of records returned in the response.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. '
+    CollectorResponses:
+      type: array
+      items:
+        $ref: '#/components/schemas/CollectorResponse'
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/dms/
+x-hasEquivalentPaths: true

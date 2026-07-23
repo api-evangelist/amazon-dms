@@ -1,0 +1,254 @@
+openapi: 3.0.0
+info:
+  version: 2016-01-01
+  x-release: v4
+  title: AWS Database Migration Service Endpoints API
+  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: dms
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/dms-2016-01-01.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://dms.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Database Migration Service multi-region endpoint
+- url: https://dms.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Database Migration Service multi-region endpoint
+- url: http://dms.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Database Migration Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://dms.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Database Migration Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Endpoints
+  description: Operations for managing source and target endpoints
+paths:
+  /createEndpoint:
+    post:
+      operationId: CreateEndpoint
+      summary: Amazon DMS Create an endpoint
+      description: Creates an endpoint using the provided settings, representing a source or target database for migration.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              $ref: '#/components/schemas/CreateEndpointInput'
+      responses:
+        '200':
+          description: Endpoint created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Endpoint'
+        '400':
+          description: Bad request
+      tags:
+      - Endpoints
+  /describeEndpoints:
+    post:
+      operationId: DescribeEndpoints
+      summary: Amazon DMS Describe endpoints
+      description: Returns information about the endpoints for your account.
+      requestBody:
+        required: false
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              properties:
+                Filters:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Filter'
+                MaxRecords:
+                  type: integer
+                Marker:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Endpoints:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Endpoint'
+                  Marker:
+                    type: string
+      tags:
+      - Endpoints
+components:
+  schemas:
+    Endpoint:
+      type: object
+      properties:
+        EndpointIdentifier:
+          type: string
+        EndpointType:
+          type: string
+        EngineName:
+          type: string
+        EngineDisplayName:
+          type: string
+        ServerName:
+          type: string
+        Port:
+          type: integer
+        DatabaseName:
+          type: string
+        Status:
+          type: string
+        EndpointArn:
+          type: string
+        SslMode:
+          type: string
+    Filter:
+      type: object
+      properties:
+        Name:
+          type: string
+        Values:
+          type: array
+          items:
+            type: string
+    CreateEndpointInput:
+      type: object
+      required:
+      - EndpointIdentifier
+      - EndpointType
+      - EngineName
+      properties:
+        EndpointIdentifier:
+          type: string
+        EndpointType:
+          type: string
+          enum:
+          - source
+          - target
+        EngineName:
+          type: string
+          description: The type of engine for the endpoint.
+        ServerName:
+          type: string
+        Port:
+          type: integer
+        DatabaseName:
+          type: string
+        Username:
+          type: string
+        Password:
+          type: string
+        SslMode:
+          type: string
+          enum:
+          - none
+          - require
+          - verify-ca
+          - verify-full
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/dms/
+x-hasEquivalentPaths: true

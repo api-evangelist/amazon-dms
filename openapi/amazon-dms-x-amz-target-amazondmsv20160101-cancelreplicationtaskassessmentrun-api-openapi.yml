@@ -1,0 +1,318 @@
+openapi: 3.0.0
+info:
+  version: 2016-01-01
+  x-release: v4
+  title: 'AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.CancelReplicationTaskAssessmentRun API'
+  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: dms
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/dms-2016-01-01.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://dms.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Database Migration Service multi-region endpoint
+- url: https://dms.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Database Migration Service multi-region endpoint
+- url: http://dms.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Database Migration Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://dms.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Database Migration Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AmazonDMSv20160101.CancelReplicationTaskAssessmentRun'
+paths:
+  /#X-Amz-Target=AmazonDMSv20160101.CancelReplicationTaskAssessmentRun:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CancelReplicationTaskAssessmentRun
+      description: <p>Cancels a single premigration assessment run.</p> <p>This operation prevents any individual assessments from running if they haven't started running. It also attempts to cancel any individual assessments that are currently running.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CancelReplicationTaskAssessmentRunResponse'
+        '480':
+          description: AccessDeniedFault
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedFault'
+        '481':
+          description: ResourceNotFoundFault
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundFault'
+        '482':
+          description: InvalidResourceStateFault
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidResourceStateFault'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CancelReplicationTaskAssessmentRunMessage'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AmazonDMSv20160101.CancelReplicationTaskAssessmentRun
+      tags:
+      - '#X Amz Target=AmazonDMSv20160101.CancelReplicationTaskAssessmentRun'
+components:
+  schemas:
+    InvalidResourceStateFault: {}
+    CancelReplicationTaskAssessmentRunResponse:
+      type: object
+      properties:
+        ReplicationTaskAssessmentRun:
+          allOf:
+          - $ref: '#/components/schemas/ReplicationTaskAssessmentRun'
+          - description: The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment run.
+      description: <p/>
+    String:
+      type: string
+    CancelReplicationTaskAssessmentRunMessage:
+      type: object
+      required:
+      - ReplicationTaskAssessmentRunArn
+      title: CancelReplicationTaskAssessmentRunMessage
+      properties:
+        ReplicationTaskAssessmentRunArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Amazon Resource Name (ARN) of the premigration assessment run to be canceled.
+      description: <p/>
+    ReplicationTaskAssessmentRunProgress:
+      type: object
+      properties:
+        IndividualAssessmentCount:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The number of individual assessments that are specified to run.
+        IndividualAssessmentCompletedCount:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The number of individual assessments that have completed, successfully or not.
+      description: The progress values reported by the <code>AssessmentProgress</code> response element.
+    TStamp:
+      type: string
+      format: date-time
+    ResourceNotFoundFault: {}
+    Integer:
+      type: integer
+    AccessDeniedFault: {}
+    ReplicationTaskAssessmentRun:
+      type: object
+      properties:
+        ReplicationTaskAssessmentRunArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Amazon Resource Name (ARN) of this assessment run.
+        ReplicationTaskArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: ARN of the migration task associated with this premigration assessment run.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: <p>Assessment run status. </p> <p>This status can have one of the following values:</p> <ul> <li> <p> <code>"cancelling"</code> – The assessment run was canceled by the <code>CancelReplicationTaskAssessmentRun</code> operation.</p> </li> <li> <p> <code>"deleting"</code> – The assessment run was deleted by the <code>DeleteReplicationTaskAssessmentRun</code> operation.</p> </li> <li> <p> <code>"failed"</code> – At least one individual assessment completed with a <code>failed</code> status.</p> </li> <li> <p> <code>"error-provisioning"</code> – An internal error occurred while resources were provisioned (during <code>provisioning</code> status).</p> </li> <li> <p> <code>"error-executing"</code> – An internal error occurred while individual assessments ran (during <code>running</code> status).</p> </li> <li> <p> <code>"invalid state"</code> – The assessment run is in an unknown state.</p> </li> <li> <p> <code>"passed"</code> – All individual assessments have completed, and none has a <code>failed</code> status.</p> </li> <li> <p> <code>"provisioning"</code> – Resources required to run individual assessments are being provisioned.</p> </li> <li> <p> <code>"running"</code> – Individual assessments are being run.</p> </li> <li> <p> <code>"starting"</code> – The assessment run is starting, but resources are not yet being provisioned for individual assessments.</p> </li> </ul>
+        ReplicationTaskAssessmentRunCreationDate:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: Date on which the assessment run was created using the <code>StartReplicationTaskAssessmentRun</code> operation.
+        AssessmentProgress:
+          allOf:
+          - $ref: '#/components/schemas/ReplicationTaskAssessmentRunProgress'
+          - description: Indication of the completion progress for the individual assessments specified to run.
+        LastFailureMessage:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Last message generated by an individual assessment failure.
+        ServiceAccessRoleArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: ARN of the service role used to start the assessment run using the <code>StartReplicationTaskAssessmentRun</code> operation. The role must allow the <code>iam:PassRole</code> action.
+        ResultLocationBucket:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Amazon S3 bucket where DMS stores the results of this assessment run.
+        ResultLocationFolder:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Folder in an Amazon S3 bucket where DMS stores the results of this assessment run.
+        ResultEncryptionMode:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Encryption mode used to encrypt the assessment run results.
+        ResultKmsKeyArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: ARN of the KMS encryption key used to encrypt the assessment run results.
+        AssessmentRunName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Unique name of the assessment run.
+      description: <p>Provides information that describes a premigration assessment run that you have started using the <code>StartReplicationTaskAssessmentRun</code> operation.</p> <p>Some of the information appears based on other operations that can return the <code>ReplicationTaskAssessmentRun</code> object.</p>
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/dms/
+x-hasEquivalentPaths: true
