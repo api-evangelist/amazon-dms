@@ -1,0 +1,246 @@
+{
+  "info": {
+    "_postman_id": "a27b23e2-2917-43ff-ac2c-33b6e7a39e69",
+    "name": "AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.DescribeEvents API",
+    "description": "<fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href=\"https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html\">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:20:58.000Z",
+    "updatedAt": "2026-07-28T10:20:58.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a27b23e2-2917-43ff-ac2c-33b6e7a39e69"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AmazonDMSv20160101.DescribeEvents",
+      "item": [
+        {
+          "name": "Describe Events",
+          "id": "a26f4dad-9d42-447b-9029-24883ac0a6b8",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AmazonDMSv20160101.DescribeEvents"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"SourceIdentifier\": \"<string>\",\n  \"SourceType\": \"replication-instance\",\n  \"StartTime\": \"<dateTime>\",\n  \"EndTime\": \"<dateTime>\",\n  \"Duration\": \"<integer>\",\n  \"EventCategories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Filters\": [\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"MaxRecords\": \"<integer>\",\n  \"Marker\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>#X-Amz-Target=AmazonDMSv20160101.DescribeEvents",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxRecords",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "Marker",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=AmazonDMSv20160101.DescribeEvents"
+            },
+            "description": " Lists events for a given source identifier and source type. You can also specify a start and end time. For more information on DMS events, see <a href=\"https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html\">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> "
+          },
+          "response": [
+            {
+              "id": "9c06b88d-a49e-4e46-9fe0-844384d6466f",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AmazonDMSv20160101.DescribeEvents"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"SourceIdentifier\": \"<string>\",\n  \"SourceType\": \"replication-instance\",\n  \"StartTime\": \"<dateTime>\",\n  \"EndTime\": \"<dateTime>\",\n  \"Duration\": \"<integer>\",\n  \"EventCategories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Filters\": [\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"MaxRecords\": \"<integer>\",\n  \"Marker\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>#X-Amz-Target=AmazonDMSv20160101.DescribeEvents",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.DescribeEvents"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Marker\": \"<string>\",\n  \"Events\": [\n    {\n      \"SourceIdentifier\": \"<string>\",\n      \"SourceType\": \"replication-instance\",\n      \"Message\": \"<string>\",\n      \"EventCategories\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Date\": \"<dateTime>\"\n    },\n    {\n      \"SourceIdentifier\": \"<string>\",\n      \"SourceType\": \"replication-instance\",\n      \"Message\": \"<string>\",\n      \"EventCategories\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Date\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T10:20:58.000Z",
+              "updatedAt": "2026-07-28T10:20:58.000Z",
+              "uid": "35240-9c06b88d-a49e-4e46-9fe0-844384d6466f"
+            }
+          ],
+          "createdAt": "2026-07-28T10:20:58.000Z",
+          "updatedAt": "2026-07-28T10:20:58.000Z",
+          "uid": "35240-a26f4dad-9d42-447b-9029-24883ac0a6b8"
+        }
+      ],
+      "id": "b1f8cf55-fc1a-4815-96e0-a26ec351e923",
+      "createdAt": "2026-07-28T10:20:58.000Z",
+      "updatedAt": "2026-07-28T10:20:58.000Z",
+      "uid": "35240-b1f8cf55-fc1a-4815-96e0-a26ec351e923"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://dms.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "info": {
+    "_postman_id": "eed22ab3-33f9-40ec-a5b2-13da0ef54ce0",
+    "name": "AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.DescribeAccountAttributes API",
+    "description": "<fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href=\"https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html\">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:19:36.000Z",
+    "updatedAt": "2026-07-28T10:19:36.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-eed22ab3-33f9-40ec-a5b2-13da0ef54ce0"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AmazonDMSv20160101.DescribeAccountAttributes",
+      "item": [
+        {
+          "name": "Describe Account Attributes",
+          "id": "3deb7b06-6b31-40f5-a75d-3fe1581ff90e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AmazonDMSv20160101.DescribeAccountAttributes"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AmazonDMSv20160101.DescribeAccountAttributes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AmazonDMSv20160101.DescribeAccountAttributes"
+            },
+            "description": "<p>Lists all of the DMS attributes for a customer account. These attributes include DMS quotas for the account and a unique account identifier in a particular DMS region. DMS quotas include a list of resource quotas supported by the account, such as the number of replication instances allowed. The description for each resource quota, includes the quota name, current usage toward that quota, and the quota's maximum value. DMS uses the unique account identifier to name each artifact used by DMS in the given region.</p> <p>This command does not take any parameters.</p>"
+          },
+          "response": [
+            {
+              "id": "4a3b8082-9e6b-4840-8ece-ed585b8acb39",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AmazonDMSv20160101.DescribeAccountAttributes"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AmazonDMSv20160101.DescribeAccountAttributes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.DescribeAccountAttributes"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"AccountQuotas\": [\n    {\n      \"AccountQuotaName\": \"<string>\",\n      \"Used\": \"<integer>\",\n      \"Max\": \"<integer>\"\n    },\n    {\n      \"AccountQuotaName\": \"<string>\",\n      \"Used\": \"<integer>\",\n      \"Max\": \"<integer>\"\n    }\n  ],\n  \"UniqueAccountIdentifier\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:19:37.000Z",
+              "updatedAt": "2026-07-28T10:19:37.000Z",
+              "uid": "35240-4a3b8082-9e6b-4840-8ece-ed585b8acb39"
+            }
+          ],
+          "createdAt": "2026-07-28T10:19:37.000Z",
+          "updatedAt": "2026-07-28T10:19:37.000Z",
+          "uid": "35240-3deb7b06-6b31-40f5-a75d-3fe1581ff90e"
+        }
+      ],
+      "id": "d2ad8860-de23-4622-bd27-55d520834dd7",
+      "createdAt": "2026-07-28T10:19:37.000Z",
+      "updatedAt": "2026-07-28T10:19:37.000Z",
+      "uid": "35240-d2ad8860-de23-4622-bd27-55d520834dd7"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://dms.{{region}}.amazonaws.com"
+    }
+  ]
+}

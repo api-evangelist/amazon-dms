@@ -1,0 +1,281 @@
+{
+  "info": {
+    "_postman_id": "5022f862-c104-408c-8a2d-982b8fb0fe3f",
+    "name": "AWS Database Migration Service Endpoints API",
+    "description": "<fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href=\"https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html\">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:18:36.000Z",
+    "updatedAt": "2026-07-28T10:18:36.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-5022f862-c104-408c-8a2d-982b8fb0fe3f"
+  },
+  "item": [
+    {
+      "name": "createEndpoint",
+      "item": [
+        {
+          "name": "Amazon DMS Create an endpoint",
+          "id": "5b325912-9c6a-49c3-8360-1a793fe67b55",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"EndpointIdentifier\": \"<string>\",\n  \"EndpointType\": \"target\",\n  \"EngineName\": \"<string>\",\n  \"ServerName\": \"<string>\",\n  \"Port\": \"<integer>\",\n  \"DatabaseName\": \"<string>\",\n  \"Username\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"SslMode\": \"none\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/createEndpoint",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "createEndpoint"
+              ]
+            },
+            "description": "Creates an endpoint using the provided settings, representing a source or target database for migration."
+          },
+          "response": [
+            {
+              "id": "9d58f838-8fac-40d8-9538-d1f0f25605e2",
+              "name": "Endpoint created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.1"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"EndpointIdentifier\": \"<string>\",\n  \"EndpointType\": \"target\",\n  \"EngineName\": \"<string>\",\n  \"ServerName\": \"<string>\",\n  \"Port\": \"<integer>\",\n  \"DatabaseName\": \"<string>\",\n  \"Username\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"SslMode\": \"none\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/createEndpoint",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "createEndpoint"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"EndpointIdentifier\": \"<string>\",\n  \"EndpointType\": \"<string>\",\n  \"EngineName\": \"<string>\",\n  \"EngineDisplayName\": \"<string>\",\n  \"ServerName\": \"<string>\",\n  \"Port\": \"<integer>\",\n  \"DatabaseName\": \"<string>\",\n  \"Status\": \"<string>\",\n  \"EndpointArn\": \"<string>\",\n  \"SslMode\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:18:37.000Z",
+              "updatedAt": "2026-07-28T10:18:37.000Z",
+              "uid": "35240-9d58f838-8fac-40d8-9538-d1f0f25605e2"
+            },
+            {
+              "id": "7b49b439-b2c0-483a-b318-f339cbe19e13",
+              "name": "Bad request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.1"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"EndpointIdentifier\": \"<string>\",\n  \"EndpointType\": \"target\",\n  \"EngineName\": \"<string>\",\n  \"ServerName\": \"<string>\",\n  \"Port\": \"<integer>\",\n  \"DatabaseName\": \"<string>\",\n  \"Username\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"SslMode\": \"none\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/createEndpoint",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "createEndpoint"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T10:18:37.000Z",
+              "updatedAt": "2026-07-28T10:18:37.000Z",
+              "uid": "35240-7b49b439-b2c0-483a-b318-f339cbe19e13"
+            }
+          ],
+          "createdAt": "2026-07-28T10:18:37.000Z",
+          "updatedAt": "2026-07-28T10:18:37.000Z",
+          "uid": "35240-5b325912-9c6a-49c3-8360-1a793fe67b55"
+        }
+      ],
+      "id": "247f7b66-721e-42dc-9e6e-088022def17b",
+      "createdAt": "2026-07-28T10:18:36.000Z",
+      "updatedAt": "2026-07-28T10:18:36.000Z",
+      "uid": "35240-247f7b66-721e-42dc-9e6e-088022def17b"
+    },
+    {
+      "name": "describeEndpoints",
+      "item": [
+        {
+          "name": "Amazon DMS Describe endpoints",
+          "id": "e869609e-47d8-4d90-ab69-aa6b2305b0db",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Filters\": [\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"MaxRecords\": \"<integer>\",\n  \"Marker\": \"<string>\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/describeEndpoints",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "describeEndpoints"
+              ]
+            },
+            "description": "Returns information about the endpoints for your account."
+          },
+          "response": [
+            {
+              "id": "12468b77-3c63-4dea-9f0c-d1d2eecf820c",
+              "name": "Successful response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.1"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Filters\": [\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"MaxRecords\": \"<integer>\",\n  \"Marker\": \"<string>\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/describeEndpoints",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "describeEndpoints"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Endpoints\": [\n    {\n      \"EndpointIdentifier\": \"<string>\",\n      \"EndpointType\": \"<string>\",\n      \"EngineName\": \"<string>\",\n      \"EngineDisplayName\": \"<string>\",\n      \"ServerName\": \"<string>\",\n      \"Port\": \"<integer>\",\n      \"DatabaseName\": \"<string>\",\n      \"Status\": \"<string>\",\n      \"EndpointArn\": \"<string>\",\n      \"SslMode\": \"<string>\"\n    },\n    {\n      \"EndpointIdentifier\": \"<string>\",\n      \"EndpointType\": \"<string>\",\n      \"EngineName\": \"<string>\",\n      \"EngineDisplayName\": \"<string>\",\n      \"ServerName\": \"<string>\",\n      \"Port\": \"<integer>\",\n      \"DatabaseName\": \"<string>\",\n      \"Status\": \"<string>\",\n      \"EndpointArn\": \"<string>\",\n      \"SslMode\": \"<string>\"\n    }\n  ],\n  \"Marker\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:18:37.000Z",
+              "updatedAt": "2026-07-28T10:18:37.000Z",
+              "uid": "35240-12468b77-3c63-4dea-9f0c-d1d2eecf820c"
+            }
+          ],
+          "createdAt": "2026-07-28T10:18:37.000Z",
+          "updatedAt": "2026-07-28T10:18:37.000Z",
+          "uid": "35240-e869609e-47d8-4d90-ab69-aa6b2305b0db"
+        }
+      ],
+      "id": "ebee8a48-9acb-4844-81df-eba0613e1a5c",
+      "createdAt": "2026-07-28T10:18:36.000Z",
+      "updatedAt": "2026-07-28T10:18:36.000Z",
+      "uid": "35240-ebee8a48-9acb-4844-81df-eba0613e1a5c"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://dms.{{region}}.amazonaws.com"
+    }
+  ]
+}

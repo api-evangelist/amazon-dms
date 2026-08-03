@@ -1,0 +1,346 @@
+{
+  "info": {
+    "_postman_id": "f0f46b58-725d-45f1-a960-0327ba805030",
+    "name": "AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis API",
+    "description": "<fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href=\"https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html\">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:21:03.000Z",
+    "updatedAt": "2026-07-28T10:21:03.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f0f46b58-725d-45f1-a960-0327ba805030"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis",
+      "item": [
+        {
+          "name": "Describe Fleet Advisor Lsa Analysis",
+          "id": "04172d72-ae9a-40d1-8996-87c259410a7d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"MaxRecords\": \"<integer>\",\n  \"NextToken\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxRecords=<string>&NextToken=<string>#X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxRecords",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis"
+            },
+            "description": "Provides descriptions of large-scale assessment (LSA) analyses produced by your Fleet Advisor collectors. "
+          },
+          "response": [
+            {
+              "id": "813c7ac4-328a-4014-9ab2-f69253ee49e3",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"MaxRecords\": \"<integer>\",\n  \"NextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&NextToken=<string>#X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Analysis\": [\n    {\n      \"LsaAnalysisId\": \"<string>\",\n      \"Status\": \"<string>\"\n    },\n    {\n      \"LsaAnalysisId\": \"<string>\",\n      \"Status\": \"<string>\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:21:04.000Z",
+              "updatedAt": "2026-07-28T10:21:04.000Z",
+              "uid": "35240-813c7ac4-328a-4014-9ab2-f69253ee49e3"
+            },
+            {
+              "id": "11fb86a0-a3b3-4f35-b5c1-fbffe64d1d90",
+              "name": "InvalidResourceStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"MaxRecords\": \"<integer>\",\n  \"NextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&NextToken=<string>#X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:21:04.000Z",
+              "updatedAt": "2026-07-28T10:21:04.000Z",
+              "uid": "35240-11fb86a0-a3b3-4f35-b5c1-fbffe64d1d90"
+            }
+          ],
+          "createdAt": "2026-07-28T10:21:04.000Z",
+          "updatedAt": "2026-07-28T10:21:04.000Z",
+          "uid": "35240-04172d72-ae9a-40d1-8996-87c259410a7d"
+        }
+      ],
+      "id": "dc5861f1-39e8-4c26-b11a-0984557a5539",
+      "createdAt": "2026-07-28T10:21:04.000Z",
+      "updatedAt": "2026-07-28T10:21:04.000Z",
+      "uid": "35240-dc5861f1-39e8-4c26-b11a-0984557a5539"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://dms.{{region}}.amazonaws.com"
+    }
+  ]
+}

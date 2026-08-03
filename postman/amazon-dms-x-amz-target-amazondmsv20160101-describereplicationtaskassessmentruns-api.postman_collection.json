@@ -1,0 +1,346 @@
+{
+  "info": {
+    "_postman_id": "cbdaa268-2f3b-4722-b156-0aa31d06c134",
+    "name": "AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns API",
+    "description": "<fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href=\"https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html\">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:21:22.000Z",
+    "updatedAt": "2026-07-28T10:21:22.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-cbdaa268-2f3b-4722-b156-0aa31d06c134"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns",
+      "item": [
+        {
+          "name": "Describe Replication Task Assessment Runs",
+          "id": "979d7c9b-8d9d-40ad-a480-0735aab5053f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Filters\": [\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"MaxRecords\": \"<integer>\",\n  \"Marker\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxRecords",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "Marker",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns"
+            },
+            "description": "<p>Returns a paginated list of premigration assessment runs based on filter settings.</p> <p>These filter settings can specify a combination of premigration assessment runs, migration tasks, replication instances, and assessment run status values.</p> <note> <p>This operation doesn't return information about individual assessments. For this information, see the <code>DescribeReplicationTaskIndividualAssessments</code> operation. </p> </note>"
+          },
+          "response": [
+            {
+              "id": "9f8b4130-501b-47b5-828e-476d9023aa27",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Filters\": [\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"MaxRecords\": \"<integer>\",\n  \"Marker\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Marker\": \"<string>\",\n  \"ReplicationTaskAssessmentRuns\": [\n    {\n      \"ReplicationTaskAssessmentRunArn\": \"<string>\",\n      \"ReplicationTaskArn\": \"<string>\",\n      \"Status\": \"<string>\",\n      \"ReplicationTaskAssessmentRunCreationDate\": \"<dateTime>\",\n      \"AssessmentProgress\": {\n        \"IndividualAssessmentCount\": \"<integer>\",\n        \"IndividualAssessmentCompletedCount\": \"<integer>\"\n      },\n      \"LastFailureMessage\": \"<string>\",\n      \"ServiceAccessRoleArn\": \"<string>\",\n      \"ResultLocationBucket\": \"<string>\",\n      \"ResultLocationFolder\": \"<string>\",\n      \"ResultEncryptionMode\": \"<string>\",\n      \"ResultKmsKeyArn\": \"<string>\",\n      \"AssessmentRunName\": \"<string>\"\n    },\n    {\n      \"ReplicationTaskAssessmentRunArn\": \"<string>\",\n      \"ReplicationTaskArn\": \"<string>\",\n      \"Status\": \"<string>\",\n      \"ReplicationTaskAssessmentRunCreationDate\": \"<dateTime>\",\n      \"AssessmentProgress\": {\n        \"IndividualAssessmentCount\": \"<integer>\",\n        \"IndividualAssessmentCompletedCount\": \"<integer>\"\n      },\n      \"LastFailureMessage\": \"<string>\",\n      \"ServiceAccessRoleArn\": \"<string>\",\n      \"ResultLocationBucket\": \"<string>\",\n      \"ResultLocationFolder\": \"<string>\",\n      \"ResultEncryptionMode\": \"<string>\",\n      \"ResultKmsKeyArn\": \"<string>\",\n      \"AssessmentRunName\": \"<string>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T10:21:23.000Z",
+              "updatedAt": "2026-07-28T10:21:23.000Z",
+              "uid": "35240-9f8b4130-501b-47b5-828e-476d9023aa27"
+            },
+            {
+              "id": "6c0780f1-5109-4eeb-9936-b0ef1b29c20c",
+              "name": "ResourceNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Filters\": [\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"MaxRecords\": \"<integer>\",\n  \"Marker\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:21:23.000Z",
+              "updatedAt": "2026-07-28T10:21:23.000Z",
+              "uid": "35240-6c0780f1-5109-4eeb-9936-b0ef1b29c20c"
+            }
+          ],
+          "createdAt": "2026-07-28T10:21:23.000Z",
+          "updatedAt": "2026-07-28T10:21:23.000Z",
+          "uid": "35240-979d7c9b-8d9d-40ad-a480-0735aab5053f"
+        }
+      ],
+      "id": "d2be35de-d930-4d13-a454-bb429e4424c2",
+      "createdAt": "2026-07-28T10:21:23.000Z",
+      "updatedAt": "2026-07-28T10:21:23.000Z",
+      "uid": "35240-d2be35de-d930-4d13-a454-bb429e4424c2"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://dms.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,838 @@
+{
+  "info": {
+    "_postman_id": "7e4681a2-23cb-44f4-8367-c516a397e20b",
+    "name": "AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.ModifyReplicationInstance API",
+    "description": "<fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href=\"https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html\">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:21:32.000Z",
+    "updatedAt": "2026-07-28T10:21:32.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-7e4681a2-23cb-44f4-8367-c516a397e20b"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance",
+      "item": [
+        {
+          "name": "Modify Replication Instance",
+          "id": "57d934be-bea5-4735-9109-8488342878e5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AmazonDMSv20160101.ModifyReplicationInstance"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ReplicationInstanceArn\": \"<string>\",\n  \"AllocatedStorage\": \"<integer>\",\n  \"ApplyImmediately\": \"<boolean>\",\n  \"ReplicationInstanceClass\": \"<string>\",\n  \"VpcSecurityGroupIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"PreferredMaintenanceWindow\": \"<string>\",\n  \"MultiAZ\": \"<boolean>\",\n  \"EngineVersion\": \"<string>\",\n  \"AllowMajorVersionUpgrade\": \"<boolean>\",\n  \"AutoMinorVersionUpgrade\": \"<boolean>\",\n  \"ReplicationInstanceIdentifier\": \"<string>\",\n  \"NetworkType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance"
+            },
+            "description": "<p>Modifies the replication instance to apply new settings. You can change one or more parameters by specifying these parameters and the new values in the request.</p> <p>Some settings are applied during the maintenance window.</p> <p/>"
+          },
+          "response": [
+            {
+              "id": "9b7d4395-729a-46a0-8ada-30184051c4fb",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AmazonDMSv20160101.ModifyReplicationInstance"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ReplicationInstanceArn\": \"<string>\",\n  \"AllocatedStorage\": \"<integer>\",\n  \"ApplyImmediately\": \"<boolean>\",\n  \"ReplicationInstanceClass\": \"<string>\",\n  \"VpcSecurityGroupIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"PreferredMaintenanceWindow\": \"<string>\",\n  \"MultiAZ\": \"<boolean>\",\n  \"EngineVersion\": \"<string>\",\n  \"AllowMajorVersionUpgrade\": \"<boolean>\",\n  \"AutoMinorVersionUpgrade\": \"<boolean>\",\n  \"ReplicationInstanceIdentifier\": \"<string>\",\n  \"NetworkType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"ReplicationInstance\": {\n    \"ReplicationInstanceIdentifier\": \"<string>\",\n    \"ReplicationInstanceClass\": \"<string>\",\n    \"ReplicationInstanceStatus\": \"<string>\",\n    \"AllocatedStorage\": \"<integer>\",\n    \"InstanceCreateTime\": \"<dateTime>\",\n    \"VpcSecurityGroups\": [\n      {\n        \"VpcSecurityGroupId\": \"<string>\",\n        \"Status\": \"<string>\"\n      },\n      {\n        \"VpcSecurityGroupId\": \"<string>\",\n        \"Status\": \"<string>\"\n      }\n    ],\n    \"AvailabilityZone\": \"<string>\",\n    \"ReplicationSubnetGroup\": {\n      \"ReplicationSubnetGroupIdentifier\": \"<string>\",\n      \"ReplicationSubnetGroupDescription\": \"<string>\",\n      \"VpcId\": \"<string>\",\n      \"SubnetGroupStatus\": \"<string>\",\n      \"Subnets\": [\n        {\n          \"SubnetIdentifier\": \"<string>\",\n          \"SubnetAvailabilityZone\": {\n            \"Name\": \"<string>\"\n          },\n          \"SubnetStatus\": \"<string>\"\n        },\n        {\n          \"SubnetIdentifier\": \"<string>\",\n          \"SubnetAvailabilityZone\": {\n            \"Name\": \"<string>\"\n          },\n          \"SubnetStatus\": \"<string>\"\n        }\n      ],\n      \"SupportedNetworkTypes\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"PreferredMaintenanceWindow\": \"<string>\",\n    \"PendingModifiedValues\": {\n      \"ReplicationInstanceClass\": \"<string>\",\n      \"AllocatedStorage\": \"<integer>\",\n      \"MultiAZ\": \"<boolean>\",\n      \"EngineVersion\": \"<string>\",\n      \"NetworkType\": \"<string>\"\n    },\n    \"MultiAZ\": \"<boolean>\",\n    \"EngineVersion\": \"<string>\",\n    \"AutoMinorVersionUpgrade\": \"<boolean>\",\n    \"KmsKeyId\": \"<string>\",\n    \"ReplicationInstanceArn\": \"<string>\",\n    \"ReplicationInstancePublicIpAddress\": \"<string>\",\n    \"ReplicationInstancePrivateIpAddress\": \"<string>\",\n    \"ReplicationInstancePublicIpAddresses\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ReplicationInstancePrivateIpAddresses\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ReplicationInstanceIpv6Addresses\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"PubliclyAccessible\": \"<boolean>\",\n    \"SecondaryAvailabilityZone\": \"<string>\",\n    \"FreeUntil\": \"<dateTime>\",\n    \"DnsNameServers\": \"<string>\",\n    \"NetworkType\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-07-28T10:21:32.000Z",
+              "updatedAt": "2026-07-28T10:21:32.000Z",
+              "uid": "35240-9b7d4395-729a-46a0-8ada-30184051c4fb"
+            },
+            {
+              "id": "1e241924-cb72-4da9-a050-0fdf5162b9a8",
+              "name": "AccessDeniedFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AmazonDMSv20160101.ModifyReplicationInstance"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ReplicationInstanceArn\": \"<string>\",\n  \"AllocatedStorage\": \"<integer>\",\n  \"ApplyImmediately\": \"<boolean>\",\n  \"ReplicationInstanceClass\": \"<string>\",\n  \"VpcSecurityGroupIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"PreferredMaintenanceWindow\": \"<string>\",\n  \"MultiAZ\": \"<boolean>\",\n  \"EngineVersion\": \"<string>\",\n  \"AllowMajorVersionUpgrade\": \"<boolean>\",\n  \"AutoMinorVersionUpgrade\": \"<boolean>\",\n  \"ReplicationInstanceIdentifier\": \"<string>\",\n  \"NetworkType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:21:32.000Z",
+              "updatedAt": "2026-07-28T10:21:32.000Z",
+              "uid": "35240-1e241924-cb72-4da9-a050-0fdf5162b9a8"
+            },
+            {
+              "id": "1d300d41-67cf-46af-bc23-9724aa8c5cfe",
+              "name": "InvalidResourceStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AmazonDMSv20160101.ModifyReplicationInstance"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ReplicationInstanceArn\": \"<string>\",\n  \"AllocatedStorage\": \"<integer>\",\n  \"ApplyImmediately\": \"<boolean>\",\n  \"ReplicationInstanceClass\": \"<string>\",\n  \"VpcSecurityGroupIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"PreferredMaintenanceWindow\": \"<string>\",\n  \"MultiAZ\": \"<boolean>\",\n  \"EngineVersion\": \"<string>\",\n  \"AllowMajorVersionUpgrade\": \"<boolean>\",\n  \"AutoMinorVersionUpgrade\": \"<boolean>\",\n  \"ReplicationInstanceIdentifier\": \"<string>\",\n  \"NetworkType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:21:32.000Z",
+              "updatedAt": "2026-07-28T10:21:32.000Z",
+              "uid": "35240-1d300d41-67cf-46af-bc23-9724aa8c5cfe"
+            },
+            {
+              "id": "4a509b40-17f9-4425-a6ac-c0b10eec3a63",
+              "name": "ResourceAlreadyExistsFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AmazonDMSv20160101.ModifyReplicationInstance"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ReplicationInstanceArn\": \"<string>\",\n  \"AllocatedStorage\": \"<integer>\",\n  \"ApplyImmediately\": \"<boolean>\",\n  \"ReplicationInstanceClass\": \"<string>\",\n  \"VpcSecurityGroupIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"PreferredMaintenanceWindow\": \"<string>\",\n  \"MultiAZ\": \"<boolean>\",\n  \"EngineVersion\": \"<string>\",\n  \"AllowMajorVersionUpgrade\": \"<boolean>\",\n  \"AutoMinorVersionUpgrade\": \"<boolean>\",\n  \"ReplicationInstanceIdentifier\": \"<string>\",\n  \"NetworkType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:21:32.000Z",
+              "updatedAt": "2026-07-28T10:21:32.000Z",
+              "uid": "35240-4a509b40-17f9-4425-a6ac-c0b10eec3a63"
+            },
+            {
+              "id": "7a7f0f93-f48e-44c9-bed6-7319db54497b",
+              "name": "ResourceNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AmazonDMSv20160101.ModifyReplicationInstance"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ReplicationInstanceArn\": \"<string>\",\n  \"AllocatedStorage\": \"<integer>\",\n  \"ApplyImmediately\": \"<boolean>\",\n  \"ReplicationInstanceClass\": \"<string>\",\n  \"VpcSecurityGroupIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"PreferredMaintenanceWindow\": \"<string>\",\n  \"MultiAZ\": \"<boolean>\",\n  \"EngineVersion\": \"<string>\",\n  \"AllowMajorVersionUpgrade\": \"<boolean>\",\n  \"AutoMinorVersionUpgrade\": \"<boolean>\",\n  \"ReplicationInstanceIdentifier\": \"<string>\",\n  \"NetworkType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:21:32.000Z",
+              "updatedAt": "2026-07-28T10:21:32.000Z",
+              "uid": "35240-7a7f0f93-f48e-44c9-bed6-7319db54497b"
+            },
+            {
+              "id": "16faa664-6663-40a6-bfc0-1529f5e64a93",
+              "name": "InsufficientResourceCapacityFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AmazonDMSv20160101.ModifyReplicationInstance"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ReplicationInstanceArn\": \"<string>\",\n  \"AllocatedStorage\": \"<integer>\",\n  \"ApplyImmediately\": \"<boolean>\",\n  \"ReplicationInstanceClass\": \"<string>\",\n  \"VpcSecurityGroupIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"PreferredMaintenanceWindow\": \"<string>\",\n  \"MultiAZ\": \"<boolean>\",\n  \"EngineVersion\": \"<string>\",\n  \"AllowMajorVersionUpgrade\": \"<boolean>\",\n  \"AutoMinorVersionUpgrade\": \"<boolean>\",\n  \"ReplicationInstanceIdentifier\": \"<string>\",\n  \"NetworkType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:21:32.000Z",
+              "updatedAt": "2026-07-28T10:21:32.000Z",
+              "uid": "35240-16faa664-6663-40a6-bfc0-1529f5e64a93"
+            },
+            {
+              "id": "3a8f3eff-147c-4486-867a-49466a32e489",
+              "name": "StorageQuotaExceededFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AmazonDMSv20160101.ModifyReplicationInstance"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ReplicationInstanceArn\": \"<string>\",\n  \"AllocatedStorage\": \"<integer>\",\n  \"ApplyImmediately\": \"<boolean>\",\n  \"ReplicationInstanceClass\": \"<string>\",\n  \"VpcSecurityGroupIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"PreferredMaintenanceWindow\": \"<string>\",\n  \"MultiAZ\": \"<boolean>\",\n  \"EngineVersion\": \"<string>\",\n  \"AllowMajorVersionUpgrade\": \"<boolean>\",\n  \"AutoMinorVersionUpgrade\": \"<boolean>\",\n  \"ReplicationInstanceIdentifier\": \"<string>\",\n  \"NetworkType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:21:32.000Z",
+              "updatedAt": "2026-07-28T10:21:32.000Z",
+              "uid": "35240-3a8f3eff-147c-4486-867a-49466a32e489"
+            },
+            {
+              "id": "c458df4d-eab6-4a22-b558-3891904bd017",
+              "name": "UpgradeDependencyFailureFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AmazonDMSv20160101.ModifyReplicationInstance"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ReplicationInstanceArn\": \"<string>\",\n  \"AllocatedStorage\": \"<integer>\",\n  \"ApplyImmediately\": \"<boolean>\",\n  \"ReplicationInstanceClass\": \"<string>\",\n  \"VpcSecurityGroupIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"PreferredMaintenanceWindow\": \"<string>\",\n  \"MultiAZ\": \"<boolean>\",\n  \"EngineVersion\": \"<string>\",\n  \"AllowMajorVersionUpgrade\": \"<boolean>\",\n  \"AutoMinorVersionUpgrade\": \"<boolean>\",\n  \"ReplicationInstanceIdentifier\": \"<string>\",\n  \"NetworkType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.ModifyReplicationInstance"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:21:32.000Z",
+              "updatedAt": "2026-07-28T10:21:32.000Z",
+              "uid": "35240-c458df4d-eab6-4a22-b558-3891904bd017"
+            }
+          ],
+          "createdAt": "2026-07-28T10:21:32.000Z",
+          "updatedAt": "2026-07-28T10:21:32.000Z",
+          "uid": "35240-57d934be-bea5-4735-9109-8488342878e5"
+        }
+      ],
+      "id": "41633189-7d65-484b-bd13-a6494b669110",
+      "createdAt": "2026-07-28T10:21:32.000Z",
+      "updatedAt": "2026-07-28T10:21:32.000Z",
+      "uid": "35240-41633189-7d65-484b-bd13-a6494b669110"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://dms.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "info": {
+    "_postman_id": "9c84fe03-7091-45e6-83b4-29fefe0e6d0e",
+    "name": "AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.DescribeReplicationSubnetGroups API",
+    "description": "<fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href=\"https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html\">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:21:20.000Z",
+    "updatedAt": "2026-07-28T10:21:20.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9c84fe03-7091-45e6-83b4-29fefe0e6d0e"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationSubnetGroups",
+      "item": [
+        {
+          "name": "Describe Replication Subnet Groups",
+          "id": "de4eeeaf-3227-40c5-b897-6a09ed04c44f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AmazonDMSv20160101.DescribeReplicationSubnetGroups"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Filters\": [\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"MaxRecords\": \"<integer>\",\n  \"Marker\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationSubnetGroups",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxRecords",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "Marker",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=AmazonDMSv20160101.DescribeReplicationSubnetGroups"
+            },
+            "description": "Returns information about the replication subnet groups."
+          },
+          "response": [
+            {
+              "id": "a3b96b87-704e-4781-bb3b-f5026e950ba9",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AmazonDMSv20160101.DescribeReplicationSubnetGroups"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Filters\": [\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"MaxRecords\": \"<integer>\",\n  \"Marker\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationSubnetGroups",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.DescribeReplicationSubnetGroups"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Marker\": \"<string>\",\n  \"ReplicationSubnetGroups\": [\n    {\n      \"ReplicationSubnetGroupIdentifier\": \"<string>\",\n      \"ReplicationSubnetGroupDescription\": \"<string>\",\n      \"VpcId\": \"<string>\",\n      \"SubnetGroupStatus\": \"<string>\",\n      \"Subnets\": [\n        {\n          \"SubnetIdentifier\": \"<string>\",\n          \"SubnetAvailabilityZone\": {\n            \"Name\": \"<string>\"\n          },\n          \"SubnetStatus\": \"<string>\"\n        },\n        {\n          \"SubnetIdentifier\": \"<string>\",\n          \"SubnetAvailabilityZone\": {\n            \"Name\": \"<string>\"\n          },\n          \"SubnetStatus\": \"<string>\"\n        }\n      ],\n      \"SupportedNetworkTypes\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"ReplicationSubnetGroupIdentifier\": \"<string>\",\n      \"ReplicationSubnetGroupDescription\": \"<string>\",\n      \"VpcId\": \"<string>\",\n      \"SubnetGroupStatus\": \"<string>\",\n      \"Subnets\": [\n        {\n          \"SubnetIdentifier\": \"<string>\",\n          \"SubnetAvailabilityZone\": {\n            \"Name\": \"<string>\"\n          },\n          \"SubnetStatus\": \"<string>\"\n        },\n        {\n          \"SubnetIdentifier\": \"<string>\",\n          \"SubnetAvailabilityZone\": {\n            \"Name\": \"<string>\"\n          },\n          \"SubnetStatus\": \"<string>\"\n        }\n      ],\n      \"SupportedNetworkTypes\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T10:21:21.000Z",
+              "updatedAt": "2026-07-28T10:21:21.000Z",
+              "uid": "35240-a3b96b87-704e-4781-bb3b-f5026e950ba9"
+            },
+            {
+              "id": "aa89c95b-ef81-4ce3-9219-457dbe582c63",
+              "name": "ResourceNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AmazonDMSv20160101.DescribeReplicationSubnetGroups"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Filters\": [\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"MaxRecords\": \"<integer>\",\n  \"Marker\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationSubnetGroups",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.DescribeReplicationSubnetGroups"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:21:21.000Z",
+              "updatedAt": "2026-07-28T10:21:21.000Z",
+              "uid": "35240-aa89c95b-ef81-4ce3-9219-457dbe582c63"
+            }
+          ],
+          "createdAt": "2026-07-28T10:21:21.000Z",
+          "updatedAt": "2026-07-28T10:21:21.000Z",
+          "uid": "35240-de4eeeaf-3227-40c5-b897-6a09ed04c44f"
+        }
+      ],
+      "id": "2852fdc3-f560-4345-a53c-76c4f04dd883",
+      "createdAt": "2026-07-28T10:21:21.000Z",
+      "updatedAt": "2026-07-28T10:21:21.000Z",
+      "uid": "35240-2852fdc3-f560-4345-a53c-76c4f04dd883"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://dms.{{region}}.amazonaws.com"
+    }
+  ]
+}
