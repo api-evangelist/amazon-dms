@@ -1,0 +1,89 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.DescribeEvents API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "#X Amz Target=AmazonDMSv20160101.DescribeEvents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "DescribeEvents",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://dms.{region}.amazonaws.com/#X-Amz-Target=AmazonDMSv20160101.DescribeEvents",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Target",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "MaxRecords",
+                "value": "",
+                "type": "query",
+                "description": "Pagination limit"
+              },
+              {
+                "name": "Marker",
+                "value": "",
+                "type": "query",
+                "description": "Pagination token"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": " Lists events for a given source identifier and source type. You can also specify a start and end time. For more information on DMS events, see <a href=\"https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html\">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,313 @@
+{
+  "item": [
+    {
+      "id": "5953ad54-6af5-4284-9f9d-423fa126b078",
+      "name": "Replication Instances",
+      "description": {
+        "content": "Operations for managing DMS replication instances",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c1544ab0-9e71-438a-93f5-4595d598ecf6",
+          "name": "Amazon DMS Create a replication instance",
+          "request": {
+            "name": "Amazon DMS Create a replication instance",
+            "description": {
+              "content": "Creates the replication instance using the specified parameters. A replication instance is used to run replication tasks.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ReplicationInstanceIdentifier\": \"<string>\",\n  \"ReplicationInstanceClass\": \"<string>\",\n  \"AllocatedStorage\": \"<integer>\",\n  \"VpcSecurityGroupIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"AvailabilityZone\": \"<string>\",\n  \"ReplicationSubnetGroupIdentifier\": \"<string>\",\n  \"MultiAZ\": \"<boolean>\",\n  \"EngineVersion\": \"<string>\",\n  \"PubliclyAccessible\": \"<boolean>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "45fee933-8264-4d67-8c99-dfcd085068c7",
+              "name": "Replication instance created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ReplicationInstanceIdentifier\": \"<string>\",\n  \"ReplicationInstanceClass\": \"<string>\",\n  \"AllocatedStorage\": \"<integer>\",\n  \"VpcSecurityGroupIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"AvailabilityZone\": \"<string>\",\n  \"ReplicationSubnetGroupIdentifier\": \"<string>\",\n  \"MultiAZ\": \"<boolean>\",\n  \"EngineVersion\": \"<string>\",\n  \"PubliclyAccessible\": \"<boolean>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ReplicationInstanceIdentifier\": \"string\",\n  \"ReplicationInstanceClass\": \"string\",\n  \"ReplicationInstanceStatus\": \"string\",\n  \"AllocatedStorage\": 2873,\n  \"ReplicationInstanceArn\": \"string\",\n  \"ReplicationInstancePublicIpAddress\": \"string\",\n  \"ReplicationInstancePrivateIpAddress\": \"string\",\n  \"AvailabilityZone\": \"string\",\n  \"MultiAZ\": false,\n  \"EngineVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "772f148f-5ad0-4c3f-8239-f1f86a9c1f8d",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ReplicationInstanceIdentifier\": \"<string>\",\n  \"ReplicationInstanceClass\": \"<string>\",\n  \"AllocatedStorage\": \"<integer>\",\n  \"VpcSecurityGroupIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"AvailabilityZone\": \"<string>\",\n  \"ReplicationSubnetGroupIdentifier\": \"<string>\",\n  \"MultiAZ\": \"<boolean>\",\n  \"EngineVersion\": \"<string>\",\n  \"PubliclyAccessible\": \"<boolean>\"\n}"
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "06e6d68d-7f50-40e5-be0a-c3f8644ae7f8",
+          "name": "Amazon DMS Describe replication instances",
+          "request": {
+            "name": "Amazon DMS Describe replication instances",
+            "description": {
+              "content": "Returns information about replication instances.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "describeReplicationInstances"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Filters\": [\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"MaxRecords\": \"<integer>\",\n  \"Marker\": \"<string>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "daa491cf-4467-46d6-9a14-80e747c45034",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "describeReplicationInstances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Filters\": [\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"MaxRecords\": \"<integer>\",\n  \"Marker\": \"<string>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ReplicationInstances\": [\n    {\n      \"ReplicationInstanceIdentifier\": \"string\",\n      \"ReplicationInstanceClass\": \"string\",\n      \"ReplicationInstanceStatus\": \"string\",\n      \"AllocatedStorage\": 4160,\n      \"ReplicationInstanceArn\": \"string\",\n      \"ReplicationInstancePublicIpAddress\": \"string\",\n      \"ReplicationInstancePrivateIpAddress\": \"string\",\n      \"AvailabilityZone\": \"string\",\n      \"MultiAZ\": false,\n      \"EngineVersion\": \"string\"\n    },\n    {\n      \"ReplicationInstanceIdentifier\": \"string\",\n      \"ReplicationInstanceClass\": \"string\",\n      \"ReplicationInstanceStatus\": \"string\",\n      \"AllocatedStorage\": 6710,\n      \"ReplicationInstanceArn\": \"string\",\n      \"ReplicationInstancePublicIpAddress\": \"string\",\n      \"ReplicationInstancePrivateIpAddress\": \"string\",\n      \"AvailabilityZone\": \"string\",\n      \"MultiAZ\": false,\n      \"EngineVersion\": \"string\"\n    }\n  ],\n  \"Marker\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "us-east-1",
+      "key": "region"
+    },
+    {
+      "type": "string",
+      "value": "http://dms.{{region}}.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "26def049-8eba-46c6-b369-77f70780e730",
+    "name": "AWS Database Migration Service Endpoints Replication Instances API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "<fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href=\"https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html\">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}

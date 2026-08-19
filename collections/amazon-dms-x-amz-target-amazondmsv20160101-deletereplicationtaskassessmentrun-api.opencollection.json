@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.DeleteReplicationTaskAssessmentRun API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "#X Amz Target=AmazonDMSv20160101.DeleteReplicationTaskAssessmentRun",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "DeleteReplicationTaskAssessmentRun",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://dms.{region}.amazonaws.com/#X-Amz-Target=AmazonDMSv20160101.DeleteReplicationTaskAssessmentRun",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Target",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Deletes the record of a single premigration assessment run.</p> <p>This operation removes all metadata that DMS maintains about this assessment run. However, the operation leaves untouched all information about this assessment run that is stored in your Amazon S3 bucket.</p>"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

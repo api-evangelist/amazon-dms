@@ -1,0 +1,799 @@
+{
+  "item": [
+    {
+      "id": "71b637d5-011b-407f-90e3-07c648f18f20",
+      "name": "#X Amz Target=AmazonDMSv20160101.ModifyEndpoint",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "142da650-dcd6-4379-839c-46b9961a52fa",
+          "name": "Modify Endpoint",
+          "request": {
+            "name": "Modify Endpoint",
+            "description": {
+              "content": "<p>Modifies the specified endpoint.</p> <note> <p>For a MySQL source or target endpoint, don't explicitly specify the database using the <code>DatabaseName</code> request parameter on the <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you modify a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database only when you specify the schema in the table-mapping rules of the DMS task.</p> </note>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AmazonDMSv20160101.ModifyEndpoint",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"EndpointArn\": \"<string>\",\n  \"EndpointIdentifier\": \"<string>\",\n  \"EndpointType\": \"<string>\",\n  \"EngineName\": \"<string>\",\n  \"Username\": \"<string>\",\n  \"Password\": \"<password>\",\n  \"ServerName\": \"<string>\",\n  \"Port\": \"<integer>\",\n  \"DatabaseName\": \"<string>\",\n  \"ExtraConnectionAttributes\": \"<string>\",\n  \"CertificateArn\": \"<string>\",\n  \"SslMode\": \"<string>\",\n  \"ServiceAccessRoleArn\": \"<string>\",\n  \"ExternalTableDefinition\": \"<string>\",\n  \"DynamoDbSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\"\n  },\n  \"S3Settings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ExternalTableDefinition\": \"<string>\",\n    \"CsvRowDelimiter\": \"<string>\",\n    \"CsvDelimiter\": \"<string>\",\n    \"BucketFolder\": \"<string>\",\n    \"BucketName\": \"<string>\",\n    \"CompressionType\": \"<string>\",\n    \"EncryptionMode\": \"<string>\",\n    \"ServerSideEncryptionKmsKeyId\": \"<string>\",\n    \"DataFormat\": \"<string>\",\n    \"EncodingType\": \"<string>\",\n    \"DictPageSizeLimit\": \"<integer>\",\n    \"RowGroupLength\": \"<integer>\",\n    \"DataPageSize\": \"<integer>\",\n    \"ParquetVersion\": \"<string>\",\n    \"EnableStatistics\": \"<boolean>\",\n    \"IncludeOpForFullLoad\": \"<boolean>\",\n    \"CdcInsertsOnly\": \"<boolean>\",\n    \"TimestampColumnName\": \"<string>\",\n    \"ParquetTimestampInMillisecond\": \"<boolean>\",\n    \"CdcInsertsAndUpdates\": \"<boolean>\",\n    \"DatePartitionEnabled\": \"<boolean>\",\n    \"DatePartitionSequence\": \"<string>\",\n    \"DatePartitionDelimiter\": \"<string>\",\n    \"UseCsvNoSupValue\": \"<boolean>\",\n    \"CsvNoSupValue\": \"<string>\",\n    \"PreserveTransactions\": \"<boolean>\",\n    \"CdcPath\": \"<string>\",\n    \"UseTaskStartTimeForFullLoadTimestamp\": \"<boolean>\",\n    \"CannedAclForObjects\": \"<string>\",\n    \"AddColumnName\": \"<boolean>\",\n    \"CdcMaxBatchInterval\": \"<integer>\",\n    \"CdcMinFileSize\": \"<integer>\",\n    \"CsvNullValue\": \"<string>\",\n    \"IgnoreHeaderRows\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"Rfc4180\": \"<boolean>\",\n    \"DatePartitionTimezone\": \"<string>\",\n    \"AddTrailingPaddingCharacter\": \"<boolean>\",\n    \"ExpectedBucketOwner\": \"<string>\",\n    \"GlueCatalogGeneration\": \"<boolean>\"\n  },\n  \"DmsTransferSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"BucketName\": \"<string>\"\n  },\n  \"MongoDbSettings\": {\n    \"Username\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"AuthType\": \"<string>\",\n    \"AuthMechanism\": \"<string>\",\n    \"NestingLevel\": \"<string>\",\n    \"ExtractDocId\": \"<string>\",\n    \"DocsToInvestigate\": \"<string>\",\n    \"AuthSource\": \"<string>\",\n    \"KmsKeyId\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"KinesisSettings\": {\n    \"StreamArn\": \"<string>\",\n    \"MessageFormat\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"IncludeTransactionDetails\": \"<boolean>\",\n    \"IncludePartitionValue\": \"<boolean>\",\n    \"PartitionIncludeSchemaTable\": \"<boolean>\",\n    \"IncludeTableAlterOperations\": \"<boolean>\",\n    \"IncludeControlDetails\": \"<boolean>\",\n    \"IncludeNullAndEmpty\": \"<boolean>\",\n    \"NoHexPrefix\": \"<boolean>\"\n  },\n  \"KafkaSettings\": {\n    \"Broker\": \"<string>\",\n    \"Topic\": \"<string>\",\n    \"MessageFormat\": \"<string>\",\n    \"IncludeTransactionDetails\": \"<boolean>\",\n    \"IncludePartitionValue\": \"<boolean>\",\n    \"PartitionIncludeSchemaTable\": \"<boolean>\",\n    \"IncludeTableAlterOperations\": \"<boolean>\",\n    \"IncludeControlDetails\": \"<boolean>\",\n    \"MessageMaxBytes\": \"<integer>\",\n    \"IncludeNullAndEmpty\": \"<boolean>\",\n    \"SecurityProtocol\": \"<string>\",\n    \"SslClientCertificateArn\": \"<string>\",\n    \"SslClientKeyArn\": \"<string>\",\n    \"SslClientKeyPassword\": \"<password>\",\n    \"SslCaCertificateArn\": \"<string>\",\n    \"SaslUsername\": \"<string>\",\n    \"SaslPassword\": \"<password>\",\n    \"NoHexPrefix\": \"<boolean>\",\n    \"SaslMechanism\": \"<string>\"\n  },\n  \"ElasticsearchSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"EndpointUri\": \"<string>\",\n    \"FullLoadErrorPercentage\": \"<integer>\",\n    \"ErrorRetryDuration\": \"<integer>\",\n    \"UseNewMappingType\": \"<boolean>\"\n  },\n  \"NeptuneSettings\": {\n    \"S3BucketName\": \"<string>\",\n    \"S3BucketFolder\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ErrorRetryDuration\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"MaxRetryCount\": \"<integer>\",\n    \"IamAuthEnabled\": \"<boolean>\"\n  },\n  \"RedshiftSettings\": {\n    \"AcceptAnyDate\": \"<boolean>\",\n    \"AfterConnectScript\": \"<string>\",\n    \"BucketFolder\": \"<string>\",\n    \"BucketName\": \"<string>\",\n    \"CaseSensitiveNames\": \"<boolean>\",\n    \"CompUpdate\": \"<boolean>\",\n    \"ConnectionTimeout\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"DateFormat\": \"<string>\",\n    \"EmptyAsNull\": \"<boolean>\",\n    \"EncryptionMode\": \"<string>\",\n    \"ExplicitIds\": \"<boolean>\",\n    \"FileTransferUploadStreams\": \"<integer>\",\n    \"LoadTimeout\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"RemoveQuotes\": \"<boolean>\",\n    \"ReplaceInvalidChars\": \"<string>\",\n    \"ReplaceChars\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ServerSideEncryptionKmsKeyId\": \"<string>\",\n    \"TimeFormat\": \"<string>\",\n    \"TrimBlanks\": \"<boolean>\",\n    \"TruncateColumns\": \"<boolean>\",\n    \"Username\": \"<string>\",\n    \"WriteBufferSize\": \"<integer>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"MapBooleanAsBoolean\": \"<boolean>\"\n  },\n  \"PostgreSQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CaptureDdls\": \"<boolean>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"DdlArtifactsSchema\": \"<string>\",\n    \"ExecuteTimeout\": \"<integer>\",\n    \"FailTasksOnLobTruncation\": \"<boolean>\",\n    \"HeartbeatEnable\": \"<boolean>\",\n    \"HeartbeatSchema\": \"<string>\",\n    \"HeartbeatFrequency\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SlotName\": \"<string>\",\n    \"PluginName\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"MapBooleanAsBoolean\": \"<boolean>\"\n  },\n  \"MySQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CleanSourceMetadataOnMismatch\": \"<boolean>\",\n    \"DatabaseName\": \"<string>\",\n    \"EventsPollInterval\": \"<integer>\",\n    \"TargetDbType\": \"<string>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"ParallelLoadThreads\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"ServerTimezone\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"OracleSettings\": {\n    \"AddSupplementalLogging\": \"<boolean>\",\n    \"ArchivedLogDestId\": \"<integer>\",\n    \"AdditionalArchivedLogDestId\": \"<integer>\",\n    \"ExtraArchivedLogDestIds\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"AllowSelectNestedTables\": \"<boolean>\",\n    \"ParallelAsmReadThreads\": \"<integer>\",\n    \"ReadAheadBlocks\": \"<integer>\",\n    \"AccessAlternateDirectly\": \"<boolean>\",\n    \"UseAlternateFolderForOnline\": \"<boolean>\",\n    \"OraclePathPrefix\": \"<string>\",\n    \"UsePathPrefix\": \"<string>\",\n    \"ReplacePathPrefix\": \"<boolean>\",\n    \"EnableHomogenousTablespace\": \"<boolean>\",\n    \"DirectPathNoLog\": \"<boolean>\",\n    \"ArchivedLogsOnly\": \"<boolean>\",\n    \"AsmPassword\": \"<password>\",\n    \"AsmServer\": \"<string>\",\n    \"AsmUser\": \"<string>\",\n    \"CharLengthSemantics\": \"<string>\",\n    \"DatabaseName\": \"<string>\",\n    \"DirectPathParallelLoad\": \"<boolean>\",\n    \"FailTasksOnLobTruncation\": \"<boolean>\",\n    \"NumberDatatypeScale\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ReadTableSpaceName\": \"<boolean>\",\n    \"RetryInterval\": \"<integer>\",\n    \"SecurityDbEncryption\": \"<password>\",\n    \"SecurityDbEncryptionName\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"SpatialDataOptionToGeoJsonFunctionName\": \"<string>\",\n    \"StandbyDelayTime\": \"<integer>\",\n    \"Username\": \"<string>\",\n    \"UseBFile\": \"<boolean>\",\n    \"UseDirectPathFullLoad\": \"<boolean>\",\n    \"UseLogminerReader\": \"<boolean>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"SecretsManagerOracleAsmAccessRoleArn\": \"<string>\",\n    \"SecretsManagerOracleAsmSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"ConvertTimestampWithZoneToUTC\": \"<boolean>\"\n  },\n  \"SybaseSettings\": {\n    \"DatabaseName\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"MicrosoftSQLServerSettings\": {\n    \"Port\": \"<integer>\",\n    \"BcpPacketSize\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"ControlTablesFileGroup\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"QuerySingleAlwaysOnNode\": \"<boolean>\",\n    \"ReadBackupOnly\": \"<boolean>\",\n    \"SafeguardPolicy\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"UseBcpFullLoad\": \"<boolean>\",\n    \"UseThirdPartyBackupDevice\": \"<boolean>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"TlogAccessMode\": \"<string>\",\n    \"ForceLobLookup\": \"<boolean>\"\n  },\n  \"IBMDb2Settings\": {\n    \"DatabaseName\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"SetDataCaptureChanges\": \"<boolean>\",\n    \"CurrentLsn\": \"<string>\",\n    \"MaxKBytesPerRead\": \"<integer>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"DocDbSettings\": {\n    \"Username\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"NestingLevel\": \"<string>\",\n    \"ExtractDocId\": \"<boolean>\",\n    \"DocsToInvestigate\": \"<integer>\",\n    \"KmsKeyId\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"RedisSettings\": {\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"SslSecurityProtocol\": \"<string>\",\n    \"AuthType\": \"<string>\",\n    \"AuthUserName\": \"<string>\",\n    \"AuthPassword\": \"<password>\",\n    \"SslCaCertificateArn\": \"<string>\"\n  },\n  \"ExactSettings\": \"<boolean>\",\n  \"GcpMySQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CleanSourceMetadataOnMismatch\": \"<boolean>\",\n    \"DatabaseName\": \"<string>\",\n    \"EventsPollInterval\": \"<integer>\",\n    \"TargetDbType\": \"<string>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"ParallelLoadThreads\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"ServerTimezone\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "37b5d1d6-f762-4248-9cb6-60bc7eaeb639",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.ModifyEndpoint",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"EndpointArn\": \"<string>\",\n  \"EndpointIdentifier\": \"<string>\",\n  \"EndpointType\": \"<string>\",\n  \"EngineName\": \"<string>\",\n  \"Username\": \"<string>\",\n  \"Password\": \"<password>\",\n  \"ServerName\": \"<string>\",\n  \"Port\": \"<integer>\",\n  \"DatabaseName\": \"<string>\",\n  \"ExtraConnectionAttributes\": \"<string>\",\n  \"CertificateArn\": \"<string>\",\n  \"SslMode\": \"<string>\",\n  \"ServiceAccessRoleArn\": \"<string>\",\n  \"ExternalTableDefinition\": \"<string>\",\n  \"DynamoDbSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\"\n  },\n  \"S3Settings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ExternalTableDefinition\": \"<string>\",\n    \"CsvRowDelimiter\": \"<string>\",\n    \"CsvDelimiter\": \"<string>\",\n    \"BucketFolder\": \"<string>\",\n    \"BucketName\": \"<string>\",\n    \"CompressionType\": \"<string>\",\n    \"EncryptionMode\": \"<string>\",\n    \"ServerSideEncryptionKmsKeyId\": \"<string>\",\n    \"DataFormat\": \"<string>\",\n    \"EncodingType\": \"<string>\",\n    \"DictPageSizeLimit\": \"<integer>\",\n    \"RowGroupLength\": \"<integer>\",\n    \"DataPageSize\": \"<integer>\",\n    \"ParquetVersion\": \"<string>\",\n    \"EnableStatistics\": \"<boolean>\",\n    \"IncludeOpForFullLoad\": \"<boolean>\",\n    \"CdcInsertsOnly\": \"<boolean>\",\n    \"TimestampColumnName\": \"<string>\",\n    \"ParquetTimestampInMillisecond\": \"<boolean>\",\n    \"CdcInsertsAndUpdates\": \"<boolean>\",\n    \"DatePartitionEnabled\": \"<boolean>\",\n    \"DatePartitionSequence\": \"<string>\",\n    \"DatePartitionDelimiter\": \"<string>\",\n    \"UseCsvNoSupValue\": \"<boolean>\",\n    \"CsvNoSupValue\": \"<string>\",\n    \"PreserveTransactions\": \"<boolean>\",\n    \"CdcPath\": \"<string>\",\n    \"UseTaskStartTimeForFullLoadTimestamp\": \"<boolean>\",\n    \"CannedAclForObjects\": \"<string>\",\n    \"AddColumnName\": \"<boolean>\",\n    \"CdcMaxBatchInterval\": \"<integer>\",\n    \"CdcMinFileSize\": \"<integer>\",\n    \"CsvNullValue\": \"<string>\",\n    \"IgnoreHeaderRows\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"Rfc4180\": \"<boolean>\",\n    \"DatePartitionTimezone\": \"<string>\",\n    \"AddTrailingPaddingCharacter\": \"<boolean>\",\n    \"ExpectedBucketOwner\": \"<string>\",\n    \"GlueCatalogGeneration\": \"<boolean>\"\n  },\n  \"DmsTransferSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"BucketName\": \"<string>\"\n  },\n  \"MongoDbSettings\": {\n    \"Username\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"AuthType\": \"<string>\",\n    \"AuthMechanism\": \"<string>\",\n    \"NestingLevel\": \"<string>\",\n    \"ExtractDocId\": \"<string>\",\n    \"DocsToInvestigate\": \"<string>\",\n    \"AuthSource\": \"<string>\",\n    \"KmsKeyId\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"KinesisSettings\": {\n    \"StreamArn\": \"<string>\",\n    \"MessageFormat\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"IncludeTransactionDetails\": \"<boolean>\",\n    \"IncludePartitionValue\": \"<boolean>\",\n    \"PartitionIncludeSchemaTable\": \"<boolean>\",\n    \"IncludeTableAlterOperations\": \"<boolean>\",\n    \"IncludeControlDetails\": \"<boolean>\",\n    \"IncludeNullAndEmpty\": \"<boolean>\",\n    \"NoHexPrefix\": \"<boolean>\"\n  },\n  \"KafkaSettings\": {\n    \"Broker\": \"<string>\",\n    \"Topic\": \"<string>\",\n    \"MessageFormat\": \"<string>\",\n    \"IncludeTransactionDetails\": \"<boolean>\",\n    \"IncludePartitionValue\": \"<boolean>\",\n    \"PartitionIncludeSchemaTable\": \"<boolean>\",\n    \"IncludeTableAlterOperations\": \"<boolean>\",\n    \"IncludeControlDetails\": \"<boolean>\",\n    \"MessageMaxBytes\": \"<integer>\",\n    \"IncludeNullAndEmpty\": \"<boolean>\",\n    \"SecurityProtocol\": \"<string>\",\n    \"SslClientCertificateArn\": \"<string>\",\n    \"SslClientKeyArn\": \"<string>\",\n    \"SslClientKeyPassword\": \"<password>\",\n    \"SslCaCertificateArn\": \"<string>\",\n    \"SaslUsername\": \"<string>\",\n    \"SaslPassword\": \"<password>\",\n    \"NoHexPrefix\": \"<boolean>\",\n    \"SaslMechanism\": \"<string>\"\n  },\n  \"ElasticsearchSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"EndpointUri\": \"<string>\",\n    \"FullLoadErrorPercentage\": \"<integer>\",\n    \"ErrorRetryDuration\": \"<integer>\",\n    \"UseNewMappingType\": \"<boolean>\"\n  },\n  \"NeptuneSettings\": {\n    \"S3BucketName\": \"<string>\",\n    \"S3BucketFolder\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ErrorRetryDuration\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"MaxRetryCount\": \"<integer>\",\n    \"IamAuthEnabled\": \"<boolean>\"\n  },\n  \"RedshiftSettings\": {\n    \"AcceptAnyDate\": \"<boolean>\",\n    \"AfterConnectScript\": \"<string>\",\n    \"BucketFolder\": \"<string>\",\n    \"BucketName\": \"<string>\",\n    \"CaseSensitiveNames\": \"<boolean>\",\n    \"CompUpdate\": \"<boolean>\",\n    \"ConnectionTimeout\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"DateFormat\": \"<string>\",\n    \"EmptyAsNull\": \"<boolean>\",\n    \"EncryptionMode\": \"<string>\",\n    \"ExplicitIds\": \"<boolean>\",\n    \"FileTransferUploadStreams\": \"<integer>\",\n    \"LoadTimeout\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"RemoveQuotes\": \"<boolean>\",\n    \"ReplaceInvalidChars\": \"<string>\",\n    \"ReplaceChars\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ServerSideEncryptionKmsKeyId\": \"<string>\",\n    \"TimeFormat\": \"<string>\",\n    \"TrimBlanks\": \"<boolean>\",\n    \"TruncateColumns\": \"<boolean>\",\n    \"Username\": \"<string>\",\n    \"WriteBufferSize\": \"<integer>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"MapBooleanAsBoolean\": \"<boolean>\"\n  },\n  \"PostgreSQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CaptureDdls\": \"<boolean>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"DdlArtifactsSchema\": \"<string>\",\n    \"ExecuteTimeout\": \"<integer>\",\n    \"FailTasksOnLobTruncation\": \"<boolean>\",\n    \"HeartbeatEnable\": \"<boolean>\",\n    \"HeartbeatSchema\": \"<string>\",\n    \"HeartbeatFrequency\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SlotName\": \"<string>\",\n    \"PluginName\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"MapBooleanAsBoolean\": \"<boolean>\"\n  },\n  \"MySQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CleanSourceMetadataOnMismatch\": \"<boolean>\",\n    \"DatabaseName\": \"<string>\",\n    \"EventsPollInterval\": \"<integer>\",\n    \"TargetDbType\": \"<string>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"ParallelLoadThreads\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"ServerTimezone\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"OracleSettings\": {\n    \"AddSupplementalLogging\": \"<boolean>\",\n    \"ArchivedLogDestId\": \"<integer>\",\n    \"AdditionalArchivedLogDestId\": \"<integer>\",\n    \"ExtraArchivedLogDestIds\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"AllowSelectNestedTables\": \"<boolean>\",\n    \"ParallelAsmReadThreads\": \"<integer>\",\n    \"ReadAheadBlocks\": \"<integer>\",\n    \"AccessAlternateDirectly\": \"<boolean>\",\n    \"UseAlternateFolderForOnline\": \"<boolean>\",\n    \"OraclePathPrefix\": \"<string>\",\n    \"UsePathPrefix\": \"<string>\",\n    \"ReplacePathPrefix\": \"<boolean>\",\n    \"EnableHomogenousTablespace\": \"<boolean>\",\n    \"DirectPathNoLog\": \"<boolean>\",\n    \"ArchivedLogsOnly\": \"<boolean>\",\n    \"AsmPassword\": \"<password>\",\n    \"AsmServer\": \"<string>\",\n    \"AsmUser\": \"<string>\",\n    \"CharLengthSemantics\": \"<string>\",\n    \"DatabaseName\": \"<string>\",\n    \"DirectPathParallelLoad\": \"<boolean>\",\n    \"FailTasksOnLobTruncation\": \"<boolean>\",\n    \"NumberDatatypeScale\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ReadTableSpaceName\": \"<boolean>\",\n    \"RetryInterval\": \"<integer>\",\n    \"SecurityDbEncryption\": \"<password>\",\n    \"SecurityDbEncryptionName\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"SpatialDataOptionToGeoJsonFunctionName\": \"<string>\",\n    \"StandbyDelayTime\": \"<integer>\",\n    \"Username\": \"<string>\",\n    \"UseBFile\": \"<boolean>\",\n    \"UseDirectPathFullLoad\": \"<boolean>\",\n    \"UseLogminerReader\": \"<boolean>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"SecretsManagerOracleAsmAccessRoleArn\": \"<string>\",\n    \"SecretsManagerOracleAsmSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"ConvertTimestampWithZoneToUTC\": \"<boolean>\"\n  },\n  \"SybaseSettings\": {\n    \"DatabaseName\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"MicrosoftSQLServerSettings\": {\n    \"Port\": \"<integer>\",\n    \"BcpPacketSize\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"ControlTablesFileGroup\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"QuerySingleAlwaysOnNode\": \"<boolean>\",\n    \"ReadBackupOnly\": \"<boolean>\",\n    \"SafeguardPolicy\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"UseBcpFullLoad\": \"<boolean>\",\n    \"UseThirdPartyBackupDevice\": \"<boolean>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"TlogAccessMode\": \"<string>\",\n    \"ForceLobLookup\": \"<boolean>\"\n  },\n  \"IBMDb2Settings\": {\n    \"DatabaseName\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"SetDataCaptureChanges\": \"<boolean>\",\n    \"CurrentLsn\": \"<string>\",\n    \"MaxKBytesPerRead\": \"<integer>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"DocDbSettings\": {\n    \"Username\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"NestingLevel\": \"<string>\",\n    \"ExtractDocId\": \"<boolean>\",\n    \"DocsToInvestigate\": \"<integer>\",\n    \"KmsKeyId\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"RedisSettings\": {\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"SslSecurityProtocol\": \"<string>\",\n    \"AuthType\": \"<string>\",\n    \"AuthUserName\": \"<string>\",\n    \"AuthPassword\": \"<password>\",\n    \"SslCaCertificateArn\": \"<string>\"\n  },\n  \"ExactSettings\": \"<boolean>\",\n  \"GcpMySQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CleanSourceMetadataOnMismatch\": \"<boolean>\",\n    \"DatabaseName\": \"<string>\",\n    \"EventsPollInterval\": \"<integer>\",\n    \"TargetDbType\": \"<string>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"ParallelLoadThreads\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"ServerTimezone\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Endpoint\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1f2a237f-16dd-457a-a5a4-46166b6c50a0",
+              "name": "InvalidResourceStateFault",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.ModifyEndpoint",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"EndpointArn\": \"<string>\",\n  \"EndpointIdentifier\": \"<string>\",\n  \"EndpointType\": \"<string>\",\n  \"EngineName\": \"<string>\",\n  \"Username\": \"<string>\",\n  \"Password\": \"<password>\",\n  \"ServerName\": \"<string>\",\n  \"Port\": \"<integer>\",\n  \"DatabaseName\": \"<string>\",\n  \"ExtraConnectionAttributes\": \"<string>\",\n  \"CertificateArn\": \"<string>\",\n  \"SslMode\": \"<string>\",\n  \"ServiceAccessRoleArn\": \"<string>\",\n  \"ExternalTableDefinition\": \"<string>\",\n  \"DynamoDbSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\"\n  },\n  \"S3Settings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ExternalTableDefinition\": \"<string>\",\n    \"CsvRowDelimiter\": \"<string>\",\n    \"CsvDelimiter\": \"<string>\",\n    \"BucketFolder\": \"<string>\",\n    \"BucketName\": \"<string>\",\n    \"CompressionType\": \"<string>\",\n    \"EncryptionMode\": \"<string>\",\n    \"ServerSideEncryptionKmsKeyId\": \"<string>\",\n    \"DataFormat\": \"<string>\",\n    \"EncodingType\": \"<string>\",\n    \"DictPageSizeLimit\": \"<integer>\",\n    \"RowGroupLength\": \"<integer>\",\n    \"DataPageSize\": \"<integer>\",\n    \"ParquetVersion\": \"<string>\",\n    \"EnableStatistics\": \"<boolean>\",\n    \"IncludeOpForFullLoad\": \"<boolean>\",\n    \"CdcInsertsOnly\": \"<boolean>\",\n    \"TimestampColumnName\": \"<string>\",\n    \"ParquetTimestampInMillisecond\": \"<boolean>\",\n    \"CdcInsertsAndUpdates\": \"<boolean>\",\n    \"DatePartitionEnabled\": \"<boolean>\",\n    \"DatePartitionSequence\": \"<string>\",\n    \"DatePartitionDelimiter\": \"<string>\",\n    \"UseCsvNoSupValue\": \"<boolean>\",\n    \"CsvNoSupValue\": \"<string>\",\n    \"PreserveTransactions\": \"<boolean>\",\n    \"CdcPath\": \"<string>\",\n    \"UseTaskStartTimeForFullLoadTimestamp\": \"<boolean>\",\n    \"CannedAclForObjects\": \"<string>\",\n    \"AddColumnName\": \"<boolean>\",\n    \"CdcMaxBatchInterval\": \"<integer>\",\n    \"CdcMinFileSize\": \"<integer>\",\n    \"CsvNullValue\": \"<string>\",\n    \"IgnoreHeaderRows\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"Rfc4180\": \"<boolean>\",\n    \"DatePartitionTimezone\": \"<string>\",\n    \"AddTrailingPaddingCharacter\": \"<boolean>\",\n    \"ExpectedBucketOwner\": \"<string>\",\n    \"GlueCatalogGeneration\": \"<boolean>\"\n  },\n  \"DmsTransferSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"BucketName\": \"<string>\"\n  },\n  \"MongoDbSettings\": {\n    \"Username\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"AuthType\": \"<string>\",\n    \"AuthMechanism\": \"<string>\",\n    \"NestingLevel\": \"<string>\",\n    \"ExtractDocId\": \"<string>\",\n    \"DocsToInvestigate\": \"<string>\",\n    \"AuthSource\": \"<string>\",\n    \"KmsKeyId\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"KinesisSettings\": {\n    \"StreamArn\": \"<string>\",\n    \"MessageFormat\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"IncludeTransactionDetails\": \"<boolean>\",\n    \"IncludePartitionValue\": \"<boolean>\",\n    \"PartitionIncludeSchemaTable\": \"<boolean>\",\n    \"IncludeTableAlterOperations\": \"<boolean>\",\n    \"IncludeControlDetails\": \"<boolean>\",\n    \"IncludeNullAndEmpty\": \"<boolean>\",\n    \"NoHexPrefix\": \"<boolean>\"\n  },\n  \"KafkaSettings\": {\n    \"Broker\": \"<string>\",\n    \"Topic\": \"<string>\",\n    \"MessageFormat\": \"<string>\",\n    \"IncludeTransactionDetails\": \"<boolean>\",\n    \"IncludePartitionValue\": \"<boolean>\",\n    \"PartitionIncludeSchemaTable\": \"<boolean>\",\n    \"IncludeTableAlterOperations\": \"<boolean>\",\n    \"IncludeControlDetails\": \"<boolean>\",\n    \"MessageMaxBytes\": \"<integer>\",\n    \"IncludeNullAndEmpty\": \"<boolean>\",\n    \"SecurityProtocol\": \"<string>\",\n    \"SslClientCertificateArn\": \"<string>\",\n    \"SslClientKeyArn\": \"<string>\",\n    \"SslClientKeyPassword\": \"<password>\",\n    \"SslCaCertificateArn\": \"<string>\",\n    \"SaslUsername\": \"<string>\",\n    \"SaslPassword\": \"<password>\",\n    \"NoHexPrefix\": \"<boolean>\",\n    \"SaslMechanism\": \"<string>\"\n  },\n  \"ElasticsearchSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"EndpointUri\": \"<string>\",\n    \"FullLoadErrorPercentage\": \"<integer>\",\n    \"ErrorRetryDuration\": \"<integer>\",\n    \"UseNewMappingType\": \"<boolean>\"\n  },\n  \"NeptuneSettings\": {\n    \"S3BucketName\": \"<string>\",\n    \"S3BucketFolder\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ErrorRetryDuration\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"MaxRetryCount\": \"<integer>\",\n    \"IamAuthEnabled\": \"<boolean>\"\n  },\n  \"RedshiftSettings\": {\n    \"AcceptAnyDate\": \"<boolean>\",\n    \"AfterConnectScript\": \"<string>\",\n    \"BucketFolder\": \"<string>\",\n    \"BucketName\": \"<string>\",\n    \"CaseSensitiveNames\": \"<boolean>\",\n    \"CompUpdate\": \"<boolean>\",\n    \"ConnectionTimeout\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"DateFormat\": \"<string>\",\n    \"EmptyAsNull\": \"<boolean>\",\n    \"EncryptionMode\": \"<string>\",\n    \"ExplicitIds\": \"<boolean>\",\n    \"FileTransferUploadStreams\": \"<integer>\",\n    \"LoadTimeout\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"RemoveQuotes\": \"<boolean>\",\n    \"ReplaceInvalidChars\": \"<string>\",\n    \"ReplaceChars\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ServerSideEncryptionKmsKeyId\": \"<string>\",\n    \"TimeFormat\": \"<string>\",\n    \"TrimBlanks\": \"<boolean>\",\n    \"TruncateColumns\": \"<boolean>\",\n    \"Username\": \"<string>\",\n    \"WriteBufferSize\": \"<integer>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"MapBooleanAsBoolean\": \"<boolean>\"\n  },\n  \"PostgreSQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CaptureDdls\": \"<boolean>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"DdlArtifactsSchema\": \"<string>\",\n    \"ExecuteTimeout\": \"<integer>\",\n    \"FailTasksOnLobTruncation\": \"<boolean>\",\n    \"HeartbeatEnable\": \"<boolean>\",\n    \"HeartbeatSchema\": \"<string>\",\n    \"HeartbeatFrequency\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SlotName\": \"<string>\",\n    \"PluginName\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"MapBooleanAsBoolean\": \"<boolean>\"\n  },\n  \"MySQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CleanSourceMetadataOnMismatch\": \"<boolean>\",\n    \"DatabaseName\": \"<string>\",\n    \"EventsPollInterval\": \"<integer>\",\n    \"TargetDbType\": \"<string>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"ParallelLoadThreads\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"ServerTimezone\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"OracleSettings\": {\n    \"AddSupplementalLogging\": \"<boolean>\",\n    \"ArchivedLogDestId\": \"<integer>\",\n    \"AdditionalArchivedLogDestId\": \"<integer>\",\n    \"ExtraArchivedLogDestIds\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"AllowSelectNestedTables\": \"<boolean>\",\n    \"ParallelAsmReadThreads\": \"<integer>\",\n    \"ReadAheadBlocks\": \"<integer>\",\n    \"AccessAlternateDirectly\": \"<boolean>\",\n    \"UseAlternateFolderForOnline\": \"<boolean>\",\n    \"OraclePathPrefix\": \"<string>\",\n    \"UsePathPrefix\": \"<string>\",\n    \"ReplacePathPrefix\": \"<boolean>\",\n    \"EnableHomogenousTablespace\": \"<boolean>\",\n    \"DirectPathNoLog\": \"<boolean>\",\n    \"ArchivedLogsOnly\": \"<boolean>\",\n    \"AsmPassword\": \"<password>\",\n    \"AsmServer\": \"<string>\",\n    \"AsmUser\": \"<string>\",\n    \"CharLengthSemantics\": \"<string>\",\n    \"DatabaseName\": \"<string>\",\n    \"DirectPathParallelLoad\": \"<boolean>\",\n    \"FailTasksOnLobTruncation\": \"<boolean>\",\n    \"NumberDatatypeScale\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ReadTableSpaceName\": \"<boolean>\",\n    \"RetryInterval\": \"<integer>\",\n    \"SecurityDbEncryption\": \"<password>\",\n    \"SecurityDbEncryptionName\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"SpatialDataOptionToGeoJsonFunctionName\": \"<string>\",\n    \"StandbyDelayTime\": \"<integer>\",\n    \"Username\": \"<string>\",\n    \"UseBFile\": \"<boolean>\",\n    \"UseDirectPathFullLoad\": \"<boolean>\",\n    \"UseLogminerReader\": \"<boolean>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"SecretsManagerOracleAsmAccessRoleArn\": \"<string>\",\n    \"SecretsManagerOracleAsmSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"ConvertTimestampWithZoneToUTC\": \"<boolean>\"\n  },\n  \"SybaseSettings\": {\n    \"DatabaseName\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"MicrosoftSQLServerSettings\": {\n    \"Port\": \"<integer>\",\n    \"BcpPacketSize\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"ControlTablesFileGroup\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"QuerySingleAlwaysOnNode\": \"<boolean>\",\n    \"ReadBackupOnly\": \"<boolean>\",\n    \"SafeguardPolicy\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"UseBcpFullLoad\": \"<boolean>\",\n    \"UseThirdPartyBackupDevice\": \"<boolean>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"TlogAccessMode\": \"<string>\",\n    \"ForceLobLookup\": \"<boolean>\"\n  },\n  \"IBMDb2Settings\": {\n    \"DatabaseName\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"SetDataCaptureChanges\": \"<boolean>\",\n    \"CurrentLsn\": \"<string>\",\n    \"MaxKBytesPerRead\": \"<integer>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"DocDbSettings\": {\n    \"Username\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"NestingLevel\": \"<string>\",\n    \"ExtractDocId\": \"<boolean>\",\n    \"DocsToInvestigate\": \"<integer>\",\n    \"KmsKeyId\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"RedisSettings\": {\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"SslSecurityProtocol\": \"<string>\",\n    \"AuthType\": \"<string>\",\n    \"AuthUserName\": \"<string>\",\n    \"AuthPassword\": \"<password>\",\n    \"SslCaCertificateArn\": \"<string>\"\n  },\n  \"ExactSettings\": \"<boolean>\",\n  \"GcpMySQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CleanSourceMetadataOnMismatch\": \"<boolean>\",\n    \"DatabaseName\": \"<string>\",\n    \"EventsPollInterval\": \"<integer>\",\n    \"TargetDbType\": \"<string>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"ParallelLoadThreads\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"ServerTimezone\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "221e5452-c211-43cd-b7cb-6ee6574ec6fc",
+              "name": "ResourceNotFoundFault",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.ModifyEndpoint",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"EndpointArn\": \"<string>\",\n  \"EndpointIdentifier\": \"<string>\",\n  \"EndpointType\": \"<string>\",\n  \"EngineName\": \"<string>\",\n  \"Username\": \"<string>\",\n  \"Password\": \"<password>\",\n  \"ServerName\": \"<string>\",\n  \"Port\": \"<integer>\",\n  \"DatabaseName\": \"<string>\",\n  \"ExtraConnectionAttributes\": \"<string>\",\n  \"CertificateArn\": \"<string>\",\n  \"SslMode\": \"<string>\",\n  \"ServiceAccessRoleArn\": \"<string>\",\n  \"ExternalTableDefinition\": \"<string>\",\n  \"DynamoDbSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\"\n  },\n  \"S3Settings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ExternalTableDefinition\": \"<string>\",\n    \"CsvRowDelimiter\": \"<string>\",\n    \"CsvDelimiter\": \"<string>\",\n    \"BucketFolder\": \"<string>\",\n    \"BucketName\": \"<string>\",\n    \"CompressionType\": \"<string>\",\n    \"EncryptionMode\": \"<string>\",\n    \"ServerSideEncryptionKmsKeyId\": \"<string>\",\n    \"DataFormat\": \"<string>\",\n    \"EncodingType\": \"<string>\",\n    \"DictPageSizeLimit\": \"<integer>\",\n    \"RowGroupLength\": \"<integer>\",\n    \"DataPageSize\": \"<integer>\",\n    \"ParquetVersion\": \"<string>\",\n    \"EnableStatistics\": \"<boolean>\",\n    \"IncludeOpForFullLoad\": \"<boolean>\",\n    \"CdcInsertsOnly\": \"<boolean>\",\n    \"TimestampColumnName\": \"<string>\",\n    \"ParquetTimestampInMillisecond\": \"<boolean>\",\n    \"CdcInsertsAndUpdates\": \"<boolean>\",\n    \"DatePartitionEnabled\": \"<boolean>\",\n    \"DatePartitionSequence\": \"<string>\",\n    \"DatePartitionDelimiter\": \"<string>\",\n    \"UseCsvNoSupValue\": \"<boolean>\",\n    \"CsvNoSupValue\": \"<string>\",\n    \"PreserveTransactions\": \"<boolean>\",\n    \"CdcPath\": \"<string>\",\n    \"UseTaskStartTimeForFullLoadTimestamp\": \"<boolean>\",\n    \"CannedAclForObjects\": \"<string>\",\n    \"AddColumnName\": \"<boolean>\",\n    \"CdcMaxBatchInterval\": \"<integer>\",\n    \"CdcMinFileSize\": \"<integer>\",\n    \"CsvNullValue\": \"<string>\",\n    \"IgnoreHeaderRows\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"Rfc4180\": \"<boolean>\",\n    \"DatePartitionTimezone\": \"<string>\",\n    \"AddTrailingPaddingCharacter\": \"<boolean>\",\n    \"ExpectedBucketOwner\": \"<string>\",\n    \"GlueCatalogGeneration\": \"<boolean>\"\n  },\n  \"DmsTransferSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"BucketName\": \"<string>\"\n  },\n  \"MongoDbSettings\": {\n    \"Username\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"AuthType\": \"<string>\",\n    \"AuthMechanism\": \"<string>\",\n    \"NestingLevel\": \"<string>\",\n    \"ExtractDocId\": \"<string>\",\n    \"DocsToInvestigate\": \"<string>\",\n    \"AuthSource\": \"<string>\",\n    \"KmsKeyId\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"KinesisSettings\": {\n    \"StreamArn\": \"<string>\",\n    \"MessageFormat\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"IncludeTransactionDetails\": \"<boolean>\",\n    \"IncludePartitionValue\": \"<boolean>\",\n    \"PartitionIncludeSchemaTable\": \"<boolean>\",\n    \"IncludeTableAlterOperations\": \"<boolean>\",\n    \"IncludeControlDetails\": \"<boolean>\",\n    \"IncludeNullAndEmpty\": \"<boolean>\",\n    \"NoHexPrefix\": \"<boolean>\"\n  },\n  \"KafkaSettings\": {\n    \"Broker\": \"<string>\",\n    \"Topic\": \"<string>\",\n    \"MessageFormat\": \"<string>\",\n    \"IncludeTransactionDetails\": \"<boolean>\",\n    \"IncludePartitionValue\": \"<boolean>\",\n    \"PartitionIncludeSchemaTable\": \"<boolean>\",\n    \"IncludeTableAlterOperations\": \"<boolean>\",\n    \"IncludeControlDetails\": \"<boolean>\",\n    \"MessageMaxBytes\": \"<integer>\",\n    \"IncludeNullAndEmpty\": \"<boolean>\",\n    \"SecurityProtocol\": \"<string>\",\n    \"SslClientCertificateArn\": \"<string>\",\n    \"SslClientKeyArn\": \"<string>\",\n    \"SslClientKeyPassword\": \"<password>\",\n    \"SslCaCertificateArn\": \"<string>\",\n    \"SaslUsername\": \"<string>\",\n    \"SaslPassword\": \"<password>\",\n    \"NoHexPrefix\": \"<boolean>\",\n    \"SaslMechanism\": \"<string>\"\n  },\n  \"ElasticsearchSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"EndpointUri\": \"<string>\",\n    \"FullLoadErrorPercentage\": \"<integer>\",\n    \"ErrorRetryDuration\": \"<integer>\",\n    \"UseNewMappingType\": \"<boolean>\"\n  },\n  \"NeptuneSettings\": {\n    \"S3BucketName\": \"<string>\",\n    \"S3BucketFolder\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ErrorRetryDuration\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"MaxRetryCount\": \"<integer>\",\n    \"IamAuthEnabled\": \"<boolean>\"\n  },\n  \"RedshiftSettings\": {\n    \"AcceptAnyDate\": \"<boolean>\",\n    \"AfterConnectScript\": \"<string>\",\n    \"BucketFolder\": \"<string>\",\n    \"BucketName\": \"<string>\",\n    \"CaseSensitiveNames\": \"<boolean>\",\n    \"CompUpdate\": \"<boolean>\",\n    \"ConnectionTimeout\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"DateFormat\": \"<string>\",\n    \"EmptyAsNull\": \"<boolean>\",\n    \"EncryptionMode\": \"<string>\",\n    \"ExplicitIds\": \"<boolean>\",\n    \"FileTransferUploadStreams\": \"<integer>\",\n    \"LoadTimeout\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"RemoveQuotes\": \"<boolean>\",\n    \"ReplaceInvalidChars\": \"<string>\",\n    \"ReplaceChars\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ServerSideEncryptionKmsKeyId\": \"<string>\",\n    \"TimeFormat\": \"<string>\",\n    \"TrimBlanks\": \"<boolean>\",\n    \"TruncateColumns\": \"<boolean>\",\n    \"Username\": \"<string>\",\n    \"WriteBufferSize\": \"<integer>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"MapBooleanAsBoolean\": \"<boolean>\"\n  },\n  \"PostgreSQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CaptureDdls\": \"<boolean>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"DdlArtifactsSchema\": \"<string>\",\n    \"ExecuteTimeout\": \"<integer>\",\n    \"FailTasksOnLobTruncation\": \"<boolean>\",\n    \"HeartbeatEnable\": \"<boolean>\",\n    \"HeartbeatSchema\": \"<string>\",\n    \"HeartbeatFrequency\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SlotName\": \"<string>\",\n    \"PluginName\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"MapBooleanAsBoolean\": \"<boolean>\"\n  },\n  \"MySQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CleanSourceMetadataOnMismatch\": \"<boolean>\",\n    \"DatabaseName\": \"<string>\",\n    \"EventsPollInterval\": \"<integer>\",\n    \"TargetDbType\": \"<string>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"ParallelLoadThreads\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"ServerTimezone\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"OracleSettings\": {\n    \"AddSupplementalLogging\": \"<boolean>\",\n    \"ArchivedLogDestId\": \"<integer>\",\n    \"AdditionalArchivedLogDestId\": \"<integer>\",\n    \"ExtraArchivedLogDestIds\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"AllowSelectNestedTables\": \"<boolean>\",\n    \"ParallelAsmReadThreads\": \"<integer>\",\n    \"ReadAheadBlocks\": \"<integer>\",\n    \"AccessAlternateDirectly\": \"<boolean>\",\n    \"UseAlternateFolderForOnline\": \"<boolean>\",\n    \"OraclePathPrefix\": \"<string>\",\n    \"UsePathPrefix\": \"<string>\",\n    \"ReplacePathPrefix\": \"<boolean>\",\n    \"EnableHomogenousTablespace\": \"<boolean>\",\n    \"DirectPathNoLog\": \"<boolean>\",\n    \"ArchivedLogsOnly\": \"<boolean>\",\n    \"AsmPassword\": \"<password>\",\n    \"AsmServer\": \"<string>\",\n    \"AsmUser\": \"<string>\",\n    \"CharLengthSemantics\": \"<string>\",\n    \"DatabaseName\": \"<string>\",\n    \"DirectPathParallelLoad\": \"<boolean>\",\n    \"FailTasksOnLobTruncation\": \"<boolean>\",\n    \"NumberDatatypeScale\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ReadTableSpaceName\": \"<boolean>\",\n    \"RetryInterval\": \"<integer>\",\n    \"SecurityDbEncryption\": \"<password>\",\n    \"SecurityDbEncryptionName\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"SpatialDataOptionToGeoJsonFunctionName\": \"<string>\",\n    \"StandbyDelayTime\": \"<integer>\",\n    \"Username\": \"<string>\",\n    \"UseBFile\": \"<boolean>\",\n    \"UseDirectPathFullLoad\": \"<boolean>\",\n    \"UseLogminerReader\": \"<boolean>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"SecretsManagerOracleAsmAccessRoleArn\": \"<string>\",\n    \"SecretsManagerOracleAsmSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"ConvertTimestampWithZoneToUTC\": \"<boolean>\"\n  },\n  \"SybaseSettings\": {\n    \"DatabaseName\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"MicrosoftSQLServerSettings\": {\n    \"Port\": \"<integer>\",\n    \"BcpPacketSize\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"ControlTablesFileGroup\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"QuerySingleAlwaysOnNode\": \"<boolean>\",\n    \"ReadBackupOnly\": \"<boolean>\",\n    \"SafeguardPolicy\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"UseBcpFullLoad\": \"<boolean>\",\n    \"UseThirdPartyBackupDevice\": \"<boolean>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"TlogAccessMode\": \"<string>\",\n    \"ForceLobLookup\": \"<boolean>\"\n  },\n  \"IBMDb2Settings\": {\n    \"DatabaseName\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"SetDataCaptureChanges\": \"<boolean>\",\n    \"CurrentLsn\": \"<string>\",\n    \"MaxKBytesPerRead\": \"<integer>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"DocDbSettings\": {\n    \"Username\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"NestingLevel\": \"<string>\",\n    \"ExtractDocId\": \"<boolean>\",\n    \"DocsToInvestigate\": \"<integer>\",\n    \"KmsKeyId\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"RedisSettings\": {\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"SslSecurityProtocol\": \"<string>\",\n    \"AuthType\": \"<string>\",\n    \"AuthUserName\": \"<string>\",\n    \"AuthPassword\": \"<password>\",\n    \"SslCaCertificateArn\": \"<string>\"\n  },\n  \"ExactSettings\": \"<boolean>\",\n  \"GcpMySQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CleanSourceMetadataOnMismatch\": \"<boolean>\",\n    \"DatabaseName\": \"<string>\",\n    \"EventsPollInterval\": \"<integer>\",\n    \"TargetDbType\": \"<string>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"ParallelLoadThreads\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"ServerTimezone\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5f3281e2-7f50-4f6f-9025-bcdf02273d6b",
+              "name": "ResourceAlreadyExistsFault",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.ModifyEndpoint",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"EndpointArn\": \"<string>\",\n  \"EndpointIdentifier\": \"<string>\",\n  \"EndpointType\": \"<string>\",\n  \"EngineName\": \"<string>\",\n  \"Username\": \"<string>\",\n  \"Password\": \"<password>\",\n  \"ServerName\": \"<string>\",\n  \"Port\": \"<integer>\",\n  \"DatabaseName\": \"<string>\",\n  \"ExtraConnectionAttributes\": \"<string>\",\n  \"CertificateArn\": \"<string>\",\n  \"SslMode\": \"<string>\",\n  \"ServiceAccessRoleArn\": \"<string>\",\n  \"ExternalTableDefinition\": \"<string>\",\n  \"DynamoDbSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\"\n  },\n  \"S3Settings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ExternalTableDefinition\": \"<string>\",\n    \"CsvRowDelimiter\": \"<string>\",\n    \"CsvDelimiter\": \"<string>\",\n    \"BucketFolder\": \"<string>\",\n    \"BucketName\": \"<string>\",\n    \"CompressionType\": \"<string>\",\n    \"EncryptionMode\": \"<string>\",\n    \"ServerSideEncryptionKmsKeyId\": \"<string>\",\n    \"DataFormat\": \"<string>\",\n    \"EncodingType\": \"<string>\",\n    \"DictPageSizeLimit\": \"<integer>\",\n    \"RowGroupLength\": \"<integer>\",\n    \"DataPageSize\": \"<integer>\",\n    \"ParquetVersion\": \"<string>\",\n    \"EnableStatistics\": \"<boolean>\",\n    \"IncludeOpForFullLoad\": \"<boolean>\",\n    \"CdcInsertsOnly\": \"<boolean>\",\n    \"TimestampColumnName\": \"<string>\",\n    \"ParquetTimestampInMillisecond\": \"<boolean>\",\n    \"CdcInsertsAndUpdates\": \"<boolean>\",\n    \"DatePartitionEnabled\": \"<boolean>\",\n    \"DatePartitionSequence\": \"<string>\",\n    \"DatePartitionDelimiter\": \"<string>\",\n    \"UseCsvNoSupValue\": \"<boolean>\",\n    \"CsvNoSupValue\": \"<string>\",\n    \"PreserveTransactions\": \"<boolean>\",\n    \"CdcPath\": \"<string>\",\n    \"UseTaskStartTimeForFullLoadTimestamp\": \"<boolean>\",\n    \"CannedAclForObjects\": \"<string>\",\n    \"AddColumnName\": \"<boolean>\",\n    \"CdcMaxBatchInterval\": \"<integer>\",\n    \"CdcMinFileSize\": \"<integer>\",\n    \"CsvNullValue\": \"<string>\",\n    \"IgnoreHeaderRows\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"Rfc4180\": \"<boolean>\",\n    \"DatePartitionTimezone\": \"<string>\",\n    \"AddTrailingPaddingCharacter\": \"<boolean>\",\n    \"ExpectedBucketOwner\": \"<string>\",\n    \"GlueCatalogGeneration\": \"<boolean>\"\n  },\n  \"DmsTransferSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"BucketName\": \"<string>\"\n  },\n  \"MongoDbSettings\": {\n    \"Username\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"AuthType\": \"<string>\",\n    \"AuthMechanism\": \"<string>\",\n    \"NestingLevel\": \"<string>\",\n    \"ExtractDocId\": \"<string>\",\n    \"DocsToInvestigate\": \"<string>\",\n    \"AuthSource\": \"<string>\",\n    \"KmsKeyId\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"KinesisSettings\": {\n    \"StreamArn\": \"<string>\",\n    \"MessageFormat\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"IncludeTransactionDetails\": \"<boolean>\",\n    \"IncludePartitionValue\": \"<boolean>\",\n    \"PartitionIncludeSchemaTable\": \"<boolean>\",\n    \"IncludeTableAlterOperations\": \"<boolean>\",\n    \"IncludeControlDetails\": \"<boolean>\",\n    \"IncludeNullAndEmpty\": \"<boolean>\",\n    \"NoHexPrefix\": \"<boolean>\"\n  },\n  \"KafkaSettings\": {\n    \"Broker\": \"<string>\",\n    \"Topic\": \"<string>\",\n    \"MessageFormat\": \"<string>\",\n    \"IncludeTransactionDetails\": \"<boolean>\",\n    \"IncludePartitionValue\": \"<boolean>\",\n    \"PartitionIncludeSchemaTable\": \"<boolean>\",\n    \"IncludeTableAlterOperations\": \"<boolean>\",\n    \"IncludeControlDetails\": \"<boolean>\",\n    \"MessageMaxBytes\": \"<integer>\",\n    \"IncludeNullAndEmpty\": \"<boolean>\",\n    \"SecurityProtocol\": \"<string>\",\n    \"SslClientCertificateArn\": \"<string>\",\n    \"SslClientKeyArn\": \"<string>\",\n    \"SslClientKeyPassword\": \"<password>\",\n    \"SslCaCertificateArn\": \"<string>\",\n    \"SaslUsername\": \"<string>\",\n    \"SaslPassword\": \"<password>\",\n    \"NoHexPrefix\": \"<boolean>\",\n    \"SaslMechanism\": \"<string>\"\n  },\n  \"ElasticsearchSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"EndpointUri\": \"<string>\",\n    \"FullLoadErrorPercentage\": \"<integer>\",\n    \"ErrorRetryDuration\": \"<integer>\",\n    \"UseNewMappingType\": \"<boolean>\"\n  },\n  \"NeptuneSettings\": {\n    \"S3BucketName\": \"<string>\",\n    \"S3BucketFolder\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ErrorRetryDuration\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"MaxRetryCount\": \"<integer>\",\n    \"IamAuthEnabled\": \"<boolean>\"\n  },\n  \"RedshiftSettings\": {\n    \"AcceptAnyDate\": \"<boolean>\",\n    \"AfterConnectScript\": \"<string>\",\n    \"BucketFolder\": \"<string>\",\n    \"BucketName\": \"<string>\",\n    \"CaseSensitiveNames\": \"<boolean>\",\n    \"CompUpdate\": \"<boolean>\",\n    \"ConnectionTimeout\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"DateFormat\": \"<string>\",\n    \"EmptyAsNull\": \"<boolean>\",\n    \"EncryptionMode\": \"<string>\",\n    \"ExplicitIds\": \"<boolean>\",\n    \"FileTransferUploadStreams\": \"<integer>\",\n    \"LoadTimeout\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"RemoveQuotes\": \"<boolean>\",\n    \"ReplaceInvalidChars\": \"<string>\",\n    \"ReplaceChars\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ServerSideEncryptionKmsKeyId\": \"<string>\",\n    \"TimeFormat\": \"<string>\",\n    \"TrimBlanks\": \"<boolean>\",\n    \"TruncateColumns\": \"<boolean>\",\n    \"Username\": \"<string>\",\n    \"WriteBufferSize\": \"<integer>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"MapBooleanAsBoolean\": \"<boolean>\"\n  },\n  \"PostgreSQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CaptureDdls\": \"<boolean>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"DdlArtifactsSchema\": \"<string>\",\n    \"ExecuteTimeout\": \"<integer>\",\n    \"FailTasksOnLobTruncation\": \"<boolean>\",\n    \"HeartbeatEnable\": \"<boolean>\",\n    \"HeartbeatSchema\": \"<string>\",\n    \"HeartbeatFrequency\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SlotName\": \"<string>\",\n    \"PluginName\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"MapBooleanAsBoolean\": \"<boolean>\"\n  },\n  \"MySQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CleanSourceMetadataOnMismatch\": \"<boolean>\",\n    \"DatabaseName\": \"<string>\",\n    \"EventsPollInterval\": \"<integer>\",\n    \"TargetDbType\": \"<string>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"ParallelLoadThreads\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"ServerTimezone\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"OracleSettings\": {\n    \"AddSupplementalLogging\": \"<boolean>\",\n    \"ArchivedLogDestId\": \"<integer>\",\n    \"AdditionalArchivedLogDestId\": \"<integer>\",\n    \"ExtraArchivedLogDestIds\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"AllowSelectNestedTables\": \"<boolean>\",\n    \"ParallelAsmReadThreads\": \"<integer>\",\n    \"ReadAheadBlocks\": \"<integer>\",\n    \"AccessAlternateDirectly\": \"<boolean>\",\n    \"UseAlternateFolderForOnline\": \"<boolean>\",\n    \"OraclePathPrefix\": \"<string>\",\n    \"UsePathPrefix\": \"<string>\",\n    \"ReplacePathPrefix\": \"<boolean>\",\n    \"EnableHomogenousTablespace\": \"<boolean>\",\n    \"DirectPathNoLog\": \"<boolean>\",\n    \"ArchivedLogsOnly\": \"<boolean>\",\n    \"AsmPassword\": \"<password>\",\n    \"AsmServer\": \"<string>\",\n    \"AsmUser\": \"<string>\",\n    \"CharLengthSemantics\": \"<string>\",\n    \"DatabaseName\": \"<string>\",\n    \"DirectPathParallelLoad\": \"<boolean>\",\n    \"FailTasksOnLobTruncation\": \"<boolean>\",\n    \"NumberDatatypeScale\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ReadTableSpaceName\": \"<boolean>\",\n    \"RetryInterval\": \"<integer>\",\n    \"SecurityDbEncryption\": \"<password>\",\n    \"SecurityDbEncryptionName\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"SpatialDataOptionToGeoJsonFunctionName\": \"<string>\",\n    \"StandbyDelayTime\": \"<integer>\",\n    \"Username\": \"<string>\",\n    \"UseBFile\": \"<boolean>\",\n    \"UseDirectPathFullLoad\": \"<boolean>\",\n    \"UseLogminerReader\": \"<boolean>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"SecretsManagerOracleAsmAccessRoleArn\": \"<string>\",\n    \"SecretsManagerOracleAsmSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"ConvertTimestampWithZoneToUTC\": \"<boolean>\"\n  },\n  \"SybaseSettings\": {\n    \"DatabaseName\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"MicrosoftSQLServerSettings\": {\n    \"Port\": \"<integer>\",\n    \"BcpPacketSize\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"ControlTablesFileGroup\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"QuerySingleAlwaysOnNode\": \"<boolean>\",\n    \"ReadBackupOnly\": \"<boolean>\",\n    \"SafeguardPolicy\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"UseBcpFullLoad\": \"<boolean>\",\n    \"UseThirdPartyBackupDevice\": \"<boolean>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"TlogAccessMode\": \"<string>\",\n    \"ForceLobLookup\": \"<boolean>\"\n  },\n  \"IBMDb2Settings\": {\n    \"DatabaseName\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"SetDataCaptureChanges\": \"<boolean>\",\n    \"CurrentLsn\": \"<string>\",\n    \"MaxKBytesPerRead\": \"<integer>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"DocDbSettings\": {\n    \"Username\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"NestingLevel\": \"<string>\",\n    \"ExtractDocId\": \"<boolean>\",\n    \"DocsToInvestigate\": \"<integer>\",\n    \"KmsKeyId\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"RedisSettings\": {\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"SslSecurityProtocol\": \"<string>\",\n    \"AuthType\": \"<string>\",\n    \"AuthUserName\": \"<string>\",\n    \"AuthPassword\": \"<password>\",\n    \"SslCaCertificateArn\": \"<string>\"\n  },\n  \"ExactSettings\": \"<boolean>\",\n  \"GcpMySQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CleanSourceMetadataOnMismatch\": \"<boolean>\",\n    \"DatabaseName\": \"<string>\",\n    \"EventsPollInterval\": \"<integer>\",\n    \"TargetDbType\": \"<string>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"ParallelLoadThreads\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"ServerTimezone\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f8068b56-50e9-44c1-897b-cef35776db04",
+              "name": "KMSKeyNotAccessibleFault",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.ModifyEndpoint",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"EndpointArn\": \"<string>\",\n  \"EndpointIdentifier\": \"<string>\",\n  \"EndpointType\": \"<string>\",\n  \"EngineName\": \"<string>\",\n  \"Username\": \"<string>\",\n  \"Password\": \"<password>\",\n  \"ServerName\": \"<string>\",\n  \"Port\": \"<integer>\",\n  \"DatabaseName\": \"<string>\",\n  \"ExtraConnectionAttributes\": \"<string>\",\n  \"CertificateArn\": \"<string>\",\n  \"SslMode\": \"<string>\",\n  \"ServiceAccessRoleArn\": \"<string>\",\n  \"ExternalTableDefinition\": \"<string>\",\n  \"DynamoDbSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\"\n  },\n  \"S3Settings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ExternalTableDefinition\": \"<string>\",\n    \"CsvRowDelimiter\": \"<string>\",\n    \"CsvDelimiter\": \"<string>\",\n    \"BucketFolder\": \"<string>\",\n    \"BucketName\": \"<string>\",\n    \"CompressionType\": \"<string>\",\n    \"EncryptionMode\": \"<string>\",\n    \"ServerSideEncryptionKmsKeyId\": \"<string>\",\n    \"DataFormat\": \"<string>\",\n    \"EncodingType\": \"<string>\",\n    \"DictPageSizeLimit\": \"<integer>\",\n    \"RowGroupLength\": \"<integer>\",\n    \"DataPageSize\": \"<integer>\",\n    \"ParquetVersion\": \"<string>\",\n    \"EnableStatistics\": \"<boolean>\",\n    \"IncludeOpForFullLoad\": \"<boolean>\",\n    \"CdcInsertsOnly\": \"<boolean>\",\n    \"TimestampColumnName\": \"<string>\",\n    \"ParquetTimestampInMillisecond\": \"<boolean>\",\n    \"CdcInsertsAndUpdates\": \"<boolean>\",\n    \"DatePartitionEnabled\": \"<boolean>\",\n    \"DatePartitionSequence\": \"<string>\",\n    \"DatePartitionDelimiter\": \"<string>\",\n    \"UseCsvNoSupValue\": \"<boolean>\",\n    \"CsvNoSupValue\": \"<string>\",\n    \"PreserveTransactions\": \"<boolean>\",\n    \"CdcPath\": \"<string>\",\n    \"UseTaskStartTimeForFullLoadTimestamp\": \"<boolean>\",\n    \"CannedAclForObjects\": \"<string>\",\n    \"AddColumnName\": \"<boolean>\",\n    \"CdcMaxBatchInterval\": \"<integer>\",\n    \"CdcMinFileSize\": \"<integer>\",\n    \"CsvNullValue\": \"<string>\",\n    \"IgnoreHeaderRows\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"Rfc4180\": \"<boolean>\",\n    \"DatePartitionTimezone\": \"<string>\",\n    \"AddTrailingPaddingCharacter\": \"<boolean>\",\n    \"ExpectedBucketOwner\": \"<string>\",\n    \"GlueCatalogGeneration\": \"<boolean>\"\n  },\n  \"DmsTransferSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"BucketName\": \"<string>\"\n  },\n  \"MongoDbSettings\": {\n    \"Username\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"AuthType\": \"<string>\",\n    \"AuthMechanism\": \"<string>\",\n    \"NestingLevel\": \"<string>\",\n    \"ExtractDocId\": \"<string>\",\n    \"DocsToInvestigate\": \"<string>\",\n    \"AuthSource\": \"<string>\",\n    \"KmsKeyId\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"KinesisSettings\": {\n    \"StreamArn\": \"<string>\",\n    \"MessageFormat\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"IncludeTransactionDetails\": \"<boolean>\",\n    \"IncludePartitionValue\": \"<boolean>\",\n    \"PartitionIncludeSchemaTable\": \"<boolean>\",\n    \"IncludeTableAlterOperations\": \"<boolean>\",\n    \"IncludeControlDetails\": \"<boolean>\",\n    \"IncludeNullAndEmpty\": \"<boolean>\",\n    \"NoHexPrefix\": \"<boolean>\"\n  },\n  \"KafkaSettings\": {\n    \"Broker\": \"<string>\",\n    \"Topic\": \"<string>\",\n    \"MessageFormat\": \"<string>\",\n    \"IncludeTransactionDetails\": \"<boolean>\",\n    \"IncludePartitionValue\": \"<boolean>\",\n    \"PartitionIncludeSchemaTable\": \"<boolean>\",\n    \"IncludeTableAlterOperations\": \"<boolean>\",\n    \"IncludeControlDetails\": \"<boolean>\",\n    \"MessageMaxBytes\": \"<integer>\",\n    \"IncludeNullAndEmpty\": \"<boolean>\",\n    \"SecurityProtocol\": \"<string>\",\n    \"SslClientCertificateArn\": \"<string>\",\n    \"SslClientKeyArn\": \"<string>\",\n    \"SslClientKeyPassword\": \"<password>\",\n    \"SslCaCertificateArn\": \"<string>\",\n    \"SaslUsername\": \"<string>\",\n    \"SaslPassword\": \"<password>\",\n    \"NoHexPrefix\": \"<boolean>\",\n    \"SaslMechanism\": \"<string>\"\n  },\n  \"ElasticsearchSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"EndpointUri\": \"<string>\",\n    \"FullLoadErrorPercentage\": \"<integer>\",\n    \"ErrorRetryDuration\": \"<integer>\",\n    \"UseNewMappingType\": \"<boolean>\"\n  },\n  \"NeptuneSettings\": {\n    \"S3BucketName\": \"<string>\",\n    \"S3BucketFolder\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ErrorRetryDuration\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"MaxRetryCount\": \"<integer>\",\n    \"IamAuthEnabled\": \"<boolean>\"\n  },\n  \"RedshiftSettings\": {\n    \"AcceptAnyDate\": \"<boolean>\",\n    \"AfterConnectScript\": \"<string>\",\n    \"BucketFolder\": \"<string>\",\n    \"BucketName\": \"<string>\",\n    \"CaseSensitiveNames\": \"<boolean>\",\n    \"CompUpdate\": \"<boolean>\",\n    \"ConnectionTimeout\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"DateFormat\": \"<string>\",\n    \"EmptyAsNull\": \"<boolean>\",\n    \"EncryptionMode\": \"<string>\",\n    \"ExplicitIds\": \"<boolean>\",\n    \"FileTransferUploadStreams\": \"<integer>\",\n    \"LoadTimeout\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"RemoveQuotes\": \"<boolean>\",\n    \"ReplaceInvalidChars\": \"<string>\",\n    \"ReplaceChars\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ServerSideEncryptionKmsKeyId\": \"<string>\",\n    \"TimeFormat\": \"<string>\",\n    \"TrimBlanks\": \"<boolean>\",\n    \"TruncateColumns\": \"<boolean>\",\n    \"Username\": \"<string>\",\n    \"WriteBufferSize\": \"<integer>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"MapBooleanAsBoolean\": \"<boolean>\"\n  },\n  \"PostgreSQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CaptureDdls\": \"<boolean>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"DdlArtifactsSchema\": \"<string>\",\n    \"ExecuteTimeout\": \"<integer>\",\n    \"FailTasksOnLobTruncation\": \"<boolean>\",\n    \"HeartbeatEnable\": \"<boolean>\",\n    \"HeartbeatSchema\": \"<string>\",\n    \"HeartbeatFrequency\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SlotName\": \"<string>\",\n    \"PluginName\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"MapBooleanAsBoolean\": \"<boolean>\"\n  },\n  \"MySQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CleanSourceMetadataOnMismatch\": \"<boolean>\",\n    \"DatabaseName\": \"<string>\",\n    \"EventsPollInterval\": \"<integer>\",\n    \"TargetDbType\": \"<string>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"ParallelLoadThreads\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"ServerTimezone\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"OracleSettings\": {\n    \"AddSupplementalLogging\": \"<boolean>\",\n    \"ArchivedLogDestId\": \"<integer>\",\n    \"AdditionalArchivedLogDestId\": \"<integer>\",\n    \"ExtraArchivedLogDestIds\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"AllowSelectNestedTables\": \"<boolean>\",\n    \"ParallelAsmReadThreads\": \"<integer>\",\n    \"ReadAheadBlocks\": \"<integer>\",\n    \"AccessAlternateDirectly\": \"<boolean>\",\n    \"UseAlternateFolderForOnline\": \"<boolean>\",\n    \"OraclePathPrefix\": \"<string>\",\n    \"UsePathPrefix\": \"<string>\",\n    \"ReplacePathPrefix\": \"<boolean>\",\n    \"EnableHomogenousTablespace\": \"<boolean>\",\n    \"DirectPathNoLog\": \"<boolean>\",\n    \"ArchivedLogsOnly\": \"<boolean>\",\n    \"AsmPassword\": \"<password>\",\n    \"AsmServer\": \"<string>\",\n    \"AsmUser\": \"<string>\",\n    \"CharLengthSemantics\": \"<string>\",\n    \"DatabaseName\": \"<string>\",\n    \"DirectPathParallelLoad\": \"<boolean>\",\n    \"FailTasksOnLobTruncation\": \"<boolean>\",\n    \"NumberDatatypeScale\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ReadTableSpaceName\": \"<boolean>\",\n    \"RetryInterval\": \"<integer>\",\n    \"SecurityDbEncryption\": \"<password>\",\n    \"SecurityDbEncryptionName\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"SpatialDataOptionToGeoJsonFunctionName\": \"<string>\",\n    \"StandbyDelayTime\": \"<integer>\",\n    \"Username\": \"<string>\",\n    \"UseBFile\": \"<boolean>\",\n    \"UseDirectPathFullLoad\": \"<boolean>\",\n    \"UseLogminerReader\": \"<boolean>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"SecretsManagerOracleAsmAccessRoleArn\": \"<string>\",\n    \"SecretsManagerOracleAsmSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"ConvertTimestampWithZoneToUTC\": \"<boolean>\"\n  },\n  \"SybaseSettings\": {\n    \"DatabaseName\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"MicrosoftSQLServerSettings\": {\n    \"Port\": \"<integer>\",\n    \"BcpPacketSize\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"ControlTablesFileGroup\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"QuerySingleAlwaysOnNode\": \"<boolean>\",\n    \"ReadBackupOnly\": \"<boolean>\",\n    \"SafeguardPolicy\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"UseBcpFullLoad\": \"<boolean>\",\n    \"UseThirdPartyBackupDevice\": \"<boolean>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"TlogAccessMode\": \"<string>\",\n    \"ForceLobLookup\": \"<boolean>\"\n  },\n  \"IBMDb2Settings\": {\n    \"DatabaseName\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"SetDataCaptureChanges\": \"<boolean>\",\n    \"CurrentLsn\": \"<string>\",\n    \"MaxKBytesPerRead\": \"<integer>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"DocDbSettings\": {\n    \"Username\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"NestingLevel\": \"<string>\",\n    \"ExtractDocId\": \"<boolean>\",\n    \"DocsToInvestigate\": \"<integer>\",\n    \"KmsKeyId\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"RedisSettings\": {\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"SslSecurityProtocol\": \"<string>\",\n    \"AuthType\": \"<string>\",\n    \"AuthUserName\": \"<string>\",\n    \"AuthPassword\": \"<password>\",\n    \"SslCaCertificateArn\": \"<string>\"\n  },\n  \"ExactSettings\": \"<boolean>\",\n  \"GcpMySQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CleanSourceMetadataOnMismatch\": \"<boolean>\",\n    \"DatabaseName\": \"<string>\",\n    \"EventsPollInterval\": \"<integer>\",\n    \"TargetDbType\": \"<string>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"ParallelLoadThreads\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"ServerTimezone\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 483,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "149c250c-7586-44ff-8c41-3bef2b7ce153",
+              "name": "AccessDeniedFault",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AmazonDMSv20160101.ModifyEndpoint",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"EndpointArn\": \"<string>\",\n  \"EndpointIdentifier\": \"<string>\",\n  \"EndpointType\": \"<string>\",\n  \"EngineName\": \"<string>\",\n  \"Username\": \"<string>\",\n  \"Password\": \"<password>\",\n  \"ServerName\": \"<string>\",\n  \"Port\": \"<integer>\",\n  \"DatabaseName\": \"<string>\",\n  \"ExtraConnectionAttributes\": \"<string>\",\n  \"CertificateArn\": \"<string>\",\n  \"SslMode\": \"<string>\",\n  \"ServiceAccessRoleArn\": \"<string>\",\n  \"ExternalTableDefinition\": \"<string>\",\n  \"DynamoDbSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\"\n  },\n  \"S3Settings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ExternalTableDefinition\": \"<string>\",\n    \"CsvRowDelimiter\": \"<string>\",\n    \"CsvDelimiter\": \"<string>\",\n    \"BucketFolder\": \"<string>\",\n    \"BucketName\": \"<string>\",\n    \"CompressionType\": \"<string>\",\n    \"EncryptionMode\": \"<string>\",\n    \"ServerSideEncryptionKmsKeyId\": \"<string>\",\n    \"DataFormat\": \"<string>\",\n    \"EncodingType\": \"<string>\",\n    \"DictPageSizeLimit\": \"<integer>\",\n    \"RowGroupLength\": \"<integer>\",\n    \"DataPageSize\": \"<integer>\",\n    \"ParquetVersion\": \"<string>\",\n    \"EnableStatistics\": \"<boolean>\",\n    \"IncludeOpForFullLoad\": \"<boolean>\",\n    \"CdcInsertsOnly\": \"<boolean>\",\n    \"TimestampColumnName\": \"<string>\",\n    \"ParquetTimestampInMillisecond\": \"<boolean>\",\n    \"CdcInsertsAndUpdates\": \"<boolean>\",\n    \"DatePartitionEnabled\": \"<boolean>\",\n    \"DatePartitionSequence\": \"<string>\",\n    \"DatePartitionDelimiter\": \"<string>\",\n    \"UseCsvNoSupValue\": \"<boolean>\",\n    \"CsvNoSupValue\": \"<string>\",\n    \"PreserveTransactions\": \"<boolean>\",\n    \"CdcPath\": \"<string>\",\n    \"UseTaskStartTimeForFullLoadTimestamp\": \"<boolean>\",\n    \"CannedAclForObjects\": \"<string>\",\n    \"AddColumnName\": \"<boolean>\",\n    \"CdcMaxBatchInterval\": \"<integer>\",\n    \"CdcMinFileSize\": \"<integer>\",\n    \"CsvNullValue\": \"<string>\",\n    \"IgnoreHeaderRows\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"Rfc4180\": \"<boolean>\",\n    \"DatePartitionTimezone\": \"<string>\",\n    \"AddTrailingPaddingCharacter\": \"<boolean>\",\n    \"ExpectedBucketOwner\": \"<string>\",\n    \"GlueCatalogGeneration\": \"<boolean>\"\n  },\n  \"DmsTransferSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"BucketName\": \"<string>\"\n  },\n  \"MongoDbSettings\": {\n    \"Username\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"AuthType\": \"<string>\",\n    \"AuthMechanism\": \"<string>\",\n    \"NestingLevel\": \"<string>\",\n    \"ExtractDocId\": \"<string>\",\n    \"DocsToInvestigate\": \"<string>\",\n    \"AuthSource\": \"<string>\",\n    \"KmsKeyId\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"KinesisSettings\": {\n    \"StreamArn\": \"<string>\",\n    \"MessageFormat\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"IncludeTransactionDetails\": \"<boolean>\",\n    \"IncludePartitionValue\": \"<boolean>\",\n    \"PartitionIncludeSchemaTable\": \"<boolean>\",\n    \"IncludeTableAlterOperations\": \"<boolean>\",\n    \"IncludeControlDetails\": \"<boolean>\",\n    \"IncludeNullAndEmpty\": \"<boolean>\",\n    \"NoHexPrefix\": \"<boolean>\"\n  },\n  \"KafkaSettings\": {\n    \"Broker\": \"<string>\",\n    \"Topic\": \"<string>\",\n    \"MessageFormat\": \"<string>\",\n    \"IncludeTransactionDetails\": \"<boolean>\",\n    \"IncludePartitionValue\": \"<boolean>\",\n    \"PartitionIncludeSchemaTable\": \"<boolean>\",\n    \"IncludeTableAlterOperations\": \"<boolean>\",\n    \"IncludeControlDetails\": \"<boolean>\",\n    \"MessageMaxBytes\": \"<integer>\",\n    \"IncludeNullAndEmpty\": \"<boolean>\",\n    \"SecurityProtocol\": \"<string>\",\n    \"SslClientCertificateArn\": \"<string>\",\n    \"SslClientKeyArn\": \"<string>\",\n    \"SslClientKeyPassword\": \"<password>\",\n    \"SslCaCertificateArn\": \"<string>\",\n    \"SaslUsername\": \"<string>\",\n    \"SaslPassword\": \"<password>\",\n    \"NoHexPrefix\": \"<boolean>\",\n    \"SaslMechanism\": \"<string>\"\n  },\n  \"ElasticsearchSettings\": {\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"EndpointUri\": \"<string>\",\n    \"FullLoadErrorPercentage\": \"<integer>\",\n    \"ErrorRetryDuration\": \"<integer>\",\n    \"UseNewMappingType\": \"<boolean>\"\n  },\n  \"NeptuneSettings\": {\n    \"S3BucketName\": \"<string>\",\n    \"S3BucketFolder\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ErrorRetryDuration\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"MaxRetryCount\": \"<integer>\",\n    \"IamAuthEnabled\": \"<boolean>\"\n  },\n  \"RedshiftSettings\": {\n    \"AcceptAnyDate\": \"<boolean>\",\n    \"AfterConnectScript\": \"<string>\",\n    \"BucketFolder\": \"<string>\",\n    \"BucketName\": \"<string>\",\n    \"CaseSensitiveNames\": \"<boolean>\",\n    \"CompUpdate\": \"<boolean>\",\n    \"ConnectionTimeout\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"DateFormat\": \"<string>\",\n    \"EmptyAsNull\": \"<boolean>\",\n    \"EncryptionMode\": \"<string>\",\n    \"ExplicitIds\": \"<boolean>\",\n    \"FileTransferUploadStreams\": \"<integer>\",\n    \"LoadTimeout\": \"<integer>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"RemoveQuotes\": \"<boolean>\",\n    \"ReplaceInvalidChars\": \"<string>\",\n    \"ReplaceChars\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"ServiceAccessRoleArn\": \"<string>\",\n    \"ServerSideEncryptionKmsKeyId\": \"<string>\",\n    \"TimeFormat\": \"<string>\",\n    \"TrimBlanks\": \"<boolean>\",\n    \"TruncateColumns\": \"<boolean>\",\n    \"Username\": \"<string>\",\n    \"WriteBufferSize\": \"<integer>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"MapBooleanAsBoolean\": \"<boolean>\"\n  },\n  \"PostgreSQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CaptureDdls\": \"<boolean>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"DdlArtifactsSchema\": \"<string>\",\n    \"ExecuteTimeout\": \"<integer>\",\n    \"FailTasksOnLobTruncation\": \"<boolean>\",\n    \"HeartbeatEnable\": \"<boolean>\",\n    \"HeartbeatSchema\": \"<string>\",\n    \"HeartbeatFrequency\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SlotName\": \"<string>\",\n    \"PluginName\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"MapBooleanAsBoolean\": \"<boolean>\"\n  },\n  \"MySQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CleanSourceMetadataOnMismatch\": \"<boolean>\",\n    \"DatabaseName\": \"<string>\",\n    \"EventsPollInterval\": \"<integer>\",\n    \"TargetDbType\": \"<string>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"ParallelLoadThreads\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"ServerTimezone\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"OracleSettings\": {\n    \"AddSupplementalLogging\": \"<boolean>\",\n    \"ArchivedLogDestId\": \"<integer>\",\n    \"AdditionalArchivedLogDestId\": \"<integer>\",\n    \"ExtraArchivedLogDestIds\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"AllowSelectNestedTables\": \"<boolean>\",\n    \"ParallelAsmReadThreads\": \"<integer>\",\n    \"ReadAheadBlocks\": \"<integer>\",\n    \"AccessAlternateDirectly\": \"<boolean>\",\n    \"UseAlternateFolderForOnline\": \"<boolean>\",\n    \"OraclePathPrefix\": \"<string>\",\n    \"UsePathPrefix\": \"<string>\",\n    \"ReplacePathPrefix\": \"<boolean>\",\n    \"EnableHomogenousTablespace\": \"<boolean>\",\n    \"DirectPathNoLog\": \"<boolean>\",\n    \"ArchivedLogsOnly\": \"<boolean>\",\n    \"AsmPassword\": \"<password>\",\n    \"AsmServer\": \"<string>\",\n    \"AsmUser\": \"<string>\",\n    \"CharLengthSemantics\": \"<string>\",\n    \"DatabaseName\": \"<string>\",\n    \"DirectPathParallelLoad\": \"<boolean>\",\n    \"FailTasksOnLobTruncation\": \"<boolean>\",\n    \"NumberDatatypeScale\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ReadTableSpaceName\": \"<boolean>\",\n    \"RetryInterval\": \"<integer>\",\n    \"SecurityDbEncryption\": \"<password>\",\n    \"SecurityDbEncryptionName\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"SpatialDataOptionToGeoJsonFunctionName\": \"<string>\",\n    \"StandbyDelayTime\": \"<integer>\",\n    \"Username\": \"<string>\",\n    \"UseBFile\": \"<boolean>\",\n    \"UseDirectPathFullLoad\": \"<boolean>\",\n    \"UseLogminerReader\": \"<boolean>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"SecretsManagerOracleAsmAccessRoleArn\": \"<string>\",\n    \"SecretsManagerOracleAsmSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"ConvertTimestampWithZoneToUTC\": \"<boolean>\"\n  },\n  \"SybaseSettings\": {\n    \"DatabaseName\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"MicrosoftSQLServerSettings\": {\n    \"Port\": \"<integer>\",\n    \"BcpPacketSize\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"ControlTablesFileGroup\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"QuerySingleAlwaysOnNode\": \"<boolean>\",\n    \"ReadBackupOnly\": \"<boolean>\",\n    \"SafeguardPolicy\": \"<string>\",\n    \"ServerName\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"UseBcpFullLoad\": \"<boolean>\",\n    \"UseThirdPartyBackupDevice\": \"<boolean>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\",\n    \"TrimSpaceInChar\": \"<boolean>\",\n    \"TlogAccessMode\": \"<string>\",\n    \"ForceLobLookup\": \"<boolean>\"\n  },\n  \"IBMDb2Settings\": {\n    \"DatabaseName\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"SetDataCaptureChanges\": \"<boolean>\",\n    \"CurrentLsn\": \"<string>\",\n    \"MaxKBytesPerRead\": \"<integer>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"DocDbSettings\": {\n    \"Username\": \"<string>\",\n    \"Password\": \"<password>\",\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"DatabaseName\": \"<string>\",\n    \"NestingLevel\": \"<string>\",\n    \"ExtractDocId\": \"<boolean>\",\n    \"DocsToInvestigate\": \"<integer>\",\n    \"KmsKeyId\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  },\n  \"RedisSettings\": {\n    \"ServerName\": \"<string>\",\n    \"Port\": \"<integer>\",\n    \"SslSecurityProtocol\": \"<string>\",\n    \"AuthType\": \"<string>\",\n    \"AuthUserName\": \"<string>\",\n    \"AuthPassword\": \"<password>\",\n    \"SslCaCertificateArn\": \"<string>\"\n  },\n  \"ExactSettings\": \"<boolean>\",\n  \"GcpMySQLSettings\": {\n    \"AfterConnectScript\": \"<string>\",\n    \"CleanSourceMetadataOnMismatch\": \"<boolean>\",\n    \"DatabaseName\": \"<string>\",\n    \"EventsPollInterval\": \"<integer>\",\n    \"TargetDbType\": \"<string>\",\n    \"MaxFileSize\": \"<integer>\",\n    \"ParallelLoadThreads\": \"<integer>\",\n    \"Password\": \"<password>\",\n    \"Port\": \"<integer>\",\n    \"ServerName\": \"<string>\",\n    \"ServerTimezone\": \"<string>\",\n    \"Username\": \"<string>\",\n    \"SecretsManagerAccessRoleArn\": \"<string>\",\n    \"SecretsManagerSecretId\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 484,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "us-east-1",
+      "key": "region"
+    },
+    {
+      "type": "string",
+      "value": "http://dms.{{region}}.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7c215f77-3a16-43e5-bece-a719dfd2d420",
+    "name": "AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.ModifyEndpoint API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "<fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href=\"https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html\">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}

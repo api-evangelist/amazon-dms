@@ -1,0 +1,313 @@
+{
+  "item": [
+    {
+      "id": "533eb2d8-d84e-4dd6-b7c1-5fc51195565d",
+      "name": "Endpoints",
+      "description": {
+        "content": "Operations for managing source and target endpoints",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "75a2c80a-fe77-40c9-b3fa-9ebd70f083d0",
+          "name": "Amazon DMS Create an endpoint",
+          "request": {
+            "name": "Amazon DMS Create an endpoint",
+            "description": {
+              "content": "Creates an endpoint using the provided settings, representing a source or target database for migration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "createEndpoint"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"EndpointIdentifier\": \"<string>\",\n  \"EndpointType\": \"<string>\",\n  \"EngineName\": \"<string>\",\n  \"ServerName\": \"<string>\",\n  \"Port\": \"<integer>\",\n  \"DatabaseName\": \"<string>\",\n  \"Username\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"SslMode\": \"<string>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "49c44520-8587-4d66-95d4-51d5167587bd",
+              "name": "Endpoint created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "createEndpoint"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"EndpointIdentifier\": \"<string>\",\n  \"EndpointType\": \"<string>\",\n  \"EngineName\": \"<string>\",\n  \"ServerName\": \"<string>\",\n  \"Port\": \"<integer>\",\n  \"DatabaseName\": \"<string>\",\n  \"Username\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"SslMode\": \"<string>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"EndpointIdentifier\": \"string\",\n  \"EndpointType\": \"string\",\n  \"EngineName\": \"string\",\n  \"EngineDisplayName\": \"string\",\n  \"ServerName\": \"string\",\n  \"Port\": 1382,\n  \"DatabaseName\": \"string\",\n  \"Status\": \"string\",\n  \"EndpointArn\": \"string\",\n  \"SslMode\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "83d274ef-817b-4170-8310-1e9a8aad93c2",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "createEndpoint"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"EndpointIdentifier\": \"<string>\",\n  \"EndpointType\": \"<string>\",\n  \"EngineName\": \"<string>\",\n  \"ServerName\": \"<string>\",\n  \"Port\": \"<integer>\",\n  \"DatabaseName\": \"<string>\",\n  \"Username\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"SslMode\": \"<string>\"\n}"
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9278281f-a29e-408e-9cef-022241216ff9",
+          "name": "Amazon DMS Describe endpoints",
+          "request": {
+            "name": "Amazon DMS Describe endpoints",
+            "description": {
+              "content": "Returns information about the endpoints for your account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "describeEndpoints"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Filters\": [\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"MaxRecords\": \"<integer>\",\n  \"Marker\": \"<string>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "16081cc9-1aa0-48fb-a6d8-2a393e2bfbda",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "describeEndpoints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Filters\": [\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"MaxRecords\": \"<integer>\",\n  \"Marker\": \"<string>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Endpoints\": [\n    {\n      \"EndpointIdentifier\": \"string\",\n      \"EndpointType\": \"string\",\n      \"EngineName\": \"string\",\n      \"EngineDisplayName\": \"string\",\n      \"ServerName\": \"string\",\n      \"Port\": 8963,\n      \"DatabaseName\": \"string\",\n      \"Status\": \"string\",\n      \"EndpointArn\": \"string\",\n      \"SslMode\": \"string\"\n    },\n    {\n      \"EndpointIdentifier\": \"string\",\n      \"EndpointType\": \"string\",\n      \"EngineName\": \"string\",\n      \"EngineDisplayName\": \"string\",\n      \"ServerName\": \"string\",\n      \"Port\": 9598,\n      \"DatabaseName\": \"string\",\n      \"Status\": \"string\",\n      \"EndpointArn\": \"string\",\n      \"SslMode\": \"string\"\n    }\n  ],\n  \"Marker\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "us-east-1",
+      "key": "region"
+    },
+    {
+      "type": "string",
+      "value": "http://dms.{{region}}.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3560ab52-9094-4acf-8002-2d86a49388a0",
+    "name": "AWS Database Migration Service Endpoints API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "<fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href=\"https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html\">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}
