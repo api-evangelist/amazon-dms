@@ -37,7 +37,8 @@ apis:
   description: Operations for managing source and target endpoints
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - Endpoints
   properties:
   - type: OpenAPI
@@ -97,7 +98,8 @@ apis:
     for #x amz target=amazondmsv20160101.applypendingmaintenanceaction.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.ApplyPendingMaintenanceAction'
   properties:
   - type: OpenAPI
@@ -132,7 +134,8 @@ apis:
     for #x amz target=amazondmsv20160101.cancelreplicationtaskassessmentrun.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.CancelReplicationTaskAssessmentRun'
   properties:
   - type: OpenAPI
@@ -216,7 +219,8 @@ apis:
     for #x amz target=amazondmsv20160101.createreplicationsubnetgroup.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.CreateReplicationSubnetGroup'
   properties:
   - type: OpenAPI
@@ -365,7 +369,8 @@ apis:
     for #x amz target=amazondmsv20160101.deletereplicationsubnetgroup.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.DeleteReplicationSubnetGroup'
   properties:
   - type: OpenAPI
@@ -399,7 +404,8 @@ apis:
     for #x amz target=amazondmsv20160101.deletereplicationtaskassessmentrun.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.DeleteReplicationTaskAssessmentRun'
   properties:
   - type: OpenAPI
@@ -434,7 +440,8 @@ apis:
     1 operation(s) for #x amz target=amazondmsv20160101.describeapplicableindividualassessments.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.DescribeApplicableIndividualAssessments'
   properties:
   - type: OpenAPI
@@ -582,7 +589,8 @@ apis:
     for #x amz target=amazondmsv20160101.describefleetadvisorcollectors.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.DescribeFleetAdvisorCollectors'
   properties:
   - type: OpenAPI
@@ -599,7 +607,8 @@ apis:
     for #x amz target=amazondmsv20160101.describefleetadvisordatabases.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.DescribeFleetAdvisorDatabases'
   properties:
   - type: OpenAPI
@@ -617,7 +626,8 @@ apis:
     for #x amz target=amazondmsv20160101.describefleetadvisorlsaanalysis.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis'
   properties:
   - type: OpenAPI
@@ -635,7 +645,8 @@ apis:
     1 operation(s) for #x amz target=amazondmsv20160101.describefleetadvisorschemaobjectsummary.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.DescribeFleetAdvisorSchemaObjectSummary'
   properties:
   - type: OpenAPI
@@ -670,7 +681,8 @@ apis:
     operation(s) for #x amz target=amazondmsv20160101.describeorderablereplicationinstances.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.DescribeOrderableReplicationInstances'
   properties:
   - type: OpenAPI
@@ -688,7 +700,8 @@ apis:
     for #x amz target=amazondmsv20160101.describependingmaintenanceactions.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.DescribePendingMaintenanceActions'
   properties:
   - type: OpenAPI
@@ -706,7 +719,8 @@ apis:
     for #x amz target=amazondmsv20160101.describerecommendationlimitations.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.DescribeRecommendationLimitations'
   properties:
   - type: OpenAPI
@@ -740,7 +754,8 @@ apis:
     for #x amz target=amazondmsv20160101.describerefreshschemasstatus.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.DescribeRefreshSchemasStatus'
   properties:
   - type: OpenAPI
@@ -757,7 +772,8 @@ apis:
     for #x amz target=amazondmsv20160101.describereplicationinstances.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.DescribeReplicationInstances'
   properties:
   - type: OpenAPI
@@ -775,7 +791,8 @@ apis:
     for #x amz target=amazondmsv20160101.describereplicationinstancetasklogs.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.DescribeReplicationInstanceTaskLogs'
   properties:
   - type: OpenAPI
@@ -793,7 +810,8 @@ apis:
     for #x amz target=amazondmsv20160101.describereplicationsubnetgroups.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.DescribeReplicationSubnetGroups'
   properties:
   - type: OpenAPI
@@ -811,7 +829,8 @@ apis:
     — 1 operation(s) for #x amz target=amazondmsv20160101.describereplicationtaskassessmentresults.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentResults'
   properties:
   - type: OpenAPI
@@ -829,7 +848,8 @@ apis:
     operation(s) for #x amz target=amazondmsv20160101.describereplicationtaskassessmentruns.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns'
   properties:
   - type: OpenAPI
@@ -848,7 +868,8 @@ apis:
     DMS — 1 operation(s) for #x amz target=amazondmsv20160101.describereplicationtaskindividualassessments.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.DescribeReplicationTaskIndividualAssessments'
   properties:
   - type: OpenAPI
@@ -997,7 +1018,8 @@ apis:
     for #x amz target=amazondmsv20160101.modifyreplicationsubnetgroup.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.ModifyReplicationSubnetGroup'
   properties:
   - type: OpenAPI
@@ -1161,7 +1183,8 @@ apis:
     for #x amz target=amazondmsv20160101.startreplicationtaskassessment.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.StartReplicationTaskAssessment'
   properties:
   - type: OpenAPI
@@ -1179,7 +1202,8 @@ apis:
     for #x amz target=amazondmsv20160101.startreplicationtaskassessmentrun.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.StartReplicationTaskAssessmentRun'
   properties:
   - type: OpenAPI
@@ -1229,7 +1253,8 @@ apis:
     for #x amz target=amazondmsv20160101.updatesubscriptionstoeventbridge.
   humanURL: https://aws.amazon.com/dms/
   baseURL: https://dms.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AmazonDMSv20160101.UpdateSubscriptionsToEventBridge'
   properties:
   - type: OpenAPI
