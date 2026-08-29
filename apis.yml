@@ -1277,6 +1277,9 @@ apis:
   - type: GettingStarted
     url: https://aws.amazon.com/dms/getting-started/
 common:
+  - type: CapabilityMap
+    url: capabilities/amazon-dms-capability-edges.yml
+    name: Amazon DMS Business Capability Map
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/amazon-dms/overview
   - type: AgenticAccess

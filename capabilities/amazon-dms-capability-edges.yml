@@ -1,0 +1,62 @@
+slug: amazon-dms
+provider: Amazon DMS
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 5
+edges:
+- tag: '#X Amz Target=AmazonDMSv20160101.CreateReplicationSubnetGroup'
+  spec_file: amazon-dms-x-amz-target-amazondmsv20160101-createreplicationsubnetgroup-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: 'CreateReplicationSubnetGroup ... schemas: ReplicationSubnetGroup, Subnet, AvailabilityZone'
+  reason: Creating a subnet group (network placement of DMS replication instances) is cloud/network infrastructure
+    provisioning, mapping to IT Infrastructure Management. No business capability beyond IT.
+- tag: '#X Amz Target=AmazonDMSv20160101.DescribeReplicationInstances'
+  spec_file: amazon-dms-x-amz-target-amazondmsv20160101-describereplicationinstances-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: DescribeReplicationInstances; ReplicationInstance, VpcSecurityGroupMembership, ReplicationSubnetGroup,
+    AvailabilityZone
+  reason: Describes provisioned replication compute instances with their VPC security groups, subnets
+    and availability zones — management of cloud compute/network infrastructure.
+- tag: '#X Amz Target=AmazonDMSv20160101.DescribeReplicationSubnetGroups'
+  spec_file: amazon-dms-x-amz-target-amazondmsv20160101-describereplicationsubnetgroups-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: DescribeReplicationSubnetGroups; ReplicationSubnetGroup, SubnetList, Subnet, AvailabilityZone
+  reason: Describes network subnet groups and availability zones backing replication instances — cloud
+    network/infrastructure configuration, i.e. IT infrastructure management.
+- tag: '#X Amz Target=AmazonDMSv20160101.ModifyReplicationInstance'
+  spec_file: amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationinstance-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: ModifyReplicationInstance; schemas ReplicationInstance, VpcSecurityGroupMembership, AvailabilityZone,
+    StorageQuotaExceededFault
+  reason: Modifies the compute instance (class, storage, AZ, VPC security groups) running migrations —
+    plainly cloud compute/storage infrastructure management.
+- tag: '#X Amz Target=AmazonDMSv20160101.ModifyReplicationSubnetGroup'
+  spec_file: amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationsubnetgroup-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: ModifyReplicationSubnetGroup; schemas Subnet, SubnetIdentifierList, ReplicationSubnetGroupDoesNotCoverEnoughAZs
+  reason: Manages VPC subnet groups for replication instances — network infrastructure configuration in
+    the cloud, i.e. IT Infrastructure Management.
