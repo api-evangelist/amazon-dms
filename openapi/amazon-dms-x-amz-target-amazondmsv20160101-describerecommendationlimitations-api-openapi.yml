@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.DescribeRecommendationLimitations API'
+  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.DescribeRecommendationLimitations API'
   description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/dms-2016-01-01.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -173,36 +174,57 @@ paths:
       tags:
       - '#X Amz Target=AmazonDMSv20160101.DescribeRecommendationLimitations'
 components:
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    LimitationList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Limitation'
-    InvalidResourceStateFault: {}
-    IntegerOptional:
-      type: integer
     String:
       type: string
+    AccessDeniedFault: {}
     FilterList:
       type: array
       items:
         $ref: '#/components/schemas/Filter'
-    DescribeRecommendationLimitationsRequest:
-      type: object
-      title: DescribeRecommendationLimitationsRequest
-      properties:
-        Filters:
-          allOf:
-          - $ref: '#/components/schemas/FilterList'
-          - description: Filters applied to the limitations described in the form of key-value pairs.
-        MaxRecords:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, Fleet Advisor includes a pagination token in the response so that you can retrieve the remaining results.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: <p>Specifies the unique pagination token that makes it possible to display the next page of results. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p> <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     Filter:
       type: object
       required:
@@ -218,6 +240,12 @@ components:
           - $ref: '#/components/schemas/FilterValueList'
           - description: The filter value, which can specify one or more values used to narrow the returned results.
       description: 'Identifies the name and value of a filter object. This filter is used to limit the number and type of DMS objects that are returned for a particular <code>Describe*</code> call or similar operation. Filters are used as an optional parameter for certain API operations. '
+    FilterValueList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    IntegerOptional:
+      type: integer
     DescribeRecommendationLimitationsResponse:
       type: object
       properties:
@@ -229,10 +257,10 @@ components:
           allOf:
           - $ref: '#/components/schemas/LimitationList'
           - description: The list of limitations for recommendations of target Amazon Web Services engines.
-    FilterValueList:
+    LimitationList:
       type: array
       items:
-        $ref: '#/components/schemas/String'
+        $ref: '#/components/schemas/Limitation'
     Limitation:
       type: object
       properties:
@@ -261,50 +289,23 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The type of the limitation, such as action required, upgrade required, and limited feature.
       description: <p>Provides information about the limitations of target Amazon Web Services engines.</p> <p>Your source database might include features that the target Amazon Web Services engine doesn't support. Fleet Advisor lists these features as limitations. You should consider these limitations during database migration. For each limitation, Fleet Advisor recommends an action that you can take to address or avoid this limitation.</p>
-    AccessDeniedFault: {}
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
+    InvalidResourceStateFault: {}
+    DescribeRecommendationLimitationsRequest:
+      type: object
+      title: DescribeRecommendationLimitationsRequest
+      properties:
+        Filters:
+          allOf:
+          - $ref: '#/components/schemas/FilterList'
+          - description: Filters applied to the limitations described in the form of key-value pairs.
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, Fleet Advisor includes a pagination token in the response so that you can retrieve the remaining results.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: <p>Specifies the unique pagination token that makes it possible to display the next page of results. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p> <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
   securitySchemes:
     hmac:
       type: apiKey

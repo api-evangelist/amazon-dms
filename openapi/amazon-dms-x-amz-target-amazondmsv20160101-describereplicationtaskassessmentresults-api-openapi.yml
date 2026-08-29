@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentResults API'
+  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentResults API'
   description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/dms-2016-01-01.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -167,7 +168,91 @@ paths:
       tags:
       - '#X Amz Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentResults'
 components:
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    DescribeReplicationTaskAssessmentResultsResponse:
+      type: object
+      properties:
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: ' An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. '
+        BucketName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: '- The Amazon S3 bucket where the task assessment report is located. '
+        ReplicationTaskAssessmentResults:
+          allOf:
+          - $ref: '#/components/schemas/ReplicationTaskAssessmentResultList'
+          - description: ' The task assessment report. '
+      description: <p/>
+    String:
+      type: string
+    ResourceNotFoundFault: {}
+    TStamp:
+      type: string
+      format: date-time
+    DescribeReplicationTaskAssessmentResultsMessage:
+      type: object
+      title: DescribeReplicationTaskAssessmentResultsMessage
+      properties:
+        ReplicationTaskArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the <code>MaxRecords</code> and <code>Marker</code> parameters. '
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: '<p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>'
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: ' An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. '
+      description: <p/>
+    IntegerOptional:
+      type: integer
     ReplicationTaskAssessmentResult:
       type: object
       properties:
@@ -200,94 +285,10 @@ components:
           - $ref: '#/components/schemas/String'
           - description: <p> The URL of the S3 object containing the task assessment results. </p> <p>The response object only contains this field if you provide <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the request.</p>
       description: ' The task assessment report in JSON format. '
-    IntegerOptional:
-      type: integer
-    String:
-      type: string
-    DescribeReplicationTaskAssessmentResultsMessage:
-      type: object
-      title: DescribeReplicationTaskAssessmentResultsMessage
-      properties:
-        ReplicationTaskArn:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the <code>MaxRecords</code> and <code>Marker</code> parameters. '
-        MaxRecords:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: '<p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>'
-        Marker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: ' An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. '
-      description: <p/>
-    DescribeReplicationTaskAssessmentResultsResponse:
-      type: object
-      properties:
-        Marker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: ' An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. '
-        BucketName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: '- The Amazon S3 bucket where the task assessment report is located. '
-        ReplicationTaskAssessmentResults:
-          allOf:
-          - $ref: '#/components/schemas/ReplicationTaskAssessmentResultList'
-          - description: ' The task assessment report. '
-      description: <p/>
-    TStamp:
-      type: string
-      format: date-time
-    ResourceNotFoundFault: {}
     ReplicationTaskAssessmentResultList:
       type: array
       items:
         $ref: '#/components/schemas/ReplicationTaskAssessmentResult'
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

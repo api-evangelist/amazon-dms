@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.DescribeFleetAdvisorSchemas API'
+  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.DescribeFleetAdvisorSchemas API'
   description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/dms-2016-01-01.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -167,26 +168,50 @@ paths:
       tags:
       - '#X Amz Target=AmazonDMSv20160101.DescribeFleetAdvisorSchemas'
 components:
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    FleetAdvisorSchemaList:
-      type: array
-      items:
-        $ref: '#/components/schemas/SchemaResponse'
-    DescribeFleetAdvisorSchemasResponse:
-      type: object
-      properties:
-        FleetAdvisorSchemas:
-          allOf:
-          - $ref: '#/components/schemas/FleetAdvisorSchemaList'
-          - description: A collection of <code>SchemaResponse</code> objects.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. '
-    FilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Filter'
     Filter:
       type: object
       required:
@@ -202,26 +227,65 @@ components:
           - $ref: '#/components/schemas/FilterValueList'
           - description: The filter value, which can specify one or more values used to narrow the returned results.
       description: 'Identifies the name and value of a filter object. This filter is used to limit the number and type of DMS objects that are returned for a particular <code>Describe*</code> call or similar operation. Filters are used as an optional parameter for certain API operations. '
-    ServerShortInfoResponse:
+    IntegerOptional:
+      type: integer
+    DatabaseShortInfoResponse:
       type: object
       properties:
-        ServerId:
+        DatabaseId:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: The ID of a server in a Fleet Advisor collector inventory.
-        IpAddress:
+          - description: The ID of a database in a Fleet Advisor collector inventory.
+        DatabaseName:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: The IP address of a server in a Fleet Advisor collector inventory.
-        ServerName:
+          - description: The name of a database in a Fleet Advisor collector inventory.
+        DatabaseIpAddress:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: The name address of a server in a Fleet Advisor collector inventory.
-      description: Describes a server in a Fleet Advisor collector inventory.
+          - description: The IP address of a database in a Fleet Advisor collector inventory.
+        DatabaseEngine:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The database engine of a database in a Fleet Advisor collector inventory, for example <code>PostgreSQL</code>.
+      description: Describes a database in a Fleet Advisor collector inventory.
+    String:
+      type: string
+    DoubleOptional:
+      type: number
+      format: double
+    DescribeFleetAdvisorSchemasResponse:
+      type: object
+      properties:
+        FleetAdvisorSchemas:
+          allOf:
+          - $ref: '#/components/schemas/FleetAdvisorSchemaList'
+          - description: A collection of <code>SchemaResponse</code> objects.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. '
     FilterValueList:
       type: array
       items:
         $ref: '#/components/schemas/String'
+    DescribeFleetAdvisorSchemasRequest:
+      type: object
+      title: DescribeFleetAdvisorSchemasRequest
+      properties:
+        Filters:
+          allOf:
+          - $ref: '#/components/schemas/FilterList'
+          - description: '<p> If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p> <ul> <li> <p> <code>complexity</code> – The schema''s complexity, for example <code>Simple</code>.</p> </li> <li> <p> <code>database-id</code> – The ID of the schema''s database.</p> </li> <li> <p> <code>database-ip-address</code> – The IP address of the schema''s database.</p> </li> <li> <p> <code>database-name</code> – The name of the schema''s database.</p> </li> <li> <p> <code>database-engine</code> – The name of the schema database''s engine.</p> </li> <li> <p> <code>original-schema-name</code> – The name of the schema''s database''s main schema.</p> </li> <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p> </li> <li> <p> <code>schema-name</code> – The name of the schema.</p> </li> <li> <p> <code>server-ip-address</code> – The IP address of the schema database''s server.</p> </li> </ul> <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code> </p>'
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: Sets the maximum number of records returned in the response.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. '
+    InvalidResourceStateFault: {}
     SchemaResponse:
       type: object
       properties:
@@ -260,50 +324,6 @@ components:
           - $ref: '#/components/schemas/DoubleOptional'
           - description: The similarity value for a schema in a Fleet Advisor collector inventory. A higher similarity value indicates that a schema is likely to be a duplicate.
       description: Describes a schema in a Fleet Advisor collector inventory.
-    DescribeFleetAdvisorSchemasRequest:
-      type: object
-      title: DescribeFleetAdvisorSchemasRequest
-      properties:
-        Filters:
-          allOf:
-          - $ref: '#/components/schemas/FilterList'
-          - description: '<p> If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p> <ul> <li> <p> <code>complexity</code> – The schema''s complexity, for example <code>Simple</code>.</p> </li> <li> <p> <code>database-id</code> – The ID of the schema''s database.</p> </li> <li> <p> <code>database-ip-address</code> – The IP address of the schema''s database.</p> </li> <li> <p> <code>database-name</code> – The name of the schema''s database.</p> </li> <li> <p> <code>database-engine</code> – The name of the schema database''s engine.</p> </li> <li> <p> <code>original-schema-name</code> – The name of the schema''s database''s main schema.</p> </li> <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p> </li> <li> <p> <code>schema-name</code> – The name of the schema.</p> </li> <li> <p> <code>server-ip-address</code> – The IP address of the schema database''s server.</p> </li> </ul> <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code> </p>'
-        MaxRecords:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: Sets the maximum number of records returned in the response.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. '
-    DoubleOptional:
-      type: number
-      format: double
-    InvalidResourceStateFault: {}
-    DatabaseShortInfoResponse:
-      type: object
-      properties:
-        DatabaseId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The ID of a database in a Fleet Advisor collector inventory.
-        DatabaseName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of a database in a Fleet Advisor collector inventory.
-        DatabaseIpAddress:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The IP address of a database in a Fleet Advisor collector inventory.
-        DatabaseEngine:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The database engine of a database in a Fleet Advisor collector inventory, for example <code>PostgreSQL</code>.
-      description: Describes a database in a Fleet Advisor collector inventory.
-    IntegerOptional:
-      type: integer
-    String:
-      type: string
     SchemaShortInfoResponse:
       type: object
       properties:
@@ -330,49 +350,30 @@ components:
       description: Describes a schema in a Fleet Advisor collector inventory.
     LongOptional:
       type: integer
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
+    FilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Filter'
+    FleetAdvisorSchemaList:
+      type: array
+      items:
+        $ref: '#/components/schemas/SchemaResponse'
+    ServerShortInfoResponse:
+      type: object
+      properties:
+        ServerId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The ID of a server in a Fleet Advisor collector inventory.
+        IpAddress:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The IP address of a server in a Fleet Advisor collector inventory.
+        ServerName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name address of a server in a Fleet Advisor collector inventory.
+      description: Describes a server in a Fleet Advisor collector inventory.
   securitySchemes:
     hmac:
       type: apiKey

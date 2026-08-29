@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.DescribeReplicationTasks API'
+  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.DescribeReplicationTasks API'
   description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/dms-2016-01-01.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -167,78 +168,7 @@ paths:
       tags:
       - '#X Amz Target=AmazonDMSv20160101.DescribeReplicationTasks'
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    FilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Filter'
-    Filter:
-      type: object
-      required:
-      - Name
-      - Values
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the filter as specified for a <code>Describe*</code> or similar operation.
-        Values:
-          allOf:
-          - $ref: '#/components/schemas/FilterValueList'
-          - description: The filter value, which can specify one or more values used to narrow the returned results.
-      description: 'Identifies the name and value of a filter object. This filter is used to limit the number and type of DMS objects that are returned for a particular <code>Describe*</code> call or similar operation. Filters are used as an optional parameter for certain API operations. '
-    BooleanOptional:
-      type: boolean
-    FilterValueList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    TStamp:
-      type: string
-      format: date-time
     ReplicationTask:
       type: object
       properties:
@@ -319,39 +249,58 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The ARN of the replication instance to which this task is moved in response to running the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html"> <code>MoveReplicationTask</code> </a> operation. Otherwise, this response parameter isn't a member of the <code>ReplicationTask</code> object.
       description: Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation.
-    Integer:
-      type: integer
-    DescribeReplicationTasksMessage:
-      type: object
-      title: DescribeReplicationTasksMessage
-      properties:
-        Filters:
-          allOf:
-          - $ref: '#/components/schemas/FilterList'
-          - description: '<p>Filters applied to replication tasks.</p> <p>Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn</p>'
-        MaxRecords:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: '<p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>'
-        Marker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: ' An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. '
-        WithoutSettings:
-          allOf:
-          - $ref: '#/components/schemas/BooleanOptional'
-          - description: An option to set to avoid returning information about settings. Use this to reduce overhead when setting information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the default).
-      description: <p/>
     MigrationTypeValue:
       type: string
       enum:
       - full-load
       - cdc
       - full-load-and-cdc
-    ReplicationTaskList:
+    Filter:
+      type: object
+      required:
+      - Name
+      - Values
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the filter as specified for a <code>Describe*</code> or similar operation.
+        Values:
+          allOf:
+          - $ref: '#/components/schemas/FilterValueList'
+          - description: The filter value, which can specify one or more values used to narrow the returned results.
+      description: 'Identifies the name and value of a filter object. This filter is used to limit the number and type of DMS objects that are returned for a particular <code>Describe*</code> call or similar operation. Filters are used as an optional parameter for certain API operations. '
+    IntegerOptional:
+      type: integer
+    BooleanOptional:
+      type: boolean
+    Long:
+      type: integer
+    DescribeReplicationTasksResponse:
+      type: object
+      example:
+        Marker: ''
+        ReplicationTasks: []
+      properties:
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: ' An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. '
+        ReplicationTasks:
+          allOf:
+          - $ref: '#/components/schemas/ReplicationTaskList'
+          - description: A description of the replication tasks.
+      description: <p/>
+    TStamp:
+      type: string
+      format: date-time
+    String:
+      type: string
+    ResourceNotFoundFault: {}
+    FilterValueList:
       type: array
       items:
-        $ref: '#/components/schemas/ReplicationTask'
+        $ref: '#/components/schemas/String'
     ReplicationTaskStats:
       type: object
       properties:
@@ -400,28 +349,80 @@ components:
           - $ref: '#/components/schemas/TStamp'
           - description: The date the replication task full load was completed.
       description: In response to a request by the <code>DescribeReplicationTasks</code> operation, this object provides a collection of statistics about a replication task.
-    DescribeReplicationTasksResponse:
+    Integer:
+      type: integer
+    FilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Filter'
+    DescribeReplicationTasksMessage:
       type: object
-      example:
-        Marker: ''
-        ReplicationTasks: []
+      title: DescribeReplicationTasksMessage
       properties:
+        Filters:
+          allOf:
+          - $ref: '#/components/schemas/FilterList'
+          - description: '<p>Filters applied to replication tasks.</p> <p>Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn</p>'
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: '<p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>'
         Marker:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: ' An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. '
-        ReplicationTasks:
+        WithoutSettings:
           allOf:
-          - $ref: '#/components/schemas/ReplicationTaskList'
-          - description: A description of the replication tasks.
+          - $ref: '#/components/schemas/BooleanOptional'
+          - description: An option to set to avoid returning information about settings. Use this to reduce overhead when setting information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the default).
       description: <p/>
-    IntegerOptional:
-      type: integer
-    String:
-      type: string
-    Long:
-      type: integer
-    ResourceNotFoundFault: {}
+    ReplicationTaskList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ReplicationTask'
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

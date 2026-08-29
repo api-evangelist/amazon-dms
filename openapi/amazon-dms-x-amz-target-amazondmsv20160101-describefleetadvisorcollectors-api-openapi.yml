@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.DescribeFleetAdvisorCollectors API'
+  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.DescribeFleetAdvisorCollectors API'
   description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/dms-2016-01-01.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -167,54 +168,17 @@ paths:
       tags:
       - '#X Amz Target=AmazonDMSv20160101.DescribeFleetAdvisorCollectors'
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    FilterList:
+    VersionStatus:
+      type: string
+      enum:
+      - UP_TO_DATE
+      - OUTDATED
+      - UNSUPPORTED
+    CollectorResponses:
       type: array
       items:
-        $ref: '#/components/schemas/Filter'
+        $ref: '#/components/schemas/CollectorResponse'
     Filter:
       type: object
       required:
@@ -230,13 +194,27 @@ components:
           - $ref: '#/components/schemas/FilterValueList'
           - description: The filter value, which can specify one or more values used to narrow the returned results.
       description: 'Identifies the name and value of a filter object. This filter is used to limit the number and type of DMS objects that are returned for a particular <code>Describe*</code> call or similar operation. Filters are used as an optional parameter for certain API operations. '
+    IntegerOptional:
+      type: integer
+    InventoryData:
+      type: object
+      properties:
+        NumberOfDatabases:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The number of databases in the Fleet Advisor collector inventory.
+        NumberOfSchemas:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The number of schemas in the Fleet Advisor collector inventory.
+      description: Describes a Fleet Advisor collector inventory.
+    BooleanOptional:
+      type: boolean
     CollectorStatus:
       type: string
       enum:
       - UNREGISTERED
       - ACTIVE
-    BooleanOptional:
-      type: boolean
     CollectorResponse:
       type: object
       properties:
@@ -289,38 +267,13 @@ components:
         InventoryData:
           $ref: '#/components/schemas/InventoryData'
       description: Describes a Fleet Advisor collector.
-    InventoryData:
-      type: object
-      properties:
-        NumberOfDatabases:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: The number of databases in the Fleet Advisor collector inventory.
-        NumberOfSchemas:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: The number of schemas in the Fleet Advisor collector inventory.
-      description: Describes a Fleet Advisor collector inventory.
+    String:
+      type: string
     FilterValueList:
       type: array
       items:
         $ref: '#/components/schemas/String'
     InvalidResourceStateFault: {}
-    DescribeFleetAdvisorCollectorsResponse:
-      type: object
-      properties:
-        Collectors:
-          allOf:
-          - $ref: '#/components/schemas/CollectorResponses'
-          - description: 'Provides descriptions of the Fleet Advisor collectors, including the collectors'' name and ID, and the latest inventory data. '
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. '
-    IntegerOptional:
-      type: integer
-    String:
-      type: string
     CollectorHealthCheck:
       type: object
       properties:
@@ -341,12 +294,21 @@ components:
           - $ref: '#/components/schemas/BooleanOptional'
           - description: Whether the role that you provided when creating the Fleet Advisor collector has sufficient permissions to access the Fleet Advisor web collector.
       description: Describes the last Fleet Advisor collector health check.
-    VersionStatus:
-      type: string
-      enum:
-      - UP_TO_DATE
-      - OUTDATED
-      - UNSUPPORTED
+    FilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Filter'
+    DescribeFleetAdvisorCollectorsResponse:
+      type: object
+      properties:
+        Collectors:
+          allOf:
+          - $ref: '#/components/schemas/CollectorResponses'
+          - description: 'Provides descriptions of the Fleet Advisor collectors, including the collectors'' name and ID, and the latest inventory data. '
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. '
     DescribeFleetAdvisorCollectorsRequest:
       type: object
       title: DescribeFleetAdvisorCollectorsRequest
@@ -363,10 +325,49 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: 'If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. '
-    CollectorResponses:
-      type: array
-      items:
-        $ref: '#/components/schemas/CollectorResponse'
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

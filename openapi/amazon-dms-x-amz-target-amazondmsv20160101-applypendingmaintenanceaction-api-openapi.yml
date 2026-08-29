@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.ApplyPendingMaintenanceAction API'
+  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.ApplyPendingMaintenanceAction API'
   description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/dms-2016-01-01.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -155,54 +156,19 @@ paths:
       tags:
       - '#X Amz Target=AmazonDMSv20160101.ApplyPendingMaintenanceAction'
 components:
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    PendingMaintenanceActionDetails:
-      type: array
-      items:
-        $ref: '#/components/schemas/PendingMaintenanceAction'
+    ResourcePendingMaintenanceActions:
+      type: object
+      properties:
+        ResourceIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html"> Constructing an Amazon Resource Name (ARN) for DMS</a> in the DMS documentation.
+        PendingMaintenanceActionDetails:
+          allOf:
+          - $ref: '#/components/schemas/PendingMaintenanceActionDetails'
+          - description: Detailed information about the pending maintenance action.
+      description: Identifies an DMS resource and any pending actions for it.
     PendingMaintenanceAction:
       type: object
       properties:
@@ -231,23 +197,6 @@ components:
           - $ref: '#/components/schemas/String'
           - description: A description providing more detail about the maintenance action.
       description: Describes a maintenance action pending for an DMS resource, including when and how it will be applied. This data type is a response element to the <code>DescribePendingMaintenanceActions</code> operation.
-    String:
-      type: string
-    ResourcePendingMaintenanceActions:
-      type: object
-      properties:
-        ResourceIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html"> Constructing an Amazon Resource Name (ARN) for DMS</a> in the DMS documentation.
-        PendingMaintenanceActionDetails:
-          allOf:
-          - $ref: '#/components/schemas/PendingMaintenanceActionDetails'
-          - description: Detailed information about the pending maintenance action.
-      description: Identifies an DMS resource and any pending actions for it.
-    TStamp:
-      type: string
-      format: date-time
     ApplyPendingMaintenanceActionMessage:
       type: object
       required:
@@ -269,6 +218,8 @@ components:
           - $ref: '#/components/schemas/String'
           - description: <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p> <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li> </ul>
       description: <p/>
+    String:
+      type: string
     ResourceNotFoundFault: {}
     ApplyPendingMaintenanceActionResponse:
       type: object
@@ -278,6 +229,56 @@ components:
           - $ref: '#/components/schemas/ResourcePendingMaintenanceActions'
           - description: The DMS resource that the pending maintenance action will be applied to.
       description: <p/>
+    PendingMaintenanceActionDetails:
+      type: array
+      items:
+        $ref: '#/components/schemas/PendingMaintenanceAction'
+    TStamp:
+      type: string
+      format: date-time
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.DescribeRecommendations API'
+  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.DescribeRecommendations API'
   description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/dms-2016-01-01.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -174,38 +175,8 @@ paths:
       - '#X Amz Target=AmazonDMSv20160101.DescribeRecommendations'
 components:
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -216,23 +187,37 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    FilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Filter'
-    RdsRecommendation:
-      type: object
-      properties:
-        RequirementsToTarget:
-          allOf:
-          - $ref: '#/components/schemas/RdsRequirements'
-          - description: Supplemental information about the requirements to the recommended target database on Amazon RDS.
-        TargetConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/RdsConfiguration'
-          - description: Supplemental information about the configuration of the recommended target database on Amazon RDS.
-      description: Provides information that describes a recommendation of a target engine on Amazon RDS.
     Filter:
       type: object
       required:
@@ -264,23 +249,26 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: <p>Specifies the unique pagination token that makes it possible to display the next page of results. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p> <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    BooleanOptional:
-      type: boolean
-    FilterValueList:
+    IntegerOptional:
+      type: integer
+    RecommendationList:
       type: array
       items:
-        $ref: '#/components/schemas/String'
-    DescribeRecommendationsResponse:
+        $ref: '#/components/schemas/Recommendation'
+    RdsRecommendation:
       type: object
       properties:
-        NextToken:
+        RequirementsToTarget:
           allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The unique pagination token returned for you to pass to a subsequent request. Fleet Advisor returns this token when the number of records in the response is greater than the <code>MaxRecords</code> value. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.
-        Recommendations:
+          - $ref: '#/components/schemas/RdsRequirements'
+          - description: Supplemental information about the requirements to the recommended target database on Amazon RDS.
+        TargetConfiguration:
           allOf:
-          - $ref: '#/components/schemas/RecommendationList'
-          - description: The list of recommendations of target engines that Fleet Advisor created for the source database.
+          - $ref: '#/components/schemas/RdsConfiguration'
+          - description: Supplemental information about the configuration of the recommended target database on Amazon RDS.
+      description: Provides information that describes a recommendation of a target engine on Amazon RDS.
+    BooleanOptional:
+      type: boolean
     RdsConfiguration:
       type: object
       properties:
@@ -317,25 +305,53 @@ components:
           - $ref: '#/components/schemas/String'
           - description: Describes the deployment option for the recommended Amazon RDS DB instance. The deployment options include Multi-AZ and Single-AZ deployments. Valid values include <code>"MULTI_AZ"</code> and <code>"SINGLE_AZ"</code>.
       description: Provides information that describes the configuration of the recommended target engine on Amazon RDS.
+    AccessDeniedFault: {}
+    RdsRequirements:
+      type: object
+      properties:
+        EngineEdition:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The required target Amazon RDS engine edition.
+        InstanceVcpu:
+          allOf:
+          - $ref: '#/components/schemas/DoubleOptional'
+          - description: The required number of virtual CPUs (vCPU) on the Amazon RDS DB instance.
+        InstanceMemory:
+          allOf:
+          - $ref: '#/components/schemas/DoubleOptional'
+          - description: The required memory on the Amazon RDS DB instance.
+        StorageSize:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The required Amazon RDS DB instance storage size.
+        StorageIops:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The required number of I/O operations completed each second (IOPS) on your Amazon RDS DB instance.
+        DeploymentOption:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The required deployment option for the Amazon RDS DB instance. Valid values include <code>"MULTI_AZ"</code> for Multi-AZ deployments and <code>"SINGLE_AZ"</code> for Single-AZ deployments.
+      description: Provides information that describes the requirements to the target engine on Amazon RDS.
+    String:
+      type: string
     DoubleOptional:
       type: number
       format: double
-    RecommendationSettings:
-      type: object
-      required:
-      - InstanceSizingType
-      - WorkloadType
-      properties:
-        InstanceSizingType:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The size of your target instance. Fleet Advisor calculates this value based on your data collection type, such as total capacity and resource utilization. Valid values include <code>"total-capacity"</code> and <code>"utilization"</code>.
-        WorkloadType:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The deployment option for your target engine. For production databases, Fleet Advisor chooses Multi-AZ deployment. For development or test databases, Fleet Advisor chooses Single-AZ deployment. Valid values include <code>"development"</code> and <code>"production"</code>.
-      description: Provides information about the required target engine settings.
+    FilterValueList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
     InvalidResourceStateFault: {}
+    RecommendationData:
+      type: object
+      properties:
+        RdsEngine:
+          allOf:
+          - $ref: '#/components/schemas/RdsRecommendation'
+          - description: The recommendation of a target Amazon RDS database engine.
+      description: Provides information about the target engine for the specified source database.
     Recommendation:
       type: object
       properties:
@@ -368,51 +384,36 @@ components:
           - $ref: '#/components/schemas/RecommendationData'
           - description: The recommendation of a target engine for the specified source database.
       description: <p>Provides information that describes a recommendation of a target engine.</p> <p>A <i>recommendation</i> is a set of possible Amazon Web Services target engines that you can choose to migrate your source on-premises database. In this set, Fleet Advisor suggests a single target engine as the right sized migration destination. To determine this rightsized migration destination, Fleet Advisor uses the inventory metadata and metrics from data collector. You can use recommendations before the start of migration to save costs and reduce risks.</p> <p>With recommendations, you can explore different target options and compare metrics, so you can make an informed decision when you choose the migration target.</p>
-    RecommendationData:
-      type: object
-      properties:
-        RdsEngine:
-          allOf:
-          - $ref: '#/components/schemas/RdsRecommendation'
-          - description: The recommendation of a target Amazon RDS database engine.
-      description: Provides information about the target engine for the specified source database.
-    AccessDeniedFault: {}
-    IntegerOptional:
-      type: integer
-    String:
-      type: string
-    RdsRequirements:
-      type: object
-      properties:
-        EngineEdition:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The required target Amazon RDS engine edition.
-        InstanceVcpu:
-          allOf:
-          - $ref: '#/components/schemas/DoubleOptional'
-          - description: The required number of virtual CPUs (vCPU) on the Amazon RDS DB instance.
-        InstanceMemory:
-          allOf:
-          - $ref: '#/components/schemas/DoubleOptional'
-          - description: The required memory on the Amazon RDS DB instance.
-        StorageSize:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: The required Amazon RDS DB instance storage size.
-        StorageIops:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: The required number of I/O operations completed each second (IOPS) on your Amazon RDS DB instance.
-        DeploymentOption:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The required deployment option for the Amazon RDS DB instance. Valid values include <code>"MULTI_AZ"</code> for Multi-AZ deployments and <code>"SINGLE_AZ"</code> for Single-AZ deployments.
-      description: Provides information that describes the requirements to the target engine on Amazon RDS.
-    RecommendationList:
+    FilterList:
       type: array
       items:
-        $ref: '#/components/schemas/Recommendation'
+        $ref: '#/components/schemas/Filter'
+    DescribeRecommendationsResponse:
+      type: object
+      properties:
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The unique pagination token returned for you to pass to a subsequent request. Fleet Advisor returns this token when the number of records in the response is greater than the <code>MaxRecords</code> value. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.
+        Recommendations:
+          allOf:
+          - $ref: '#/components/schemas/RecommendationList'
+          - description: The list of recommendations of target engines that Fleet Advisor created for the source database.
+    RecommendationSettings:
+      type: object
+      required:
+      - InstanceSizingType
+      - WorkloadType
+      properties:
+        InstanceSizingType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The size of your target instance. Fleet Advisor calculates this value based on your data collection type, such as total capacity and resource utilization. Valid values include <code>"total-capacity"</code> and <code>"utilization"</code>.
+        WorkloadType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The deployment option for your target engine. For production databases, Fleet Advisor chooses Multi-AZ deployment. For development or test databases, Fleet Advisor chooses Single-AZ deployment. Valid values include <code>"development"</code> and <code>"production"</code>.
+      description: Provides information about the required target engine settings.
   securitySchemes:
     hmac:
       type: apiKey

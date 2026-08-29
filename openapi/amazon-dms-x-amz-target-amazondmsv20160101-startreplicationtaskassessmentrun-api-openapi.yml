@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.StartReplicationTaskAssessmentRun API'
+  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.StartReplicationTaskAssessmentRun API'
   description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/dms-2016-01-01.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -222,38 +223,8 @@ paths:
       - '#X Amz Target=AmazonDMSv20160101.StartReplicationTaskAssessmentRun'
 components:
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -264,10 +235,54 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    KMSAccessDeniedFault: {}
+    ExcludeTestList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
     KMSInvalidStateFault: {}
-    KMSKeyNotAccessibleFault: {}
     S3ResourceNotFoundFault: {}
+    StartReplicationTaskAssessmentRunResponse:
+      type: object
+      properties:
+        ReplicationTaskAssessmentRun:
+          allOf:
+          - $ref: '#/components/schemas/ReplicationTaskAssessmentRun'
+          - description: The premigration assessment run that was started.
+      description: <p/>
+    AccessDeniedFault: {}
+    KMSDisabledFault: {}
     StartReplicationTaskAssessmentRunMessage:
       type: object
       required:
@@ -314,30 +329,24 @@ components:
           - $ref: '#/components/schemas/ExcludeTestList'
           - description: <p>Space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note> <p>You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in the API operation.</p> <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p> </note>
       description: <p/>
-    S3AccessDeniedFault: {}
     TStamp:
       type: string
       format: date-time
-    Integer:
-      type: integer
+    KMSFault: {}
+    String:
+      type: string
+    ResourceAlreadyExistsFault: {}
+    ResourceNotFoundFault: {}
+    KMSNotFoundFault: {}
     IncludeTestList:
       type: array
       items:
         $ref: '#/components/schemas/String'
+    KMSKeyNotAccessibleFault: {}
     InvalidResourceStateFault: {}
-    AccessDeniedFault: {}
-    KMSAccessDeniedFault: {}
-    String:
-      type: string
-    StartReplicationTaskAssessmentRunResponse:
-      type: object
-      properties:
-        ReplicationTaskAssessmentRun:
-          allOf:
-          - $ref: '#/components/schemas/ReplicationTaskAssessmentRun'
-          - description: The premigration assessment run that was started.
-      description: <p/>
-    KMSDisabledFault: {}
+    Integer:
+      type: integer
+    S3AccessDeniedFault: {}
     ReplicationTaskAssessmentRunProgress:
       type: object
       properties:
@@ -350,14 +359,6 @@ components:
           - $ref: '#/components/schemas/Integer'
           - description: The number of individual assessments that have completed, successfully or not.
       description: The progress values reported by the <code>AssessmentProgress</code> response element.
-    KMSNotFoundFault: {}
-    ExcludeTestList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    ResourceNotFoundFault: {}
-    ResourceAlreadyExistsFault: {}
-    KMSFault: {}
     ReplicationTaskAssessmentRun:
       type: object
       properties:

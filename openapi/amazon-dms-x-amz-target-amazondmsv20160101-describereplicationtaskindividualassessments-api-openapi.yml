@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service Endpoints #X Amz Target=AmazonDMSv20160101.DescribeReplicationTaskIndividualAssessments API'
+  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.DescribeReplicationTaskIndividualAssessments API'
   description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/dms-2016-01-01.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -167,7 +168,97 @@ paths:
       tags:
       - '#X Amz Target=AmazonDMSv20160101.DescribeReplicationTaskIndividualAssessments'
 components:
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    String:
+      type: string
+    ResourceNotFoundFault: {}
+    DescribeReplicationTaskIndividualAssessmentsMessage:
+      type: object
+      title: DescribeReplicationTaskIndividualAssessmentsMessage
+      properties:
+        Filters:
+          allOf:
+          - $ref: '#/components/schemas/FilterList'
+          - description: '<p>Filters applied to the individual assessments described in the form of key-value pairs.</p> <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>'
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
+      description: <p/>
+    FilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Filter'
+    ReplicationTaskIndividualAssessmentList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ReplicationTaskIndividualAssessment'
+    Filter:
+      type: object
+      required:
+      - Name
+      - Values
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the filter as specified for a <code>Describe*</code> or similar operation.
+        Values:
+          allOf:
+          - $ref: '#/components/schemas/FilterValueList'
+          - description: The filter value, which can specify one or more values used to narrow the returned results.
+      description: 'Identifies the name and value of a filter object. This filter is used to limit the number and type of DMS objects that are returned for a particular <code>Describe*</code> call or similar operation. Filters are used as an optional parameter for certain API operations. '
+    FilterValueList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
     ReplicationTaskIndividualAssessment:
       type: object
       properties:
@@ -192,10 +283,6 @@ components:
           - $ref: '#/components/schemas/TStamp'
           - description: Date when this individual assessment was started as part of running the <code>StartReplicationTaskAssessmentRun</code> operation.
       description: Provides information that describes an individual assessment from a premigration assessment run.
-    IntegerOptional:
-      type: integer
-    String:
-      type: string
     DescribeReplicationTaskIndividualAssessmentsResponse:
       type: object
       properties:
@@ -208,97 +295,11 @@ components:
           - $ref: '#/components/schemas/ReplicationTaskIndividualAssessmentList'
           - description: One or more individual assessments as specified by <code>Filters</code>.
       description: <p/>
-    DescribeReplicationTaskIndividualAssessmentsMessage:
-      type: object
-      title: DescribeReplicationTaskIndividualAssessmentsMessage
-      properties:
-        Filters:
-          allOf:
-          - $ref: '#/components/schemas/FilterList'
-          - description: '<p>Filters applied to the individual assessments described in the form of key-value pairs.</p> <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>'
-        MaxRecords:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
-        Marker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
-      description: <p/>
-    ReplicationTaskIndividualAssessmentList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ReplicationTaskIndividualAssessment'
-    FilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Filter'
-    Filter:
-      type: object
-      required:
-      - Name
-      - Values
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the filter as specified for a <code>Describe*</code> or similar operation.
-        Values:
-          allOf:
-          - $ref: '#/components/schemas/FilterValueList'
-          - description: The filter value, which can specify one or more values used to narrow the returned results.
-      description: 'Identifies the name and value of a filter object. This filter is used to limit the number and type of DMS objects that are returned for a particular <code>Describe*</code> call or similar operation. Filters are used as an optional parameter for certain API operations. '
-    FilterValueList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
+    IntegerOptional:
+      type: integer
     TStamp:
       type: string
       format: date-time
-    ResourceNotFoundFault: {}
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey
