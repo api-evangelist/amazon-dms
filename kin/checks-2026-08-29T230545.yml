@@ -1,15 +1,15 @@
 ---
 kin_checks:
   slug: amazon-dms
-  schema_version: 0.15.1
-  scored_at: '2026-08-28'
-  run_ts: 2026-08-28T221322
+  schema_version: 0.16.0
+  scored_at: '2026-08-29'
+  run_ts: 2026-08-29T230545
   note: Actionable checks only (missed + partial). earned/na are every other check
-    in rubric/scoring-0.15.1.yml; counts below let you verify that.
+    in rubric/scoring-0.16.0.yml; counts below let you verify that.
   counts:
     total: 130
-    earned: 46
-    partial: 15
+    earned: 44
+    partial: 17
     missed: 45
     na: 24
   checks:
@@ -118,6 +118,14 @@ kin_checks:
     status: partial
     earned: 2.79
     detail: 67 of 72 openapi documents pass
+  - id: security_schemes_defined
+    status: partial
+    earned: 3.83
+    detail: 69 of 72 openapi documents pass
+  - id: security_applied
+    status: partial
+    earned: 2.88
+    detail: 69 of 72 openapi documents pass
   - id: rules_present
     status: partial
     earned: 2.5
