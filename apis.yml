@@ -1278,6 +1278,10 @@ apis:
   - type: GettingStarted
     url: https://aws.amazon.com/dms/getting-started/
 common:
+  - type: Pricing
+    url: https://aws.amazon.com/pricing/?nc2=h_pr_hub
+  - type: Plans
+    url: plans/amazon-dms-plans-pricing.yml
   - type: CapabilityMap
     url: capabilities/amazon-dms-capability-edges.yml
     name: Amazon DMS Business Capability Map
