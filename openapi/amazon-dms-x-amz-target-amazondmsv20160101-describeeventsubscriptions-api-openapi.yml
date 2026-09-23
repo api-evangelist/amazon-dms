@@ -2,8 +2,10 @@ openapi: 3.2.0
 info:
   version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.DescribeEventSubscriptions API'
-  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  title: 'AWS Database Migration Service #X Amz…'
+  description: 'Database Migration Service
+
+    Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE).'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -125,7 +127,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: DescribeEventSubscriptions
-      description: <p>Lists all the event subscriptions for a customer account. The description of a subscription includes <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>, <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>. </p> <p>If you specify <code>SubscriptionName</code>, this action lists the description for that subscription.</p>
+      description: 'Lists all the event subscriptions for a customer account. The description of a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status.
+
+
+        If you specify SubscriptionName, this action lists the description for that subscription.'
       responses:
         '200':
           description: Success
@@ -167,8 +172,85 @@ paths:
           - AmazonDMSv20160101.DescribeEventSubscriptions
       tags:
       - '#X Amz Target=AmazonDMSv20160101.DescribeEventSubscriptions'
+      summary: Describe event subscriptions
+      x-summary-source: derived
 components:
   schemas:
+    DescribeEventSubscriptionsMessage:
+      type: object
+      title: DescribeEventSubscriptionsMessage
+      properties:
+        SubscriptionName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the DMS event subscription to be described.
+        Filters:
+          allOf:
+          - $ref: '#/components/schemas/FilterList'
+          - description: '<p>Filters applied to event subscriptions.</p> <p>Valid filter names: event-subscription-arn | event-subscription-id </p>'
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: '<p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>'
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: ' An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. '
+      description: <p/>
+    Filter:
+      type: object
+      required:
+      - Name
+      - Values
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the filter as specified for a <code>Describe*</code> or similar operation.
+        Values:
+          allOf:
+          - $ref: '#/components/schemas/FilterValueList'
+          - description: The filter value, which can specify one or more values used to narrow the returned results.
+      description: 'Identifies the name and value of a filter object. This filter is used to limit the number and type of DMS objects that are returned for a particular <code>Describe*</code> call or similar operation. Filters are used as an optional parameter for certain API operations. '
+    EventCategoriesList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    DescribeEventSubscriptionsResponse:
+      type: object
+      properties:
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: ' An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. '
+        EventSubscriptionsList:
+          allOf:
+          - $ref: '#/components/schemas/EventSubscriptionsList'
+          - description: A list of event subscriptions.
+      description: <p/>
+    FilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Filter'
+    ResourceNotFoundFault: {}
+    Boolean:
+      type: boolean
+    SourceIdsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    EventSubscriptionsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/EventSubscription'
+    IntegerOptional:
+      type: integer
+    String:
+      type: string
+    FilterValueList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
     EventSubscription:
       type: object
       properties:
@@ -209,108 +291,9 @@ components:
           - $ref: '#/components/schemas/Boolean'
           - description: Boolean value that indicates if the event subscription is enabled.
       description: Describes an event notification subscription created by the <code>CreateEventSubscription</code> operation.
-    Filter:
-      type: object
-      required:
-      - Name
-      - Values
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the filter as specified for a <code>Describe*</code> or similar operation.
-        Values:
-          allOf:
-          - $ref: '#/components/schemas/FilterValueList'
-          - description: The filter value, which can specify one or more values used to narrow the returned results.
-      description: 'Identifies the name and value of a filter object. This filter is used to limit the number and type of DMS objects that are returned for a particular <code>Describe*</code> call or similar operation. Filters are used as an optional parameter for certain API operations. '
-    IntegerOptional:
-      type: integer
-    SourceIdsList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    EventCategoriesList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    DescribeEventSubscriptionsResponse:
-      type: object
-      properties:
-        Marker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: ' An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. '
-        EventSubscriptionsList:
-          allOf:
-          - $ref: '#/components/schemas/EventSubscriptionsList'
-          - description: A list of event subscriptions.
-      description: <p/>
-    Boolean:
-      type: boolean
-    String:
-      type: string
-    ResourceNotFoundFault: {}
-    FilterValueList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    DescribeEventSubscriptionsMessage:
-      type: object
-      title: DescribeEventSubscriptionsMessage
-      properties:
-        SubscriptionName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the DMS event subscription to be described.
-        Filters:
-          allOf:
-          - $ref: '#/components/schemas/FilterList'
-          - description: '<p>Filters applied to event subscriptions.</p> <p>Valid filter names: event-subscription-arn | event-subscription-id </p>'
-        MaxRecords:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: '<p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>'
-        Marker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: ' An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. '
-      description: <p/>
-    FilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Filter'
-    EventSubscriptionsList:
-      type: array
-      items:
-        $ref: '#/components/schemas/EventSubscription'
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -321,8 +304,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

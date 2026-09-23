@@ -2,8 +2,10 @@ openapi: 3.2.0
 info:
   version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.DescribeFleetAdvisorCollectors API'
-  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  title: 'AWS Database Migration Service #X Amz…'
+  description: 'Database Migration Service
+
+    Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE).'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -167,14 +169,10 @@ paths:
           - AmazonDMSv20160101.DescribeFleetAdvisorCollectors
       tags:
       - '#X Amz Target=AmazonDMSv20160101.DescribeFleetAdvisorCollectors'
+      summary: Describe fleet advisor collectors
+      x-summary-source: derived
 components:
   schemas:
-    VersionStatus:
-      type: string
-      enum:
-      - UP_TO_DATE
-      - OUTDATED
-      - UNSUPPORTED
     CollectorResponses:
       type: array
       items:
@@ -194,27 +192,50 @@ components:
           - $ref: '#/components/schemas/FilterValueList'
           - description: The filter value, which can specify one or more values used to narrow the returned results.
       description: 'Identifies the name and value of a filter object. This filter is used to limit the number and type of DMS objects that are returned for a particular <code>Describe*</code> call or similar operation. Filters are used as an optional parameter for certain API operations. '
-    IntegerOptional:
-      type: integer
-    InventoryData:
-      type: object
-      properties:
-        NumberOfDatabases:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: The number of databases in the Fleet Advisor collector inventory.
-        NumberOfSchemas:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: The number of schemas in the Fleet Advisor collector inventory.
-      description: Describes a Fleet Advisor collector inventory.
-    BooleanOptional:
-      type: boolean
-    CollectorStatus:
+    VersionStatus:
       type: string
       enum:
-      - UNREGISTERED
-      - ACTIVE
+      - UP_TO_DATE
+      - OUTDATED
+      - UNSUPPORTED
+    InvalidResourceStateFault: {}
+    DescribeFleetAdvisorCollectorsRequest:
+      type: object
+      title: DescribeFleetAdvisorCollectorsRequest
+      properties:
+        Filters:
+          allOf:
+          - $ref: '#/components/schemas/FilterList'
+          - description: '<p> If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p> <ul> <li> <p> <code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li> <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li> </ul> <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>'
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: Sets the maximum number of records returned in the response.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. '
+    FilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Filter'
+    BooleanOptional:
+      type: boolean
+    DescribeFleetAdvisorCollectorsResponse:
+      type: object
+      properties:
+        Collectors:
+          allOf:
+          - $ref: '#/components/schemas/CollectorResponses'
+          - description: 'Provides descriptions of the Fleet Advisor collectors, including the collectors'' name and ID, and the latest inventory data. '
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. '
+    IntegerOptional:
+      type: integer
+    String:
+      type: string
     CollectorResponse:
       type: object
       properties:
@@ -267,13 +288,18 @@ components:
         InventoryData:
           $ref: '#/components/schemas/InventoryData'
       description: Describes a Fleet Advisor collector.
-    String:
-      type: string
-    FilterValueList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    InvalidResourceStateFault: {}
+    InventoryData:
+      type: object
+      properties:
+        NumberOfDatabases:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The number of databases in the Fleet Advisor collector inventory.
+        NumberOfSchemas:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The number of schemas in the Fleet Advisor collector inventory.
+      description: Describes a Fleet Advisor collector inventory.
     CollectorHealthCheck:
       type: object
       properties:
@@ -294,64 +320,18 @@ components:
           - $ref: '#/components/schemas/BooleanOptional'
           - description: Whether the role that you provided when creating the Fleet Advisor collector has sufficient permissions to access the Fleet Advisor web collector.
       description: Describes the last Fleet Advisor collector health check.
-    FilterList:
+    FilterValueList:
       type: array
       items:
-        $ref: '#/components/schemas/Filter'
-    DescribeFleetAdvisorCollectorsResponse:
-      type: object
-      properties:
-        Collectors:
-          allOf:
-          - $ref: '#/components/schemas/CollectorResponses'
-          - description: 'Provides descriptions of the Fleet Advisor collectors, including the collectors'' name and ID, and the latest inventory data. '
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. '
-    DescribeFleetAdvisorCollectorsRequest:
-      type: object
-      title: DescribeFleetAdvisorCollectorsRequest
-      properties:
-        Filters:
-          allOf:
-          - $ref: '#/components/schemas/FilterList'
-          - description: '<p> If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p> <ul> <li> <p> <code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li> <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li> </ul> <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>'
-        MaxRecords:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: Sets the maximum number of records returned in the response.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. '
+        $ref: '#/components/schemas/String'
+    CollectorStatus:
+      type: string
+      enum:
+      - UNREGISTERED
+      - ACTIVE
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -362,8 +342,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

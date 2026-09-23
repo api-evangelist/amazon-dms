@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Amazon DMS AWS Database Migration Service Replication Instances API
+  title: Amazon DMS AWS Database Migration Service Replication…
   description: AWS Database Migration Service (DMS) helps you migrate databases to AWS quickly and securely. The API provides operations for creating and managing replication instances, endpoints, and replication tasks for database migrations.
   version: '2016-01-01'
   contact:

@@ -2,8 +2,10 @@ openapi: 3.2.0
 info:
   version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.ModifyEventSubscription API'
-  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  title: 'AWS Database Migration Service #X Amz…'
+  description: 'Database Migration Service
+
+    Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE).'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -125,7 +127,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: ModifyEventSubscription
-      description: 'Modifies an existing DMS event notification subscription. '
+      description: Modifies an existing DMS event notification subscription.
       responses:
         '200':
           description: Success
@@ -203,8 +205,59 @@ paths:
           - AmazonDMSv20160101.ModifyEventSubscription
       tags:
       - '#X Amz Target=AmazonDMSv20160101.ModifyEventSubscription'
+      summary: Modify event subscription
+      x-summary-source: derived
 components:
   schemas:
+    KMSDisabledFault: {}
+    EventCategoriesList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    KMSAccessDeniedFault: {}
+    SNSNoAuthorizationFault: {}
+    SNSInvalidTopicFault: {}
+    BooleanOptional:
+      type: boolean
+    ResourceNotFoundFault: {}
+    KMSInvalidStateFault: {}
+    Boolean:
+      type: boolean
+    SourceIdsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    KMSThrottlingFault: {}
+    ResourceQuotaExceededFault: {}
+    String:
+      type: string
+    ModifyEventSubscriptionMessage:
+      type: object
+      required:
+      - SubscriptionName
+      title: ModifyEventSubscriptionMessage
+      properties:
+        SubscriptionName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the DMS event notification subscription to be modified.
+        SnsTopicArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: ' The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.'
+        SourceType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: '<p> The type of DMS resource that generates the events you want to subscribe to. </p> <p>Valid values: replication-instance | replication-task</p>'
+        EventCategories:
+          allOf:
+          - $ref: '#/components/schemas/EventCategoriesList'
+          - description: ' A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. '
+        Enabled:
+          allOf:
+          - $ref: '#/components/schemas/BooleanOptional'
+          - description: ' A Boolean value; set to <b>true</b> to activate the subscription. '
+      description: <p/>
     EventSubscription:
       type: object
       properties:
@@ -245,47 +298,7 @@ components:
           - $ref: '#/components/schemas/Boolean'
           - description: Boolean value that indicates if the event subscription is enabled.
       description: Describes an event notification subscription created by the <code>CreateEventSubscription</code> operation.
-    KMSAccessDeniedFault: {}
-    SourceIdsList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    ModifyEventSubscriptionMessage:
-      type: object
-      required:
-      - SubscriptionName
-      title: ModifyEventSubscriptionMessage
-      properties:
-        SubscriptionName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the DMS event notification subscription to be modified.
-        SnsTopicArn:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: ' The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.'
-        SourceType:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: '<p> The type of DMS resource that generates the events you want to subscribe to. </p> <p>Valid values: replication-instance | replication-task</p>'
-        EventCategories:
-          allOf:
-          - $ref: '#/components/schemas/EventCategoriesList'
-          - description: ' A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. '
-        Enabled:
-          allOf:
-          - $ref: '#/components/schemas/BooleanOptional'
-          - description: ' A Boolean value; set to <b>true</b> to activate the subscription. '
-      description: <p/>
-    BooleanOptional:
-      type: boolean
-    KMSInvalidStateFault: {}
-    SNSNoAuthorizationFault: {}
-    KMSDisabledFault: {}
-    EventCategoriesList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
+    KMSNotFoundFault: {}
     ModifyEventSubscriptionResponse:
       type: object
       properties:
@@ -294,42 +307,9 @@ components:
           - $ref: '#/components/schemas/EventSubscription'
           - description: The modified event subscription.
       description: <p/>
-    Boolean:
-      type: boolean
-    String:
-      type: string
-    ResourceNotFoundFault: {}
-    KMSNotFoundFault: {}
-    ResourceQuotaExceededFault: {}
-    KMSThrottlingFault: {}
-    SNSInvalidTopicFault: {}
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -340,8 +320,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

@@ -2,8 +2,10 @@ openapi: 3.2.0
 info:
   version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.DescribeFleetAdvisorSchemaObjectSummary API'
-  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  title: 'AWS Database Migration Service #X Amz…'
+  description: 'Database Migration Service
+
+    Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE).'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -167,23 +169,17 @@ paths:
           - AmazonDMSv20160101.DescribeFleetAdvisorSchemaObjectSummary
       tags:
       - '#X Amz Target=AmazonDMSv20160101.DescribeFleetAdvisorSchemaObjectSummary'
+      summary: Describe fleet advisor schema object summary
+      x-summary-source: derived
 components:
   schemas:
-    DescribeFleetAdvisorSchemaObjectSummaryResponse:
-      type: object
-      properties:
-        FleetAdvisorSchemaObjects:
-          allOf:
-          - $ref: '#/components/schemas/FleetAdvisorSchemaObjectList'
-          - description: A collection of <code>FleetAdvisorSchemaObjectResponse</code> objects.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. '
+    InvalidResourceStateFault: {}
+    FleetAdvisorSchemaObjectList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FleetAdvisorSchemaObjectResponse'
     String:
       type: string
-    LongOptional:
-      type: integer
     FleetAdvisorSchemaObjectResponse:
       type: object
       properties:
@@ -208,10 +204,6 @@ components:
           - $ref: '#/components/schemas/LongOptional'
           - description: The size level of the code in a schema object in a Fleet Advisor collector inventory.
       description: Describes a schema object in a Fleet Advisor collector inventory.
-    FilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Filter'
     Filter:
       type: object
       required:
@@ -227,17 +219,6 @@ components:
           - $ref: '#/components/schemas/FilterValueList'
           - description: The filter value, which can specify one or more values used to narrow the returned results.
       description: 'Identifies the name and value of a filter object. This filter is used to limit the number and type of DMS objects that are returned for a particular <code>Describe*</code> call or similar operation. Filters are used as an optional parameter for certain API operations. '
-    FleetAdvisorSchemaObjectList:
-      type: array
-      items:
-        $ref: '#/components/schemas/FleetAdvisorSchemaObjectResponse'
-    FilterValueList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    IntegerOptional:
-      type: integer
-    InvalidResourceStateFault: {}
     DescribeFleetAdvisorSchemaObjectSummaryRequest:
       type: object
       title: DescribeFleetAdvisorSchemaObjectSummaryRequest
@@ -254,6 +235,29 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: 'If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. '
+    FilterValueList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    FilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Filter'
+    DescribeFleetAdvisorSchemaObjectSummaryResponse:
+      type: object
+      properties:
+        FleetAdvisorSchemaObjects:
+          allOf:
+          - $ref: '#/components/schemas/FleetAdvisorSchemaObjectList'
+          - description: A collection of <code>FleetAdvisorSchemaObjectResponse</code> objects.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. '
+    LongOptional:
+      type: integer
+    IntegerOptional:
+      type: integer
   parameters:
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
@@ -261,14 +265,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -281,18 +297,6 @@ components:
       required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string

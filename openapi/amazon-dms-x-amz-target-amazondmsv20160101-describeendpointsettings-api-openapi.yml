@@ -2,8 +2,10 @@ openapi: 3.2.0
 info:
   version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.DescribeEndpointSettings API'
-  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  title: 'AWS Database Migration Service #X Amz…'
+  description: 'Database Migration Service
+
+    Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE).'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -161,14 +163,28 @@ paths:
           - AmazonDMSv20160101.DescribeEndpointSettings
       tags:
       - '#X Amz Target=AmazonDMSv20160101.DescribeEndpointSettings'
+      summary: Describe endpoint settings
+      x-summary-source: derived
 components:
   schemas:
-    EndpointSettingsList:
-      type: array
-      items:
-        $ref: '#/components/schemas/EndpointSetting'
-    BooleanOptional:
-      type: boolean
+    DescribeEndpointSettingsMessage:
+      type: object
+      required:
+      - EngineName
+      title: DescribeEndpointSettingsMessage
+      properties:
+        EngineName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The databse engine used for your source or target endpoint.
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
     String:
       type: string
     DescribeEndpointSettingsResponse:
@@ -182,6 +198,10 @@ components:
           allOf:
           - $ref: '#/components/schemas/EndpointSettingsList'
           - description: Descriptions of the endpoint settings available for your source or target database engine.
+    BooleanOptional:
+      type: boolean
+    IntegerOptional:
+      type: integer
     EndpointSettingTypeValue:
       type: string
       enum:
@@ -189,8 +209,10 @@ components:
       - boolean
       - integer
       - enum
-    IntegerOptional:
-      type: integer
+    EndpointSettingEnumValues:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
     EndpointSetting:
       type: object
       properties:
@@ -231,28 +253,10 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.
       description: Endpoint settings.
-    DescribeEndpointSettingsMessage:
-      type: object
-      required:
-      - EngineName
-      title: DescribeEndpointSettingsMessage
-      properties:
-        EngineName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The databse engine used for your source or target endpoint.
-        MaxRecords:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
-        Marker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
-    EndpointSettingEnumValues:
+    EndpointSettingsList:
       type: array
       items:
-        $ref: '#/components/schemas/String'
+        $ref: '#/components/schemas/EndpointSetting'
   parameters:
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
@@ -260,8 +264,20 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -280,18 +296,6 @@ components:
       required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string

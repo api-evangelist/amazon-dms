@@ -2,8 +2,10 @@ openapi: 3.2.0
 info:
   version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.StartReplicationTaskAssessment API'
-  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  title: 'AWS Database Migration Service #X Amz…'
+  description: 'Database Migration Service
+
+    Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE).'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -125,7 +127,22 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: StartReplicationTaskAssessment
-      description: <p> Starts the replication task assessment for unsupported data types in the source database. </p> <p>You can only use this operation for a task if the following conditions are true:</p> <ul> <li> <p>The task must be in the <code>stopped</code> state.</p> </li> <li> <p>The task must have successful connections to the source and target.</p> </li> </ul> <p>If either of these conditions are not met, an <code>InvalidResourceStateFault</code> error will result. </p> <p>For information about DMS task assessments, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating a task assessment report</a> in the <i>Database Migration Service User Guide</i>.</p>
+      description: 'Starts the replication task assessment for unsupported data types in the source database.
+
+
+        You can only use this operation for a task if the following conditions are true:
+
+
+        The task must be in the stopped state.
+
+
+        The task must have successful connections to the source and target.
+
+
+        If either of these conditions are not met, an InvalidResourceStateFault error will result.
+
+
+        For information about DMS task assessments, see Creating a task assessment report in the Database Migration Service User Guide.'
       responses:
         '200':
           description: Success
@@ -161,51 +178,40 @@ paths:
           - AmazonDMSv20160101.StartReplicationTaskAssessment
       tags:
       - '#X Amz Target=AmazonDMSv20160101.StartReplicationTaskAssessment'
+      summary: Start replication task assessment
+      x-summary-source: derived
 components:
-  parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    InvalidResourceStateFault: {}
+    Integer:
+      type: integer
+    String:
+      type: string
+    MigrationTypeValue:
+      type: string
+      enum:
+      - full-load
+      - cdc
+      - full-load-and-cdc
+    StartReplicationTaskAssessmentResponse:
+      type: object
+      properties:
+        ReplicationTask:
+          allOf:
+          - $ref: '#/components/schemas/ReplicationTask'
+          - description: ' The assessed replication task. '
+      description: <p/>
+    StartReplicationTaskAssessmentMessage:
+      type: object
+      required:
+      - ReplicationTaskArn
+      title: StartReplicationTaskAssessmentMessage
+      properties:
+        ReplicationTaskArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: ' The Amazon Resource Name (ARN) of the replication task. '
+      description: <p/>
     ReplicationTask:
       type: object
       properties:
@@ -286,37 +292,11 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The ARN of the replication instance to which this task is moved in response to running the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html"> <code>MoveReplicationTask</code> </a> operation. Otherwise, this response parameter isn't a member of the <code>ReplicationTask</code> object.
       description: Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation.
-    MigrationTypeValue:
-      type: string
-      enum:
-      - full-load
-      - cdc
-      - full-load-and-cdc
-    String:
-      type: string
-    ResourceNotFoundFault: {}
     Long:
       type: integer
-    StartReplicationTaskAssessmentMessage:
-      type: object
-      required:
-      - ReplicationTaskArn
-      title: StartReplicationTaskAssessmentMessage
-      properties:
-        ReplicationTaskArn:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: ' The Amazon Resource Name (ARN) of the replication task. '
-      description: <p/>
-    StartReplicationTaskAssessmentResponse:
-      type: object
-      properties:
-        ReplicationTask:
-          allOf:
-          - $ref: '#/components/schemas/ReplicationTask'
-          - description: ' The assessed replication task. '
-      description: <p/>
-    InvalidResourceStateFault: {}
+    TStamp:
+      type: string
+      format: date-time
     ReplicationTaskStats:
       type: object
       properties:
@@ -365,11 +345,50 @@ components:
           - $ref: '#/components/schemas/TStamp'
           - description: The date the replication task full load was completed.
       description: In response to a request by the <code>DescribeReplicationTasks</code> operation, this object provides a collection of statistics about a replication task.
-    TStamp:
-      type: string
-      format: date-time
-    Integer:
-      type: integer
+    ResourceNotFoundFault: {}
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

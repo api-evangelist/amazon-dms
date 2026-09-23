@@ -2,8 +2,10 @@ openapi: 3.2.0
 info:
   version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.StopReplicationTask API'
-  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  title: 'AWS Database Migration Service #X Amz…'
+  description: 'Database Migration Service
+
+    Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE).'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -161,28 +163,17 @@ paths:
           - AmazonDMSv20160101.StopReplicationTask
       tags:
       - '#X Amz Target=AmazonDMSv20160101.StopReplicationTask'
+      summary: Stop replication task
+      x-summary-source: derived
 components:
   schemas:
-    StopReplicationTaskResponse:
-      type: object
-      example:
-        ReplicationTask:
-          MigrationType: full-load
-          ReplicationInstanceArn: arn:aws:dms:us-east-1:123456789012:rep:6UTDJGBOUS3VI3SUWA66XFJCJQ
-          ReplicationTaskArn: arn:aws:dms:us-east-1:123456789012:task:OEAMB3NXSTZ6LFYZFEPPBBXPYM
-          ReplicationTaskCreationDate: 2016-12-14 18:25:43+00:00
-          ReplicationTaskIdentifier: task1
-          ReplicationTaskSettings: '{"TargetMetadata":{"TargetSchema":"","SupportLobs":true,"FullLobMode":true,"LobChunkSize":64,"LimitedSizeLobMode":false,"LobMaxSize":0},"FullLoadSettings":{"FullLoadEnabled":true,"ApplyChangesEnabled":false,"TargetTablePrepMode":"DROP_AND_CREATE","CreatePkAfterFullLoad":false,"StopTaskCachedChangesApplied":false,"StopTaskCachedChangesNotApplied":false,"ResumeEnabled":false,"ResumeMinTableSize":100000,"ResumeOnlyClusteredPKTables":true,"MaxFullLoadSubTasks":8,"TransactionConsistencyTimeout":600,"CommitRate":10000},"Logging":{"EnableLogging":false}}'
-          SourceEndpointArn: arn:aws:dms:us-east-1:123456789012:endpoint:ZW5UAN6P4E77EC7YWHK4RZZ3BE
-          Status: creating
-          TableMappings: file://mappingfile.json
-          TargetEndpointArn: arn:aws:dms:us-east-1:123456789012:endpoint:ASXWXJZLNWNT5HTWCGV2BUJQ7E
-      properties:
-        ReplicationTask:
-          allOf:
-          - $ref: '#/components/schemas/ReplicationTask'
-          - description: The replication task stopped.
-      description: <p/>
+    InvalidResourceStateFault: {}
+    Integer:
+      type: integer
+    String:
+      type: string
+    Long:
+      type: integer
     ReplicationTask:
       type: object
       properties:
@@ -263,6 +254,10 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The ARN of the replication instance to which this task is moved in response to running the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html"> <code>MoveReplicationTask</code> </a> operation. Otherwise, this response parameter isn't a member of the <code>ReplicationTask</code> object.
       description: Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation.
+    ResourceNotFoundFault: {}
+    TStamp:
+      type: string
+      format: date-time
     StopReplicationTaskMessage:
       type: object
       required:
@@ -274,18 +269,26 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The Amazon Resource Name(ARN) of the replication task to be stopped.
       description: <p/>
-    String:
-      type: string
-    ResourceNotFoundFault: {}
-    Long:
-      type: integer
-    MigrationTypeValue:
-      type: string
-      enum:
-      - full-load
-      - cdc
-      - full-load-and-cdc
-    InvalidResourceStateFault: {}
+    StopReplicationTaskResponse:
+      type: object
+      example:
+        ReplicationTask:
+          MigrationType: full-load
+          ReplicationInstanceArn: arn:aws:dms:us-east-1:123456789012:rep:6UTDJGBOUS3VI3SUWA66XFJCJQ
+          ReplicationTaskArn: arn:aws:dms:us-east-1:123456789012:task:OEAMB3NXSTZ6LFYZFEPPBBXPYM
+          ReplicationTaskCreationDate: 2016-12-14 18:25:43+00:00
+          ReplicationTaskIdentifier: task1
+          ReplicationTaskSettings: '{"TargetMetadata":{"TargetSchema":"","SupportLobs":true,"FullLobMode":true,"LobChunkSize":64,"LimitedSizeLobMode":false,"LobMaxSize":0},"FullLoadSettings":{"FullLoadEnabled":true,"ApplyChangesEnabled":false,"TargetTablePrepMode":"DROP_AND_CREATE","CreatePkAfterFullLoad":false,"StopTaskCachedChangesApplied":false,"StopTaskCachedChangesNotApplied":false,"ResumeEnabled":false,"ResumeMinTableSize":100000,"ResumeOnlyClusteredPKTables":true,"MaxFullLoadSubTasks":8,"TransactionConsistencyTimeout":600,"CommitRate":10000},"Logging":{"EnableLogging":false}}'
+          SourceEndpointArn: arn:aws:dms:us-east-1:123456789012:endpoint:ZW5UAN6P4E77EC7YWHK4RZZ3BE
+          Status: creating
+          TableMappings: file://mappingfile.json
+          TargetEndpointArn: arn:aws:dms:us-east-1:123456789012:endpoint:ASXWXJZLNWNT5HTWCGV2BUJQ7E
+      properties:
+        ReplicationTask:
+          allOf:
+          - $ref: '#/components/schemas/ReplicationTask'
+          - description: The replication task stopped.
+      description: <p/>
     ReplicationTaskStats:
       type: object
       properties:
@@ -334,38 +337,15 @@ components:
           - $ref: '#/components/schemas/TStamp'
           - description: The date the replication task full load was completed.
       description: In response to a request by the <code>DescribeReplicationTasks</code> operation, this object provides a collection of statistics about a replication task.
-    TStamp:
+    MigrationTypeValue:
       type: string
-      format: date-time
-    Integer:
-      type: integer
+      enum:
+      - full-load
+      - cdc
+      - full-load-and-cdc
   parameters:
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -376,8 +356,32 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

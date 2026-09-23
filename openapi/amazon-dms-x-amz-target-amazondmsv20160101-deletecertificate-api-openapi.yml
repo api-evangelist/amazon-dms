@@ -2,8 +2,10 @@ openapi: 3.2.0
 info:
   version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.DeleteCertificate API'
-  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  title: 'AWS Database Migration Service #X Amz…'
+  description: 'Database Migration Service
+
+    Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE).'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -125,7 +127,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: DeleteCertificate
-      description: 'Deletes the specified certificate. '
+      description: Deletes the specified certificate.
       responses:
         '200':
           description: Success
@@ -161,73 +163,13 @@ paths:
           - AmazonDMSv20160101.DeleteCertificate
       tags:
       - '#X Amz Target=AmazonDMSv20160101.DeleteCertificate'
+      summary: Delete certificate
+      x-summary-source: derived
 components:
-  parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    InvalidResourceStateFault: {}
     String:
       type: string
-    DeleteCertificateMessage:
-      type: object
-      required:
-      - CertificateArn
-      title: DeleteCertificateMessage
-      properties:
-        CertificateArn:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The Amazon Resource Name (ARN) of the certificate.
-    ResourceNotFoundFault: {}
-    DeleteCertificateResponse:
-      type: object
-      example:
-        Certificate: {}
-      properties:
-        Certificate:
-          allOf:
-          - $ref: '#/components/schemas/Certificate'
-          - description: The Secure Sockets Layer (SSL) certificate.
     Certificate:
       type: object
       properties:
@@ -274,12 +216,74 @@ components:
       description: The SSL certificate that can be used to encrypt connections between the endpoints and the replication instance.
     CertificateWallet:
       type: string
-    IntegerOptional:
-      type: integer
-    InvalidResourceStateFault: {}
+    ResourceNotFoundFault: {}
     TStamp:
       type: string
       format: date-time
+    DeleteCertificateMessage:
+      type: object
+      required:
+      - CertificateArn
+      title: DeleteCertificateMessage
+      properties:
+        CertificateArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Resource Name (ARN) of the certificate.
+    DeleteCertificateResponse:
+      type: object
+      example:
+        Certificate: {}
+      properties:
+        Certificate:
+          allOf:
+          - $ref: '#/components/schemas/Certificate'
+          - description: The Secure Sockets Layer (SSL) certificate.
+    IntegerOptional:
+      type: integer
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

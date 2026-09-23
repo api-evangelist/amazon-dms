@@ -2,8 +2,10 @@ openapi: 3.2.0
 info:
   version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.TestConnection API'
-  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  title: 'AWS Database Migration Service #X Amz…'
+  description: 'Database Migration Service
+
+    Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE).'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -179,51 +181,40 @@ paths:
           - AmazonDMSv20160101.TestConnection
       tags:
       - '#X Amz Target=AmazonDMSv20160101.TestConnection'
+      summary: Test connection
+      x-summary-source: derived
 components:
-  parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    InvalidResourceStateFault: {}
+    TestConnectionResponse:
+      type: object
+      example:
+        Connection: {}
+      properties:
+        Connection:
+          allOf:
+          - $ref: '#/components/schemas/Connection'
+          - description: The connection tested.
+      description: <p/>
+    String:
+      type: string
+    TestConnectionMessage:
+      type: object
+      required:
+      - ReplicationInstanceArn
+      - EndpointArn
+      title: TestConnectionMessage
+      properties:
+        ReplicationInstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Resource Name (ARN) of the replication instance.
+        EndpointArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+      description: <p/>
+    KMSKeyNotAccessibleFault: {}
     Connection:
       type: object
       properties:
@@ -252,39 +243,52 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The replication instance identifier. This parameter is stored as a lowercase string.
       description: Status of the connection between an endpoint and a replication instance, including Amazon Resource Names (ARNs) and the last error message issued.
-    String:
-      type: string
-    ResourceNotFoundFault: {}
-    AccessDeniedFault: {}
-    TestConnectionResponse:
-      type: object
-      example:
-        Connection: {}
-      properties:
-        Connection:
-          allOf:
-          - $ref: '#/components/schemas/Connection'
-          - description: The connection tested.
-      description: <p/>
-    KMSKeyNotAccessibleFault: {}
-    InvalidResourceStateFault: {}
     ResourceQuotaExceededFault: {}
-    TestConnectionMessage:
-      type: object
-      required:
-      - ReplicationInstanceArn
-      - EndpointArn
-      title: TestConnectionMessage
-      properties:
-        ReplicationInstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The Amazon Resource Name (ARN) of the replication instance.
-        EndpointArn:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
-      description: <p/>
+    AccessDeniedFault: {}
+    ResourceNotFoundFault: {}
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

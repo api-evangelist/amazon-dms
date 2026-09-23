@@ -2,8 +2,10 @@ openapi: 3.2.0
 info:
   version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.MoveReplicationTask API'
-  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  title: 'AWS Database Migration Service #X Amz…'
+  description: 'Database Migration Service
+
+    Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE).'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -179,8 +181,76 @@ paths:
           - AmazonDMSv20160101.MoveReplicationTask
       tags:
       - '#X Amz Target=AmazonDMSv20160101.MoveReplicationTask'
+      summary: Move replication task
+      x-summary-source: derived
 components:
   schemas:
+    Long:
+      type: integer
+    AccessDeniedFault: {}
+    ReplicationTaskStats:
+      type: object
+      properties:
+        FullLoadProgressPercent:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The percent complete for the full load migration task.
+        ElapsedTimeMillis:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: The elapsed time of the task, in milliseconds.
+        TablesLoaded:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The number of tables loaded for this task.
+        TablesLoading:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The number of tables currently loading for this task.
+        TablesQueued:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The number of tables queued for this task.
+        TablesErrored:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The number of errors that have occurred during this task.
+        FreshStartDate:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: The date the replication task was started either with a fresh start or a target reload.
+        StartDate:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: The date the replication task was started either with a fresh start or a resume. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType">StartReplicationTaskType</a>.
+        StopDate:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: The date the replication task was stopped.
+        FullLoadStartDate:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: The date the replication task full load was started.
+        FullLoadFinishDate:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: The date the replication task full load was completed.
+      description: In response to a request by the <code>DescribeReplicationTasks</code> operation, this object provides a collection of statistics about a replication task.
+    InvalidResourceStateFault: {}
+    Integer:
+      type: integer
+    TStamp:
+      type: string
+      format: date-time
+    ResourceNotFoundFault: {}
+    MoveReplicationTaskResponse:
+      type: object
+      properties:
+        ReplicationTask:
+          allOf:
+          - $ref: '#/components/schemas/ReplicationTask'
+          - description: The replication task that was moved.
+      description: <p/>
     ReplicationTask:
       type: object
       properties:
@@ -261,15 +331,7 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The ARN of the replication instance to which this task is moved in response to running the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html"> <code>MoveReplicationTask</code> </a> operation. Otherwise, this response parameter isn't a member of the <code>ReplicationTask</code> object.
       description: Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation.
-    MigrationTypeValue:
-      type: string
-      enum:
-      - full-load
-      - cdc
-      - full-load-and-cdc
-    AccessDeniedFault: {}
-    Long:
-      type: integer
+    KMSKeyNotAccessibleFault: {}
     MoveReplicationTaskMessage:
       type: object
       required:
@@ -286,100 +348,18 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The ARN of the replication instance where you want to move the task to.
       description: <p/>
-    TStamp:
+    ResourceQuotaExceededFault: {}
+    MigrationTypeValue:
       type: string
-      format: date-time
+      enum:
+      - full-load
+      - cdc
+      - full-load-and-cdc
     String:
       type: string
-    ResourceNotFoundFault: {}
-    KMSKeyNotAccessibleFault: {}
-    InvalidResourceStateFault: {}
-    ResourceQuotaExceededFault: {}
-    MoveReplicationTaskResponse:
-      type: object
-      properties:
-        ReplicationTask:
-          allOf:
-          - $ref: '#/components/schemas/ReplicationTask'
-          - description: The replication task that was moved.
-      description: <p/>
-    ReplicationTaskStats:
-      type: object
-      properties:
-        FullLoadProgressPercent:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The percent complete for the full load migration task.
-        ElapsedTimeMillis:
-          allOf:
-          - $ref: '#/components/schemas/Long'
-          - description: The elapsed time of the task, in milliseconds.
-        TablesLoaded:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The number of tables loaded for this task.
-        TablesLoading:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The number of tables currently loading for this task.
-        TablesQueued:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The number of tables queued for this task.
-        TablesErrored:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The number of errors that have occurred during this task.
-        FreshStartDate:
-          allOf:
-          - $ref: '#/components/schemas/TStamp'
-          - description: The date the replication task was started either with a fresh start or a target reload.
-        StartDate:
-          allOf:
-          - $ref: '#/components/schemas/TStamp'
-          - description: The date the replication task was started either with a fresh start or a resume. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType">StartReplicationTaskType</a>.
-        StopDate:
-          allOf:
-          - $ref: '#/components/schemas/TStamp'
-          - description: The date the replication task was stopped.
-        FullLoadStartDate:
-          allOf:
-          - $ref: '#/components/schemas/TStamp'
-          - description: The date the replication task full load was started.
-        FullLoadFinishDate:
-          allOf:
-          - $ref: '#/components/schemas/TStamp'
-          - description: The date the replication task full load was completed.
-      description: In response to a request by the <code>DescribeReplicationTasks</code> operation, this object provides a collection of statistics about a replication task.
-    Integer:
-      type: integer
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -390,8 +370,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

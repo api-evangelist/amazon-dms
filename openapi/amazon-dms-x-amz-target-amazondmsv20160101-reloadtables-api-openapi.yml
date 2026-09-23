@@ -2,8 +2,10 @@ openapi: 3.2.0
 info:
   version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.ReloadTables API'
-  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  title: 'AWS Database Migration Service #X Amz…'
+  description: 'Database Migration Service
+
+    Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE).'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -125,7 +127,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: ReloadTables
-      description: <p>Reloads the target database table with the source data. </p> <p>You can only use this operation with a task in the <code>RUNNING</code> state, otherwise the service will throw an <code>InvalidResourceStateFault</code> exception.</p>
+      description: 'Reloads the target database table with the source data.
+
+
+        You can only use this operation with a task in the RUNNING state, otherwise the service will throw an InvalidResourceStateFault exception.'
       responses:
         '200':
           description: Success
@@ -161,15 +166,13 @@ paths:
           - AmazonDMSv20160101.ReloadTables
       tags:
       - '#X Amz Target=AmazonDMSv20160101.ReloadTables'
+      summary: Reload tables
+      x-summary-source: derived
 components:
   schemas:
-    TableListToReload:
-      type: array
-      items:
-        $ref: '#/components/schemas/TableToReload'
+    InvalidResourceStateFault: {}
     String:
       type: string
-    ResourceNotFoundFault: {}
     ReloadTablesResponse:
       type: object
       properties:
@@ -177,27 +180,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: 'The Amazon Resource Name (ARN) of the replication task. '
-    ReloadOptionValue:
-      type: string
-      enum:
-      - data-reload
-      - validate-only
-    TableToReload:
-      type: object
-      required:
-      - SchemaName
-      - TableName
-      properties:
-        SchemaName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The schema name of the table to be reloaded.
-        TableName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The table name of the table to be reloaded.
-      description: Provides the name of the schema and table to be reloaded.
-    InvalidResourceStateFault: {}
     ReloadTablesMessage:
       type: object
       required:
@@ -217,33 +199,34 @@ components:
           allOf:
           - $ref: '#/components/schemas/ReloadOptionValue'
           - description: '<p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task. </p> <p>Valid values: data-reload, validate-only</p> <p>Default value is data-reload.</p>'
+    TableToReload:
+      type: object
+      required:
+      - SchemaName
+      - TableName
+      properties:
+        SchemaName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The schema name of the table to be reloaded.
+        TableName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The table name of the table to be reloaded.
+      description: Provides the name of the schema and table to be reloaded.
+    ReloadOptionValue:
+      type: string
+      enum:
+      - data-reload
+      - validate-only
+    TableListToReload:
+      type: array
+      items:
+        $ref: '#/components/schemas/TableToReload'
+    ResourceNotFoundFault: {}
   parameters:
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -254,8 +237,32 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

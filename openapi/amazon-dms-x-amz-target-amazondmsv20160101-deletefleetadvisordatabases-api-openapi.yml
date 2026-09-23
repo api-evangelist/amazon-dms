@@ -2,8 +2,10 @@ openapi: 3.2.0
 info:
   version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.DeleteFleetAdvisorDatabases API'
-  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  title: 'AWS Database Migration Service #X Amz…'
+  description: 'Database Migration Service
+
+    Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE).'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -161,23 +163,12 @@ paths:
           - AmazonDMSv20160101.DeleteFleetAdvisorDatabases
       tags:
       - '#X Amz Target=AmazonDMSv20160101.DeleteFleetAdvisorDatabases'
+      summary: Delete fleet advisor databases
+      x-summary-source: derived
 components:
   schemas:
-    InvalidOperationFault: {}
     String:
       type: string
-    ResourceNotFoundFault: {}
-    StringList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    DeleteFleetAdvisorDatabasesResponse:
-      type: object
-      properties:
-        DatabaseIds:
-          allOf:
-          - $ref: '#/components/schemas/StringList'
-          - description: The IDs of the databases that the operation deleted.
     DeleteFleetAdvisorDatabasesRequest:
       type: object
       required:
@@ -188,33 +179,22 @@ components:
           allOf:
           - $ref: '#/components/schemas/StringList'
           - description: The IDs of the Fleet Advisor collector databases to delete.
+    InvalidOperationFault: {}
+    DeleteFleetAdvisorDatabasesResponse:
+      type: object
+      properties:
+        DatabaseIds:
+          allOf:
+          - $ref: '#/components/schemas/StringList'
+          - description: The IDs of the databases that the operation deleted.
+    StringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    ResourceNotFoundFault: {}
   parameters:
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -225,8 +205,32 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

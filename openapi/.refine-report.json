@@ -222,7 +222,8 @@
     "amazon-dms-openapi.yaml: declared missing tag: #X Amz Target=AmazonDMSv20160101.StopReplicationTask",
     "amazon-dms-openapi.yaml: declared missing tag: #X Amz Target=AmazonDMSv20160101.TestConnection",
     "amazon-dms-openapi.yaml: declared missing tag: #X Amz Target=AmazonDMSv20160101.UpdateSubscriptionsToEventBridge",
-    "amazon-dms-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0"
+    "amazon-dms-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
   ],
   "skipped": [
     "amazon-dms-endpoints-api-openapi.yml: previously refined output, superseded by openapi/_original/",

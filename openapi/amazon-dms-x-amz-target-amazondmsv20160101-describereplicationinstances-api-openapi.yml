@@ -2,8 +2,10 @@ openapi: 3.2.0
 info:
   version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.DescribeReplicationInstances API'
-  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  title: 'AWS Database Migration Service #X Amz…'
+  description: 'Database Migration Service
+
+    Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE).'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -167,59 +169,26 @@ paths:
           - AmazonDMSv20160101.DescribeReplicationInstances
       tags:
       - '#X Amz Target=AmazonDMSv20160101.DescribeReplicationInstances'
+      summary: Describe replication instances
+      x-summary-source: derived
 components:
-  parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ReplicationInstancePrivateIpAddressList:
+    SubnetList:
       type: array
       items:
-        $ref: '#/components/schemas/String'
-    StringList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
+        $ref: '#/components/schemas/Subnet'
+    VpcSecurityGroupMembership:
+      type: object
+      properties:
+        VpcSecurityGroupId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The VPC security group ID.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The status of the VPC security group.
+      description: Describes the status of a security group associated with the virtual private cloud (VPC) hosting your replication and DB instances.
     Filter:
       type: object
       required:
@@ -235,38 +204,26 @@ components:
           - $ref: '#/components/schemas/FilterValueList'
           - description: The filter value, which can specify one or more values used to narrow the returned results.
       description: 'Identifies the name and value of a filter object. This filter is used to limit the number and type of DMS objects that are returned for a particular <code>Describe*</code> call or similar operation. Filters are used as an optional parameter for certain API operations. '
-    IntegerOptional:
-      type: integer
-    BooleanOptional:
-      type: boolean
-    SubnetList:
+    VpcSecurityGroupMembershipList:
       type: array
       items:
-        $ref: '#/components/schemas/Subnet'
-    DescribeReplicationInstancesMessage:
+        $ref: '#/components/schemas/VpcSecurityGroupMembership'
+    ReplicationInstancePrivateIpAddressList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    ReplicationInstancePublicIpAddressList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    AvailabilityZone:
       type: object
-      title: DescribeReplicationInstancesMessage
       properties:
-        Filters:
-          allOf:
-          - $ref: '#/components/schemas/FilterList'
-          - description: '<p>Filters applied to replication instances.</p> <p>Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class | engine-version</p>'
-        MaxRecords:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: '<p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>'
-        Marker:
+        Name:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: ' An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. '
-      description: <p/>
-    Boolean:
-      type: boolean
-    TStamp:
-      type: string
-      format: date-time
-    String:
-      type: string
+          - description: The name of the Availability Zone.
+      description: The name of an Availability Zone for use during database migration. <code>AvailabilityZone</code> is an optional parameter to the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationInstance.html"> <code>CreateReplicationInstance</code> </a> operation, and it’s value relates to the Amazon Web Services Region of an endpoint. For example, the availability zone of an endpoint in the us-east-1 region might be us-east-1a, us-east-1b, us-east-1c, or us-east-1d.
     ReplicationSubnetGroup:
       type: object
       properties:
@@ -295,76 +252,8 @@ components:
           - $ref: '#/components/schemas/StringList'
           - description: The IP addressing protocol supported by the subnet group. This is used by a replication instance with values such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
       description: Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroups</code> operation.
-    ResourceNotFoundFault: {}
-    VpcSecurityGroupMembership:
-      type: object
-      properties:
-        VpcSecurityGroupId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The VPC security group ID.
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The status of the VPC security group.
-      description: Describes the status of a security group associated with the virtual private cloud (VPC) hosting your replication and DB instances.
-    VpcSecurityGroupMembershipList:
-      type: array
-      items:
-        $ref: '#/components/schemas/VpcSecurityGroupMembership'
-    FilterValueList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    Subnet:
-      type: object
-      properties:
-        SubnetIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The subnet identifier.
-        SubnetAvailabilityZone:
-          allOf:
-          - $ref: '#/components/schemas/AvailabilityZone'
-          - description: The Availability Zone of the subnet.
-        SubnetStatus:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The status of the subnet.
-      description: In response to a request by the <code>DescribeReplicationSubnetGroups</code> operation, this object identifies a subnet by its given Availability Zone, subnet identifier, and status.
-    ReplicationInstanceIpv6AddressList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
     Integer:
       type: integer
-    ReplicationInstancePublicIpAddressList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    ReplicationInstanceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ReplicationInstance'
-    FilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Filter'
-    DescribeReplicationInstancesResponse:
-      type: object
-      example:
-        Marker: ''
-        ReplicationInstances: []
-      properties:
-        Marker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: ' An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. '
-        ReplicationInstances:
-          allOf:
-          - $ref: '#/components/schemas/ReplicationInstanceList'
-          - description: The replication instances described.
-      description: <p/>
     ReplicationInstance:
       type: object
       properties:
@@ -471,6 +360,31 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
       description: Provides information that defines a replication instance.
+    DescribeReplicationInstancesResponse:
+      type: object
+      example:
+        Marker: ''
+        ReplicationInstances: []
+      properties:
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: ' An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. '
+        ReplicationInstances:
+          allOf:
+          - $ref: '#/components/schemas/ReplicationInstanceList'
+          - description: The replication instances described.
+      description: <p/>
+    FilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Filter'
+    TStamp:
+      type: string
+      format: date-time
+    ResourceNotFoundFault: {}
+    BooleanOptional:
+      type: boolean
     ReplicationPendingModifiedValues:
       type: object
       properties:
@@ -495,14 +409,104 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
       description: 'Provides information about the values of pending modifications to a replication instance. This data type is an object of the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationInstance.html"> <code>ReplicationInstance</code> </a> user-defined data type. '
-    AvailabilityZone:
+    Boolean:
+      type: boolean
+    ReplicationInstanceIpv6AddressList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    StringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    IntegerOptional:
+      type: integer
+    ReplicationInstanceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ReplicationInstance'
+    String:
+      type: string
+    DescribeReplicationInstancesMessage:
       type: object
+      title: DescribeReplicationInstancesMessage
       properties:
-        Name:
+        Filters:
+          allOf:
+          - $ref: '#/components/schemas/FilterList'
+          - description: '<p>Filters applied to replication instances.</p> <p>Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class | engine-version</p>'
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: '<p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>'
+        Marker:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: The name of the Availability Zone.
-      description: The name of an Availability Zone for use during database migration. <code>AvailabilityZone</code> is an optional parameter to the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationInstance.html"> <code>CreateReplicationInstance</code> </a> operation, and it’s value relates to the Amazon Web Services Region of an endpoint. For example, the availability zone of an endpoint in the us-east-1 region might be us-east-1a, us-east-1b, us-east-1c, or us-east-1d.
+          - description: ' An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. '
+      description: <p/>
+    FilterValueList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    Subnet:
+      type: object
+      properties:
+        SubnetIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The subnet identifier.
+        SubnetAvailabilityZone:
+          allOf:
+          - $ref: '#/components/schemas/AvailabilityZone'
+          - description: The Availability Zone of the subnet.
+        SubnetStatus:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The status of the subnet.
+      description: In response to a request by the <code>DescribeReplicationSubnetGroups</code> operation, this object identifies a subnet by its given Availability Zone, subnet identifier, and status.
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

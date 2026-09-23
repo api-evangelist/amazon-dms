@@ -76,6 +76,38 @@ paths:
       - Endpoints
 components:
   schemas:
+    Filter:
+      type: object
+      properties:
+        Name:
+          type: string
+        Values:
+          type: array
+          items:
+            type: string
+    Endpoint:
+      type: object
+      properties:
+        EndpointIdentifier:
+          type: string
+        EndpointType:
+          type: string
+        EngineName:
+          type: string
+        EngineDisplayName:
+          type: string
+        ServerName:
+          type: string
+        Port:
+          type: integer
+        DatabaseName:
+          type: string
+        Status:
+          type: string
+        EndpointArn:
+          type: string
+        SslMode:
+          type: string
     CreateEndpointInput:
       type: object
       required:
@@ -110,35 +142,3 @@ components:
           - require
           - verify-ca
           - verify-full
-    Endpoint:
-      type: object
-      properties:
-        EndpointIdentifier:
-          type: string
-        EndpointType:
-          type: string
-        EngineName:
-          type: string
-        EngineDisplayName:
-          type: string
-        ServerName:
-          type: string
-        Port:
-          type: integer
-        DatabaseName:
-          type: string
-        Status:
-          type: string
-        EndpointArn:
-          type: string
-        SslMode:
-          type: string
-    Filter:
-      type: object
-      properties:
-        Name:
-          type: string
-        Values:
-          type: array
-          items:
-            type: string

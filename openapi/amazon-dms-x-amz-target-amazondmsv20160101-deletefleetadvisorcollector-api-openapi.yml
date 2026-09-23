@@ -2,8 +2,10 @@ openapi: 3.2.0
 info:
   version: 2016-01-01
   x-release: v4
-  title: 'AWS Database Migration Service #X Amz Target=AmazonDMSv20160101.DeleteFleetAdvisorCollector API'
-  description: <fullname>Database Migration Service</fullname> <p>Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i> </p>
+  title: 'AWS Database Migration Service #X Amz…'
+  description: 'Database Migration Service
+
+    Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE).'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -157,7 +159,24 @@ paths:
           - AmazonDMSv20160101.DeleteFleetAdvisorCollector
       tags:
       - '#X Amz Target=AmazonDMSv20160101.DeleteFleetAdvisorCollector'
+      summary: Delete fleet advisor collector
+      x-summary-source: derived
 components:
+  schemas:
+    InvalidResourceStateFault: {}
+    DeleteCollectorRequest:
+      type: object
+      required:
+      - CollectorReferencedId
+      title: DeleteCollectorRequest
+      properties:
+        CollectorReferencedId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The reference ID of the Fleet Advisor collector to delete.
+    String:
+      type: string
+    CollectorNotFoundFault: {}
   parameters:
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
@@ -165,14 +184,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -189,33 +220,6 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-  schemas:
-    String:
-      type: string
-    DeleteCollectorRequest:
-      type: object
-      required:
-      - CollectorReferencedId
-      title: DeleteCollectorRequest
-      properties:
-        CollectorReferencedId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The reference ID of the Fleet Advisor collector to delete.
-    InvalidResourceStateFault: {}
-    CollectorNotFoundFault: {}
   securitySchemes:
     hmac:
       type: apiKey

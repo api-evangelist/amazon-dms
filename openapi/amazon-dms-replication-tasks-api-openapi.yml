@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Amazon DMS AWS Database Migration Service Replication Tasks API
+  title: Amazon DMS AWS Database Migration Service Replication Tasks…
   description: AWS Database Migration Service (DMS) helps you migrate databases to AWS quickly and securely. The API provides operations for creating and managing replication instances, endpoints, and replication tasks for database migrations.
   version: '2016-01-01'
   contact:
@@ -71,33 +71,6 @@ paths:
       - Replication Tasks
 components:
   schemas:
-    CreateReplicationTaskInput:
-      type: object
-      required:
-      - ReplicationTaskIdentifier
-      - SourceEndpointArn
-      - TargetEndpointArn
-      - ReplicationInstanceArn
-      - MigrationType
-      - TableMappings
-      properties:
-        ReplicationTaskIdentifier:
-          type: string
-        SourceEndpointArn:
-          type: string
-        TargetEndpointArn:
-          type: string
-        ReplicationInstanceArn:
-          type: string
-        MigrationType:
-          type: string
-          enum:
-          - full-load
-          - cdc
-          - full-load-and-cdc
-        TableMappings:
-          type: string
-          description: JSON table mappings for the replication task.
     ReplicationTask:
       type: object
       properties:
@@ -130,3 +103,30 @@ components:
               type: integer
             TablesErrored:
               type: integer
+    CreateReplicationTaskInput:
+      type: object
+      required:
+      - ReplicationTaskIdentifier
+      - SourceEndpointArn
+      - TargetEndpointArn
+      - ReplicationInstanceArn
+      - MigrationType
+      - TableMappings
+      properties:
+        ReplicationTaskIdentifier:
+          type: string
+        SourceEndpointArn:
+          type: string
+        TargetEndpointArn:
+          type: string
+        ReplicationInstanceArn:
+          type: string
+        MigrationType:
+          type: string
+          enum:
+          - full-load
+          - cdc
+          - full-load-and-cdc
+        TableMappings:
+          type: string
+          description: JSON table mappings for the replication task.
