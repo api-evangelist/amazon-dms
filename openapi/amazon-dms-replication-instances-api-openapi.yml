@@ -76,38 +76,6 @@ paths:
       - Replication Instances
 components:
   schemas:
-    Filter:
-      type: object
-      properties:
-        Name:
-          type: string
-        Values:
-          type: array
-          items:
-            type: string
-    ReplicationInstance:
-      type: object
-      properties:
-        ReplicationInstanceIdentifier:
-          type: string
-        ReplicationInstanceClass:
-          type: string
-        ReplicationInstanceStatus:
-          type: string
-        AllocatedStorage:
-          type: integer
-        ReplicationInstanceArn:
-          type: string
-        ReplicationInstancePublicIpAddress:
-          type: string
-        ReplicationInstancePrivateIpAddress:
-          type: string
-        AvailabilityZone:
-          type: string
-        MultiAZ:
-          type: boolean
-        EngineVersion:
-          type: string
     CreateReplicationInstanceInput:
       type: object
       required:
@@ -137,3 +105,35 @@ components:
           type: string
         PubliclyAccessible:
           type: boolean
+    ReplicationInstance:
+      type: object
+      properties:
+        ReplicationInstanceIdentifier:
+          type: string
+        ReplicationInstanceClass:
+          type: string
+        ReplicationInstanceStatus:
+          type: string
+        AllocatedStorage:
+          type: integer
+        ReplicationInstanceArn:
+          type: string
+        ReplicationInstancePublicIpAddress:
+          type: string
+        ReplicationInstancePrivateIpAddress:
+          type: string
+        AvailabilityZone:
+          type: string
+        MultiAZ:
+          type: boolean
+        EngineVersion:
+          type: string
+    Filter:
+      type: object
+      properties:
+        Name:
+          type: string
+        Values:
+          type: array
+          items:
+            type: string
