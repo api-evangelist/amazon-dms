@@ -71,6 +71,33 @@ paths:
       - Replication Tasks
 components:
   schemas:
+    CreateReplicationTaskInput:
+      type: object
+      required:
+      - ReplicationTaskIdentifier
+      - SourceEndpointArn
+      - TargetEndpointArn
+      - ReplicationInstanceArn
+      - MigrationType
+      - TableMappings
+      properties:
+        ReplicationTaskIdentifier:
+          type: string
+        SourceEndpointArn:
+          type: string
+        TargetEndpointArn:
+          type: string
+        ReplicationInstanceArn:
+          type: string
+        MigrationType:
+          type: string
+          enum:
+          - full-load
+          - cdc
+          - full-load-and-cdc
+        TableMappings:
+          type: string
+          description: JSON table mappings for the replication task.
     ReplicationTask:
       type: object
       properties:
@@ -103,30 +130,3 @@ components:
               type: integer
             TablesErrored:
               type: integer
-    CreateReplicationTaskInput:
-      type: object
-      required:
-      - ReplicationTaskIdentifier
-      - SourceEndpointArn
-      - TargetEndpointArn
-      - ReplicationInstanceArn
-      - MigrationType
-      - TableMappings
-      properties:
-        ReplicationTaskIdentifier:
-          type: string
-        SourceEndpointArn:
-          type: string
-        TargetEndpointArn:
-          type: string
-        ReplicationInstanceArn:
-          type: string
-        MigrationType:
-          type: string
-          enum:
-          - full-load
-          - cdc
-          - full-load-and-cdc
-        TableMappings:
-          type: string
-          description: JSON table mappings for the replication task.
