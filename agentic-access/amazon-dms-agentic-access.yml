@@ -1,19 +1,173 @@
-generated: '2026-07-15'
+generated: '2026-09-23'
 method: generated
-source: openapi/amazon-dms-openapi.yaml, openapi/amazon-dms-openapi.yml
+source: openapi/amazon-dms-endpoints-api-openapi.yml, openapi/amazon-dms-replication-instances-api-openapi.yml,
+  openapi/amazon-dms-replication-tasks-api-openapi.yml, openapi/amazon-dms-x-amz-target-amazondmsv20160101-addtagstoresource-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-applypendingmaintenanceaction-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-batchstartrecommendations-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-cancelreplicationtaskassessmentrun-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-createendpoint-api-openapi.yml, openapi/amazon-dms-x-amz-target-amazondmsv20160101-createeventsubscription-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-createfleetadvisorcollector-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationinstance-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationsubnetgroup-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationtask-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletecertificate-api-openapi.yml, openapi/amazon-dms-x-amz-target-amazondmsv20160101-deleteconnection-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-deleteendpoint-api-openapi.yml, openapi/amazon-dms-x-amz-target-amazondmsv20160101-deleteeventsubscription-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletefleetadvisorcollector-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletefleetadvisordatabases-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationinstance-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationsubnetgroup-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationtask-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationtaskassessmentrun-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeaccountattributes-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeapplicableindividualassessments-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describecertificates-api-openapi.yml, openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeconnections-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeendpoints-api-openapi.yml, openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeendpointsettings-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeendpointtypes-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeeventcategories-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeevents-api-openapi.yml, openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeeventsubscriptions-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorcollectors-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisordatabases-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorlsaanalysis-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorschemaobjectsummary-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorschemas-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeorderablereplicationinstances-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describependingmaintenanceactions-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describerecommendationlimitations-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describerecommendations-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describerefreshschemasstatus-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationinstances-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationinstancetasklogs-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationsubnetgroups-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskassessmentresults-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskassessmentruns-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskindividualassessments-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtasks-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeschemas-api-openapi.yml, openapi/amazon-dms-x-amz-target-amazondmsv20160101-describetablestatistics-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-importcertificate-api-openapi.yml, openapi/amazon-dms-x-amz-target-amazondmsv20160101-listtagsforresource-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyendpoint-api-openapi.yml, openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyeventsubscription-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationinstance-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationsubnetgroup-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationtask-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-movereplicationtask-api-openapi.yml, openapi/amazon-dms-x-amz-target-amazondmsv20160101-rebootreplicationinstance-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-refreshschemas-api-openapi.yml, openapi/amazon-dms-x-amz-target-amazondmsv20160101-reloadtables-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-removetagsfromresource-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-runfleetadvisorlsaanalysis-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-startrecommendations-api-openapi.yml, openapi/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtask-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtaskassessment-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtaskassessmentrun-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-stopreplicationtask-api-openapi.yml, openapi/amazon-dms-x-amz-target-amazondmsv20160101-testconnection-api-openapi.yml,
+  openapi/amazon-dms-x-amz-target-amazondmsv20160101-updatesubscriptionstoeventbridge-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 75
   by_action_class:
-    acting: 75
+    acting: 74
+    connected: 1
   by_consequence:
-    write: 72
+    write: 71
     physical: 1
+    read: 1
     safety-critical: 2
   human_in_the_loop_required: 2
 operations:
+- path: /createEndpoint
+  method: post
+  operationId: CreateEndpoint
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /describeEndpoints
+  method: post
+  operationId: DescribeEndpoints
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /
+  method: post
+  operationId: CreateReplicationInstance
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /describeReplicationInstances
+  method: post
+  operationId: DescribeReplicationInstances
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /createReplicationTask
+  method: post
+  operationId: CreateReplicationTask
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /startReplicationTask
+  method: post
+  operationId: StartReplicationTask
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /#X-Amz-Target=AmazonDMSv20160101.AddTagsToResource
   method: post
   operationId: AddTagsToResource
@@ -398,6 +552,22 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /#X-Amz-Target=AmazonDMSv20160101.DescribeEndpoints
+  method: post
+  operationId: DescribeEndpoints
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /#X-Amz-Target=AmazonDMSv20160101.DescribeEndpointSettings
   method: post
   operationId: DescribeEndpointSettings
@@ -430,22 +600,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /#X-Amz-Target=AmazonDMSv20160101.DescribeEndpoints
-  method: post
-  operationId: DescribeEndpoints
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /#X-Amz-Target=AmazonDMSv20160101.DescribeEventCategories
   method: post
   operationId: DescribeEventCategories
@@ -462,9 +616,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /#X-Amz-Target=AmazonDMSv20160101.DescribeEventSubscriptions
+- path: /#X-Amz-Target=AmazonDMSv20160101.DescribeEvents
   method: post
-  operationId: DescribeEventSubscriptions
+  operationId: DescribeEvents
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -478,9 +632,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /#X-Amz-Target=AmazonDMSv20160101.DescribeEvents
+- path: /#X-Amz-Target=AmazonDMSv20160101.DescribeEventSubscriptions
   method: post
-  operationId: DescribeEvents
+  operationId: DescribeEventSubscriptions
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -656,9 +810,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationInstanceTaskLogs
+- path: /#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationInstances
   method: post
-  operationId: DescribeReplicationInstanceTaskLogs
+  operationId: DescribeReplicationInstances
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -672,9 +826,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationInstances
+- path: /#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationInstanceTaskLogs
   method: post
-  operationId: DescribeReplicationInstances
+  operationId: DescribeReplicationInstanceTaskLogs
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -820,18 +974,12 @@ operations:
   method: post
   operationId: ListTagsForResource
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=AmazonDMSv20160101.ModifyEndpoint
   method: post
   operationId: ModifyEndpoint
@@ -1107,102 +1255,6 @@ operations:
 - path: /#X-Amz-Target=AmazonDMSv20160101.UpdateSubscriptionsToEventBridge
   method: post
   operationId: UpdateSubscriptionsToEventBridge
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /
-  method: post
-  operationId: CreateReplicationInstance
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /createEndpoint
-  method: post
-  operationId: CreateEndpoint
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /createReplicationTask
-  method: post
-  operationId: CreateReplicationTask
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /describeReplicationInstances
-  method: post
-  operationId: DescribeReplicationInstances
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /describeEndpoints
-  method: post
-  operationId: DescribeEndpoints
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /startReplicationTask
-  method: post
-  operationId: StartReplicationTask
   x-agentic-access:
     action-class: acting
     consequence: write
