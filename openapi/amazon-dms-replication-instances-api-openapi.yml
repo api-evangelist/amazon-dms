@@ -105,6 +105,15 @@ components:
           type: string
         PubliclyAccessible:
           type: boolean
+    Filter:
+      type: object
+      properties:
+        Name:
+          type: string
+        Values:
+          type: array
+          items:
+            type: string
     ReplicationInstance:
       type: object
       properties:
@@ -128,12 +137,3 @@ components:
           type: boolean
         EngineVersion:
           type: string
-    Filter:
-      type: object
-      properties:
-        Name:
-          type: string
-        Values:
-          type: array
-          items:
-            type: string
