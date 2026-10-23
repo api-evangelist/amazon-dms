@@ -31,419 +31,419 @@ artifacts:
     method: derived
     evidence: openapi/amazon-dms-replication-tasks-api
   collections/amazon-dms-x-amz-target-amazondmsv20160101-addtagstoresource-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-addtagstoresource-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-addtagstoresource-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-addtagstoresource-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-applypendingmaintenanceaction-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-applypendingmaintenanceaction-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-applypendingmaintenanceaction-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-applypendingmaintenanceaction-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-batchstartrecommendations-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-batchstartrecommendations-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-batchstartrecommendations-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-batchstartrecommendations-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-cancelreplicationtaskassessmentrun-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-cancelreplicationtaskassessmentrun-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-cancelreplicationtaskassessmentrun-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-cancelreplicationtaskassessmentrun-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-createendpoint-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-createendpoint-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-createendpoint-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-createendpoint-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-createeventsubscription-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-createeventsubscription-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-createeventsubscription-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-createeventsubscription-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-createfleetadvisorcollector-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-createfleetadvisorcollector-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-createfleetadvisorcollector-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-createfleetadvisorcollector-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationinstance-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationinstance-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationinstance-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationinstance-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationsubnetgroup-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationsubnetgroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationsubnetgroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationsubnetgroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationtask-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationtask-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationtask-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationtask-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deletecertificate-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletecertificate-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deletecertificate-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletecertificate-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deleteconnection-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deleteconnection-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deleteconnection-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deleteconnection-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deleteendpoint-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deleteendpoint-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deleteendpoint-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deleteendpoint-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deleteeventsubscription-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deleteeventsubscription-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deleteeventsubscription-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deleteeventsubscription-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deletefleetadvisorcollector-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletefleetadvisorcollector-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deletefleetadvisorcollector-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletefleetadvisorcollector-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deletefleetadvisordatabases-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletefleetadvisordatabases-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deletefleetadvisordatabases-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletefleetadvisordatabases-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationinstance-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationinstance-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationinstance-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationinstance-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationsubnetgroup-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationsubnetgroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationsubnetgroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationsubnetgroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationtask-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationtask-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationtask-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationtask-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationtaskassessmentrun-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationtaskassessmentrun-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationtaskassessmentrun-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationtaskassessmentrun-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeaccountattributes-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeaccountattributes-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeaccountattributes-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeaccountattributes-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeapplicableindividualassessments-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeapplicableindividualassessments-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeapplicableindividualassessments-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeapplicableindividualassessments-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describecertificates-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describecertificates-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describecertificates-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describecertificates-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeconnections-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeconnections-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeconnections-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeconnections-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeendpoints-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeendpoints-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeendpoints-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeendpoints-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeendpointsettings-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeendpointsettings-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeendpointsettings-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeendpointsettings-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeendpointtypes-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeendpointtypes-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeendpointtypes-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeendpointtypes-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeeventcategories-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeeventcategories-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeeventcategories-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeeventcategories-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeevents-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeevents-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeevents-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeevents-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeeventsubscriptions-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeeventsubscriptions-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeeventsubscriptions-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeeventsubscriptions-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorcollectors-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorcollectors-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorcollectors-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorcollectors-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisordatabases-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisordatabases-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisordatabases-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisordatabases-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorlsaanalysis-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorlsaanalysis-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorlsaanalysis-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorlsaanalysis-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorschemaobjectsummary-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorschemaobjectsummary-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorschemaobjectsummary-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorschemaobjectsummary-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorschemas-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorschemas-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorschemas-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorschemas-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeorderablereplicationinstances-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeorderablereplicationinstances-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeorderablereplicationinstances-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeorderablereplicationinstances-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describependingmaintenanceactions-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describependingmaintenanceactions-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describependingmaintenanceactions-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describependingmaintenanceactions-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describerecommendationlimitations-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describerecommendationlimitations-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describerecommendationlimitations-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describerecommendationlimitations-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describerecommendations-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describerecommendations-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describerecommendations-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describerecommendations-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describerefreshschemasstatus-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describerefreshschemasstatus-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describerefreshschemasstatus-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describerefreshschemasstatus-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationinstances-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationinstances-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationinstances-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationinstances-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationinstancetasklogs-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationinstancetasklogs-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationinstancetasklogs-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationinstancetasklogs-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationsubnetgroups-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationsubnetgroups-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationsubnetgroups-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationsubnetgroups-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskassessmentresults-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskassessmentresults-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskassessmentresults-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskassessmentresults-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskassessmentruns-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskassessmentruns-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskassessmentruns-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskassessmentruns-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskindividualassessments-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskindividualassessments-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskindividualassessments-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskindividualassessments-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtasks-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtasks-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtasks-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtasks-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeschemas-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeschemas-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describeschemas-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeschemas-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describetablestatistics-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describetablestatistics-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-describetablestatistics-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describetablestatistics-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-importcertificate-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-importcertificate-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-importcertificate-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-importcertificate-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-listtagsforresource-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-listtagsforresource-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-listtagsforresource-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-listtagsforresource-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-modifyendpoint-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyendpoint-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-modifyendpoint-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyendpoint-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-modifyeventsubscription-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyeventsubscription-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-modifyeventsubscription-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyeventsubscription-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationinstance-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationinstance-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationinstance-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationinstance-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationsubnetgroup-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationsubnetgroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationsubnetgroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationsubnetgroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationtask-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationtask-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationtask-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationtask-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-movereplicationtask-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-movereplicationtask-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-movereplicationtask-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-movereplicationtask-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-rebootreplicationinstance-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-rebootreplicationinstance-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-rebootreplicationinstance-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-rebootreplicationinstance-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-refreshschemas-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-refreshschemas-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-refreshschemas-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-refreshschemas-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-reloadtables-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-reloadtables-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-reloadtables-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-reloadtables-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-removetagsfromresource-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-removetagsfromresource-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-removetagsfromresource-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-removetagsfromresource-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-runfleetadvisorlsaanalysis-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-runfleetadvisorlsaanalysis-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-runfleetadvisorlsaanalysis-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-runfleetadvisorlsaanalysis-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-startrecommendations-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-startrecommendations-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-startrecommendations-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-startrecommendations-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtask-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtask-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtask-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtask-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtaskassessment-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtaskassessment-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtaskassessment-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtaskassessment-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtaskassessmentrun-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtaskassessmentrun-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtaskassessmentrun-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtaskassessmentrun-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-stopreplicationtask-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-stopreplicationtask-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-stopreplicationtask-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-stopreplicationtask-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-testconnection-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-testconnection-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-testconnection-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-testconnection-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-updatesubscriptionstoeventbridge-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-updatesubscriptionstoeventbridge-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms-x-amz-target-amazondmsv20160101-updatesubscriptionstoeventbridge-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-updatesubscriptionstoeventbridge-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-dms.opencollection.json:
     method: derived
     evidence: openapi/amazon-dms
@@ -684,127 +684,7 @@ artifacts:
   json-structure/amazon-dms-vpc-security-group-membership-structure.json:
     method: unknown
     evidence: no authorship recorded
-  kin/checks-2026-09-24T161608.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T125852.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T133943.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T143147.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T154045.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-26T215308.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T094438.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T103455.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T123021.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T132314.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T140727.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-28T221322.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-29T213958.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-29T230545.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-30T203505.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-30T220315.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-31T223420.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T063623.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T210448.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T222808.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-02T211804.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-02T224043.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-03T161828.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-03T174231.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T062714.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T212454.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T224856.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T055819.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T072335.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T144739.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T195450.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T211839.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T011047.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T211804.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T224210.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-07T200636.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-07T213054.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-08T214843.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-08T232836.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-10T204815.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-10T222408.yml:
+  kin/checks-2026-10-11T110117.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-12T062655.yml:
@@ -888,6 +768,21 @@ artifacts:
   kin/score-2026-09-24T161608.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T210408.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T232841.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T000835.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T024842.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-11T110117.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   openapi/_original/amazon-dms-openapi.yaml:
     method: harvested
     evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
@@ -896,6 +791,9 @@ artifacts:
     method: harvested
     evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
       to the provider's source is unverified
+  openapi/amazon-dms-aws-database-migration-service-api-openapi.yml:
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/amazon-dms-endpoints-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
@@ -903,213 +801,6 @@ artifacts:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/amazon-dms-replication-tasks-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-addtagstoresource-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-applypendingmaintenanceaction-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-batchstartrecommendations-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-cancelreplicationtaskassessmentrun-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-createendpoint-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-createeventsubscription-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-createfleetadvisorcollector-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationinstance-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationsubnetgroup-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationtask-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletecertificate-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-deleteconnection-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-deleteendpoint-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-deleteeventsubscription-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletefleetadvisorcollector-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletefleetadvisordatabases-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationinstance-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationsubnetgroup-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationtask-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationtaskassessmentrun-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeaccountattributes-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeapplicableindividualassessments-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describecertificates-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeconnections-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeendpoints-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeendpointsettings-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeendpointtypes-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeeventcategories-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeevents-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeeventsubscriptions-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorcollectors-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisordatabases-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorlsaanalysis-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorschemaobjectsummary-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorschemas-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeorderablereplicationinstances-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describependingmaintenanceactions-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describerecommendationlimitations-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describerecommendations-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describerefreshschemasstatus-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationinstances-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationinstancetasklogs-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationsubnetgroups-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskassessmentresults-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskassessmentruns-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskindividualassessments-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtasks-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeschemas-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-describetablestatistics-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-importcertificate-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-listtagsforresource-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyendpoint-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyeventsubscription-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationinstance-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationsubnetgroup-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationtask-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-movereplicationtask-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-rebootreplicationinstance-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-refreshschemas-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-reloadtables-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-removetagsfromresource-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-runfleetadvisorlsaanalysis-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-startrecommendations-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtask-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtaskassessment-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtaskassessmentrun-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-stopreplicationtask-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-testconnection-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-dms-x-amz-target-amazondmsv20160101-updatesubscriptionstoeventbridge-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   plans/amazon-dms-plans-pricing.yml:
@@ -1125,212 +816,212 @@ artifacts:
     method: derived
     evidence: openapi/amazon-dms-replication-tasks-api
   postman/amazon-dms-x-amz-target-amazondmsv20160101-addtagstoresource-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-addtagstoresource-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-applypendingmaintenanceaction-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-applypendingmaintenanceaction-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-batchstartrecommendations-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-batchstartrecommendations-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-cancelreplicationtaskassessmentrun-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-cancelreplicationtaskassessmentrun-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-createendpoint-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-createendpoint-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-createeventsubscription-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-createeventsubscription-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-createfleetadvisorcollector-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-createfleetadvisorcollector-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationinstance-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationinstance-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationsubnetgroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationsubnetgroup-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationtask-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-createreplicationtask-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-deletecertificate-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletecertificate-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-deleteconnection-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deleteconnection-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-deleteendpoint-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deleteendpoint-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-deleteeventsubscription-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deleteeventsubscription-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-deletefleetadvisorcollector-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletefleetadvisorcollector-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-deletefleetadvisordatabases-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletefleetadvisordatabases-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationinstance-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationinstance-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationsubnetgroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationsubnetgroup-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationtask-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationtask-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationtaskassessmentrun-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-deletereplicationtaskassessmentrun-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describeaccountattributes-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeaccountattributes-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describeapplicableindividualassessments-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeapplicableindividualassessments-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describecertificates-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describecertificates-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describeconnections-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeconnections-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describeendpoints-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeendpoints-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describeendpointsettings-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeendpointsettings-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describeendpointtypes-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeendpointtypes-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describeeventcategories-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeeventcategories-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describeevents-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeevents-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describeeventsubscriptions-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeeventsubscriptions-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorcollectors-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorcollectors-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisordatabases-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisordatabases-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorlsaanalysis-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorlsaanalysis-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorschemaobjectsummary-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorschemaobjectsummary-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorschemas-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describefleetadvisorschemas-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describeorderablereplicationinstances-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeorderablereplicationinstances-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describependingmaintenanceactions-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describependingmaintenanceactions-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describerecommendationlimitations-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describerecommendationlimitations-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describerecommendations-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describerecommendations-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describerefreshschemasstatus-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describerefreshschemasstatus-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationinstances-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationinstances-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationinstancetasklogs-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationinstancetasklogs-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationsubnetgroups-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationsubnetgroups-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskassessmentresults-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskassessmentresults-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskassessmentruns-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskassessmentruns-api
+    method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskindividualassessments-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtaskindividualassessments-api
+  : method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtasks-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describereplicationtasks-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describeschemas-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describeschemas-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-describetablestatistics-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-describetablestatistics-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-importcertificate-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-importcertificate-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-listtagsforresource-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-listtagsforresource-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-modifyendpoint-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyendpoint-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-modifyeventsubscription-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyeventsubscription-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationinstance-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationinstance-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationsubnetgroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationsubnetgroup-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationtask-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-modifyreplicationtask-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-movereplicationtask-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-movereplicationtask-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-rebootreplicationinstance-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-rebootreplicationinstance-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-refreshschemas-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-refreshschemas-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-reloadtables-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-reloadtables-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-removetagsfromresource-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-removetagsfromresource-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-runfleetadvisorlsaanalysis-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-runfleetadvisorlsaanalysis-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-startrecommendations-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-startrecommendations-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtask-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtask-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtaskassessment-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtaskassessment-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtaskassessmentrun-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-startreplicationtaskassessmentrun-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-stopreplicationtask-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-stopreplicationtask-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-testconnection-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-testconnection-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-dms-x-amz-target-amazondmsv20160101-updatesubscriptionstoeventbridge-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-dms-x-amz-target-amazondmsv20160101-updatesubscriptionstoeventbridge-api
+    method: unknown
+    evidence: no authorship recorded
   rate-limits/amazon-dms-rate-limits.yml:
     method: generated
     evidence: declared in the artifact
