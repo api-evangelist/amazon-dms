@@ -1,0 +1,326 @@
+aid: amazon-dms
+name: Amazon DMS
+description: >-
+  AWS Database Migration Service (AWS DMS) helps you migrate databases to AWS quickly and securely. The source database
+  remains fully operational during the migration, minimizing downtime to applications that rely on the database. AWS DMS
+  can migrate your data to and from the most widely used commercial and open-source databases, supporting homogeneous
+  and heterogeneous migrations with continuous data replication.
+type: Index
+kind: company
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: medium
+  source:
+  - plans
+  - authentication
+  - security
+  generated: '2026-09-03'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-dms.png
+tags:
+  - Amazon Web Services
+  - Data Replication
+  - Database
+  - Database Migration
+  - Migration
+tags_raw:
+  - AWS
+  - Data Replication
+  - Database
+  - Database Migration
+  - Migration
+url: https://raw.githubusercontent.com/api-evangelist/amazon-dms/refs/heads/main/apis.yml
+created: '2024-01-15'
+modified: '2026-05-19'
+specificationVersion: '0.23'
+apis:
+- aid: amazon-dms:amazon-dms-endpoints-api
+  name: Amazon DMS Endpoints API
+  description: Operations for managing source and target endpoints
+  humanURL: https://aws.amazon.com/dms/
+  baseURL: https://dms.amazonaws.com
+  tags: []
+  tags_raw:
+  - Endpoints
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-dms-endpoints-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/dms/latest/APIReference/
+  - type: GettingStarted
+    url: https://aws.amazon.com/dms/getting-started/
+- aid: amazon-dms:amazon-dms-replication-instances-api
+  name: Amazon DMS Replication Instances API
+  description: Operations for managing DMS replication instances
+  humanURL: https://aws.amazon.com/dms/
+  baseURL: https://dms.amazonaws.com
+  tags:
+  - Replication Instances
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-dms-replication-instances-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/dms/latest/APIReference/
+  - type: GettingStarted
+    url: https://aws.amazon.com/dms/getting-started/
+- aid: amazon-dms:amazon-dms-replication-tasks-api
+  name: Amazon DMS Replication Tasks API
+  description: Operations for managing replication tasks
+  humanURL: https://aws.amazon.com/dms/
+  baseURL: https://dms.amazonaws.com
+  tags:
+  - Replication Tasks
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-dms-replication-tasks-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/dms/latest/APIReference/
+  - type: GettingStarted
+    url: https://aws.amazon.com/dms/getting-started/
+- aid: amazon-dms:amazon-dms-aws-database-migration-service-api
+  name: Amazon DMS AWS Database Migration Service API
+  description: >-
+    The AWS Database Migration Service API from Amazon DMS — 69 operation(s) for aws database migration
+    service.
+  humanURL: https://aws.amazon.com/dms/
+  baseURL: https://dms.amazonaws.com
+  tags:
+  - AWS Database Migration Service
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-dms-aws-database-migration-service-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/dms/latest/APIReference/
+  - type: GettingStarted
+    url: https://aws.amazon.com/dms/getting-started/
+- aid: amazon-dms:amazon-dms-data-migration-api
+  name: Amazon DMS Dms Data Migration API
+  description: The Dms Data Migration API from Amazon DMS — 6 operation(s) for dms data migration.
+  humanURL: https://aws.amazon.com/dms/
+  baseURL: https://dms.amazonaws.com
+  tags:
+  - Dms Data Migration
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-dms-data-migration-api-openapi.yml
+- aid: amazon-dms:amazon-dms-data-provider-api
+  name: Amazon DMS Dms Data Provider API
+  description: The Dms Data Provider API from Amazon DMS — 4 operation(s) for dms data provider.
+  humanURL: https://aws.amazon.com/dms/
+  baseURL: https://dms.amazonaws.com
+  tags:
+  - Dms Data Provider
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-dms-data-provider-api-openapi.yml
+- aid: amazon-dms:amazon-dms-instance-profile-api
+  name: Amazon DMS Dms Instance Profile API
+  description: The Dms Instance Profile API from Amazon DMS — 4 operation(s) for dms instance profile.
+  humanURL: https://aws.amazon.com/dms/
+  baseURL: https://dms.amazonaws.com
+  tags:
+  - Dms Instance Profile
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-dms-instance-profile-api-openapi.yml
+- aid: amazon-dms:amazon-dms-metadata-model-assessment-api
+  name: Amazon DMS Dms Metadata Model Assessment API
+  description: >-
+    The Dms Metadata Model Assessment API from Amazon DMS — 3 operation(s) for dms metadata model assessment.
+  humanURL: https://aws.amazon.com/dms/
+  baseURL: https://dms.amazonaws.com
+  tags:
+  - Dms Metadata Model Assessment
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-dms-metadata-model-assessment-api-openapi.yml
+- aid: amazon-dms:amazon-dms-metadata-model-conversion-api
+  name: Amazon DMS Dms Metadata Model Conversion API
+  description: >-
+    The Dms Metadata Model Conversion API from Amazon DMS — 3 operation(s) for dms metadata model conversion.
+  humanURL: https://aws.amazon.com/dms/
+  baseURL: https://dms.amazonaws.com
+  tags:
+  - Dms Metadata Model Conversion
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-dms-metadata-model-conversion-api-openapi.yml
+- aid: amazon-dms:amazon-dms-metadata-model-creation-api
+  name: Amazon DMS Dms Metadata Model Creation API
+  description: >-
+    The Dms Metadata Model Creation API from Amazon DMS — 3 operation(s) for dms metadata model creation.
+  humanURL: https://aws.amazon.com/dms/
+  baseURL: https://dms.amazonaws.com
+  tags:
+  - Dms Metadata Model Creation
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-dms-metadata-model-creation-api-openapi.yml
+- aid: amazon-dms:amazon-dms-migration-project-api
+  name: Amazon DMS Dms Migration Project API
+  description: >-
+    The Dms Migration Project API from Amazon DMS — 4 operation(s) for dms migration project.
+  humanURL: https://aws.amazon.com/dms/
+  baseURL: https://dms.amazonaws.com
+  tags:
+  - Dms Migration Project
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-dms-migration-project-api-openapi.yml
+- aid: amazon-dms:amazon-dms-operations-api
+  name: Amazon DMS Dms Operations API
+  description: The Dms Operations API from Amazon DMS — 16 operation(s) for dms operations.
+  humanURL: https://aws.amazon.com/dms/
+  baseURL: https://dms.amazonaws.com
+  tags:
+  - Dms Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-dms-operations-api-openapi.yml
+- aid: amazon-dms:amazon-dms-replication-api
+  name: Amazon DMS Dms Replication API
+  description: The Dms Replication API from Amazon DMS — 3 operation(s) for dms replication.
+  humanURL: https://aws.amazon.com/dms/
+  baseURL: https://dms.amazonaws.com
+  tags:
+  - Dms Replication
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-dms-replication-api-openapi.yml
+- aid: amazon-dms:amazon-dms-replication-config-api
+  name: Amazon DMS Dms Replication Config API
+  description: >-
+    The Dms Replication Config API from Amazon DMS — 4 operation(s) for dms replication config.
+  humanURL: https://aws.amazon.com/dms/
+  baseURL: https://dms.amazonaws.com
+  tags:
+  - Dms Replication Config
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-dms-replication-config-api-openapi.yml
+common:
+  - type: RateLimits
+    url: rate-limits/amazon-dms-rate-limits.yml
+  - type: FinOps
+    url: finops/amazon-dms-finops.yml
+  - type: Pricing
+    url: https://aws.amazon.com/pricing/?nc2=h_pr_hub
+  - type: Plans
+    url: plans/amazon-dms-plans-pricing.yml
+  - type: CapabilityMap
+    url: capabilities/amazon-dms-capability-edges.yml
+    name: Amazon DMS Business Capability Map
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/amazon-dms/overview
+  - type: AgenticAccess
+    url: agentic-access/amazon-dms-agentic-access.yml
+  - type: TrustCenter
+    url: security/amazon-dms-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-dms-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-dms-domain-security.yml
+  - type: Authentication
+    url: authentication/amazon-dms-authentication.yml
+  - type: Portal
+    url: https://aws.amazon.com/dms/
+  - type: Website
+    url: https://aws.amazon.com/dms/
+  - type: Documentation
+    url: https://docs.aws.amazon.com/dms/
+  - type: TermsOfService
+    url: https://aws.amazon.com/service-terms/
+  - type: PrivacyPolicy
+    url: https://aws.amazon.com/privacy/
+  - type: Support
+    url: https://aws.amazon.com/premiumsupport/
+  - type: Blog
+    url: https://aws.amazon.com/blogs/database/
+  - type: GitHubOrganization
+    url: https://github.com/aws
+  - type: Console
+    url: https://console.aws.amazon.com/dms/
+  - type: Signup
+    url: https://portal.aws.amazon.com/billing/signup
+  - type: Login
+    url: https://signin.aws.amazon.com/
+  - type: StatusPage
+    url: https://health.aws.amazon.com/health/status
+  - type: Contact
+    url: https://aws.amazon.com/contact-us/
+  - type: SpectralRules
+    url: https://raw.githubusercontent.com/api-evangelist/amazon-dms/refs/heads/main/rules/amazon-dms-spectral-rules.yml
+  - type: Vocabulary
+    url: https://raw.githubusercontent.com/api-evangelist/amazon-dms/refs/heads/main/vocabulary/amazon-dms-vocabulary.yaml
+  - type: Features
+    data:
+      - name: Homogeneous Migration
+        description: Migrate between databases of the same engine type with minimal conversion
+      - name: Heterogeneous Migration
+        description: Migrate between different database engines using Schema Conversion Tool
+      - name: Continuous Data Replication
+        description: Continuously replicate data changes using change data capture (CDC)
+      - name: Minimal Downtime Migration
+        description: Keep source database operational during migration for high availability
+      - name: Multi-AZ Replication
+        description: Provision replication instances across multiple Availability Zones for resilience
+      - name: Premigration Assessment
+        description: Run automated assessments to identify migration issues before starting
+  - type: UseCases
+    data:
+      - name: Database Consolidation
+        description: Consolidate multiple databases into a single AWS-managed database
+      - name: Cross-Engine Migration
+        description: Migrate from Oracle or SQL Server to open-source Aurora or PostgreSQL
+      - name: Development and Testing
+        description: Continuously replicate production data to development environments
+      - name: Active-Active Replication
+        description: Maintain synchronized database replicas across regions for failover
+      - name: Analytics Migration
+        description: Migrate transactional databases to analytical data warehouses like Redshift
+  - type: Integrations
+    data:
+      - name: Amazon Aurora
+        description: Target Aurora MySQL and Aurora PostgreSQL for cost-efficient managed databases
+      - name: Amazon RDS
+        description: Migrate to RDS instances for fully managed relational database hosting
+      - name: Amazon Redshift
+        description: Migrate data warehouses or replicate transactional data for analytics
+      - name: AWS Schema Conversion Tool
+        description: Convert database schemas for heterogeneous migrations between engine types
+      - name: Amazon S3
+        description: Stream migration data to S3 for archival or downstream processing
+  - type: Integrations
+    url: https://aws.amazon.com/marketplace
+integrations:
+  - name: Sign in
+  - name: Agent Mode
+  - name: Why AWS Marketplace?
+  - name: Get started in AWS Marketplace
+  - name: Industry
+  - name: Resources
+  - name: Become a Channel Partner
+  - name: Sell in AWS Marketplace
+  - name: Manage Your Account
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+x-parent: amazon-web-services
+x-relationship: product
